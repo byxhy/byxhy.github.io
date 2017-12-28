@@ -62,8 +62,7 @@ html {
 }
 
 body {
-  /*font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;*/
-  font:  400 16px/1.62 'PT Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   margin: 620px 620px;
   width: 80%;
   /*font-size: 16px;*/
@@ -172,6 +171,7 @@ h6 {
 }
 
 p {
+  font-family: Menlo, Monaco, Consolas, "Andale Mono", "lucida console", "Courier New", monospace;
   margin-bottom: 10px;
   margin-top: 10px;
   line-height: 1.7em;
