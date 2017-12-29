@@ -78,6 +78,7 @@ log：2017-12-29-13:16:05
 - [x] h4 和　body的顏色改成灰色了
 - [x] 将打赏的樣式重新修改
 - [x] 将打赏的title去除掉
+- [x] 将主頁頭像的title去除
 
 <div class = "footer_div">
 
