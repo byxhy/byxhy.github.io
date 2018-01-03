@@ -102,7 +102,7 @@ print(int('3.4'))     # ValueError: invalid literal for int() with base 10: '3.4
 
 5 % 3
 ```
-3] 变量 variable　
+3] 变量
 ```Python
 gun = 94
 print(gun)

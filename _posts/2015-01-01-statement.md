@@ -80,6 +80,13 @@ log：2017-12-29-13:16:05
 - [x] 将打赏的title去除掉
 - [x] 将主頁頭像的title去除
 
+
+log：2018-01-03-23:50:25
+
+想到这就和盖房子是一样的
+- [x] 將h1的大小調小到1.7em:(main.css line:118 )
+
+
 <div class = "footer_div">
 
   <div align="right">
