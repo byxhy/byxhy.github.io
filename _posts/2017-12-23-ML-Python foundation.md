@@ -54,6 +54,7 @@ tag: 機器學習
 <h3 id="2"> 二、基本使用 ☂</h3>
 
 1] print 功能　
+
 ```Python
 print("This is Python basic tutorial")
 
@@ -103,6 +104,7 @@ print(int('3.4'))     # ValueError: invalid literal for int() with base 10: '3.4
 5 % 3
 ```
 3] 变量
+
 ```Python
 gun = 94
 print(gun)
@@ -113,15 +115,128 @@ print(apple)
 a, b, c = 9, 8, 7
 print(a, b, c)
 ```
+<br />
+
+<h3 id="3"> 三、while 和 for 循环 ☂</h3>
+
+1] while
+
+```Python
+condition = 0
+while condition < 5:
+    print(condition)
+    condition += 1       # Err: condition++
+
+conditoin = 5
+while condition:
+    print(condition)
+    condition -= 1  
+```
+２] for
+
+```Python
+eg_list = [1, 2, 3, 4, 5, 6.2, 7, 8, 9, 10]
+for i in eg_list:
+    print(i)
+    print('This is inside the for loop')
+
+print('This is outside the for loop')
+```
+３] range
+
+```Python
+a = range(1, 10)
+for i in a:
+    print(i)
+
+b = range(10)
+for i in b:
+    print(i)
+
+c = range(1, 10, 2)
+for i in c:
+    print(i)
+```
+
+4] set type
+- list
+
+```Python
+eg_list = [1, 2, 3, 4, 5, 6]
+for i in eg_list:
+    print(i)
+```
+- tuple
+
+```Python
+tup = ('WangEr', 38, 168.5)
+for i in tup:
+    print(i)
+```
+- dictionary (But the dictionary is out of order. refer OrderedDict)
+
+```Python
+dic = {}
+dic['lan'] = 'python'
+dic['version'] = 2.7
+dic['platform'] = 64
+for key in dic:
+    print(key, '=', dic[key])
+```
+- set (The set collection will remove duplicates and it is out of order too)
+
+```Python
+s = set(['Python3', 'Python2', 'NXP', 'Python3'])
+for i in s:
+    print(i)
+```
+- iterator
+
+```Python
+# define a Fib class
+class Fib(object):
+    def __init__(self, max):
+        self.max = max
+        self.n, self.a, self.b = 0, 0, 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.n < self.max:
+            r = self.b
+            self.a, self.b = self.b, self.a + self.b
+            self.n = self.n + 1
+            return r
+        raise StopIteration()
+
+# using Fib object
+for i in Fib(5):
+    print(i)
+```
+-  yield
+
+```Python
+def fib(max):
+    a, b = 0, 1
+    while max:
+        r = b
+        a, b = b, a+b
+        max -= 1
+        yield r
+
+# using generator
+for i in fib(5):
+    print(i)
+```
+
 
 
 
 ---
 
-
-    [三、while 和 for 循环](#3)
-    - 3.1 while 循环
-    - 3.2 for 循环
+    - 3.1
+    - 3.2
 
     [四、if 判断](#4)
     - 4.1 if 判断
