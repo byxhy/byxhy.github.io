@@ -53,7 +53,7 @@ tag: 機器學習
 
 <h3 id="2"> 二、基本使用 ☂</h3>
 
-1] print 功能　
+1] print
 
 ```Python
 print("This is Python basic tutorial")
@@ -72,7 +72,7 @@ print(int('3.4'))     # ValueError: invalid literal for int() with base 10: '3.4
 ```
 
 2] 基础数学运算　
-- 加減乘除
+- addition subtraction multiplication and division
 
 ```Python
 2 + 2
@@ -84,7 +84,7 @@ print(int('3.4'))     # ValueError: invalid literal for int() with base 10: '3.4
 4 / 3
 ```
 
-- ^ 和 **
+- ^ and **
 
 ```Python
 2 ** 2
@@ -103,7 +103,7 @@ print(int('3.4'))     # ValueError: invalid literal for int() with base 10: '3.4
 
 5 % 3
 ```
-3] 变量
+3] variables
 
 ```Python
 gun = 94
@@ -229,17 +229,58 @@ def fib(max):
 for i in fib(5):
     print(i)
 ```
+<br />
 
+<h3 id="4"> 四、if 判断 ☂</h3>
+
+1] if
+
+```Python
+x = 9
+y = 6
+if x < y:
+    print('x is less than y')
+else:
+    print('x is more than y')
+```
+
+- Although the following syntax is correct in Python, we still discourage it.
+
+```Python
+x = 3
+y = 5
+z = 9
+if x < y < z:
+    print('x is less than y, and y is less than z')
+else:
+    print('y is not sure')  
+```
+
+- The following syntax is recommenaded.
+
+```Python
+x = 3
+y = 5
+z = 3
+if x < y and y < z:
+    print('x is less than y, and y is less than z')
+else:
+    print('y is not sure')
+```
+
+２] Trinocular operator ( var = var1 if condition else var2 )
+
+```Python
+worked = True
+result = 'done' if worked else 'not yet'
+print(result)
+```
 
 
 
 ---
 
-    - 3.1
-    - 3.2
-
-    [四、if 判断](#4)
-    - 4.1 if 判断
+    - 4.1
     - 4.2 if else 判断
     - 4.3 if elif else 判断
 
