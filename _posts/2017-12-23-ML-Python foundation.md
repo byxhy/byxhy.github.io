@@ -5,7 +5,7 @@ date: 2017-12-12
 tag: 機器學習
 ---
 
-声明：本系列按照[james_yuan](http://www.imooc.com/u/1349694/courses?sort=publish)老师的C++课程的学习路径整理而来，添加少量学习注释。最近沉迷学习，无法自拔，跟着慕课老师james_yuan学习C++，秉承着先上路再迭代的思想，出发啦 ... 另外所有的源碼點[這裏](http://www.imooc.com/u/1349694/courses?sort=publish)下載
+声明：本系列根據[莫煩Python](https://morvanzhou.github.io/)老师的Python基礎教學網站课程學習整理而來。學下來感覺不錯，那就秉承着先上路再迭代的思想，出发啦...　另外本系列所有的源碼可以點這裏[下載](http://www.imooc.com/u/1349694/courses?sort=publish)
 
 ---
 
