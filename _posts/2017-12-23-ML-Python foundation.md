@@ -71,7 +71,7 @@ print(float('3.4') + 3)
 print(int('3.4'))     # ValueError: invalid literal for int() with base 10: '3.4'
 ```
 
-2] 基础数学运算　
+2] basic computation
 - addition subtraction multiplication and division
 
 ```Python
@@ -244,6 +244,8 @@ else:
     print('x is more than y')
 ```
 
+2] if else
+
 - Although the following syntax is correct in Python, we still discourage it.
 
 ```Python
@@ -267,8 +269,20 @@ if x < y and y < z:
 else:
     print('y is not sure')
 ```
+3] if elif else
 
-２] Trinocular operator ( var = var1 if condition else var2 )
+```Python
+x = 3
+y = 9
+if x > y:
+    print('x > y')
+elif x < y:
+    print('x < y')
+else:
+    print('x == y')
+```
+
+4] Trinocular operator ( var = var1 if condition else var2 )
 
 ```Python
 worked = True
@@ -276,18 +290,80 @@ result = 'done' if worked else 'not yet'
 print(result)
 ```
 
+<h3 id="5"> 五、定义功能 ☂</h3>
 
+1] def
+
+```Python
+def add(a, b):
+    print('This is a add() function.')
+    print('a + b =', a + b)
+
+add(3, 7)
+```
+
+2] function parameter
+
+```Python
+def add(a, b):
+    print('This is a add() function.')
+    print('a + b =', a + b)
+
+add(3, 7)
+```
+
+3] default parameter
+
+```Python
+def sale_car(price, color='red', brand='carmy', is_second_hand=True):
+    print('price =', price, ','
+          'color =', color, ','
+          'brand =', brand, ','
+          'is_second_hand =', is_second_hand)
+
+sale_car(10000)
+```
+
+４] call yourself, only called inside the script
+
+```Python
+if __name__ == '__main__':
+    #code_here
+    print('main')
+```
+
+５] variable parameters
+
+```Python
+def sumGrades(name, *score):
+    totalScore = 0
+    for i in score:
+        totalScore += i
+    print(name, 'total score is', totalScore)
+
+sumGrades('Lisa', 8)
+
+sumGrades('Mery', 8, 7, 9)
+```
+
+６] keyword parameters
+
+```Python
+def keyPara(name, **kw):
+    print('name is ', name)
+    for k, v in kw.items():
+        print(k, v)
+
+keyPara('Mary', Gender = 'woman', country = 'US', age = '23')
+```
+
+- PA:
+
+1) Default, variable and keyword parameters should be behind all the function parameters
+
+2) Through the variable parameters and keyword parameters, all function can be replaced by universal_func(*args, **kw)
 
 ---
-
-    - 4.1
-    - 4.2 if else 判断
-    - 4.3 if elif else 判断
-
-    [五、定义功能](#5)
-    - 5.1 def 函数
-    - 5.2 函数参数
-    - 5.3 函数默认参数
 
     [六、变量形式](#6)
     - 6.1 全局 & 局部 变量
