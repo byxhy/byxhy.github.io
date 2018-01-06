@@ -5,7 +5,7 @@ date: 2017-12-12
 tag: 機器學習
 ---
 
-声明：本系列根據[莫煩Python](https://morvanzhou.github.io/)老师的Python基礎教學網站课程學習整理而來。學下來感覺不錯，那就秉承着先上路再迭代的思想，出发啦...　另外本系列所有的源碼可以點這裏[下載](http://www.imooc.com/u/1349694/courses?sort=publish)
+声明：本系列根據[莫煩Python](https://morvanzhou.github.io/)老师的Python基礎教學網站的课程整理而來。學下來感覺不錯，那就秉承着先上路再迭代的思想，出发啦...　另外本系列所有的源碼可以點這裏[下載](http://www.imooc.com/u/1349694/courses?sort=publish)
 
 ---
 
