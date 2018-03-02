@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ｎ Year"
+title: "Time Tunnel"
 author: "Xhy"
 categories: journal
 tags: [documentation,sample]
@@ -10,9 +10,10 @@ image: NYear.jpg
 
 >她说，她来的时候就有了，信不信你走的时候，我还在？最开始的時候就是自己寫寫，没想到过了些日子就变成这样了 ^_^
 
-
 <br />
+
 ### 正文：
+<br />
 
 第539天，兴趣是最好的老师 ~
 
@@ -22,6 +23,7 @@ image: NYear.jpg
 
 ---
 
+
 第540天，学会一个人过冬
 
 ![](/assets/img/NYear/540.jpg)
@@ -29,6 +31,7 @@ image: NYear.jpg
 2017-12-14 00:23
 
 ---
+
 
 第541天，终于等到你
 
