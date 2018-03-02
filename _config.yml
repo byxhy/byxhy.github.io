@@ -21,7 +21,7 @@ plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-t
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           'Fourier'
-description:	       'A man's stars and seas'
+description:	       'A man`s stars and seas'
 author:              'Xhy'
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
