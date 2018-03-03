@@ -12,35 +12,30 @@ Photo by Jeremy Bishop
 
 <br />
 
-### 篇节
+## Table of Contents
 
-<br />
-
-[一、安装](#1)
-
-[二、基本使用](#2)
-
-[三、while 和 for 循环](#3)
-
-[四、if 判断](#4)
-
-[五、定义功能](#5)
-
-[六、变量形式](#6)
-
-[七、模块安装](#7)
-
-[八、文件读取](#8)
-
-[九、class 类](#9)
-
-[十、input 输入](#10)
-
-[十一、元组, 列表, 字典](#11)
-
-[十二、模块](#12)
-
-[十三、其他](#13)
+1. [安装](#introduction)
+   1. [What is Jekyll](#what-is-jekyll)
+   2. [Never Used Jeykll Before?](#never-used-jekyll-before)
+2. [基本使用](#installation)
+   1. [GitHub Pages Installation](#github-pages-installation)
+   2. [Local Installation](#local-installation)
+3. [while 和 for 循环](#configuration)
+   1. [Sample Posts](#sample-posts)
+   2. [Site Variables](#site-variables)
+4. [if 判断](#features)
+   1. [Design Considerations](#design-considerations)
+   2. [Disqus](#disqus)
+   3. [Google Analytics](#google-analytics)
+5. [定义功能](#everything-else)
+6. [变量形式](#Contributing)
+7. [模块安装](#questions)
+8. [文件读取](#credits)
+9. [class 类](#license)
+10. [input 输入](#everything-else)
+11. [元组, 列表, 字典](#Contributing)
+12. [模块](#questions)
+13. [其他](#credits)
 
 ---
 

@@ -34,6 +34,10 @@ Photo by Jeremy Bishop
 
 <br />
 
+<h3 id="1"> 一、C++远征之起航篇 ☂</h3>
+
+1] C++输入输出流
+
 ```c++
 /*
 ********************************************************************************
@@ -60,37 +64,6 @@ int main(int argc, const char * argv[])
     return 0;
 }
 ```
-
-<h3 id="1"> 一、C++远征之起航篇 ☂</h3>
-
-1] C++输入输出流
-
-
-    /*
-    ********************************************************************************
-    *      Copyright (C), 2015-2115, Xhy Tech. Stu.
-    *      FileName   : Hello.cpp
-    *      Author     : X h y
-    *      Version    : 2.0   
-    *      Date       : 11-02-2016
-    *      Description:     
-    ********************************************************************************
-    */
-
-    #include <iostream>
-    #include <stdlib.h>
-
-    using namespace std;
-
-    int main(int argc, const char * argv[])
-    {
-        cout << "Hello tomorrow !" << endl;
-
-        system("pause");
-
-        return 0;
-    }
-
 
 2] C++新特性以及输入输出
 
