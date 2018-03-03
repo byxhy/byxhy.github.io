@@ -1,17 +1,17 @@
 ---
 layout: page
-title: Tags
+title: Categories
 ---
 <ul class="posts">
   {% for post in site.posts %}
 
     {% unless post.next %}
-      <h3>{{ post.categories }}</h3>
+      <h3>{{ post.categories}}</h3>
     {% else %}
-      {% capture categories %}{{ post.categories}}{% endcapture %}
-      {% capture ncategories %}{{ post.next.categories}}{% endcapture %}
-      {% if categories != ncategories %}
-        <h3>{{ post.categories}}</h3>
+      {% capture category %}{{ post.categories}}{% endcapture %}
+      {% capture ncategory %}{{ post.next.categories}}{% endcapture %}
+      {% if category != ncategory %}
+        <h3>{{ post.categories | categories: '%Y' }}</h3>
       {% endif %}
     {% endunless %}
 
