@@ -1,15 +1,16 @@
 ---
 layout: post
-title: "ML-Python foundation"
+title: "ML-python foundation"
 author: "Xhy"
 categories: journal
 tags: [documentation,sample]
 image: Trial.jpg
 ---
+Photo by Jeremy Bishop
 
->声明：本系列根據[莫煩Python](https://morvanzhou.github.io/)老师的Python基礎教學網站的课程整理而來。學下來感覺不錯，那就秉承着先上路再迭代的思想，出发啦...　另外本系列所有的源碼可以點這裏[下載](http://www.imooc.com/u/1349694/courses?sort=publish)
+>声明：本系列根據[莫煩python](https://morvanzhou.github.io/)老师的python基礎教學網站的课程整理而來。學下來感覺不錯，那就秉承着先上路再迭代的思想，出发啦...　另外本系列所有的源碼可以點這裏[下載](http://www.imooc.com/u/1349694/courses?sort=publish)
 
----
+<br />
 
 ### 篇节
 
@@ -57,12 +58,12 @@ image: Trial.jpg
 
 1] print
 
-```Python
-print("This is Python basic tutorial")
+```python
+print("This is python basic tutorial")
 
-print('This is Python basic tutorial')
+print('This is python basic tutorial')
 
-print('This is Python' + ' basic tutorial')
+print('This is python' + ' basic tutorial')
 
 print(3 + 4)
 
@@ -76,7 +77,7 @@ print(int('3.4'))     # ValueError: invalid literal for int() with base 10: '3.4
 2] basic computation
 - addition subtraction multiplication and division
 
-```Python
+```python
 2 + 2
 
 4 - 2
@@ -88,7 +89,7 @@ print(int('3.4'))     # ValueError: invalid literal for int() with base 10: '3.4
 
 - ^ and **
 
-```Python
+```python
 2 ** 2
 
 2 ** 3
@@ -98,7 +99,7 @@ print(int('3.4'))     # ValueError: invalid literal for int() with base 10: '3.4
 
 - %
 
-```Python
+```python
 9 % 2
 
 7 % 3
@@ -107,7 +108,7 @@ print(int('3.4'))     # ValueError: invalid literal for int() with base 10: '3.4
 ```
 3] variables
 
-```Python
+```python
 gun = 94
 print(gun)
 
@@ -123,7 +124,7 @@ print(a, b, c)
 
 1] while
 
-```Python
+```python
 condition = 0
 while condition < 5:
     print(condition)
@@ -136,7 +137,7 @@ while condition:
 ```
 ２] for
 
-```Python
+```python
 eg_list = [1, 2, 3, 4, 5, 6.2, 7, 8, 9, 10]
 for i in eg_list:
     print(i)
@@ -146,7 +147,7 @@ print('This is outside the for loop')
 ```
 ３] range
 
-```Python
+```python
 a = range(1, 10)
 for i in a:
     print(i)
@@ -163,21 +164,21 @@ for i in c:
 4] set type
 - list
 
-```Python
+```python
 eg_list = [1, 2, 3, 4, 5, 6]
 for i in eg_list:
     print(i)
 ```
 - tuple
 
-```Python
+```python
 tup = ('WangEr', 38, 168.5)
 for i in tup:
     print(i)
 ```
 - dictionary (But the dictionary is out of order. refer OrderedDict)
 
-```Python
+```python
 dic = {}
 dic['lan'] = 'python'
 dic['version'] = 2.7
@@ -187,14 +188,14 @@ for key in dic:
 ```
 - set (The set collection will remove duplicates and it is out of order too)
 
-```Python
-s = set(['Python3', 'Python2', 'NXP', 'Python3'])
+```python
+s = set(['python3', 'python2', 'NXP', 'python3'])
 for i in s:
     print(i)
 ```
 - iterator
 
-```Python
+```python
 # define a Fib class
 class Fib(object):
     def __init__(self, max):
@@ -218,7 +219,7 @@ for i in Fib(5):
 ```
 -  yield
 
-```Python
+```python
 def fib(max):
     a, b = 0, 1
     while max:
@@ -237,7 +238,7 @@ for i in fib(5):
 
 1] if
 
-```Python
+```python
 x = 9
 y = 6
 if x < y:
@@ -248,9 +249,9 @@ else:
 
 2] if else
 
-- Although the following syntax is correct in Python, we still discourage it.
+- Although the following syntax is correct in python, we still discourage it.
 
-```Python
+```python
 x = 3
 y = 5
 z = 9
@@ -262,7 +263,7 @@ else:
 
 - The following syntax is recommenaded.
 
-```Python
+```python
 x = 3
 y = 5
 z = 3
@@ -273,7 +274,7 @@ else:
 ```
 3] if elif else
 
-```Python
+```python
 x = 3
 y = 9
 if x > y:
@@ -286,7 +287,7 @@ else:
 
 4] Trinocular operator ( var = var1 if condition else var2 )
 
-```Python
+```python
 worked = True
 result = 'done' if worked else 'not yet'
 print(result)
@@ -296,7 +297,7 @@ print(result)
 
 1] def
 
-```Python
+```python
 def add(a, b):
     print('This is a add() function.')
     print('a + b =', a + b)
@@ -306,7 +307,7 @@ add(3, 7)
 
 2] function parameter
 
-```Python
+```python
 def add(a, b):
     print('This is a add() function.')
     print('a + b =', a + b)
@@ -316,7 +317,7 @@ add(3, 7)
 
 3] default parameter
 
-```Python
+```python
 def sale_car(price, color='red', brand='carmy', is_second_hand=True):
     print('price =', price, ','
           'color =', color, ','
@@ -328,7 +329,7 @@ sale_car(10000)
 
 ４] call yourself, only called inside the script
 
-```Python
+```python
 if __name__ == '__main__':
     #code_here
     print('main')
@@ -336,7 +337,7 @@ if __name__ == '__main__':
 
 ５] variable parameters
 
-```Python
+```python
 def sumGrades(name, *score):
     totalScore = 0
     for i in score:
@@ -350,7 +351,7 @@ sumGrades('Mery', 8, 7, 9)
 
 ６] keyword parameters
 
-```Python
+```python
 def keyPara(name, **kw):
     print('name is ', name)
     for k, v in kw.items():

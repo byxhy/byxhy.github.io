@@ -6,12 +6,13 @@ categories: journal
 tags: [documentation,sample]
 image: Trial.jpg
 ---
+Photo by Jeremy Bishop
 
->声明：本系列按照[james_yuan](http://www.imooc.com/u/1349694/courses?sort=publish)老师的C++课程的学习路径整理而来，添加少量学习注释。最近沉迷学习，无法自拔，跟着慕课老师james_yuan学习C++，秉承着先上路再迭代的思想，出发啦 ...
+>声明：本系列按照[james_yuan](http://www.imooc.com/u/1349694/courses?sort=publish)老师的C++课程的学习路径整理而来，添加少量学习注释。最近沉迷学习，无法自拔，跟着慕课老师james_yuan学习C++，秉承着先上路再迭代的思想，出发啦 ..
 
----
+<br />.
 
-## &emsp;篇&emsp;节
+### 篇节
 
 <br />
 
@@ -32,6 +33,33 @@ image: Trial.jpg
 ---
 
 <br />
+
+```c++
+/*
+********************************************************************************
+*      Copyright (C), 2015-2115, Xhy Tech. Stu.
+*      FileName   : Hello.cpp
+*      Author     : X h y
+*      Version    : 2.0   
+*      Date       : 11-02-2016
+*      Description:     
+********************************************************************************
+*/
+
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+int main(int argc, const char * argv[])
+{
+    cout << "Hello tomorrow !" << endl;
+
+    system("pause");
+
+    return 0;
+}
+```
 
 <h3 id="1"> 一、C++远征之起航篇 ☂</h3>
 

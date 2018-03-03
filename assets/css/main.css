@@ -54,18 +54,17 @@ h3 {
   color: #4F4F4F;
 }
 
-h6 {
-  margin-bottom: 30px;
-  margin-top: 0px;
-  font-size: 1.0em;
-  font-style: oblique;
-  color: #E3E3E3;
+h5 {
+  font-family: "PT Serif", Georgia, "Times New Roman", serif,  'PT Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  line-height: 1.75rem;
+  font-size: 16px;
+  color: #FFB5C5;
 }
 
 h6 {
   margin-bottom: 30px;
   margin-top: 0px;
-  font-size: 0.9em;
+  font-size: 15px;
   font-style: oblique;
   color: #E3E3E3;
 }
@@ -91,7 +90,7 @@ blockquote {
   padding: 0px 15px;
   border-left: 0.25em solid #ccc;
   color: #999;
-  line-height: 1.5;
+  line-height: 1.9;
 }
 
 hr {
