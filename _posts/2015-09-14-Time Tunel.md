@@ -6,7 +6,7 @@ categories: journal
 tags: [documentation,sample]
 image: NYear.jpg
 ---
-<i>Photo by Joshua Earle</i>
+Photo by Joshua Earle
 
 >有人说，她来的时候就有了，信不信你走的时候，我还在？最开始的時候就是自己寫寫，没想到过了些日子就变成这样了 ^_^　
 
