@@ -19,14 +19,14 @@
 
 body {
   font-family: "PT Serif", Georgia, "Times New Roman", serif,  'PT Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, Hiragino Sans GB, Microsoft YaHei, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #515151;
   line-height: 1.75rem;
 }
 
 @media (max-width: 30em) {
   body {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.5rem;
   }
   body h1 {
@@ -52,6 +52,14 @@ h3 {
   text-indent: 4px;
   border-radius: 4px;
   color: #4F4F4F;
+}
+
+h6 {
+  margin-bottom: 30px;
+  margin-top: 0px;
+  font-size: 1.0em;
+  font-style: oblique;
+  color: #E3E3E3;
 }
 
 h6 {
