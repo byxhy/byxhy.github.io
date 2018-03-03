@@ -6,6 +6,7 @@ categories: journal
 tags: [documentation,sample]
 image: Trial.jpg
 ---
+
 Photo by Jeremy Bishop
 
 >声明：本系列根據[莫煩python](https://morvanzhou.github.io/)老师的python基礎教學網站的课程整理而來。學下來感覺不錯，那就秉承着先上路再迭代的思想，出发啦...　另外本系列所有的源碼可以點這裏[下載](http://www.imooc.com/u/1349694/courses?sort=publish)
@@ -37,11 +38,13 @@ Photo by Jeremy Bishop
 12. [模块](#questions)
 13. [其他](#credits)
 
+<br />
+
 ---
 
 <br />
 
-<h3 id="1"> 一、安装 ☂</h3>
+### 一、安装 ☂
 
 1] 安装
 
@@ -49,7 +52,7 @@ Photo by Jeremy Bishop
 
 <br />
 
-<h3 id="2"> 二、基本使用 ☂</h3>
+### 二、基本使用 ☂
 
 1] print
 
@@ -115,7 +118,7 @@ print(a, b, c)
 ```
 <br />
 
-<h3 id="3"> 三、while 和 for 循环 ☂</h3>
+### 三、while 和 for 循环 ☂
 
 1] while
 
@@ -229,7 +232,7 @@ for i in fib(5):
 ```
 <br />
 
-<h3 id="4"> 四、if 判断 ☂</h3>
+### 四、if 判断 ☂
 
 1] if
 
@@ -288,7 +291,7 @@ result = 'done' if worked else 'not yet'
 print(result)
 ```
 
-<h3 id="5"> 五、定义功能 ☂</h3>
+###  五、定义功能 ☂
 
 1] def
 
