@@ -2,7 +2,7 @@
 layout: post
 title: "Getting Started"
 author: "Paul Le"
-categories: journal
+categories: Fourier
 tags: [documentation,sample]
 image: forest.jpg
 ---

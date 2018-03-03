@@ -2,7 +2,7 @@
 layout: post
 title: "Text Formatting Examples"
 author: "Paul Le"
-categories: journal
+categories: Fourier
 tags: [documentation,sample]
 image: cards.jpg
 ---
