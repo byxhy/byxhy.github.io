@@ -4,7 +4,7 @@ title: "ML-python foundation"
 author: "Xhy"
 categories: journal
 tags: [documentation,sample]
-image: Trial.jpg
+image: trial.jpg
 ---
 
 Photo by Jeremy Bishop
