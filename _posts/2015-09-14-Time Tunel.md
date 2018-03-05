@@ -22,7 +22,7 @@ Photo by Nitish Meena
 
 
 
-第289天，再出发，
+第289天，再出发，☃ ……
 
 ![](/assets/img/NYear/-289.jpg)
 ###### 2015-09-15 23:47

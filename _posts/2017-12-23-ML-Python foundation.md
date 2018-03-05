@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "ML-python foundation"
+title: "Machine Learning python foundation"
 author: "Xhy"
 categories: journal
 tags: [documentation,sample]
-image: trial.jpg
+image: MLFoudation.jpg
 ---
 
-Photo by Jeremy Bishop
+Photo by JESHOOTS.COM
 
 >声明：本系列根據[莫煩python](https://morvanzhou.github.io/)老师的python基礎教學網站的课程整理而來。學下來感覺不錯，那就秉承着先上路再迭代的思想，出发啦...　另外本系列所有的源碼可以點這裏[下載](http://www.imooc.com/u/1349694/courses?sort=publish)
 
@@ -39,6 +39,34 @@ Photo by Jeremy Bishop
 13. [其他](#credits)
 
 <br />
+
+## Table of Contents
+
+[一、安装](#1)
+
+[二、基本使用](#2)
+
+[三、while 和 for 循环](#3)
+
+[四、if 判断](#4)
+
+[五、定义功能](#5)
+
+[六、变量形式](#6)
+
+[七、模块安装](#7)
+
+[八、文件读取](#8)
+
+[九、class 类](#9)
+
+[十、input 输入](#10)
+
+[十一、元组, 列表, 字典](#11)
+
+[十二、模块](#12)
+
+[十三、其他](#13)
 
 ---
 

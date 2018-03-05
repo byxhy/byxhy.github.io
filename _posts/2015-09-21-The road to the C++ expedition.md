@@ -10,11 +10,9 @@ Photo by Jeremy Bishop
 
 >声明：本系列按照[james_yuan](http://www.imooc.com/u/1349694/courses?sort=publish)老师的C++课程的学习路径整理而来，添加少量学习注释。最近沉迷学习，无法自拔，跟着慕课老师james_yuan学习C++，秉承着先上路再迭代的思想，出发啦 ..
 
-<br />.
-
-### 篇节
-
 <br />
+
+## Table of Contents
 
 [一、C++远征之起航篇](#1)
 
