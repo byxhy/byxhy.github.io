@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Machine Learning python foundation"
+title: "Python foundation for Machine Learning "
 author: "Xhy"
-categories: journal
+categories: Machine Learning
 tags: [documentation,sample]
 image: MLFoudation.jpg
 ---
@@ -39,7 +39,6 @@ Photo by JESHOOTS.COM
 13. [其他](#credits)
 
 <br />
-
 
 ---
 
