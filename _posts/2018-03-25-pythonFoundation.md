@@ -7,11 +7,53 @@ tags: [documentation,sample]
 image: MLFoudation.jpg
 ---
 
-# Python Basic Tutorial
 
-## 1 - Install Python3
+Photo by JESHOOTS.COM
 
-## 2 - Basic use
+>声明：本系列根據[莫煩python](https://morvanzhou.github.io/)老师的python基礎教學網站的课程整理而來。學下來感覺不錯，那就秉承着先上路再迭代的思想，出发啦...　另外本系列所有的源碼可以點這裏[下載](http://www.imooc.com/u/1349694/courses?sort=publish)
+
+<br />
+
+## Table of Contents
+
+1. [安装](#introduction)
+   1. [What is Jekyll](#what-is-jekyll)
+   2. [Never Used Jeykll Before?](#never-used-jekyll-before)
+2. [基本使用](#installation)
+   1. [GitHub Pages Installation](#github-pages-installation)
+   2. [Local Installation](#local-installation)
+3. [while 和 for 循环](#configuration)
+   1. [Sample Posts](#sample-posts)
+   2. [Site Variables](#site-variables)
+4. [if 判断](#features)
+   1. [Design Considerations](#design-considerations)
+   2. [Disqus](#disqus)
+   3. [Google Analytics](#google-analytics)
+5. [定义功能](#everything-else)
+6. [变量形式](#Contributing)
+7. [模块安装](#questions)
+8. [文件读取](#credits)
+9. [class 类](#license)
+10. [input 输入](#everything-else)
+11. [元组, 列表, 字典](#Contributing)
+12. [模块](#questions)
+13. [其他](#credits)
+
+<br />
+
+---
+
+<br />
+
+### 一、安装 ☂
+
+1] 安装
+
+自己想辦法，正所謂:授人以魚不如授人以漁，假如你真的想的話，你就一定辦得到。另外在新學一件事情的時候，不要糾結與工具，不要糾結與細節，始終謹記你的出發點是什麼！
+
+<br />
+
+### 二、基本使用 ☂
 
 ### 2.1 - print function
 
