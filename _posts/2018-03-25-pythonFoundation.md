@@ -562,7 +562,7 @@ else:
     x is more than y
 
 
-### * Although the following syntax is correct in Python, we still discourage it.
+#### * Although the following syntax is correct in Python, we still discourage it.
 
 
 ```python
@@ -578,7 +578,7 @@ else:
     x is less than y, and y is less than z
 
 
-### * The following syntax is recommenaded.
+#### * The following syntax is recommenaded.
 
 
 ```python
@@ -629,7 +629,7 @@ else:
     x < y
 
 
-### * Trinocular operator ( var = var1 if condition else var2 )
+#### * Trinocular operator ( var = var1 if condition else var2 )
 
 
 ```python
@@ -737,10 +737,8 @@ keyPara('Mary', Gender = 'woman', country = 'US', age = '23')
     country US
     age 23
 
-
 #### 1) Default , variable  and keyword parameters should be behind all the function parameters
-
-#### 2) Through the variable parameters and keyword parameters, all function can be replaced by universal_func(*args, **kw) .
+#### 2) Through the variable parameters and keyword parameters, all function can be replaced by universal_func(*args, **kw)
 
 ## 6 - Local variables and global variables
 
@@ -1160,7 +1158,7 @@ for index in range(len(b_list)):
     index = 4 number in list 10
 
 
-### 11.4 - list characteristics
+### 11.4 - list
 
 #### 11.4.1 - append
 
