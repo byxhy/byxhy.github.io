@@ -46,6 +46,9 @@ Photo by JESHOOTS.COM
 <br />
 
 
+
+# Python Basic Tutorial
+
 ## 1 - Install Python3
 
 ## 2 - Basic use
@@ -737,8 +740,10 @@ keyPara('Mary', Gender = 'woman', country = 'US', age = '23')
     country US
     age 23
 
+
 #### 1) Default , variable  and keyword parameters should be behind all the function parameters
-#### 2) Through the variable parameters and keyword parameters, all function can be replaced by universal_func(*args, **kw)
+
+#### 2) Through the variable parameters and keyword parameters, all function can be replaced by universal_func(*args, **kw) .
 
 ## 6 - Local variables and global variables
 
@@ -1243,3 +1248,86 @@ print(a)
 ```
 
     [4, 3, 2, 1, 1, 1, -1]
+
+
+### 11.5 - multidimensional list
+
+#### 11.5.1 - create a two dimensional list
+
+
+```python
+a = [1, 2, 3, 4, 5]
+
+multi_dim_a = [[1, 2, 3],
+               [4, 5, 6],
+               [7, 8, 9]]
+
+print(a[1])
+
+print(multi_dim_a[0][2])
+```
+
+    2
+    3
+
+
+### 11.6 - dictionary
+
+#### 11.6.1 - create dictionary
+
+
+```python
+a_list = [1, 2, 3, 4, 5, 6, 7, 8]
+
+d1 = {'apple':1, 'peer':2, 'orange':3}
+d2 = {1:'a', 2:'b', 3:'c'}
+d3 = {1:'a', 'b':2, 'c':3}
+
+print(a_list[0])
+print(d1['apple'])
+
+print(d2[1])
+print(d2['a'])　　＃dic[key:value]  
+```
+
+    1
+    1
+    a
+
+
+
+    ---------------------------------------------------------------------------
+
+    KeyError                                  Traceback (most recent call last)
+
+    <ipython-input-7-f4615d3d0597> in <module>()
+          9
+         10 print(d2[1])
+    ---> 11 print(d2['a'])
+         12
+         13 print(d3['b'])
+
+
+    KeyError: 'a'
+
+
+
+```python
+print(d3['b'])
+print(d3[2])
+```
+
+    2
+
+
+
+    ---------------------------------------------------------------------------
+
+    KeyError                                  Traceback (most recent call last)
+
+    <ipython-input-8-3fd50c7cf06e> in <module>()
+          1 print(d3['b'])
+    ----> 2 print(d3[2])
+
+
+    KeyError: 2
