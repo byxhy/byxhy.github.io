@@ -44,12 +44,7 @@ Photo by JESHOOTS.COM
 ---
 
 <br />
-
-
-
-# Python Basic Tutorial
-
-## 1 - Install Python3
+# 1 - Install Python3
 
 ## 2 - Basic use
 
@@ -1250,7 +1245,7 @@ print(a)
     [4, 3, 2, 1, 1, 1, -1]
 
 
-### 11.5 - multidimensional list
+### 11.5 - multidimensional list z
 
 #### 11.5.1 - create a two dimensional list
 
@@ -1273,7 +1268,7 @@ print(multi_dim_a[0][2])
 
 ### 11.6 - dictionary
 
-#### 11.6.1 - create dictionary
+#### 11.6.1 - create dictionary --- dic[key:value]
 
 
 ```python
@@ -1287,7 +1282,7 @@ print(a_list[0])
 print(d1['apple'])
 
 print(d2[1])
-print(d2['a'])　　＃dic[key:value]  
+print(d2['a'])
 ```
 
     1
@@ -1331,3 +1326,21 @@ print(d3[2])
 
 
     KeyError: 2
+
+
+#### 11.6.2 - dictionary save type
+
+
+```python
+def func():
+    return 0
+
+d4 = {'apple':[1, 2, 3], 'pear':{1:3, 3:'a'}, 'orange':func}
+
+print(d4)
+
+print(d4['pear'][3])
+```
+
+    {'apple': [1, 2, 3], 'pear': {1: 3, 3: 'a'}, 'orange': <function func at 0x7f8f105779d8>}
+    a
