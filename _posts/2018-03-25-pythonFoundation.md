@@ -44,7 +44,8 @@ Photo by JESHOOTS.COM
 ---
 
 <br />
-# 1 - Install Python3
+
+## 1 - Install Python3
 
 ## 2 - Basic use
 
@@ -98,15 +99,7 @@ print(int('3') + 4)
 
 
 ```python
-print(float('3.4') + 3)
-```
-
-    6.4
-
-
-
-```python
-print(int('3.4'))  # Err: invalid literal for int() with base 10: '3.4'
+print(int('3.4'))
 ```
 
 
@@ -114,11 +107,19 @@ print(int('3.4'))  # Err: invalid literal for int() with base 10: '3.4'
 
     ValueError                                Traceback (most recent call last)
 
-    <ipython-input-34-ab130068a217> in <module>()
-    ----> 1 print(int('3.4'))  # ValueError: invalid literal for int() with base 10: '3.4'
+    <ipython-input-12-fa76ed979087> in <module>()
+    ----> 1 print(int('3.4'))
 
 
     ValueError: invalid literal for int() with base 10: '3.4'
+
+
+
+```python
+print(float('3.4') + 3)
+```
+
+    6.4
 
 
 
@@ -1081,7 +1082,7 @@ else:
     Sorry, You are failed
 
 
-## 11 - Tuple and list
+## 11 - Tuple \ list \ dictionary
 
 ### 11.1 - tuple
 
@@ -1245,7 +1246,7 @@ print(a)
     [4, 3, 2, 1, 1, 1, -1]
 
 
-### 11.5 - multidimensional list z
+### 11.5 - multidimensional list
 
 #### 11.5.1 - create a two dimensional list
 
@@ -1295,15 +1296,25 @@ print(d2['a'])
 
     KeyError                                  Traceback (most recent call last)
 
-    <ipython-input-7-f4615d3d0597> in <module>()
+    <ipython-input-20-a4d791bc3605> in <module>()
           9
          10 print(d2[1])
     ---> 11 print(d2['a'])
-         12
-         13 print(d3['b'])
 
 
     KeyError: 'a'
+
+
+
+```python
+# dictionary is no order
+del d1['peer']
+
+
+print(d1)
+```
+
+    {'apple': 1, 'orange': 3}
 
 
 
@@ -1320,7 +1331,7 @@ print(d3[2])
 
     KeyError                                  Traceback (most recent call last)
 
-    <ipython-input-8-3fd50c7cf06e> in <module>()
+    <ipython-input-22-3fd50c7cf06e> in <module>()
           1 print(d3['b'])
     ----> 2 print(d3[2])
 
@@ -1344,3 +1355,91 @@ print(d4['pear'][3])
 
     {'apple': [1, 2, 3], 'pear': {1: 3, 3: 'a'}, 'orange': <function func at 0x7f8f105779d8>}
     a
+
+
+## 12 - module
+
+### 12.1 - import method
+
+#### 12.1.1 - import time
+
+
+```python
+import time
+print(time.localtime())
+```
+
+    time.struct_time(tm_year=2018, tm_mon=4, tm_mday=3, tm_hour=23, tm_min=17, tm_sec=6, tm_wday=1, tm_yday=93, tm_isdst=0)
+
+
+#### 12.1.2 - import time as  - , -
+
+
+```python
+import time as t
+print(t.localtime())
+```
+
+    time.struct_time(tm_year=2018, tm_mon=4, tm_mday=3, tm_hour=23, tm_min=20, tm_sec=26, tm_wday=1, tm_yday=93, tm_isdst=0)
+
+
+#### 12.1.3 - from time import time,localtime (just import function you want)
+
+
+```python
+from time import time, localtime
+
+print(localtime())
+print(time())
+```
+
+    time.struct_time(tm_year=2018, tm_mon=4, tm_mday=3, tm_hour=23, tm_min=22, tm_sec=11, tm_wday=1, tm_yday=93, tm_isdst=0)
+    1522768931.7420359
+
+
+#### 12.1.4 - import time  import *
+
+
+```python
+from time import *
+print(localtime())
+```
+
+    time.struct_time(tm_year=2018, tm_mon=4, tm_mday=3, tm_hour=23, tm_min=24, tm_sec=1, tm_wday=1, tm_yday=93, tm_isdst=0)
+
+
+### 12.2 - import my own  module
+
+#### balance.py
+
+
+```python
+d=float(input('Please enter what is your initial balance: \n'))
+p=float(input('Please input what is the interest rate (as a number): \n'))
+d=float(d+d*(p/100))
+year=1
+while year<=5:
+    d=float(d+d*p/100)
+    print('Your new balance after year:',year,'is',d)
+    year=year+1
+print('your final year is',d)
+```
+
+    Please enter what is your initial balance:
+    5000
+    Please input what is the interest rate (as a number):
+    2.3
+    Your new balance after year: 1 is 5232.645
+    Your new balance after year: 2 is 5352.995835000001
+    Your new balance after year: 3 is 5476.114739205001
+    Your new balance after year: 4 is 5602.065378206716
+    Your new balance after year: 5 is 5730.91288190547
+    your final year is 5730.91288190547
+
+
+####  just import one time
+
+
+```python
+import balance
+```
