@@ -45,6 +45,7 @@ Photo by JESHOOTS.COM
 
 <br />
 
+
 ## 1 - Install Python3
 
 ## 2 - Basic use
@@ -1437,9 +1438,103 @@ print('your final year is',d)
     your final year is 5730.91288190547
 
 
-####  just import one time
-
 
 ```python
 import balance
 ```
+
+    Please enter what is your initial balance:
+    5000
+    Please input what is the interest rate (as a number):
+    2.3
+    Your new balance after year: 1 is 5232.645
+    Your new balance after year: 2 is 5352.995835000001
+    Your new balance after year: 3 is 5476.114739205001
+    Your new balance after year: 4 is 5602.065378206716
+    Your new balance after year: 5 is 5730.91288190547
+    your final year is 5730.91288190547
+
+
+## 13 - Others
+
+### 13.1 - continue & break
+
+#### 13.1.1 - true or false
+
+
+```python
+a = True
+while a:
+    b = input('type something')
+    if b == '1':
+        a = False
+    else:
+        pass
+print('finish run')
+```
+
+    type something3
+    type something1
+    finish run
+
+
+#### 13.1.2 - break
+
+
+```python
+while True:
+    b = input('type somesthing:')
+    if b == '1':
+        break
+    else:
+        pass
+print('finish run')
+```
+
+    type somesthing:3
+    type somesthing:2
+    type somesthing:1
+    finish run
+
+
+#### 13.1.3 - continue
+
+
+```python
+while True:
+    b = input('type somesthing:')
+    if b == '1':
+        continue
+    elif b == '2':
+        break
+    else:
+        pass
+    print('still in while')
+
+print('finish run')
+```
+
+    type somesthing:3
+    still in while
+    type somesthing:1
+    type somesthing:2
+    finish run
+
+
+### 13.2 - try
+
+### 13.3 - zip lambda map
+
+### 13.4 - copy & deepcoyp
+
+### 13.5 - threading
+
+### 13.6 - multiprocessing
+
+### 13.7 - tkinter
+
+### 13.8 - pickle
+
+### 13.9 - set
+
+### 13.10 - Regular expression
