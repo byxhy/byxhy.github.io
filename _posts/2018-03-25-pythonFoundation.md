@@ -45,8 +45,9 @@ Photo by JESHOOTS.COM
 
 <br />
 
-
 ## 1 - Install Python3
+
+### 1.1 - By yourself
 
 ## 2 - Basic use
 
@@ -1523,18 +1524,808 @@ print('finish run')
 
 ### 13.2 - try
 
+#### 13.2.1 - try, except ... as ...
+
+
+```python
+try:
+    file = open('eee.txt', 'r')
+except Exception as e:
+    print(e)
+```
+
+    [Errno 2] No such file or directory: 'eee.txt'
+
+
+#### 13.2.2 - application
+
+#### The first time: No such file or directory
+
+
+```python
+try:
+    file=open('eeee.txt','r+')
+except Exception as e:
+    print(e)
+    response = input('do you want to create a new file:')
+    if response=='y':
+        file=open('eeee.txt','w')
+    else:
+        pass
+else:
+    file.write('ssss')
+    file.close()
+```
+
+    [Errno 2] No such file or directory: 'eeee.txt'
+    do you want to create a new file:y
+
+
+#### The seconed time: write 'ssss' to eeee.txt
+
+
+```python
+try:
+    file=open('eeee.txt','r+')
+except Exception as e:
+    print(e)
+    response = input('do you want to create a new file:')
+    if response=='y':
+        file=open('eeee.txt','w')
+    else:
+        pass
+else:
+    file.write('ssss')
+    file.close()
+```
+
 ### 13.3 - zip lambda map
 
-### 13.4 - copy & deepcoyp
+#### 13.3.1 - zip
 
+
+```python
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+ab = zip(a, b)
+```
+
+
+```python
+print(ab)
+```
+
+    <zip object at 0x7fb53024a948>
+
+
+
+```python
+print(list(ab)) # view by list
+```
+
+    [(1, 4), (2, 5), (3, 6)]
+
+
+
+```python
+for i,j in zip(a, b):
+    print(i/2, j*2)
+```
+
+    0.5 8
+    1.0 10
+    1.5 12
+
+
+#### 13.3.2 - lambda
+
+
+```python
+fun = lambda x,y : x+y
+
+x = int(input('x = '))
+y = int(input('y = '))
+
+print('x + y =',fun(x, y))
+```
+
+    x = 3
+    y = 7
+    x + y = 10
+
+
+#### 13.3.3 - map
+
+
+```python
+def func(x, y):
+    return (x + y)
+```
+
+
+```python
+list(map(func, [1],[2]))
+```
+
+
+
+
+    [3]
+
+
+
+
+```python
+list(map(func, [1,2], [3, 4]))
+```
+
+
+
+
+    [4, 6]
+
+
+
+### 13.4 - copy & deepcopy
+
+#### 13.4.1 - id
+
+
+```python
+import copy
+
+a = [1, 2, 3]
+b = a
+
+id(a)
+```
+
+
+
+
+    140416172680264
+
+
+
+
+```python
+id(b)
+```
+
+
+
+
+    140416172680264
+
+
+
+
+```python
+id(a) == id(b)
+```
+
+
+
+
+    True
+
+
+
+
+```python
+b[0] = 9999
+print(a, b)
+```
+
+    [9999, 2, 3] [9999, 2, 3]
+
+
+#### 13.4.2 - copy
+
+
+```python
+import copy
+
+c = [1, 2, 3]
+d = copy.copy(c)
+
+print(id(c) == id(d))
+```
+
+    False
+
+
+
+```python
+c[0] = 999
+print(c, d)
+```
+
+    [999, 2, 3] [1, 2, 3]
+
+
+#### 13.4.3 - deepcopy
+
+
+```python
+# copy.copy
+e = [1, 2, [3, 4]]
+f = copy.copy(e)
+
+print(id(e) == id(f))
+```
+
+    False
+
+
+
+```python
+print(id(e[2]) == id(f[2]))
+```
+
+    True
+
+
+
+```python
+e[2][0] = 666
+print(e, f)
+```
+
+    [1, 2, [666, 4]] [1, 2, [666, 4]]
+
+
+
+```python
+# copy.deepcopy
+g = copy.deepcopy(e)
+
+print(id(e) == id(g))
+```
+
+    False
+
+
+
+```python
+print(id(e[2]) == id(g[2]))
+```
+
+    False
+
+
+
+```python
+e[2][0] = 999
+print(e, g)
+```
+
+    [1, 2, [999, 4]] [1, 2, [666, 4]]
+
+
+
+```python
 ### 13.5 - threading
+```
 
+
+```python
 ### 13.6 - multiprocessing
+```
 
+
+```python
 ### 13.7 - tkinter
+```
 
 ### 13.8 - pickle
 
+#### 13.8.1 - save
+
+
+```python
+import pickle
+
+a_dict = {'da':111, 2:[23, 1, 4], '23': {1:2, 'd':'sad'}}
+
+file = open('p.pickle', 'wb')
+pickle.dump(a_dict, file)
+file.close()
+```
+
+#### 13.8.2 - reload
+
+
+```python
+with open('p.pickle', 'rb') as file:
+    a_dict_reload = pickle.load(file)
+
+print(a_dict_reload)
+```
+
+    {'da': 111, 2: [23, 1, 4], '23': {1: 2, 'd': 'sad'}}
+
+
 ### 13.9 - set
 
+#### 13.9.1 - foundation
+
+
+```python
+char_list = ['a', 'b', 'c', 'c', 'd', 'd', 'd']
+
+sentence = 'Welcome Back to This Tutorial'
+
+print(set(char_list))
+```
+
+    {'d', 'c', 'a', 'b'}
+
+
+
+```python
+print(set(sentence))
+```
+
+    {'W', 'T', 'u', 'B', 'k', ' ', 'm', 'i', 'o', 's', 'r', 'a', 'l', 't', 'h', 'c', 'e'}
+
+
+
+```python
+print(set(char_list+ list(sentence)))
+```
+
+    {'W', 'T', 'u', 'b', 'B', 'd', 'k', ' ', 'm', 'i', 'o', 's', 'r', 'a', 'l', 't', 'h', 'c', 'e'}
+
+
+#### 13.9.2 - add
+
+
+```python
+unique_char = set(char_list)
+unique_char.add('x')
+
+print(unique_char)
+```
+
+    {'b', 'd', 'x', 'a', 'c'}
+
+
+
+```python
+unique_char.add(['y', 'z']) # unique_char.add(['y', 'z']) this is wrong
+```
+
+
+    ---------------------------------------------------------------------------
+
+    TypeError                                 Traceback (most recent call last)
+
+    <ipython-input-58-e470cd27c66a> in <module>()
+    ----> 1 unique_char.add(['y', 'z'])
+
+
+    TypeError: unhashable type: 'list'
+
+
+#### 13.9.3 - remove / discard / clear
+
+
+```python
+unique_char.remove('x')
+print(unique_char)
+```
+
+    {'b', 'd', 'a', 'c'}
+
+
+
+```python
+unique_char.discard('d')
+print(unique_char)
+```
+
+    {'b', 'a', 'c'}
+
+
+
+```python
+unique_char.clear()
+print(unique_char)
+```
+
+    set()
+
+
+#### 13.9.4 - remove / discard / clear
+
+
+```python
+unique_char = set(char_list)
+print(unique_char)
+```
+
+    {'d', 'c', 'a', 'b'}
+
+
+
+```python
+print(unique_char.difference({'a', 'e', 'i'}))
+```
+
+    {'d', 'c', 'b'}
+
+
+
+```python
+print(unique_char.intersection({'a', 'e', 'i'}))
+```
+
+    {'a'}
+
+
 ### 13.10 - Regular expression
+
+#### 13.10.1 - matching string
+
+
+```python
+pattern1 = "cat"
+pattern2 = "bird"
+string = "dog runs to cat"
+
+print(pattern1 in string)
+print(pattern2 in string)  
+```
+
+    True
+    False
+
+
+#### 13.10.2 - re
+
+
+```python
+import re
+
+pattern1 = "cat"
+pattern2 = "bird"
+string = "dog runs to cat"
+
+print(re.search(pattern1, string))
+print(re.search(pattern2, string))
+```
+
+    <_sre.SRE_Match object; span=(12, 15), match='cat'>
+    None
+
+
+#### 13.10.3 - multiple patterns
+
+
+```python
+ptn = r"r[au]n"
+print(re.search(ptn, "dog runs to cat"))
+```
+
+    <_sre.SRE_Match object; span=(4, 7), match='run'>
+
+
+
+```python
+print(re.search(r"r[A-Z]n", "dog runs to cat"))
+print(re.search(r"r[a-z]n", "dog runs to cat"))
+print(re.search(r"r[0-9]n", "dog r2ns to cat"))
+print(re.search(r"r[0-9a-z]n", "dog runs to cat"))
+```
+
+    None
+    <_sre.SRE_Match object; span=(4, 7), match='run'>
+    <_sre.SRE_Match object; span=(4, 7), match='r2n'>
+    <_sre.SRE_Match object; span=(4, 7), match='run'>
+
+
+#### 13.10.4 - match by type
+
+####  \d : decimal digit
+
+
+```python
+print(re.search(r"r\dn", "run r4n"))
+```
+
+    <_sre.SRE_Match object; span=(4, 7), match='r4n'>
+
+
+#### \D : any non-decimal digit
+
+
+```python
+print(re.search(r"r\Dn", "run r4n"))
+```
+
+    <_sre.SRE_Match object; span=(0, 3), match='run'>
+
+
+#### \s : any white space [\t\n\r\f\v]
+
+
+```python
+print(re.search(r"r\sn", "r\nn r4n"))
+```
+
+    <_sre.SRE_Match object; span=(0, 3), match='r\nn'>
+
+
+#### \S : opposite to \s, any non-white space
+
+
+```python
+print(re.search(r"r\Sn", "r\nn r4n"))
+```
+
+    <_sre.SRE_Match object; span=(4, 7), match='r4n'>
+
+
+#### \w : [a-zA-Z0-9_]
+
+
+```python
+print(re.search(r"r\wn", "r\nn r4n"))
+```
+
+    <_sre.SRE_Match object; span=(4, 7), match='r4n'>
+
+
+#### \W : opposite to \w
+
+
+```python
+print(re.search(r"r\Wn", "r\nn r4n"))
+```
+
+#### \b : empty string (only at the start or end of the word)
+
+
+```python
+print(re.search(r"\bruns\b", "dog runs to cat"))
+```
+
+    <_sre.SRE_Match object; span=(4, 8), match='runs'>
+
+
+#### \B : empty string (but not at the start or end of a word)
+
+
+```python
+print(re.search(r"\B runs \B", "dog   runs  to cat"))
+```
+
+    <_sre.SRE_Match object; span=(5, 11), match=' runs '>
+
+
+#### \\ : match \
+
+
+```python
+print(re.search(r"runs\\", "runs\ to me"))
+```
+
+    <_sre.SRE_Match object; span=(0, 5), match='runs\\'>
+
+
+#### . : match anything (except \n)
+
+
+```python
+print(re.search(r"r.n", "r[ns to me"))
+```
+
+    <_sre.SRE_Match object; span=(0, 3), match='r[n'>
+
+
+#### ^ : match line beginning
+
+
+```python
+print(re.search(r"^dog", "dog runs to cat"))
+```
+
+    <_sre.SRE_Match object; span=(0, 3), match='dog'>
+
+
+#### $ : match line ending
+
+
+```python
+print(re.search(r"cat$", "dog runs to cat"))
+```
+
+    <_sre.SRE_Match object; span=(12, 15), match='cat'>
+
+
+#### ? : may or may not occur
+
+
+```python
+print(re.search(r"Mon(day)?", "Monday"))
+print(re.search(r"Mon(day)?", "Mon"))  
+```
+
+    <_sre.SRE_Match object; span=(0, 6), match='Monday'>
+    <_sre.SRE_Match object; span=(0, 3), match='Mon'>
+
+
+#### flags
+
+
+```python
+string = """
+dog runs to cat.
+I run to dog.
+"""
+print(re.search(r"^I", string))
+```
+
+    None
+
+
+
+```python
+print(re.search(r"^I", string, flags=re.M))  
+```
+
+    <_sre.SRE_Match object; span=(18, 19), match='I'>
+
+
+#### 13.10.5 - duplicate match
+
+#### * : occur 0 or more times
+
+
+```python
+print(re.search(r"ab*", "a"))
+print(re.search(r"ab*", "abbbbb"))
+```
+
+    <_sre.SRE_Match object; span=(0, 1), match='a'>
+    <_sre.SRE_Match object; span=(0, 6), match='abbbbb'>
+
+
+#### + : occur 1 or more times
+
+
+```python
+print(re.search(r"ab+", "a"))
+print(re.search(r"ab+", "abbbbb"))  
+```
+
+    None
+    <_sre.SRE_Match object; span=(0, 6), match='abbbbb'>
+
+
+#### {n, m} : occur n to m times
+
+
+```python
+print(re.search(r"ab{2,10}", "a"))
+print(re.search(r"ab{2,10}", "abbbbb"))
+```
+
+    None
+    <_sre.SRE_Match object; span=(0, 6), match='abbbbb'>
+
+
+#### {n} : occur n  times
+
+
+```python
+print(re.search(r"ab{3}", "abbcbb"))
+print(re.search(r"ab{3}", "abbbbb"))
+print(re.search(r"ab{4}", "abbbbb"))
+print(re.search(r"ab{5}", "abbbbb"))
+```
+
+    None
+    <_sre.SRE_Match object; span=(0, 4), match='abbb'>
+    <_sre.SRE_Match object; span=(0, 5), match='abbbb'>
+    <_sre.SRE_Match object; span=(0, 6), match='abbbbb'>
+
+
+#### 13.10.6 - group
+
+
+```python
+match = re.search(r"ID:(\d+), Date:(.+)", "ID:021523, Date: Feb/12/2017")
+print(match.group())
+```
+
+    ID:021523, Date: Feb/12/2017
+
+
+
+```python
+print(match.group(1))
+```
+
+    021523
+
+
+
+```python
+print(match.group(2))
+```
+
+     Feb/12/2017
+
+
+#### group by name
+
+
+```python
+match = re.search(r"ID:(?P<id>\d+), Date:(?P<date>.+)", "ID:021523, Date: Feb/12/2017")
+print(match.group('id'))
+print(match.group('date'))
+```
+
+    021523
+     Feb/12/2017
+
+
+#### 13.10.7 - findall
+
+#### findall
+
+
+```python
+print(re.findall(r"r[ua]n", "run ran ren"))
+```
+
+    ['run', 'ran']
+
+
+#### | : or
+
+
+```python
+print(re.findall(r"run|ran", "run ran ren"))
+```
+
+    ['run', 'ran']
+
+
+#### 13.10.8 - sub vs replace
+
+
+```python
+print(re.sub(r"r[au]ns", "catches", "dog runs to cat"))
+```
+
+    dog catches to cat
+
+
+#### 13.10.9 - split
+
+
+```python
+print(re.split(r"[,;./]", "a;b,c.d;e.y/u/uu"))   
+```
+
+    ['a', 'b', 'c', 'd', 'e', 'y', 'u', 'uu']
+
+
+#### 13.10.9 - compile
+
+
+```python
+compiled_re = re.compile(r"r[ua]n")
+print(compiled_re.search("dog ran to cat"))
+```
+
+    <_sre.SRE_Match object; span=(4, 7), match='ran'>
+
+
+
+
+## It's Over.
