@@ -1938,7 +1938,7 @@ print(unique_char)
     set()
 
 
-#### 13.9.4 - remove / discard / clear
+#### 13.9.4 - difference and intersection
 
 
 ```python
