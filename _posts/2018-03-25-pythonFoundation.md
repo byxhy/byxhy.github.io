@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python Basic Tutorial"
+title: "Python foundation for Machine Learning"
 author: "Xhy"
 categories: Machine Learning
 tags: [documentation,sample]
@@ -8,7 +8,7 @@ image: MLFoudation.jpg
 ---
 
 
-Photo by JESHOOTS.COM
+Photo by Farzad Nazifi
 
 >声明：本系列根據[莫煩python](https://morvanzhou.github.io/)老师的python基礎教學網站的课程整理而來。學下來感覺不錯，那就秉承着先上路再迭代的思想，出发啦...　另外本系列所有的源碼可以點這裏[下載](http://www.imooc.com/u/1349694/courses?sort=publish)
 
