@@ -45,9 +45,12 @@ Photo by Farzad Nazifi
 
 <br />
 
+
+# Python Basic Tutorial
+
 ## 1 - Install Python3
 
-### 1.1 - By yourself
+### 1.1 - by yourself
 
 ## 2 - Basic use
 
@@ -1804,10 +1807,390 @@ print(e, g)
     [1, 2, [999, 4]] [1, 2, [666, 4]]
 
 
+### 13.5 - threading
+
+#### 13.5.1 - add thread
+
 
 ```python
-### 13.5 - threading
+import threading
+threading.active_count()
 ```
+
+
+
+
+    5
+
+
+
+
+```python
+threading.enumerate()
+```
+
+
+
+
+    [<_MainThread(MainThread, started 139974580156160)>,
+     <Thread(Thread-2, started daemon 139974371399424)>,
+     <Heartbeat(Thread-3, started daemon 139974363006720)>,
+     <HistorySavingThread(IPythonHistorySavingThread, started 139974337828608)>,
+     <ParentPollerUnix(Thread-1, started daemon 139973990807296)>]
+
+
+
+
+```python
+threading.current_thread()
+```
+
+
+
+
+    <_MainThread(MainThread, started 139974580156160)>
+
+
+
+
+```python
+def thread_job():
+    print('This is a thread of %s', threading.current_thread())
+
+def main():
+    thread = threading.Thread(target=thread_job,)
+    thread.start()
+
+if __name__ == '__main__':
+    main()
+```
+
+    This is a thread of %s <Thread(Thread-9, started 139973982414592)>
+
+
+#### 13.5.2 - join
+
+#### do not add join
+
+
+```python
+import threading
+import time
+
+def thread_job():
+    print("T1 start\n")
+    for i in range(10):
+        time.sleep(0.1)
+    print("T1 finish\n")
+
+added_thread = threading.Thread(target=thread_job, name='T1')
+added_thread.start()
+print("all done\n")
+```
+
+    T1 start
+
+    all done
+
+    T1 finish
+
+
+
+#### do add join
+
+
+```python
+import threading
+import time
+
+def thread_job():
+    print("T1 start\n")
+    for i in range(10):
+        time.sleep(0.1)
+    print("T1 finish\n")
+
+added_thread = threading.Thread(target=thread_job, name='T1')
+added_thread.start()
+added_thread.join()
+print("all done\n")
+```
+
+    T1 start
+
+    T1 finish
+
+    all done
+
+
+
+
+```python
+def T1_job():
+    print("T1 start\n")
+    for i in range(10):
+        time.sleep(0.1)
+    print("T1 finish\n")
+
+def T2_job():
+    print("T2 start\n")
+    print("T2 finish\n")
+
+thread_1 = threading.Thread(target=T1_job, name='T1')
+thread_2 = threading.Thread(target=T2_job, name='T2')
+thread_1.start()
+thread_2.start()
+print("all done\n")
+```
+
+    T2 start
+    T1 start
+    all done
+
+
+    T2 finish
+
+
+    T1 finish
+
+
+
+
+```python
+def T1_job():
+    print("T1 start\n")
+    for i in range(10):
+        time.sleep(0.1)
+    print("T1 finish\n")
+
+def T2_job():
+    print("T2 start\n")
+    print("T2 finish\n")
+
+thread_1 = threading.Thread(target=T1_job, name='T1')
+thread_2 = threading.Thread(target=T2_job, name='T2')
+thread_1.start()
+thread_2.start()
+thread_2.join()
+thread_1.join()
+print("all done\n")
+```
+
+    T1 start
+
+    T2 start
+
+    T2 finish
+
+    T1 finish
+
+    all done
+
+
+
+#### 13.5.3 - Queue
+
+
+```python
+import threading
+import time
+from queue import Queue
+```
+
+
+```python
+def job(l,q):
+    for i in range (len(l)):
+        l[i] = l[i]**2
+    q.put(l)   # multithreading function can not use return
+```
+
+
+```python
+import threading
+import time
+
+from queue import Queue
+
+def job(l,q):
+    for i in range (len(l)):
+        l[i] = l[i]**2
+    q.put(l)
+
+def multithreading():
+    q =Queue()
+    threads = []
+    data = [[1,2,3],[3,4,5],[4,4,4],[5,5,5]]
+    for i in range(4):
+        t = threading.Thread(target=job,args=(data[i],q))
+        t.start()
+        threads.append(t)
+    for thread in threads:
+        thread.join()
+    results = []
+    for _ in range(4):
+        results.append(q.get())
+    print(results)
+
+if __name__== '__main__':
+    multithreading()
+```
+
+    [[1, 4, 9], [9, 16, 25], [16, 16, 16], [25, 25, 25]]
+
+
+#### 13.5.4 - GIL(Global Interpreter Lock)
+
+
+```python
+import threading
+from queue import Queue
+import copy
+import time
+
+def job(l, q):
+    res = sum(l)
+    q.put(res)
+
+def multithreading(l):
+    q = Queue()
+    threads = []
+    for i in range(4):
+        t = threading.Thread(target=job, args=(copy.copy(l), q), name='T%i' % i)
+        t.start()
+        threads.append(t)
+    [t.join() for t in threads]
+    total = 0
+    for _ in range(4):
+        total += q.get()
+    print(total)
+
+def normal(l):
+    total = sum(l)
+    print(total)
+
+if __name__ == '__main__':
+    l = list(range(1000000))
+    s_t = time.time()
+    normal(l*4)
+    print('normal: ',time.time()-s_t)
+    s_t = time.time()
+    multithreading(l)
+    print('multithreading: ', time.time()-s_t)
+```
+
+    1999998000000
+    normal:  0.16218066215515137
+    1999998000000
+    multithreading:  0.0786292552947998
+
+
+#### 13.5.5 - Lock
+
+#### do not use lock
+
+
+```python
+import threading
+
+def job1():
+    global A
+    for i in range(10):
+        A+=1
+        print('job1',A)
+
+def job2():
+    global A
+    for i in range(10):
+        A+=10
+        print('job2',A)
+
+if __name__== '__main__':
+    lock=threading.Lock()
+    A=0
+    t1=threading.Thread(target=job1)
+    t2=threading.Thread(target=job2)
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()
+```
+
+    job1job2  19
+    1job2
+     job130
+    2job2
+     job140
+    3job2
+     job150
+    4job2
+     job160
+    5job2
+     job170
+    6job2
+     job180
+    7job2
+     job190
+    8job2
+     job1100
+    9job2
+     job1110
+    20
+
+
+#### do use lock
+
+
+```python
+import threading
+
+def job1():
+    global A,lock
+    lock.acquire()
+    for i in range(10):
+        A+=1
+        print('job1',A)
+    lock.release()
+
+def job2():
+    global A,lock
+    lock.acquire()
+    for i in range(10):
+        A+=10
+        print('job2',A)
+    lock.release()
+
+if __name__== '__main__':
+    lock=threading.Lock()
+    A=0
+    t1=threading.Thread(target=job1)
+    t2=threading.Thread(target=job2)
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()
+```
+
+    job1 1
+    job1 2
+    job1 3
+    job1 4
+    job1 5
+    job1 6
+    job1 7
+    job1 8
+    job1 9
+    job1 10
+    job2 20
+    job2 30
+    job2 40
+    job2 50
+    job2 60
+    job2 70
+    job2 80
+    job2 90
+    job2 100
+    job2 110
+
 
 
 ```python
@@ -2328,4 +2711,4 @@ print(compiled_re.search("dog ran to cat"))
 
 
 
-## It's Over.
+## It's Over 
