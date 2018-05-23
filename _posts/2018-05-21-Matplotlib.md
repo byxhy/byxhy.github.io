@@ -18,7 +18,6 @@ Photo by hal-gatewood
 
 
 1. [Matplotlib introduction](#1---matplotlib-introduction)
-
 2. [Basic use](#2---basic-use)
    1. [basic use](#2-1---basic-use)
    2. [figure](#2-2---figure)
@@ -32,16 +31,12 @@ Photo by hal-gatewood
    10. [Contours](#2-10---contours)
    11. [Image](#2-11---image)
    12. [3D](#2-12---3d)
-
 3. [Multigraph merge display](#3---multigraph-merge-display)
    1. [subplot merge](#3-1---subplot-merge)
    2. [subplot2grid](#3-2---subplot2grid)
    3. [picture in picture](#3-3---picture-in-picture)
    4. [The second axis](#3-4---the-second-axis)
-
 4. [Animation](#4---animation)
-
-
 
 <br />
 
