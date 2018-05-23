@@ -14,32 +14,34 @@ Photo by hal-gatewood
 
 <br />
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=34229976&auto=0&height=32"></iframe>
-
 ## Table of Contents
 
-1. [安装](#introduction)
-   1. [What is Jekyll](#what-is-jekyll)
-   2. [Never Used Jeykll Before?](#never-used-jekyll-before)
-2. [基本使用](#installation)
-   1. [GitHub Pages Installation](#github-pages-installation)
-   2. [Local Installation](#local-installation)
-3. [while 和 for 循环](#configuration)
-   1. [Sample Posts](#sample-posts)
-   2. [Site Variables](#site-variables)
-4. [if 判断](#features)
-   1. [Design Considerations](#design-considerations)
-   2. [Disqus](#disqus)
-   3. [Google Analytics](#google-analytics)
-5. [定义功能](#everything-else)
-6. [变量形式](#Contributing)
-7. [模块安装](#questions)
-8. [文件读取](#credits)
-9. [class 类](#license)
-10. [input 输入](#everything-else)
-11. [元组, 列表, 字典](#Contributing)
-12. [模块](#questions)
-13. [其他](#credits)
+
+1. [Matplotlib introduction](#1---matplotlib-introduction)
+
+2. [Basic use](#2---basic-use)
+   1. [basic use](#2-1---basic-use)
+   2. [figure](#2-2---figure)
+   3. [set coordiante 1](#2-3---set-coordiante-1)
+   4. [set coordiante 2](#2-4---set-coordiante-2)
+   5. [Legend](#2-5---legend)
+   6. [Annotation](#2-6---annotation)
+   7. [tick](#2-7---tick)
+   8. [Scatter](#2-8---scatter)
+   9. [Bar](#2-9---bar)
+   10. [Contours](#2-10---contours)
+   11. [Image](#2-11---image)
+   12. [3D](#2-12---3d)
+
+3. [Multigraph merge display](#3---multigraph-merge-display)
+   1. [subplot merge](#3-1---subplot-merge)
+   2. [subplot2grid](#3-2---subplot2grid)
+   3. [picture in picture](#3-3---picture-in-picture)
+   4. [The second axis](#3-4---the-second-axis)
+
+4. [Animation](#4---animation)
+
+
 
 <br />
 
@@ -48,13 +50,11 @@ Photo by hal-gatewood
 <br />
 
 
-# Matplotlib
-
 ## 1 - Matplotlib introduction
 
 ## 2 - Basic use
 
-### 2.1 - Basic use
+### 2-1 - Basic use
 
 
 ```python
@@ -74,7 +74,7 @@ plt.show()
 
 
 
-### 2.2 - figure
+### 2-2 - figure
 
 
 ```python
@@ -96,7 +96,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_3_0.png)
 
 
-### 2.3 - set coordiante -1
+### 2-3 - set coordiante 1
 
 
 ```python
@@ -156,7 +156,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_6_1.png)
 
 
-### 2.４ - set coordiante -２
+### 2-4 - set coordiante 2
 
 
 ```python
@@ -257,7 +257,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_10_0.png)
 
 
-### 2.５ - Legend
+### 2-5 - Legend
 
 
 ```python
@@ -296,7 +296,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_12_0.png)
 
 
-### 2.6 - Annotation
+### 2-6 - Annotation
 
 
 ```python
@@ -433,7 +433,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_17_0.png)
 
 
-### 2.7 - tick
+### 2-7 - tick
 
 
 ```python
@@ -496,7 +496,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_20_0.png)
 
 
-### 2.8 - Scatter
+### 2-8 - Scatter
 
 
 ```python
@@ -523,7 +523,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_22_0.png)
 
 
-### 2.9 - Bar
+### 2-9 - Bar
 
 
 ```python
@@ -588,7 +588,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_25_0.png)
 
 
-### 2.10 - Contours
+### 2-10 - Contours
 
 
 ```python
@@ -626,7 +626,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_27_1.png)
 
 
-### 2.11 - Image
+### 2-11 - Image
 
 
 ```python
@@ -669,7 +669,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_30_0.png)
 
 
-### 2.12 - 3D
+### 2-12 - 3D
 
 
 ```python
@@ -776,7 +776,7 @@ plt.show()
 
 
 ## 3 - Multigraph merge display
-### 3.1 - subplot  merge
+### 3-1 - subplot merge
 
 
 ```python
@@ -830,8 +830,8 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_39_0.png)
 
 
-### 3.2 - subplot  2 grid
-#### 3.2.1 - subplot2grid
+### 3-2 - subplot2grid
+#### 3-2-1 - subplot2grid
 
 
 ```python
@@ -859,7 +859,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_41_0.png)
 
 
-#### 3.2.2 - gridspec
+#### 3-2-2 - gridspec
 
 
 ```python
@@ -882,7 +882,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_43_0.png)
 
 
-#### 3.2.3 - subplots
+#### 3-2-3 - subplots
 
 
 ```python
@@ -902,7 +902,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_45_0.png)
 
 
-### 3.3 - picture in picture
+### 3-3 - picture in picture
 
 
 ```python
@@ -941,7 +941,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_47_0.png)
 
 
-### 3.4 - The second axis
+### 3-4 - The second axis
 
 
 ```python
@@ -970,7 +970,7 @@ plt.show()
 ![png](/assets/img/Matplotlib/output_49_0.png)
 
 
-## 3 - Animation
+## 4 - Animation
 
 
 ```python
