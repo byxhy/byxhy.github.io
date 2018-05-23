@@ -14,6 +14,8 @@ Photo by hal-gatewood
 
 <br />
 
+<embed src="http://www.xiami.com/widget/0_1774389724/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"></embed>
+
 ## Table of Contents
 
 1. [安装](#introduction)
