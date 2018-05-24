@@ -10,34 +10,29 @@ image: MLFoudation.jpg
 
 Photo by Farzad Nazifi
 
->声明：系列筆記參照[莫煩python](https://morvanzhou.github.io/)老师的python基礎教學網站的课程整理而來
+>声明：系列筆記參照[莫煩python](https://morvanzhou.github.io/)教學網站的课程整理而來，感謝老師的分享
 
 <br />
 
 ## Table of Contents
 
-1. [安装](#introduction)
-   1. [What is Jekyll](#what-is-jekyll)
-   2. [Never Used Jeykll Before?](#never-used-jekyll-before)
-2. [基本使用](#installation)
-   1. [GitHub Pages Installation](#github-pages-installation)
-   2. [Local Installation](#local-installation)
-3. [while 和 for 循环](#configuration)
-   1. [Sample Posts](#sample-posts)
-   2. [Site Variables](#site-variables)
-4. [if 判断](#features)
-   1. [Design Considerations](#design-considerations)
-   2. [Disqus](#disqus)
-   3. [Google Analytics](#google-analytics)
-5. [定义功能](#everything-else)
-6. [变量形式](#Contributing)
-7. [模块安装](#questions)
-8. [文件读取](#credits)
-9. [class 类](#license)
-10. [input 输入](#everything-else)
-11. [元组, 列表, 字典](#Contributing)
-12. [模块](#questions)
-13. [其他](#credits)
+1. [Install Python](#1---install-python)
+   1. [by yourself](#1-1---by-yourself)
+
+2. [Basic use](#2---basic-use)
+   1. [print function](#2-1---print-function)
+   2. [basic computation](#2-2---basic-computation)
+   3. [variable](#2-3---variable)
+
+3. [While and for loop](#3---while-and-for-loop)
+   1. [while](#3-1---while)
+   2. [for](#3-2---for)
+   3. [range](#3-3---range)
+   4. [set type](#3-4---set-type)
+
+4. [If](#4---if)
+   1. [basic use](#4-1---basic-use)
+
 
 <br />
 
@@ -46,17 +41,15 @@ Photo by Farzad Nazifi
 <br />
 
 
-# Python Basic Tutorial
-
 ## 1 - Install Python3
 
-### 1.1 - by yourself
+### 1-1 - by yourself
 
 ## 2 - Basic use
 
-### 2.1 - print function
+### 2-1 - print function
 
-#### 2.1.1 - print string
+#### 2-1-1 - print string
 
 
 ```python
@@ -74,7 +67,7 @@ print('This is Python basic tutorial')
     This is Python basic tutorial
 
 
-#### 2.1.2 - string addition
+#### 2-1-2 - string addition
 
 
 ```python
@@ -84,7 +77,7 @@ print('This is Python' + ' basic tutorial')
     This is Python basic tutorial
 
 
-#### 2.1.3 - simple computation
+#### 2-1-3 - simple computation
 
 
 ```python
@@ -135,9 +128,9 @@ print(int(3.4) + 4)
     7
 
 
-### 2.2  - basic computation
+### 2-2 - basic computation
 
-#### 2.2.1 - addition and subtraction multiplication and division
+#### 2-2-1 - addition and subtraction multiplication and division
 
 
 ```python
@@ -187,7 +180,7 @@ print(int(3.4) + 4)
 
 
 
-#### 2.2.2 - ^ and **
+#### 2-2-2 - ^ and **
 
 
 ```python
@@ -225,7 +218,7 @@ print(int(3.4) + 4)
 
 
 
-#### 2.2.3 - %
+#### 2-2-3 - %
 
 
 ```python
@@ -263,9 +256,9 @@ print(int(3.4) + 4)
 
 
 
-### 2.3  - variable
+### 2-3 - variable
 
-#### 2.3.1 - naming rules
+#### 2-3-1 - naming rules
 
 
 ```python
@@ -308,7 +301,7 @@ print(a, b, c)
 
 ## 3 - While and for loop
 
-### 3.1 - while
+### 3-1 - while
 
 
 ```python
@@ -340,7 +333,7 @@ while condition:
     1
 
 
-### 3.2 - for
+### 3-2 - for
 
 
 ```python
@@ -375,7 +368,7 @@ print('This is outside the for loop')
     This is outside the for loop
 
 
-### 3.3 - range
+### 3-3 - range
 
 
 ```python
@@ -428,9 +421,9 @@ for i in c:
     9
 
 
-### 3.4 - set type
+### 3-4 - set type
 
-#### 3.4.1 - list
+#### 3-4-1 - list
 
 
 ```python
@@ -447,7 +440,7 @@ for i in eg_list:
     6
 
 
-#### 3.4.2 - tuple
+#### 3-4-2 - tuple
 
 
 ```python
@@ -461,7 +454,7 @@ for i in tup:
     168.5
 
 
-#### 3.4.3 - dictionary (But the dictionary is out of order. refer OrderedDict)
+#### 3-4-3 - dictionary (But the dictionary is out of order. refer OrderedDict)
 
 
 ```python
@@ -478,7 +471,7 @@ for key in dic:
     platform = 64
 
 
-#### 3.4.4 - set (The set collection will remove duplicates and it is out of order too)
+#### 3-4-4 - set (The set collection will remove duplicates and it is out of order too)
 
 
 ```python
@@ -492,7 +485,7 @@ for i in s:
     NXP
 
 
-#### 3.4.5 - iterator
+#### 3-4-5 - iterator
 
 
 ```python
@@ -525,7 +518,7 @@ for i in Fib(5):
     5
 
 
-#### 3.4.6 - yield
+#### 3-4-6 - yield
 
 
 ```python
@@ -551,7 +544,7 @@ for i in fib(5):
 
 ## 4 - If
 
-### 4.1 - basic use
+### 4-1 - basic use
 
 
 ```python
@@ -582,7 +575,7 @@ else:
     x is less than y, and y is less than z
 
 
-#### * The following syntax is recommenaded.
+#### * The following syntax is recommended.
 
 
 ```python
@@ -2707,7 +2700,6 @@ print(compiled_re.search("dog ran to cat"))
 ```
 
     <_sre.SRE_Match object; span=(4, 7), match='ran'>
-
 
 
 

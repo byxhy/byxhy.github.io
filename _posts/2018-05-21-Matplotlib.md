@@ -10,7 +10,7 @@ image: hal-gatewood.jpg
 
 Photo by hal-gatewood
 
->声明：系列筆記參照[莫煩python](https://morvanzhou.github.io/)老师的python基礎教學網站的课程整理而來
+>声明：系列筆記參照[莫煩python](https://morvanzhou.github.io/)教學網站的课程整理而來，感謝老師的分享
 
 <br />
 
@@ -999,3 +999,6 @@ ani.save('basic_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
 
 
 ![png](/assets/img/Matplotlib/output_51_0.png)
+
+
+## It's Over
