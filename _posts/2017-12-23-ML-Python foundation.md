@@ -10,7 +10,7 @@ image: MLFoudation.jpg
 
 Photo by Farzad Nazifi
 
->声明：本系列根據[莫煩python](https://morvanzhou.github.io/)老师的python基礎教學網站的课程整理而來。學下來感覺不錯，那就秉承着先上路再迭代的思想，出发啦...　另外本系列所有的源碼可以點這裏[下載](http://www.imooc.com/u/1349694/courses?sort=publish)
+>声明：>声明：系列筆記參照[莫煩python](https://morvanzhou.github.io/)老师的python基礎教學網站的课程整理而來
 
 <br />
 
@@ -2711,4 +2711,4 @@ print(compiled_re.search("dog ran to cat"))
 
 
 
-## It's Over 
+## It's Over
