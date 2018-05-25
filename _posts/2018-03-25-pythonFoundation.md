@@ -34,6 +34,27 @@ Photo by Farzad Nazifi
    1. [basic use](#4-1---basic-use)
 
 
+5. [Define function](#5---define-function)
+   1. [def use](#5-1---def-use)
+   2. [function parameters](#5-2---function-parameters)
+   3. [default parameters](#5-3---default-parameters)
+   4. [call yourself, only called inside the script](#5-4---call-yourself-only-called-inside-the-script)
+   5. [variable parameters](#5-5---variable-parameters)
+   6. [keyword parameters](#5-6---keyword-parameters)
+
+6. [Local variables and global variables](#6---local-variables-and-global-variables)
+   1. [local variable](#6-1---local-variable)
+   2. [global variable](#6-2---global-variable)
+
+7. [Install the modules](#7---install-the-modules)
+   1. [install Numpy and matplotlib](#7-1---install-numpy-and-matplotlib)
+
+8. [Read and write file](#8---read-and-write-file)
+   1. [write](#8-1---write)
+   2. [write](#8-2---write)
+   3. [read](#8-3---read)
+
+
 <br />
 
 ---
@@ -640,7 +661,7 @@ print(result)
 
 ## 5 - Define function
 
-### 5.1 - def use
+### 5-1 - def use
 
 
 ```python
@@ -655,7 +676,7 @@ add(3, 7)
     a + b = 10
 
 
-### 5.2 - function parameters
+### 5-2 - function parameters
 
 
 ```python
@@ -670,7 +691,7 @@ add(3, 7)
     a + b = 10
 
 
-### 5.3 - default parameters
+### 5-3 - default parameters
 
 
 ```python
@@ -686,7 +707,7 @@ sale_car(10000)
     price = 10000 ,color = red ,brand = carmy ,is_second_hand = True
 
 
-### 5.4 - call yourself, only called inside the script
+### 5-4 - call yourself, only called inside the script
 
 
 ```python
@@ -698,7 +719,7 @@ if __name__ == '__main__':
     main
 
 
-### 5.5 - variable parameters
+### 5-5 - variable parameters
 
 
 ```python
@@ -717,7 +738,7 @@ sumGrades('Mery', 8, 7, 9)
     Mery total score is 24
 
 
-### 5.6 - keyword parameters
+### 5-6 - keyword parameters
 
 
 ```python
@@ -737,11 +758,12 @@ keyPara('Mary', Gender = 'woman', country = 'US', age = '23')
 
 #### 1) Default , variable  and keyword parameters should be behind all the function parameters
 
-#### 2) Through the variable parameters and keyword parameters, all function can be replaced by universal_func(*args, **kw) .
+#### 2) Through the variable parameters and keyword parameters, all function can be replaced by universal_func(*args,**kw)
+
 
 ## 6 - Local variables and global variables
 
-### 6.1 - local variable
+### 6-1 - local variable
 
 
 ```python
@@ -772,7 +794,7 @@ print(localVar)
     NameError: name 'localVar' is not defined
 
 
-### 6.2 - global variable
+### 6-2 - global variable
 
 
 ```python
@@ -795,7 +817,7 @@ print(a)
 
 ## 7 - Install the modules
 
-### 7.1 - install Numpy and matplotlib
+### 7-1 - install Numpy and matplotlib
 
 
 ```python
@@ -805,9 +827,9 @@ import matplotlib.pyplot as plt
 
 ## 8 - Read and write file
 
-### 8.1 - write
+### 8-1 - write
 
-#### 8.1.1 - '\n'
+#### 8-1-1 - '\n'
 
 
 ```python
@@ -832,7 +854,7 @@ print(text)
     This the third line.
 
 
-#### 8.1.2 - read and write file
+#### 8-1-2 - read and write file
 
 
 ```python
@@ -843,7 +865,7 @@ myNewFile.write(text)
 myNewFile.close()
 ```
 
-#### 8.1.3 - '\t'
+#### 8-1-3 - '\t'
 
 
 ```python
@@ -860,9 +882,9 @@ myNewFile.close()
     	This is the third line.
 
 
-### 8.2 - write
+### 8-2 - write
 
-#### 8.2.1 - append
+#### 8-2-1 - append
 
 
 ```python
@@ -873,7 +895,7 @@ myNewFile.write(appendText)
 myNewFile.close()
 ```
 
-#### 8.2.2 - write
+#### 8-2-2 - write
 
 
 ```python
@@ -884,9 +906,9 @@ myNewFile.write(writeText)
 myNewFile.close()
 ```
 
-### 8.3 - read
+### 8-3 - read
 
-#### 8.3.1 - read
+#### 8-３-1 - read
 
 
 ```python
@@ -900,7 +922,7 @@ file.close()
     This is a 'write' command.
 
 
-#### 8.3.2 - readline
+#### 8-３-2 - readline
 
 
 ```python
@@ -924,7 +946,7 @@ file.close()
 
 
 
-#### 8.3.3 - readlines(text → list)
+#### 8-３-3 - readlines(text → list)
 
 
 ```python
