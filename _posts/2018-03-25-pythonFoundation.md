@@ -54,6 +54,21 @@ Photo by Farzad Nazifi
    2. [write](#8-2---write)
    3. [read](#8-3---read)
 
+9. [Class](#9---class)
+   1. [class](#9-1---class)
+   2. [class and init](#9-2---class-and-init)
+   3. [default parameters in init](#9-3---default-parameters-in-init)
+
+10. [Input](#10---input)
+    1. [input](#10-1---input)
+    2. [input extension](#10-2---input-extension)
+
+11. [Tuple \ list \ dictionary](#11---tuple-list-dictionary)
+    1. [tuple](#11-1---tuple)
+    2. [input extension](#11-2---input-extension)
+
+11 - Tuple-list-dictionary
+
 
 <br />
 
@@ -61,7 +76,7 @@ Photo by Farzad Nazifi
 
 <br />
 
-
+1104
 ## 1 - Install Python3
 
 ### 1-1 - by yourself
@@ -969,7 +984,7 @@ for item in context:
 
 ## 9 - Class
 
-### 9.1 - class
+### 9-1 - class
 
 
 ```python
@@ -1000,7 +1015,7 @@ cal.name
 
 
 
-### 9.2 - class and init
+### 9-2 - class and init
 
 
 ```python
@@ -1026,7 +1041,7 @@ print('height =', cal.height)
     height = 18
 
 
-### 9.3 - default parameters in init
+### 9-3 - default parameters in init
 
 
 ```python
@@ -1054,7 +1069,7 @@ print('height =', cal.height)
 
 ## 10 - Input
 
-### 10.1 - input
+### 10-1 - input
 
 
 ```python
@@ -1081,7 +1096,7 @@ else:
     2 < num <= 10
 
 
-### 10.2 - input extension
+### 10-2 - input extension
 
 
 ```python
@@ -1102,9 +1117,9 @@ else:
     Sorry, You are failed
 
 
-## 11 - Tuple \ list \ dictionary
+## 11 - Tuple-list-dictionary
 
-### 11.1 - tuple
+### 11-1 - tuple
 
 
 ```python
@@ -1129,7 +1144,7 @@ print(b_tuple[0 : len(b_tuple)])
     (1, 2, 3, 4, 5)
 
 
-### 11.2 - list
+### 11-2 - list
 
 
 ```python
@@ -1149,7 +1164,7 @@ print(a_list[0 : len(a_list)])
     [1, 2, 3, 4, 5]
 
 
-### 11.3 - print by for loop
+### 11-3 - print by for loop
 
 
 ```python
@@ -1179,9 +1194,9 @@ for index in range(len(b_list)):
     index = 4 number in list 10
 
 
-### 11.4 - list
+### 11-4 - list
 
-#### 11.4.1 - append
+#### 11-4.1 - append
 
 
 ```python
@@ -1193,7 +1208,7 @@ print(a)
     [1, 2, 3, 4, 1, 1, -1, 0]
 
 
-#### 11.4.2 - remove
+#### 11-4.2 - remove
 
 
 ```python
@@ -1205,7 +1220,7 @@ print(a)
     [1, 3, 4, 1, 1, -1]
 
 
-#### 11.4.3 - find the corresponding index
+#### 11-4.3 - find the corresponding index
 
 
 ```python
@@ -1244,7 +1259,7 @@ print(a.count(1))
     3
 
 
-#### 11.4.4 - list sort
+#### 11-4.4 - list sort
 
 
 ```python
@@ -1266,9 +1281,9 @@ print(a)
     [4, 3, 2, 1, 1, 1, -1]
 
 
-### 11.5 - multidimensional list
+### 11-5 - multidimensional list
 
-#### 11.5.1 - create a two dimensional list
+#### 11-5.1 - create a two dimensional list
 
 
 ```python
@@ -1287,9 +1302,9 @@ print(multi_dim_a[0][2])
     3
 
 
-### 11.6 - dictionary
+### 11-6 - dictionary
 
-#### 11.6.1 - create dictionary --- dic[key:value]
+#### 11-6.1 - create dictionary --- dic[key:value]
 
 
 ```python
@@ -1359,7 +1374,7 @@ print(d3[2])
     KeyError: 2
 
 
-#### 11.6.2 - dictionary save type
+#### 11-6.2 - dictionary save type
 
 
 ```python
