@@ -17,6 +17,17 @@ And I decided to read an English article everyday.
 
 
 
+### 2018-05-31
+
+*article*
+
+[GTC Translator Agreement](https://translate-coursera.org/GTCTranslatorAgreement.pdf)
+
+*new words*
+
+*summarize*
+
+<br />
 
 ### 2018-05-30
 
@@ -40,6 +51,7 @@ And I decided to read an English article everyday.
 *new words*
 
 *summarize*
+
 
 ![](/assets/img/coursera.png)
 
