@@ -41,6 +41,6 @@ And I decided to read an English article everyday.
 
 *summarize*
 
-
+![](/assets/img/coursera.png)
 
 <br />
