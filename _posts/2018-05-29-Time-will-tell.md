@@ -16,6 +16,17 @@ And I decided to read an English article everyday.
 <br />
 
 
+### 2018-06-01
+
+*article*
+
+[Why is Kevin Durant a snake?](https://www.quora.com/Why-is-Kevin-Durant-a-snake)
+
+*new words*
+
+*summarize*
+
+<br />
 
 ### 2018-05-31
 
