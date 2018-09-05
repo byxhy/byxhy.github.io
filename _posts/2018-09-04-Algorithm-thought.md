@@ -18,8 +18,8 @@ Photo by sabine schulte
 
 1. [Selection Sort](#1---selection-sort)
    1. [basic selection sort](#1-1---basic-selection-sort)
-	 2. [using template](#2-2---using-template)
-	 3. [variable](#2-3---variable)
+	 2. [using template](#1-2---using-template)
+	 3. [generate test cases](#1-3---generate-test-cases)
 
 2. [Basic use](#2---basic-use)
    1. [print function](#2-1---print-function)
@@ -94,7 +94,7 @@ void selectionSort(int arr[], int n)
     for (int i = 0; i < n - 1; i++) {
         int minIndex = i; //放在那很关键
 
-        for (int j = i + 1; j < n - 1; j++) {
+        for (int j = i + 1; j < n; j++) {
         if (arr[j] < arr[minIndex]) {
                 minIndex = j;
             }
@@ -141,7 +141,7 @@ void selectionSort(T arr[], int n)
     for (int i = 0; i < n - 1; i++) {
         int minIndex = i; //放在那很关键
 
-        for (int j = i + 1; j < n - 1; j++) {
+        for (int j = i + 1; j < n; j++) {
             //Err: if (arr[minIndex] > arr[j])
             //要与重载操作符方向一致，在比较结构体的时候
             if (arr[j] < arr[minIndex]) {
@@ -201,6 +201,7 @@ int main(void)
     return 0;
 }
 ```
+
 Student.h
 ```c++
 #ifndef STUDENT_H_
@@ -230,6 +231,104 @@ struct Student
         return os;
     }
 };
+
+#endif
+```
+### 1-3 - generate test cases
+
+SelectionSort.cpp
+```c++
+#include "SortTestHelper.h"
+
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <stdlib.h>
+
+
+using namespace std;
+
+template <typename T> //泛型
+void selectionSort(T arr[], int n)
+{
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i; //放在那很关键
+
+        for (int j = i + 1; j < n; j++) {
+            //Err: if (arr[minIndex] > arr[j])
+            //要与重载操作符方向一致，在比较结构体的时候
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+
+        swap(arr[i], arr[minIndex]);
+    }
+}
+
+int main(void)
+{
+    int n = 100;
+
+    int *arr = SortTestHelper::generateRandomArray(n, 0, n);
+
+    selectionSort(arr, n);
+
+    SortTestHelper::printArray(arr, n);
+
+    delete []arr;
+    arr = NULL;
+
+    system("pause");
+
+    return 0;
+}
+```
+
+SortTestHelper.h
+
+```c++
+#ifndef SORTTESTHELPER_H_
+#define SORTTESTHELPER_H_
+
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cassert>
+
+using namespace std;
+
+namespace SortTestHelper
+{
+    //调用后记得释放
+    int *generateRandomArray(int n, int rangeL, int rangeR)
+    {
+        assert(rangeL <= rangeR);
+
+        int *arr = new int[n];
+
+        srand(time(NULL));
+
+        for (int i = 0; i < n; i++)
+            arr[i] = rand() % (rangeR - rangeL + 1) + rangeL;
+
+        return arr;
+    }
+
+    void printArray(int *arr, int n)
+    {
+        if (NULL == arr) {
+            cout << "Input array is error." << endl;
+            return;
+    }
+
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+
+        cout << endl;
+    }
+
+}
 
 #endif
 ```
