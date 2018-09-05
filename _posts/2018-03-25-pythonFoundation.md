@@ -16,7 +16,7 @@ Photo by Farzad Nazifi
 
 ## Table of Contents
 
-1. [Install Python](#1---install-python)
+1. [Install Python](#1---install-python3)
    1. [by yourself](#1-1---by-yourself)
 
 2. [Basic use](#2---basic-use)
@@ -67,14 +67,13 @@ Photo by Farzad Nazifi
     1. [tuple](#11-1---tuple)
     2. [input extension](#11-2---input-extension)
 
-11 - Tuple-list-dictionary
-
 
 <br />
 
 ---
 
 <br />
+
 
 1104
 ## 1 - Install Python3
