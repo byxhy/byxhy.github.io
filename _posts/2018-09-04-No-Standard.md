@@ -18,13 +18,44 @@ The following is a simple example that demonstrates how to create a new thread t
 
 ```c++
 #include <iostream>
-#include <fstream>
+#include <algorithm>
 #include <string>
-#include <windows.h>
-#include <tchar.h>
-#include <strsafe.h>
+#include <stdlib.h>
 
-#define MAX_THREADS 3
+using namespace std;
+
+void selectionSort(int arr[], int n)
+{
+	for (int i = 0; i < n - 1; i++) {
+		int minIndex = i; //放在那很关键
+
+		for (int j = i + 1; j < n - 1; j++) {
+			if (arr[j] < arr[minIndex]) {
+				minIndex = j;
+			}
+		}
+
+		swap(arr[i], arr[minIndex]);
+	}
+}
+
+int main(void)
+{
+	//1. int
+	int a[10] = { 4, 6, 2, 2, 8, 3, 9, 1, 0, 11 };
+
+	selectionSort(a, 10);
+
+	for (int m = 0; m < 10; m++) {
+		cout << a[m] << " ";
+	}
+
+	cout << endl;
+
+	system("pause");
+
+	return 0;
+}
 
 
 
