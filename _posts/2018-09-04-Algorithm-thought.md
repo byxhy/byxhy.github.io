@@ -58,7 +58,7 @@ Photo by sabine schulte
 ### 1-1 - basic selection sort
 
 ```c++
-##include <iostream>
+#include <iostream>
 #include <algorithm>
 #include <string>
 #include <stdlib.h>
@@ -272,7 +272,7 @@ using namespace std;
 
 namespace SortTestHelper
 {
-    //调用后记得释放
+    //Remenber to release
     int *generateRandomArray(int n, int rangeL, int rangeR)
     {
         assert(rangeL <= rangeR);
