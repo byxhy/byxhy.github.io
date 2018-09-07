@@ -20,6 +20,7 @@ Photo by sabine schulte
    1. [basic selection sort](#1-1---basic-selection-sort)
 	 2. [using template](#1-2---using-template)
 	 3. [generate test cases](#1-3---generate-test-cases)
+   4. [detect performance](#1-4---detect-performance)
 
 2. [Basic use](#2---basic-use)
    1. [print function](#2-1---print-function)
@@ -43,31 +44,6 @@ Photo by sabine schulte
    4. [call yourself, only called inside the script](#5-4---call-yourself-only-called-inside-the-script)
    5. [variable parameters](#5-5---variable-parameters)
    6. [keyword parameters](#5-6---keyword-parameters)
-
-6. [Local variables and global variables](#6---local-variables-and-global-variables)
-   1. [local variable](#6-1---local-variable)
-   2. [global variable](#6-2---global-variable)
-
-7. [Install the modules](#7---install-the-modules)
-   1. [install Numpy and matplotlib](#7-1---install-numpy-and-matplotlib)
-
-8. [Read and write file](#8---read-and-write-file)
-   1. [write](#8-1---write)
-   2. [write](#8-2---write)
-   3. [read](#8-3---read)
-
-9. [Class](#9---class)
-   1. [class](#9-1---class)
-   2. [class and init](#9-2---class-and-init)
-   3. [default parameters in init](#9-3---default-parameters-in-init)
-
-10. [Input](#10---input)
-    1. [input](#10-1---input)
-    2. [input extension](#10-2---input-extension)
-
-11. [Tuple \ list \ dictionary](#11---tuple-list-dictionary)
-    1. [tuple](#11-1---tuple)
-    2. [input extension](#11-2---input-extension)
 
 
 <br />
@@ -234,6 +210,7 @@ struct Student
 
 #endif
 ```
+
 ### 1-3 - generate test cases
 
 SelectionSort.cpp
@@ -332,6 +309,135 @@ namespace SortTestHelper
 
 #endif
 ```
+
+### 1-4 - detect performance
+
+SelectionSort.cpp
+```c++
+#include "SortTestHelper.h"
+
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <stdlib.h>
+
+
+using namespace std;
+
+template <typename T>
+void selectionSort(T arr[], int n)
+{
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+
+        swap(arr[i], arr[minIndex]);
+    }
+}
+
+int main(void)
+{
+    int n = 1000;
+
+    int *arr = SortTestHelper::generateRandomArray(n, 0, n);
+
+    SortTestHelper::testSort("selectionSort", selectionSort, arr, n);
+
+    SortTestHelper::printArray(arr, n);
+
+    delete [] arr;
+    arr = NULL;
+
+    system("pause");
+
+    return 0;
+}
+
+```
+
+SortTestHelper.h
+
+```c++
+#ifndef SORTTESTHELPER_H_
+#define SORTTESTHELPER_H_
+
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cassert>
+
+using namespace std;
+
+namespace SortTestHelper
+{
+    //Remenber to release
+    int *generateRandomArray(int n, int rangeL, int rangeR)
+    {
+        assert(rangeL <= rangeR);
+
+        int *arr = new int[n];
+
+        srand(time(NULL));
+
+        for (int i = 0; i < n; i++)
+            arr[i] = rand() % (rangeR - rangeL + 1) + rangeL;
+
+        return arr;
+    }
+
+    void printArray(int *arr, int n)
+    {
+        if (NULL == arr) {
+            cout << "Input array is error." << endl;
+            return;
+        }
+
+        for (int i = 0; i < n; i++)
+            cout << arr[i] << " ";
+
+        cout << endl;
+    }
+
+    template <typename T>
+    bool isSorted(T arr[], int n)
+    {
+        for (int i = 0; i < n - 1; i++) {
+            if (arr[i] > arr[i+1]) {
+                cout << "Sort failed." << endl;
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    template <typename T>
+    void testSort(string funcName, void(*sort)(T arr[], int), T arr[], int n)
+    {
+        clock_t startTime = clock();
+        sort(arr, n);
+        clock_t stopTime = clock();
+
+        //Check
+        assert( isSorted(arr, n) );
+
+        cout << funcName + " cost time: " << double(stopTime - startTime) / CLOCKS_PER_SEC << "s" << endl;
+    }
+
+}
+
+#endif
+```
+
+1. What is the difference between 'function pointer' and 'pointer to a function'?
+2. Remenber to check.(assert)
+
+
 ## 2 - Basic use
 
 ### 2-1 - print function
