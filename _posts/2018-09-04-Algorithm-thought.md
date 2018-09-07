@@ -68,7 +68,7 @@ using namespace std;
 void selectionSort(int arr[], int n)
 {
     for (int i = 0; i < n - 1; i++) {
-        int minIndex = i; //放在那很关键
+        int minIndex = i; //It matters where you put it.
 
         for (int j = i + 1; j < n; j++) {
         if (arr[j] < arr[minIndex]) {
@@ -111,15 +111,13 @@ SelectionSort.cpp
 
 using namespace std;
 
-template <typename T> //泛型
+template <typename T>
 void selectionSort(T arr[], int n)
 {
     for (int i = 0; i < n - 1; i++) {
-        int minIndex = i; //放在那很关键
+        int minIndex = i; //It matters where you put it.
 
         for (int j = i + 1; j < n; j++) {
-            //Err: if (arr[minIndex] > arr[j])
-            //要与重载操作符方向一致，在比较结构体的时候
             if (arr[j] < arr[minIndex]) {
                 minIndex = j;
             }
@@ -167,7 +165,7 @@ int main(void)
     selectionSort(d, 4);
 
     for (int m = 0; m < 4; m++)	{
-        //cout << d[m] << " "; //输出和小于号，都重载过了
+        //cout << d[m] << " "; //The output symbol is overloaded
         cout << d[m];
     }
     cout << endl;
@@ -193,10 +191,9 @@ struct Student
     string name;
     int    score;
 
-    //自定义比较的威力
+    //custom comparison
     bool operator<(const Student &otherStudent)
     {
-        //要与后面排序计算方向一致，两个学生的分数相等按名字顺序排，不等按分数排
         return score != otherStudent.score ? score < otherStudent.score : name < otherStudent.name;
 	}
 
@@ -225,15 +222,13 @@ SelectionSort.cpp
 
 using namespace std;
 
-template <typename T> //泛型
+template <typename T>
 void selectionSort(T arr[], int n)
 {
     for (int i = 0; i < n - 1; i++) {
-        int minIndex = i; //放在那很关键
+        int minIndex = i;
 
         for (int j = i + 1; j < n; j++) {
-            //Err: if (arr[minIndex] > arr[j])
-            //要与重载操作符方向一致，在比较结构体的时候
             if (arr[j] < arr[minIndex]) {
                 minIndex = j;
             }
