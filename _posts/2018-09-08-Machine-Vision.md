@@ -14,7 +14,7 @@ Photo by shane hauser
 
 <br />
 
-haha
+### 1.My first machine vision code.
 
 ```python
 open_framegrabber ('File', 1, 1, 0, 0, 0, 0, 'default', -1, 'default', -1, 'false', 'fabrik', 'default', 1, -1, AcqHandle)
@@ -40,6 +40,28 @@ while (true)
 endwhile
 close_framegrabber (AcqHandle)
 ```
-### 1.My first machine vision code.
 
 <br />
+
+### 2.A simple object detection in Halcon.
+
+**1) Problem Finding:**
+
+How to select the pixels you interested in picture?
+
+**2) Problem Analysis:**
+
+A blob analysis mainly consists of three steps:
+
+* Acquire Image(s):
+An image is acquired.
+* Segment Image(s):
+Isolating the foreground pixels of interest from the image background using preprocessing tools and operations like thresholding and others. This is also called segmentation.
+* Extract Features:
+Features like area (i.e., the number of pixels), center of gravity, or the orientation of a blob or blobs are calculated.
+
+* ([The above information comes from halcon](https://www.mvtec.com/services-solutions/technologies/blob-analysis/))
+
+**3) Problem Solving:**
+
+**4) Problem Expansion:**
