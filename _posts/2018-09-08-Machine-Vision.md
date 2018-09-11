@@ -47,11 +47,13 @@ close_framegrabber (AcqHandle)
 
 **1) Problem Finding:**
 
-How to select the pixels you interested in picture?
+*How to select the pixels you interested in picture? (Massage ball)*
+
+![](/assets/img/MV-2-1.jpg)
 
 **2) Problem Analysis:**
 
-A blob analysis mainly consists of three steps:
+*A blob analysis mainly consists of three steps:*
 
 * Acquire Image(s):
 An image is acquired.
@@ -63,5 +65,36 @@ Features like area (i.e., the number of pixels), center of gravity, or the orien
 * ([The above information comes from halcon](https://www.mvtec.com/services-solutions/technologies/blob-analysis/))
 
 **3) Problem Solving:**
+```python
+* Initialize the program
+dev_close_window ()
+dev_open_window (0, 0, 1200, 576, 'black', WindowHandle)
+dev_set_draw ('margin')
+
+* 1. Acquire Image(s)
+read_image (Image, 'E:/M/Halcon/Image/6.jpg')
+
+* 2. Segment the Image(s)
+rgb1_to_gray (Image, GrayImage)
+dev_display (GrayImage)
+
+threshold (GrayImage, Regions, 113, 255)
+dev_display (Regions)
+
+connection (Regions, ConnectedRegions)
+dev_display (ConnectedRegions)
+
+* 3. Extract Features
+select_shape (ConnectedRegions, SelectedRegions, 'area', 'and', 360952, 515238)
+area_center (SelectedRegions, Area, Row, Column)  
+
+* 4. Display
+dev_display (Image)
+dev_display (SelectedRegions)
+disp_message (WindowHandle, 'Area:' + Area + ' Coordinate:(' + Row + ',' + Column + ')', 'window', 12, 12, 'black', 'true')
+```
+
+![](/assets/img/MV-2-3.jpg)
+
 
 **4) Problem Expansion:**
