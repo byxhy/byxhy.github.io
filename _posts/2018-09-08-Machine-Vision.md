@@ -107,7 +107,7 @@ disp_message (WindowHandle, 'Area:' + Area + ' Coordinate:(' + Row + ',' + Colum
 
 **1) Problem Finding:**
 
-*What's the difference between the erosion, dilation, opening and closing ?*
+*What is the difference between the erosion, dilation, opening and closing ?*
 
 ![](/assets/img/MV-3-1.jpg)
 
@@ -169,16 +169,16 @@ dev_display (Bond)
 dev_display (RegionOpening)
 ```
 
-*Opening*
+*opening*
 ![](/assets/img/MV-3-3-1.jpg)
 
 *erosion*
 ![](/assets/img/MV-3-3-2.jpg)
 
-*Dilation*
+*dilation*
 ![](/assets/img/MV-3-3-3.jpg)
 
-*Closing*
+*closing*
 ![](/assets/img/MV-3-3-4.jpg)
 
 
