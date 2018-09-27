@@ -183,6 +183,43 @@ dev_display (RegionOpening)
 
 
 **4) Problem Expansion:**
-* ?????
+
+
+
+<br />
+
+### 4. Elementary Arithmetic
+
+**1) Problem Finding:**
+* mean-filtering
+* median-filtering
+* Gauss-filtering
+* template-filtering
+
+**2) Problem Analysis:**
+
+
+**3) Problem Solving:**
+
+
+**4) Problem Expansion:**
+
+
+<br />
+
+### 5. Elementary Arithmetic
+
+**1) Problem Finding:**
+
+
+**2) Problem Analysis:**
+
+
+**3) Problem Solving:**
+
+
+**4) Problem Expansion:**
+
+Today is american dream.
 
 <br />
