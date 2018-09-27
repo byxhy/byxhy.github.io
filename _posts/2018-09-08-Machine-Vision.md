@@ -167,6 +167,7 @@ dev_display (RegionOpening)
 * 4. Display
 dev_display (Bond)
 dev_display (RegionOpening)
+
 ```
 
 *opening*
@@ -188,7 +189,7 @@ dev_display (RegionOpening)
 
 <br />
 
-### 4. Elementary Arithmetic
+### 4. Powerful filter
 
 **1) Problem Finding:**
 * mean-filtering
@@ -197,15 +198,59 @@ dev_display (RegionOpening)
 * template-filtering
 
 **2) Problem Analysis:**
-
+* The operator gauss_filter smoothes images using the discrete Gaussian, a discrete approximation of the Gaussian function.
 
 **3) Problem Solving:**
+```python
+* Initialize the program
+dev_update_off ()
+dev_close_window ()
+
+* 1. Acquire Image(s)
+read_image (Image, 'datacode/ecc200/ecc200_to_preprocess_004')
+dev_open_window_fit_image (Image, 0, 0, -1, -1, WindowHandle)
+dev_display (Image)
+
+* 2.Segment the Image(s)
+
+* median_image
+median_image (Image, ImageMedian, 'circle', 1.5, 'mirrored')
+dev_display (ImageMedian)
+
+* mean_image
+dev_display (Image)
+mean_image (Image, ImageMean, 9, 9)
+dev_display (ImageMean)
+
+* gauss_filter
+dev_display (Image)
+gauss_filter (Image, ImageGauss, 5)
+dev_display (ImageGauss)
+
+```
+
+*original*
+
+![](/assets/img/MV-4-3-1.jpg)
+
+*median_image*
+
+![](/assets/img/MV-4-3-2.jpg)
+
+*mean_image*
+
+![](/assets/img/MV-4-3-3.jpg)
+
+*gauss_filter*
+
+![](/assets/img/MV-4-3-4.jpg)
 
 
 **4) Problem Expansion:**
 
 
 <br />
+
 
 ### 5. Elementary Arithmetic
 
@@ -220,6 +265,6 @@ dev_display (RegionOpening)
 
 **4) Problem Expansion:**
 
-Today is american dream.
+
 
 <br />
