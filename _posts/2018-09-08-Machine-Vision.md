@@ -252,7 +252,60 @@ dev_display (ImageGauss)
 <br />
 
 
-### 5. Elementary Arithmetic
+### 5. Affine transformation
+
+**1) Problem Finding:**
+
+*How to rotate the Jordan logo to 90 degrees ?*
+
+![](/assets/img/MV-5-1.jpg)
+
+
+**2) Problem Analysis:**
+
+* find the angle between the logo and horizontal line
+* rotate the angle to 0
+
+**3) Problem Solving:**
+```python
+* Initialize the program
+dev_update_off ()
+dev_close_window ()
+
+* 1. Acquire Image(s)
+read_image (Image, 'E:/M/Halcon/Image/jordan.jpg')
+dev_open_window_fit_image (Image, 0, 0, -1, -1, WindowHandle)
+rgb1_to_gray (Image, GrayImage)
+dev_display (GrayImage)
+
+* 2.Segment the Image(s)
+threshold (GrayImage, Regions, 5, 103)
+opening_rectangle1 (Regions, RegionOpening, 10, 10)
+shape_trans (RegionOpening, RegionTrans, 'convex')
+dev_display (RegionTrans)
+
+* 3. Extract features
+orientation_region (RegionTrans, Phi)
+area_center (RegionTrans, Area1, Row1, Column1)
+vector_angle_to_rigid (Row1, Column1, Phi, Row1, Column1, 1.57, HomMat2D)
+
+affine_trans_image (Image, ImageAffinTrans, HomMat2D, 'constant', 'false')
+dev_display (ImageAffinTrans)
+```
+
+
+*The rotating Jordan*
+
+![](/assets/img/MV-5-3-1.jpg)
+
+**4) Problem Expansion:**
+
+
+
+<br />
+
+
+### 6. Approximate a rigid affine transformation from point correspondences
 
 **1) Problem Finding:**
 
