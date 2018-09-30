@@ -16,6 +16,7 @@ Photo by shane hauser
 
 ### 1.My first machine vision code.
 
+
 ```python
 open_framegrabber ('File', 1, 1, 0, 0, 0, 0, 'default', -1, 'default', -1, 'false', 'fabrik', 'default', 1, -1, AcqHandle)
 grab_image_start (AcqHandle, -1)
@@ -42,6 +43,7 @@ close_framegrabber (AcqHandle)
 ```
 
 <br />
+
 
 ### 2.A simple object detection in Halcon.
 
@@ -104,6 +106,7 @@ disp_message (WindowHandle, 'Area:' + Area + ' Coordinate:(' + Row + ',' + Colum
 <br />
 
 ### 3. Elementary Arithmetic
+
 
 **1) Problem Finding:**
 
@@ -185,9 +188,8 @@ dev_display (RegionOpening)
 
 **4) Problem Expansion:**
 
-
-
 <br />
+
 
 ### 4. Powerful filter
 
@@ -248,7 +250,6 @@ dev_display (ImageGauss)
 
 **4) Problem Expansion:**
 
-
 <br />
 
 
@@ -299,8 +300,6 @@ dev_display (ImageAffinTrans)
 ![](/assets/img/MV-5-3-1.jpg)
 
 **4) Problem Expansion:**
-
-
 
 <br />
 
@@ -371,6 +370,7 @@ License number
 
 **4) Problem Expansion:**
 
+<br />
 
 
 ### 7. Approximate a rigid affine transformation from point correspondences
@@ -385,4 +385,22 @@ License number
 
 
 **4) Problem Expansion:**
+
+<br />
+
+
+
+### 8. Approximate a rigid affine transformation from point correspondences
+
+**1) Problem Finding:**
+
+
+**2) Problem Analysis:**
+
+
+**3) Problem Solving:**
+
+
+**4) Problem Expansion:**
+
 <br />
