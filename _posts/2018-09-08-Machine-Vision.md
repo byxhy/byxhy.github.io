@@ -365,6 +365,8 @@ dev_display (ImageAffinTrans)
 disp_message (WindowHandle, 'License Numbre: '+Class[0]+' '+Class[1]+' '+Class[2]+' '+Class[3]+' '+Class[4]+' '+Class[5]+' '+Class[6], 'window', RowMax+60, ColumnMin-30, 'red', 'true')
 
 ```
+
+License number
 ![](/assets/img/MV-6-3.jpg)
 
 **4) Problem Expansion:**
