@@ -308,13 +308,14 @@ dev_display (ImageAffinTrans)
 ### 6. How to recognition a license number
 
 **1) Problem Finding:**
+
 *How to recognition the license number quickly?*
 
 ![](/assets/img/MV-6-1.jpg)
 
 **2) Problem Analysis:**
-* Acquire a license License number
-* Rotate the lience number picture to horizontal
+* Acquire a license number
+* Rotate the license number picture to horizontal
 * License plate recognition
 
 **3) Problem Solving:**
@@ -367,6 +368,7 @@ disp_message (WindowHandle, 'License Numbre: '+Class[0]+' '+Class[1]+' '+Class[2
 ![](/assets/img/MV-6-3.jpg)
 
 **4) Problem Expansion:**
+
 
 
 ### 7. Approximate a rigid affine transformation from point correspondences
