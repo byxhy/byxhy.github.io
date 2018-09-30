@@ -305,7 +305,71 @@ dev_display (ImageAffinTrans)
 <br />
 
 
-### 6. Approximate a rigid affine transformation from point correspondences
+### 6. How to recognition a license number
+
+**1) Problem Finding:**
+*How to recognition the license number quickly?*
+
+![](/assets/img/MV-6-1.jpg)
+
+**2) Problem Analysis:**
+* Acquire a license License number
+* Rotate the lience number picture to horizontal
+* License plate recognition
+
+**3) Problem Solving:**
+```python
+* Initialize the program
+dev_update_off ()
+dev_close_window ()
+
+* 1. Acquire Image(s)
+read_image (Image, 'E:/M/Halcon/Image/CarlicenseNumber.jpg')
+dev_open_window_fit_image (Image, 0, 0, -1, -1, WindowHandle)
+rgb1_to_gray (Image, GrayImage)
+invert_image (GrayImage, ImageInvert)
+dev_display (GrayImage)
+
+* 2. Rotate the lience number picture to horizontal
+threshold (GrayImage, Regions, 0, 46)
+dilation_rectangle1 (Regions, RegionDilation, 50, 5)
+erosion_rectangle1 (RegionDilation, RegionErosion1, 9, 11)
+connection (RegionErosion1, ConnectedRegions)
+select_shape (ConnectedRegions, SelectedRegions, 'area', 'and', 38588.6, 78028)
+opening_rectangle1 (SelectedRegions, RegionOpening, 16, 10)
+shape_trans (RegionOpening, RegionTrans, 'convex')
+orientation_region (RegionTrans, Phi)
+area_center (RegionTrans, Area, Row, Column)
+
+vector_angle_to_rigid (Row, Column, Phi, Row, Column, 3.14, HomMat2D)
+affine_trans_image (GrayImage, ImageAffinTrans, HomMat2D, 'constant', 'false')
+
+
+* 3. License plate recognition
+threshold (ImageAffinTrans, Regions1, 1, 52)
+opening_circle (Regions1, RegionOpening1, 3.5)
+connection (RegionOpening1, ConnectedRegions1)
+select_shape (ConnectedRegions1, SelectedRegions1, ['area','height'], 'and', [1914.41,109.41], [4632.13,200])
+closing_circle (SelectedRegions1, RegionClosing, 1)
+smallest_rectangle1 (RegionClosing, Row1, Column1, Row2, Column2)
+sort_region (RegionClosing, SortedRegions, 'character', 'true', 'column')
+
+read_ocr_class_mlp ('Industrial_0-9A-Z_NoRej.omc', OCRHandle)
+do_ocr_multi_class_mlp (SortedRegions, ImageAffinTrans, OCRHandle, Class, Confidence)
+
+tuple_max(Row2, RowMax)
+tuple_min(Column2, ColumnMin)
+
+dev_display (ImageAffinTrans)
+disp_message (WindowHandle, 'License Numbre: '+Class[0]+' '+Class[1]+' '+Class[2]+' '+Class[3]+' '+Class[4]+' '+Class[5]+' '+Class[6], 'window', RowMax+60, ColumnMin-30, 'red', 'true')
+
+```
+![](/assets/img/MV-6-3.jpg)
+
+**4) Problem Expansion:**
+
+
+### 7. Approximate a rigid affine transformation from point correspondences
 
 **1) Problem Finding:**
 
@@ -317,7 +381,4 @@ dev_display (ImageAffinTrans)
 
 
 **4) Problem Expansion:**
-
-
-
 <br />
