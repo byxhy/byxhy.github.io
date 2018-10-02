@@ -369,6 +369,34 @@ License number
 
 **4) Problem Expansion:**
 
+*another way to select the number region*
+
+```python
+* Initialize the program
+dev_update_off ()
+dev_close_window ()
+
+* 1. Acquire Image(s)
+read_image (Image, 'E:/M/Halcon/Image/MV-6-1.jpg')
+dev_open_window_fit_image (Image, 0, 0, -1, -1, WindowHandle)
+rgb1_to_gray (Image, GrayImage1)
+invert_image (Image, ImageInvert)
+dev_display (Image)
+
+* 2. Rotate the lience number picture to horizontal
+decompose3 (ImageInvert, red, green, bule)
+trans_from_rgb (red, red, red, ImageResult1, ImageResult2, ImageResult3, 'hsv')
+threshold (ImageResult3, Regions2, 238, 255)
+opening_circle (Regions2, RegionOpening2, 4.5)
+shape_trans (RegionOpening2, RegionTrans1, 'rectangle2')
+
+area_center (RegionTrans1, Area1, Row3, Column3)
+orientation_region (RegionTrans1, Phi1)
+vector_angle_to_rigid (Row3, Column3, Phi1, Row3, Column3, 0, HomMat2D1)
+affine_trans_image (GrayImage1, ImageAffinTrans, HomMat2D1, 'constant', 'false')
+```
+![](/assets/img/MV-6-4.jpg)
+
 <br />
 
 
