@@ -4,18 +4,15 @@ title: "Time Tunnel"
 author: "Xhy"
 categories: journal
 tags: [documentation,sample]
-image: NYear.jpg
+image: joshua-earle.jpg
 ---
-Photo by Nitish Meena
+Photo by joshua earle
 
->有人说，她来的时候就有了，信不信你走的时候，我还在？最开始的時候就是自己寫寫，没想到过了些日子就变成这样了 ☂❄☃
-
->從 290 倒數到 0，再從 0 正數 ……
+>有人说，她来的时候就有了，信不信你走的时候，我还在 ...
 
 <br />
 
 ### 正文：
-<br />
 
 
 第290天，看到你们军训，我眼泪都快掉出来了 ~
