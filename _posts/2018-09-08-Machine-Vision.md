@@ -501,9 +501,10 @@ book clip size
 ![](/assets/img/MV-8-1.jpg)
 
 **2) Problem Analysis:**
-* 1
-* 2
-* 3
+* Correct and form a separate connected domain
+* Associate the region with text
+* Training
+* OCR
 
 **3) Problem Solving:**
 ```python
@@ -513,7 +514,7 @@ dev_close_window ()
 
 
 * 1. Acquire the Image(s)
-read_image (Text, 'E:/M/Halcon/Image/text.jpg')
+read_image (Text, 'E:/M/Halcon/Image/Yamashita-Eiko.jpg')
 dev_open_window_fit_image (Text, 0, 0, -1, -1, WindowHandle)
 dev_display (Text)
 
@@ -534,8 +535,6 @@ smallest_rectangle1 (ImageReduced, Row1, Column1, Row2, Column2)
 gen_rectangle1 (Rectangle, Row1, Column1+178, Row1+(Row2-Row1)/2, Column2)
 reduce_domain (ImageReduced, Rectangle, ImageReduced1)
 
-
-
 * 3. Extract features
 threshold (ImageReduced1, Regions1, 127, 194)
 dilation_rectangle1 (Regions1, RegionDilation, 3, 6)
@@ -546,8 +545,31 @@ count_obj (ConnectedRegions1, Number)
 for i := 1 to Number by 1
     select_obj (SortedRegions, ObjectSelected, i)
 endfor
+
+* 4. Form TRF file
+words := ['山', '下', '英', '子', '著']
+TrainFile := 'E:/M/Halcon/TrainingsFile/Yamashita-Eiko.trf'
+for i := 1 to Number by 1
+    select_obj (SortedRegions, ObjectSelected, i)
+    append_ocr_trainf (ObjectSelected, ImageReduced1, words[i-1], TrainFile)
+endfor
+
+read_ocr_trainf_names (TrainFile, CharacterNames, CharacterCount)
+
+* 5. Start training
+ClassFile := 'E:/M/Halcon/TrainingsFile/Yamashita-Eiko.omc'
+create_ocr_class_mlp (82, 86, 'constant', 'default', CharacterNames, 80, 'none', 10, 42, OCRHandle)
+trainf_ocr_class_mlp (OCRHandle, TrainFile, 200, 1, 0.01, Error, ErrorLog)
+write_ocr_class_mlp (OCRHandle, ClassFile)
+
+* 6. Start OCR
+read_ocr_class_mlp (ClassFile, OCRHandle1)
+do_ocr_multi_class_mlp (SortedRegions, ImageReduced1, OCRHandle1, Class, Confidence)
+
+dev_display (ImageAffinTrans)
+disp_message (WindowHandle, Class, 'image', Row2-200, Column2+400, 'red', 'false')
 ```
-text
+Yamashita-Eiko
 ![](/assets/img/MV-8-3.jpg)
 
 **4) Problem Expansion:**
