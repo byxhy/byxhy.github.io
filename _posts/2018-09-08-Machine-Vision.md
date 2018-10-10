@@ -492,33 +492,92 @@ book clip size
 <br />
 
 
-### 8. Approximate a rigid affine transformation from point correspondences
+### 8. OCR
 
 **1) Problem Finding:**
+* What does OCR stand for
+* How to OCR text in image
 
+![](/assets/img/MV-8-1.jpg)
 
 **2) Problem Analysis:**
-
+* 1
+* 2
+* 3
 
 **3) Problem Solving:**
+```python
+* Initialize the program
+dev_update_off ()
+dev_close_window ()
 
+
+* 1. Acquire the Image(s)
+read_image (Text, 'E:/M/Halcon/Image/text.jpg')
+dev_open_window_fit_image (Text, 0, 0, -1, -1, WindowHandle)
+dev_display (Text)
+
+* 2. Segment the Image(s)
+rgb1_to_gray (Text, GrayImage)
+threshold (GrayImage, Regions, 147, 244)
+connection (Regions, ConnectedRegions)
+select_shape (ConnectedRegions, SelectedRegions, 'area', 'and', 20, 42542.5)
+union1 (SelectedRegions, RegionUnion)
+shape_trans (RegionUnion, RegionTrans, 'rectangle2')
+orientation_region (RegionTrans, Phi)
+area_center (RegionTrans, Area, Row, Column)
+vector_angle_to_rigid (Row, Column, Phi, Row, Column, 3.14, HomMat2D)
+affine_trans_region (RegionTrans, RegionAffineTrans, HomMat2D, 'nearest_neighbor')
+affine_trans_image (GrayImage, ImageAffinTrans, HomMat2D, 'constant', 'false')
+reduce_domain (ImageAffinTrans, RegionAffineTrans, ImageReduced)
+smallest_rectangle1 (ImageReduced, Row1, Column1, Row2, Column2)
+gen_rectangle1 (Rectangle, Row1, Column1+178, Row1+(Row2-Row1)/2, Column2)
+reduce_domain (ImageReduced, Rectangle, ImageReduced1)
+
+
+
+* 3. Extract features
+threshold (ImageReduced1, Regions1, 127, 194)
+dilation_rectangle1 (Regions1, RegionDilation, 3, 6)
+connection (RegionDilation, ConnectedRegions1)
+* Err:sort_region (ConnectedRegions1, SortedRegions, 'character', 'true', column)
+sort_region (ConnectedRegions1, SortedRegions, 'character', 'true', 'column')
+count_obj (ConnectedRegions1, Number)
+for i := 1 to Number by 1
+    select_obj (SortedRegions, ObjectSelected, i)
+endfor
+```
+text
+![](/assets/img/MV-8-3.jpg)
 
 **4) Problem Expansion:**
+* ([Optical Character Recognition in Halcon 12](https://multipix.com/supportblog/optical-character-recognition-halcon-12/))
 
 <br />
 
 
-### 9. Approximate a rigid affine transformation from point correspondences
+
+
+### 9. Title
 
 **1) Problem Finding:**
-
+* 111
+* 111
+![](/assets/img/MV-8-1.jpg)
 
 **2) Problem Analysis:**
-
+* 222
+* 222
+* 222
 
 **3) Problem Solving:**
-
+```python
+* Initialize the program
+dev_update_off ()
+dev_close_window ()
+```
+title
+![](/assets/img/MV-8-3.jpg)
 
 **4) Problem Expansion:**
-
-<br />
+* ([title](https://multipix.com/supportblog/optical-character-recognition-halcon-12/))
