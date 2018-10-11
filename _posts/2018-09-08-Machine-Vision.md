@@ -577,10 +577,67 @@ Yamashita-Eiko
 
 <br />
 
+### 9. Color segmentation
+
+**1) Problem Finding:**
+* 111
+* 111
+![](/assets/img/MV-9-1.jpg)
+
+**2) Problem Analysis:**
+* 222
+* 222
+* 222
+
+**3) Problem Solving:**
+```python
+* Initialize the program
+dev_update_off ()
+dev_close_window ()
 
 
+* 1. Acquire the Image(s)
+read_image (Image, 'E:/M/Halcon/Image/jelly-beans.jpg')
+dev_open_window_fit_image (Image, 0, 0, -1, -1, WindowHandle)
+dev_display (Image)
 
-### 9. Title
+
+* 2. Segment the Image(s)
+decompose3 (Image, Red, Green, Blue)
+trans_from_rgb (Red, Green, Blue, Hue, Saturation, Intensity, 'hsv')
+threshold (Saturation, Regions, 58, 255)
+reduce_domain (Hue, Regions, ImageReduced)
+threshold (ImageReduced, Regions1, 16, 28)
+opening_circle (Regions1, RegionOpening, 3.5)
+fill_up (RegionOpening, RegionFillUp)
+area_center (RegionFillUp, Area, OrangeRow, OrangeColumn)
+
+dev_display (Image)
+gen_cross_contour_xld (Cross1, OrangeRow, OrangeColumn, 30, 0)
+
+threshold (ImageReduced, Regions2, 101, 118)
+fill_up (Regions2, RegionFillUp1)
+area_center (RegionFillUp1, Area1, BlueRow, BlueColumn)
+gen_cross_contour_xld (Cross2, BlueRow, BlueColumn, 30, 0)
+
+threshold (ImageReduced, Regions3, 45, 51)
+opening_circle (Regions3, RegionOpening1, 3.5)
+area_center (RegionOpening1, Area2, GreenRow, GreenColumn)
+gen_cross_contour_xld (Cross2, GreenRow, GreenColumn, 30, 0)
+
+
+* 3. Extract features
+```
+title
+![](/assets/img/MV-8-3.jpg)
+
+**4) Problem Expansion:**
+* ([title](https://multipix.com/supportblog/optical-character-recognition-halcon-12/))
+
+<br />
+
+
+### 10. Title
 
 **1) Problem Finding:**
 * 111
