@@ -577,17 +577,16 @@ Yamashita-Eiko
 
 <br />
 
-### 9. Color segmentation
+### 9. Color image segmentation
 
 **1) Problem Finding:**
-* 111
-* 111
+* Convert a three-channel image into three images
+* Regions of interest extraction based on HSV color space
 ![](/assets/img/MV-9-1.jpg)
 
 **2) Problem Analysis:**
-* 222
-* 222
-* 222
+* RGB to HSV
+* Get ROI by HSV
 
 **3) Problem Solving:**
 ```python
@@ -595,12 +594,10 @@ Yamashita-Eiko
 dev_update_off ()
 dev_close_window ()
 
-
 * 1. Acquire the Image(s)
 read_image (Image, 'E:/M/Halcon/Image/jelly-beans.jpg')
 dev_open_window_fit_image (Image, 0, 0, -1, -1, WindowHandle)
 dev_display (Image)
-
 
 * 2. Segment the Image(s)
 decompose3 (Image, Red, Green, Blue)
@@ -612,27 +609,44 @@ opening_circle (Regions1, RegionOpening, 3.5)
 fill_up (RegionOpening, RegionFillUp)
 area_center (RegionFillUp, Area, OrangeRow, OrangeColumn)
 
-dev_display (Image)
-gen_cross_contour_xld (Cross1, OrangeRow, OrangeColumn, 30, 0)
-
 threshold (ImageReduced, Regions2, 101, 118)
 fill_up (Regions2, RegionFillUp1)
 area_center (RegionFillUp1, Area1, BlueRow, BlueColumn)
-gen_cross_contour_xld (Cross2, BlueRow, BlueColumn, 30, 0)
 
 threshold (ImageReduced, Regions3, 45, 51)
 opening_circle (Regions3, RegionOpening1, 3.5)
 area_center (RegionOpening1, Area2, GreenRow, GreenColumn)
-gen_cross_contour_xld (Cross2, GreenRow, GreenColumn, 30, 0)
 
+threshold (ImageReduced, Regions4, 0, 15)
+dilation_circle (Regions4, RegionDilation, 5)
+fill_up (RegionDilation, RegionFillUp2)
+connection (RegionFillUp2, ConnectedRegions)
+select_shape (ConnectedRegions, SelectedRegions, 'area', 'and', 27752.8, 50000)
+area_center (SelectedRegions, Area3, RedRow, RedColumn)
+
+threshold (ImageReduced, Regions5, 36, 43)
+opening_circle (Regions5, RegionOpening2, 3.5)
+area_center (RegionOpening2, Area4, YellowRow, YellowColumn)
 
 * 3. Extract features
+dev_display (Image)
+gen_cross_contour_xld (Cross1, OrangeRow, OrangeColumn, 30, 0)
+gen_cross_contour_xld (Cross2, BlueRow, BlueColumn, 30, 0)
+gen_cross_contour_xld (Cross3, GreenRow, GreenColumn, 30, 0)
+gen_cross_contour_xld (Cross4, RedRow, RedColumn, 30, 0)
+gen_cross_contour_xld (Cross5, YellowRow, YellowColumn, 30, 0)
+
+disp_message (WindowHandle, 'Orange', 'image', OrangeRow, OrangeColumn, 'black', 'true')
+disp_message (WindowHandle, 'Blue', 'image', BlueRow, BlueColumn, 'black', 'true')
+disp_message (WindowHandle, 'Green', 'image', GreenRow, GreenColumn, 'black', 'true')
+disp_message (WindowHandle, 'Red', 'image', RedRow, RedColumn, 'black', 'true')
+disp_message (WindowHandle, 'Yellow', 'image', YellowRow, YellowColumn, 'black', 'true')
 ```
-title
-![](/assets/img/MV-8-3.jpg)
+Jelly beans
+![](/assets/img/MV-9-3.jpg)
 
 **4) Problem Expansion:**
-* ([title](https://multipix.com/supportblog/optical-character-recognition-halcon-12/))
+* ([How to determine range of HSV values of the image?](https://dsp.stackexchange.com/questions/5922/how-to-determine-range-of-hsv-values-of-the-image))
 
 <br />
 
