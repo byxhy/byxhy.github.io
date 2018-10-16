@@ -654,13 +654,14 @@ Jelly beans
 ### 10. Color Recognition by MLP
 
 **1) Problem Finding:**
-* Create a multilayer perceptron for classification or regression.
+
+*Create a multilayer perceptron for classification or regression.*
 ![](/assets/img/MV-10-1.jpg)
 
 **2) Problem Analysis:**
-* 222
-* 222
-* 222
+* Specify color classes
+* Train the specified color classes
+* Apply the trained classes
 
 **3) Problem Solving:**
 ```python
@@ -668,43 +669,56 @@ Jelly beans
 dev_update_off ()
 dev_close_window ()
 
+Regions := ['red','green','blue','yellow','pink','milky','purple','background']
+gen_empty_obj (Classes)
+
 * 1. Acquire the Image(s)
 read_image (Image, 'E:/M/Halcon/Image/jelly-bean_train.jpg')
 dev_open_window_fit_image (Image, 0, 0, -1, -1, WindowHandle)
 dev_display (Image)
 
-* 2. Segment the Image(s)
-Regions := ['red','green','blue','yellow','pink','milky','purple','background']
-
-
-gen_empty_obj (Classes)
-
-* Specify color classes
+* 2. Specify color classes
 for I := 1 to |Regions| by 1
     dev_display (Image)
     dev_display (Classes)
     disp_message (WindowHandle, ['Drag rectangle inside ' + Regions[I - 1] + ' color','Click right mouse button to confirm'], 'window', 24, 12, 'black', 'false')
     draw_rectangle1 (WindowHandle, Row1, Column1, Row2, Column2)
     gen_rectangle1 (Rectangle, Row1, Column1, Row2, Column2)
-    concat_obj (Rectangle, Classes, Classes)
-
+    concat_obj (Rectangle, Classes, Classes)    
 endfor
 
-
-* Train the specified color classes
-create_class_mlp (3, 7, 8, 'softmax', 'normalization', 3, 42, MLPHandle)
+* 3. Train the specified color classes
+create_class_mlp (3, 8, 8, 'softmax', 'normalization', 4, 42, MLPHandle)
 add_samples_image_class_mlp (Image, Classes, MLPHandle)
 disp_message (WindowHandle, 'Training...', 'window', 100, 12, 'black', 'false')
 train_class_mlp (MLPHandle, 400, 0.5, 0.01, Error, ErrorLog)
 
-* Apply the trained classes
-classify_image_class_mlp (Image, ClassRegions, MLPHandle, 0.5)
+* 4. Apply the trained classes
+read_image (Image1, 'E:/M/Halcon/Image/test-1.jpg')
+classify_image_class_mlp (Image1, ClassRegions, MLPHandle, 0.5)
+count_obj (ClassRegions, Number)
+ if (Number != |Regions|)
+    disp_message (WindowHandle, 'Not OK', 'window', 0, 0, 'red', 'false')
+else
+    for Index := 1 to Number by 1
+        dev_clear_window ()
+        dev_display (Image1)
+        copy_obj (ClassRegions, ObjectsSelected, Index, 1)        
+        disp_message (WindowHandle, Regions[Number-Index], 'window', 0, 0, 'green', 'true')
+    endfor
+endif
 ```
-title
-![](/assets/img/MV-10-3.jpg)
+Test image
+![](/assets/img/MV-10-3-test.jpg)
+
+![](/assets/img/MV-10-3-red.jpg)
+
+![](/assets/img/MV-10-3-green.jpg)
+
+![](/assets/img/MV-10-3-blue.jpg)
 
 **4) Problem Expansion:**
-* ([title](https://multipix.com/supportblog/optical-character-recognition-halcon-12/))
+* ([Colour Recognition in Images Using Neural Networks](http://www.ijircce.com/upload/2016/february/260_73_Colour.pdf))
 
 <br />
 
