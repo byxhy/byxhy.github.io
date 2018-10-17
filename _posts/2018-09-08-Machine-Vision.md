@@ -731,9 +731,42 @@ Test image
 ![](/assets/img/MV-8-1.jpg)
 
 **2) Problem Analysis:**
+* .h
+  * E:\Program Files (x86)\MVTec\HALCON-12.0\include
+  * E:\Program Files (x86)\MVTec\HALCON-12.0\include\halconcpp
 * 222
 * 222
-* 222
+
+**3) Problem Solving:**
+```python
+* Initialize the program
+dev_update_off ()
+dev_close_window ()
+```
+title
+![](/assets/img/MV-8-3.jpg)
+
+**4) Problem Expansion:**
+* ([title](https://multipix.com/supportblog/optical-character-recognition-halcon-12/))
+
+<br />
+
+
+### 12. Title
+
+**1) Problem Finding:**
+* 111
+* 111
+![](/assets/img/MV-8-1.jpg)
+
+**2) Problem Analysis:**
+* .h
+  * E:\Program Files (x86)\MVTec\HALCON-12.0\include
+  * E:\Program Files (x86)\MVTec\HALCON-12.0\include\halconcpp
+* .lib
+  * E:\Program Files (x86)\MVTec\HALCON-12.0\lib\x86sse2-win32
+  * halconcpp.lib
+* dll
 
 **3) Problem Solving:**
 ```python
