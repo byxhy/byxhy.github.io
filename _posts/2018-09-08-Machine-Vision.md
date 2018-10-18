@@ -723,28 +723,57 @@ Test image
 <br />
 
 
-### 11. Title
+### 11. Halcon + VS2013
 
 **1) Problem Finding:**
-* 111
-* 111
-![](/assets/img/MV-8-1.jpg)
+
+*Halcon and Visual Studio 2013 midxed programing*
 
 **2) Problem Analysis:**
 * .h
-  * E:\Program Files (x86)\MVTec\HALCON-12.0\include
-  * E:\Program Files (x86)\MVTec\HALCON-12.0\include\halconcpp
-* 222
-* 222
+  * ..\MVTec\HALCON-12.0\include
+  * ..\MVTec\HALCON-12.0\include\halconcpp
+* .lib
+  * ..\MVTec\HALCON-12.0\lib\x64-win64
+  * halconcpp.lib
+* dll
 
 **3) Problem Solving:**
-```python
-* Initialize the program
-dev_update_off ()
-dev_close_window ()
+```c++
+void CGreySkyDlg::OnBnClickedButton1()
+{
+    //1. Acquire Image(s)
+    ReadImage(&ho_Image, "E:/M/Halcon/Image/MV-6-1.jpg");
+    GetImageSize(ho_Image, &hv_Width, &hv_Height);  
+    SetWindowAttr("background_color", "black");
+
+    HWND hwnd1;
+    CRect rect;
+    GetDlgItem(IDC_PIC)->GetWindowRect(&rect);
+    hwnd1 = GetDlgItem(IDC_PIC)->m_hWnd;
+    LONG lWWindowID = (LONG)hwnd1;
+
+    //2. Set the window size
+    hv_Width = rect.Width();
+    hv_Height = rect.Height();
+
+    OpenWindow(0, 0, hv_Width, hv_Height, lWWindowID, "", "", &hv_WindowHandle);
+
+    HDevWindowStack::Push(hv_WindowHandle);
+    if (HDevWindowStack::IsOpen())
+        DispObj(ho_Image, HDevWindowStack::GetActive());
+}
+
+
+void CGreySkyDlg::OnBnClickedButton2()
+{
+    Rgb1ToGray(ho_Image, &ho_GrayImage1);
+    if (HDevWindowStack::IsOpen())
+        DispObj(ho_GrayImage1, HDevWindowStack::GetActive());
+}
 ```
-title
-![](/assets/img/MV-8-3.jpg)
+GreySky
+![](/assets/img/MV-11-3.jpg)
 
 **4) Problem Expansion:**
 * ([title](https://multipix.com/supportblog/optical-character-recognition-halcon-12/))
@@ -770,41 +799,7 @@ title
 
 **3) Problem Solving:**
 ```c++
-void CGreySkyDlg::OnBnClickedButton1()
-{
-    // TODO:  在此添加控件通知处理程序代码
 
-    //1. Acquire Image(s)
-    ReadImage(&ho_Image, "E:/M/Halcon/Image/MV-6-1.jpg");
-    GetImageSize(ho_Image, &hv_Width, &hv_Height);  
-    SetWindowAttr("background_color", "black");
-
-
-    HWND hwnd1;
-    CRect rect;
-    GetDlgItem(IDC_PIC)->GetWindowRect(&rect);
-    hwnd1 = GetDlgItem(IDC_PIC)->m_hWnd;
-    LONG lWWindowID = (LONG)hwnd1;
-
-    //Set the window size
-    hv_Width = rect.Width();
-    hv_Height = rect.Height();
-
-    OpenWindow(0, 0, hv_Width, hv_Height, lWWindowID, "", "", &hv_WindowHandle);
-
-    HDevWindowStack::Push(hv_WindowHandle);
-    if (HDevWindowStack::IsOpen())
-        DispObj(ho_Image, HDevWindowStack::GetActive());
-}
-
-
-void CGreySkyDlg::OnBnClickedButton2()
-{
-    // TODO:  在此添加控件通知处理程序代码
-    Rgb1ToGray(ho_Image, &ho_GrayImage1);
-    if (HDevWindowStack::IsOpen())
-        DispObj(ho_GrayImage1, HDevWindowStack::GetActive());
-}
 ```
 title
 ![](/assets/img/MV-8-3.jpg)
