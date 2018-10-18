@@ -769,10 +769,42 @@ title
 * dll
 
 **3) Problem Solving:**
-```python
-* Initialize the program
-dev_update_off ()
-dev_close_window ()
+```c++
+void CGreySkyDlg::OnBnClickedButton1()
+{
+    // TODO:  在此添加控件通知处理程序代码
+
+    //1. Acquire Image(s)
+    ReadImage(&ho_Image, "E:/M/Halcon/Image/MV-6-1.jpg");
+    GetImageSize(ho_Image, &hv_Width, &hv_Height);  
+    SetWindowAttr("background_color", "black");
+
+
+    HWND hwnd1;
+    CRect rect;
+    GetDlgItem(IDC_PIC)->GetWindowRect(&rect);
+    hwnd1 = GetDlgItem(IDC_PIC)->m_hWnd;
+    LONG lWWindowID = (LONG)hwnd1;
+
+    //Set the window size
+    hv_Width = rect.Width();
+    hv_Height = rect.Height();
+
+    OpenWindow(0, 0, hv_Width, hv_Height, lWWindowID, "", "", &hv_WindowHandle);
+
+    HDevWindowStack::Push(hv_WindowHandle);
+    if (HDevWindowStack::IsOpen())
+        DispObj(ho_Image, HDevWindowStack::GetActive());
+}
+
+
+void CGreySkyDlg::OnBnClickedButton2()
+{
+    // TODO:  在此添加控件通知处理程序代码
+    Rgb1ToGray(ho_Image, &ho_GrayImage1);
+    if (HDevWindowStack::IsOpen())
+        DispObj(ho_GrayImage1, HDevWindowStack::GetActive());
+}
 ```
 title
 ![](/assets/img/MV-8-3.jpg)
