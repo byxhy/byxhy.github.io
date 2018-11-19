@@ -94,7 +94,7 @@ const std::string GetCurrentDate()
     char       buf[20];
     localtime_s(&tstruct, &now);
 
-    strftime(buf, sizeof(buf), "%Y-%m-%d", &tstruct);
+    strftime(buf, sizeof(buf), "%Y%m%d", &tstruct);
 
     return buf;
 }
