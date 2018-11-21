@@ -15,7 +15,7 @@ Photo by markus-spiske-78531
 <br />
 
 
-### State openly
+### Statement
 
 The c++ logging library is copy from ([Sergey Podobryf's github](https://github.com/SergiusTheBest/plog)). I did some simple redevelopment on this basis.
 
@@ -58,26 +58,47 @@ bool InitLogDir(std::string dir, std::string logname)
     // 1. Create root directory
     if (!CreateDirectoryA(dir.c_str(), 0))
     {
-        if (ERROR_ALREADY_EXISTS != GetLastError())
+        if (ERROR_ALREADY_EXISTS == GetLastError())
+        {
+            // 2. Create date directory
+            std::string logdir = dir + "\\" + GetCurrentDate();
+            if (!CreateDirectoryA(logdir.c_str(), 0))
+            {
+                if (ERROR_ALREADY_EXISTS == GetLastError())
+                {
+                    //ERROR_ALREADY_EXISTS
+                }
+                else
+                {
+                    plog::init(plog::debug, "c:\\Clog.txt");
+                    LOGE << "Create date directory failed: GetLastError() = " << GetLastError();
+                    return false;
+                }
+            }
+        }
+        else
         {
             plog::init(plog::debug, "c:\\Clog.txt");
             LOGE << "Create root directory failed: GetLastError() = " << GetLastError();
+            return false;
         }
-
-        return false;
     }
 
     // 2. Create date directory
     std::string logdir = dir + "\\" + GetCurrentDate();
     if (!CreateDirectoryA(logdir.c_str(), 0))
     {
-        if (ERROR_ALREADY_EXISTS != GetLastError())
+        if (ERROR_ALREADY_EXISTS == GetLastError())
+        {
+            //ERROR_ALREADY_EXISTS
+        }
+        else
         {
             plog::init(plog::debug, "c:\\Clog.txt");
             LOGE << "Create date directory failed: GetLastError() = " << GetLastError();
+            return false;
         }
 
-        return false;
     }
 
     // 3. Init the plog
@@ -127,4 +148,11 @@ int testclog()
 }
 ```
 
+log.txt
+```c++
+2018-11-21 13:15:38.204 DEBUG [6064] [testclog@16] Hello Plog
+2018-11-21 13:15:38.205 ERROR [6064] [testclog@17] Hello Plog
+2018-11-21 13:15:38.205 WARN  [6064] [testclog@18] Hello Clog
+2018-11-21 13:15:38.205 INFO  [6064] [testclog@19] Hello Clog
+```
 <br />
