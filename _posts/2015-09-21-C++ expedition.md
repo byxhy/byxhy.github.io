@@ -31,6 +31,27 @@ Photo by joshua-earle
 [七、C++远征之模板篇](#7)
 
 <br />
+
+* [C++远征之起航篇](#1)
+    * C++语言新特性
+        * C++输入输出流
+        * C++新特性以及输入输出
+        * namespace-命名空间的学习
+    * 綜合
+        * 练习：求最大值
+* [C++远征之离港篇](#2)
+    * C++语言新特性
+        * C++输入输出流
+        * C++新特性以及输入输出
+        * namespace-命名空间的学习
+        * List item four
+* List item two
+* List item three
+* List item four
+* List item three
+* List item four
+
+<br />
 <br />
 
 <h3 id="1"> 一、C++远征之起航篇 ☂</h3>
@@ -56,7 +77,70 @@ using namespace std;
 
 int main(int argc, const char * argv[])
 {
-    cout << "Hello tomorrow !" << endl;
+	cout << "Hello tomorrow !" << endl;
+
+	system("pause");
+
+	return 0;
+}
+```
+
+2] C++新特性以及输入输出
+
+```c++
+/*
+********************************************************************************
+*      Copyright (C), 2015-2115, Xhy Tech. Stu.
+*      FileName   : CinCout.cpp
+*      Author     : X h y
+*      Version    : 2.0   
+*      Date       : 11-03-2016
+*      Description:     
+********************************************************************************
+*/
+
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+int main(int argc, const char * argv[])
+{
+    int x = 0;
+
+    cout << "Please input a integer number: ";
+    cin >> x;  //VS: getline(cin, x);
+
+    cout << oct << x << endl;
+    cout << dec << x << endl;
+    cout << hex << x << endl;
+
+    bool y = 0;
+    cout << "Please input a bool value: ";
+    cout << boolalpha << y << endl;
+
+    //PA: C++11的safe-bool标准: 只有在上下文需要判断bool条件的时候才会自动转换为bool类型
+    //    这里没有需要判断的情况，所以输入除1外的其他值，经过cin处理直接就变成false了
+    //    所以，不要输入bool值了
+    //    想想cin如果在一个循环里会怎样(提示: clear)
+
+
+    //Err: Infinite Loop
+    //while (true)
+    //{
+    //    cin >> y;
+    //    cout << boolalpha << y << endl;
+    //}
+
+
+    //True:
+    //while (true)
+    //{
+    //    cin.clear();
+    //    cin >> y;
+    //    cout << boolalpha << y << endl;
+    //}
+
 
     system("pause");
 
@@ -64,177 +148,113 @@ int main(int argc, const char * argv[])
 }
 ```
 
-2] C++新特性以及输入输出
-
-
-    /*
-     ********************************************************************************
-     *      Copyright (C), 2015-2115, Xhy Tech. Stu.
-     *      FileName   : CinCout.cpp
-     *      Author     : X h y
-     *      Version    : 2.0   
-     *      Date       : 11-03-2016
-     *      Description:     
-     ********************************************************************************
-     */
-
-    #include <iostream>
-    #include <stdlib.h>
-
-    using namespace std;
-
-    int main(int argc, const char * argv[])
-    {
-        int x = 0;
-
-        cout << "Please input a integer number: ";
-        cin >> x;  //VS: getline(cin, x);
-
-        cout << oct << x << endl;
-        cout << dec << x << endl;
-        cout << hex << x << endl;
-
-        bool y = 0;
-        cout << "Please input a bool value: ";
-
-        //PA: C++11的safe-bool标准: 只有在上下文需要判断bool条件的时候才会自动转换为bool类型
-        //    这里没有需要判断的情况，所以输入除1外的其他值，经过cin处理直接就变成false了
-        //    所以，不要输入bool值了
-
-        //Err: cin >> y;  
-
-        cout << boolalpha << y << endl;
-
-        system("pause");
-
-        return 0;
-    }
-
 
 3] namespace-命名空间的学习
 
-    /*
-    ********************************************************************************
-    *      Copyright (C), 2015-2115, Xhy Tech. Stu.
-    *      FileName   : Namespace.cpp
-    *      Author     : X h y
-    *      Version    : 2.0   
-    *      Date       : 11-03-2016
-    *      Description:     
-    ********************************************************************************
-    */
+```c++
+/*
+********************************************************************************
+*      Copyright (C), 2015-2115, Xhy Tech. Stu.
+*      FileName   : Namespace.cpp
+*      Author     : X h y
+*      Version    : 2.0   
+*      Date       : 11-03-2016
+*      Description:     
+********************************************************************************
+*/
 
-    #include <iostream>
-    #include <stdlib.h>
+#include <iostream>
+#include <stdlib.h>
 
-    using namespace std;
+using namespace std;
 
-    namespace CompanyA
+namespace CompanyA
+{
+    int x = 1;
+
+    void fun()
     {
-        int x = 1;
+        cout << "CompanyA" << endl;
+    }
+}
 
-        void fun()
-        {
-          cout << "CompanyA" << endl;
-        }
+//这是一个好的习惯，对于协作来说
+namespace CompanyB
+{
+    int x = 2;
+
+    void fun()
+    {
+        cout << "CompanyB" << endl;
     }
 
-    //这是一个好的习惯，对于协作来说
-    namespace CompanyB
+    void fun2()
     {
-        int x = 2;
-
-        void fun()
-        {
-          cout << "CompanyB" << endl;
-        }
-
-        void fun2()
-        {
-          cout << "Company2B" << endl;
-        }
+        cout << "Company2B" << endl;
     }
+}
 
-    //必须先有定义好的名字空间，才能去使用，不能放在实现之前
-    using namespace CompanyB;
+//必须先有定义好的名字空间，才能去使用，不能放在实现之前
+using namespace CompanyB;
 
-    int main(int argc, const char * argv[])
-    {
-        cout << CompanyA::x << endl;
-        CompanyA::fun();
+int main(int argc, const char * argv[])
+{
+    cout << CompanyA::x << endl;
+    CompanyA::fun();
 
-        //推荐这种写法
-        cout << CompanyB::x << endl;
-        CompanyB::fun();
+    //推荐这种写法
+    cout << CompanyB::x << endl;
+    CompanyB::fun();
 
-        //VS: 使用了名字空间 CompanyB
-        cout << x << endl;
-        fun();
-        fun2();
+    //VS: 使用了名字空间 CompanyB
+    cout << x << endl;
+    fun();
+    fun2();
 
-        system("pause");
+    system("pause");
 
-        return 0;
-    }　
+    return 0;
+}
+```
 
 4] 练习：求最大值
 
-    /*
-     ********************************************************************************
-     *      Copyright (C), 2015-2115, Xhy Tech. Stu.
-     *      FileName   : GetMaxOrMin.cpp
-     *      Author     : X h y
-     *      Version    : 2.0   
-     *      Date       : 11-05-2016
-     *      Description:     
-     ********************************************************************************
-     */
+```c++
+/*
+********************************************************************************
+*      Copyright (C), 2015-2115, Xhy Tech. Stu.
+*      FileName   : GetMaxOrMin.cpp
+*      Author     : X h y
+*      Version    : 2.0   
+*      Date       : 11-05-2016
+*      Description:     
+********************************************************************************
+*/
 
-    #include <iostream>
-    #include <stdlib.h>
+#include <iostream>
+#include <stdlib.h>
 
-    using namespace std;
+using namespace std;
 
-    namespace CompanyA
-    {
-        int getMaxOrMin(int *arr, int count, bool isMax = true);
-    }
+int main(int argc, const char * argv[])
+{
+    cout << CompanyA::x << endl;
+    CompanyA::fun();
 
-    int main(int argc, const char * argv[])
-    {
-        int arr[7] = { 3, 4, 1, 8, 9, 1, 2 };
+    //推荐这种写法
+    cout << CompanyB::x << endl;
+    CompanyB::fun();
 
-        cout << "Max is " << CompanyA::getMaxOrMin(arr, 7) << endl;
-        cout << "Min is " << CompanyA::getMaxOrMin(arr, 7, false) << endl;
+    //VS: 使用了名字空间 CompanyB
+    cout << x << endl;
+    fun();
+    fun2();
 
-        system("pause");
+    system("pause");
 
-        return 0;
-    }
-
-    int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
-    {
-        //PA: 一定要赋第一个值给ret
-        int ret = *arr;
-
-        if (isMax)
-        {
-          //从第一个起
-          for (int i = 1; i < count; i++)
-          {
-            ret = (ret >= arr[i]) ? ret : arr[i];
-          }
-        }
-        else
-        {
-          for (int i = 1; i < count; i++)
-          {
-            ret = (ret <= arr[i]) ? ret : arr[i];
-          }
-        }
-
-        return ret;
-    }
+    return 0;
+}
+```
 
 <h3 id="2"> 二、C++远征之离港篇 ☂</h3>
 1] C++特性之引用
