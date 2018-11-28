@@ -387,3 +387,143 @@ int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
      return 0;
  }
 ```
+
+2] C++特性之const
+
+```c++
+/*
+ ********************************************************************************
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : Const.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 11-06-2016
+ *      Description:     
+ ********************************************************************************
+ */
+
+ #include <iostream>
+ #include <stdlib.h>
+
+ using namespace std;
+
+ //1' 修饰基本数据类型
+ int testBasicStrCon()
+ {
+     //Vs: #define X  3
+     const int x = 6;
+     int const y = 9;
+
+     //x = 5;   //Err: const修饰之后的值不能改变
+     //y = 8;
+
+     cout << "x = " << x << endl;
+     cout << "y = " << y << endl;
+
+     return 0;
+ }
+
+ //2' const 修饰指针常量左边(左数右指法、整体法, 有没有开锁就是了)
+ int testPointConLift()
+ {
+     int x = 6;
+     int const * p = &x;  //左数，开锁就是值了,那值不能改变
+     cout << "* p = " << * p << endl;
+
+     //* p = 4;           //Err: 值不能改变
+
+     x = 4;
+     cout << "* p = " << * p << endl;
+
+     return 0;
+ }
+
+ //3' const 修饰指针常量右边
+ int testPointConRight()
+ {
+     int x = 6;
+     int y = 9;
+
+     int * const p = &x;  //右指，没开锁,那就是指针不能变
+
+     cout << "* p = " << * p << endl;
+
+     * p = 4;
+     cout << "* p = " << * p << endl;
+     cout << " x = " << x << endl;
+
+     //p = &y;           //Err: 指针不能变
+
+     return 0;
+ }
+
+
+ //4' const 修饰指针，将权限大的变量赋值给权限小的
+ int testPointLimit()
+ {
+     int x = 6;
+     int const * p = &x;    //PA: 权限大的 赋值给 权限小的
+     cout << "* p = " << * p << endl;
+
+     //PA: 反过来就不行了
+     //const int y = 4;
+     //int * q = &y;        //通过*q有可能就操作了y的值，报错
+
+     return 0;
+ }
+
+ //5' const 修饰引用
+ int testReference()
+ {
+     int x = 6;
+     int const &y = x;
+
+     cout << "y = " << y << endl;
+
+     //y = 4;        //error!!!
+     x = 4;
+     cout << "y = " << y << endl;
+
+     return 0;
+ }
+
+ void fun(const int &a, const int &b)
+ {
+     //a = 1;     //error !!!
+     //b = 2;     //error !!!
+ }
+
+ //6' const 修饰函数形参(避免改变传入的变量的值)
+ int testFuncParameter()
+ {
+     int x = 6;
+     int y = 9;
+     cout << "x = " << x << " y = " << y << endl;
+
+     fun(x, y);
+     cout << "x = " << x << " y = " << y << endl;
+
+     return 0;
+ }
+
+
+ int main(int argc, const char * argv[])
+ {
+     //testBasicStrCon();
+
+     //testPointConLift();
+
+     //testPointConRight();
+
+     //testPointLimit();
+
+     //testReference();
+
+     testFuncParameter();
+
+     system("pause");
+
+     return 0;
+ }
+ ```
+update c++ expedition to line-528
