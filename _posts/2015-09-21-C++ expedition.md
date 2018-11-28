@@ -42,8 +42,8 @@ Photo by joshua-earle
 * [C++远征之离港篇](#2)
     * C++语言新特性
         * C++特性之引用
-        * C++新特性以及输入输出
-        * namespace-命名空间的学习
+        * C++特性之const
+        * C++特性之默认参数
         * List item four
 * List item two
 * List item three
