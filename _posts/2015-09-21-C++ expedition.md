@@ -43,8 +43,10 @@ Photo by joshua-earle
     * C++语言新特性
         * C++特性之引用
         * C++特性之const
-        * C++特性之默认参数
-        * List item four
+    * C++语言新亮點
+        * C++新亮點之默认参数
+        * C++新亮點之重載函數
+        * C++新亮點之內聯函數
 * List item two
 * List item three
 * List item four
@@ -526,4 +528,143 @@ int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
      return 0;
  }
  ```
-update c++ expedition to line-528
+ 3] C++亮點之默认参数
+
+```c++
+/*
+ ********************************************************************************
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : DefaultPara.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 11-06-2016
+ *      Description:     
+ ********************************************************************************
+ */
+
+ #include <iostream>
+ #include <stdlib.h>
+
+ using namespace std;
+
+ //3' C++函数特性之默认参数    Q:要求，好处
+ void fun_default(int a = 10, int b = 20, int c = 30)
+ {
+ 	cout << "a = " << a << "," << "b = " << b << "," << "c = " << c << endl;
+ }
+ int main()
+ {
+ 	fun_default();
+ 	fun_default(100);
+ 	fun_default(100, 200);
+ 	fun_default(100, 200, 300);
+
+ 	return 0;
+ }
+```
+4] C++亮點之重載函數
+
+```c++
+/*
+********************************************************************************
+*      Copyright (C), 2015-2115, Xhy Tech. Stu.
+*      FileName   : Overload.cpp
+*      Author     : X h y
+*      Version    : 2.1   
+*      Date       : 11-06-2016
+*      Description:     
+********************************************************************************
+*/
+
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+//4' C++函数特性之重载函数    Q:要求，好处
+void funOverload(double i = 0.1, double j = 0.2)
+{
+	cout << "i = " << i << "," << "j = " << j << endl;
+}
+
+void funOverload(int a = 10, int b = 20, int c = 30)
+{
+	cout << "a = " << a << "," << "b = " << b << "," << "c = " << c << endl;
+}
+
+int main()
+{
+	//Err: 找全部参数都有默认值的函数，如果两个函数都有默认参数，则报错
+	//Err: funOverload();   
+
+	funOverload(1, 2);
+	funOverload(0.1);
+
+	funOverload(100);
+	funOverload(100, 200);
+	funOverload(100, 200, 300);
+
+	return 0;
+}
+```
+4] C++亮點之內聯函數
+
+```c++
+/*
+********************************************************************************
+*      Copyright (C), 2015-2115, Xhy Tech. Stu.
+*      FileName   : Inline.cpp
+*      Author     : X h y
+*      Version    : 2.1   
+*      Date       : 11-06-2016
+*      Description:     
+********************************************************************************
+*/
+
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+//5'  C++函数特性之内联函数    Q:要求，好处
+inline void funInline(double i = 0.1, double j = 0.2)
+{
+	cout << "i = " << i << "," << "j = " << j << endl;
+}
+
+inline void funInline(int a = 10, int b = 20, int c = 30)
+{
+	cout << "a = " << a << "," << "b = " << b << "," << "c = " << c << endl;
+}
+
+int main()
+{
+	funInline(1, 2);   //首先去找全部参数都有默认值的函数，若都有，就报错
+	funInline(100);
+	funInline(100, 200);
+	funInline(100, 200, 300);
+
+	funInline(0.1);
+
+	return 0;
+}
+```
+update c++ expedition to line-652
+
+9] 9999999999999
+
+```c++
+/*
+********************************************************************************
+*      Copyright (C), 2015-2115, Xhy Tech. Stu.
+*      FileName   : DefaultPara.cpp
+*      Author     : X h y
+*      Version    : 2.1   
+*      Date       : 11-06-2016
+*      Description:     
+********************************************************************************
+*/
+
+
+
+```
