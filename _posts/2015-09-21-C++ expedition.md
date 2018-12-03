@@ -919,7 +919,222 @@ int main(int argc, const char * argv[])
 }
 
 ```
+3] 初始字符串类型
 
+```c++
+/*
+********************************************************************************
+*      Copyright (C), 2015-2115, Xhy Tech. Stu.
+*      FileName   : InitString.cpp
+*      Author     : X h y
+*      Version    : 2.1   
+*      Date       : 12-28-2016
+*      Description:     
+********************************************************************************
+*/
+
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+#include <afx.h>
+
+using namespace std;
+
+void testString();
+void testCharPoint();
+void testStringMore();
+void pCharToString();
+void printCString(CString &csInput);
+void testCString();
+
+int main(int argc, const char * argv[])
+{
+    //testString();
+    //testCharPoint();
+    //testStringMore();
+    //pCharToString();
+    //CString csInfo = "printCString";
+    //printCString(csInfo);
+    testCString();
+
+    system("pause");
+
+    return 0;
+}
+
+//1、热身
+void testString()
+{
+    string name;
+
+    cout << "Please input your name: ";
+    getline(cin, name);        //VS: cin >> name;
+
+    if (name.empty())          //Err: if (NULL == name)
+    {
+        cout << "The input is null ..." << endl;
+        return;
+    }
+
+    cout << "Hello " << name << " !" << endl;
+
+    if ("imooc" == name)       //Err: if (imooc == name)
+    {
+        cout << "You are Administrator !" << endl;
+    }
+
+    cout << "Your name's length is " << name.size() << "." << endl;
+
+    cout << "Your name's first letter is " << name[0] << "." << endl;  //PA
+}
+
+//2、char* 的使用：可以指向一个字符，也可以表示字符数组的首地址功能
+void testCharPoint()
+{
+    //PA: ""里面包含了'\0'
+    char ch1[17] = "study char point";
+
+    cout << "    ch1:" << ch1 << endl;
+    cout << " ch1[0]:" << ch1[0] << endl;
+    cout << "ch1[14]:" << ch1[14] << endl;
+    cout << "ch1[15]:" << ch1[15] << endl;
+    cout << "ch1[16]:" << ch1[16] << endl;  //Q?
+    cout << "strlen(ch1) = " << strlen(ch1) << endl << endl;
+
+    //Err: char * ch2 = "test char point";
+    const char * ch2 = "study char point";
+    cout << "    ch2:" << ch2 << endl;
+    cout << "   * ch2:" << * ch2 << endl;
+
+    char * ch3 = ch1;
+    cout << "    ch3:" << ch3 << endl;
+    cout << "   * ch3:" << * ch3 << endl << endl;
+
+    //Err: char * ch4 = ch1[3];
+    char * ch4 = &ch1[3];
+    cout << "&ch1[3]:" << ch4 << endl << endl;
+
+    char ch5 = 'c';
+    cout << "    ch5:" << ch5 << endl << endl;
+
+    //Err: char * ch6 = ch5;
+    char * ch6 = &ch5;
+    cout << "    ch6:" << ch6 << endl;  // Pointer address
+    cout << "   * ch6:" << * ch6 << endl;
+}
+
+//3、string 的使用: <string>
+void testStringMore()
+{
+    string s1 = "This";
+    //EQ: string s2 = string(" is");
+    string s2 = " is";
+    string s3 = string(" a").append("program.");
+    //Q: 什么时候不能直接相加，连接？s4 = "hello" + "world";
+    //Q: 加上string呢？ s4 = string("hello") + string("world");
+    string s4 = s1 + s2 + s3;
+
+    cout << "s4:" << s4 << endl;
+    cout << "s4.size():" << s4.size() << endl;
+
+    //Err: string s5 = s4.insert(s4.end()-9, ' '); insert返回的不是字符串
+    s4.insert(s4.end() - 8, 1, ' ');
+    //EQ: s4.insert(s4.end()-8, ' '); 其中 1 代表个数，1个可以不写
+
+    cout << "s4:" << s4 << endl;
+    cout << "s4.size():" << s4.size() << endl;
+}
+
+//4、char*  <---->  string 借助c_str();
+void pCharToString()
+{
+    //Err: char * ch1 = "pCharToString";
+    const char * ch1 = "pCharToString";
+    string s1 = string(ch1);
+
+    cout << "ch1: " << ch1 << endl;
+    cout << " s1: " << s1 << endl << endl;
+
+
+    cout << "* ch1+1  : " << * ch1 + 1 << endl;
+    cout << "* (ch1+1): " << * (ch1 + 1) << endl << endl;
+
+
+    cout << "* ch1    : " << * ch1 << endl;
+    cout << "* (ch1+1): " << * (ch1 + 1) << endl;
+    cout << "* (ch1+2): " << * (ch1 + 2) << endl;
+    cout << "* (ch1+3): " << * (ch1 + 3) << endl << endl;
+
+
+    cout << " s1[0]: " << s1[0] << endl;
+    cout << " s1[1]: " << s1[1] << endl;
+    cout << " s1[2]: " << s1[2] << endl;
+    cout << " s1[3]: " << s1[3] << endl;
+    cout << " s1[s1.size() - 1]: " << s1[s1.size() - 1] << endl << endl;
+
+
+    string s2 = "StringToPChar";
+    const char * ch2 = s2.c_str();
+    cout << "ch2: " << ch2 << endl << endl;
+
+    //PA: c_str()返回的是一个const char* 以空字符结束指针，并且是临时的，会被改变
+    //如果s2改变了，const char*的值也随之改变
+    s2 = "unSafe!!!";
+    cout << "ch2: " << ch2 << endl;
+
+
+    //要么随用随转换可以把c_str()的值保存起来
+    //int len1 = s2.size() + 1; //Err
+    int len1 = s2.size() + 1;
+    int len2 = strlen(s2.c_str()) + 1;
+
+    cout << "len1 = " << len1 << " len2 = " << len2 << endl;
+
+    char * ch3 = new char[len1];
+    strcpy_s(ch3, len1, s2.c_str());
+    cout << "ch3: " << ch3 << endl;
+
+    delete[] ch3;
+    ch3 = NULL;
+}
+
+//5、CString 的使用: CString 常用于 MFC 编程中，是属于 MFC 的类需要 <afx.h>
+void printCString(CString &csInput)
+{
+    int n = csInput.GetLength(); //类比string
+    //cout << "cstr.GetLength() = " << cstr.GetLength() << endl;
+
+    for (int i = 0; i<n; i++)
+    {
+        printf("%c", csInput[i]); //直接转换成数组了
+    }
+
+    printf("\n");
+
+    cout << "csInput: " << csInput << endl;
+}
+
+//6、CString 的基本使用
+void testCString()
+{
+    char * ch = "Hello";
+    string s = "World";
+    //Q: s.c_str()
+    CString cstr1(ch), cstr2(s.c_str()), cstr3("Program");
+
+    printCString(cstr1);
+    printCString(cstr2);
+    printCString(cstr3);
+
+    CString cstr4, cstr5;
+    cstr4 = cstr1 + cstr2 + cstr3;
+    cstr5 = cstr1 + " " + cstr2 + " " + cstr3;
+
+    printCString(cstr4);
+    printCString(cstr5);
+}
+
+```
 ---
 9] 9999999999999
 
@@ -938,4 +1153,4 @@ int main(int argc, const char * argv[])
 
 
 ```
-update c++ expedition to line-923
+update c++ expedition to line-1135
