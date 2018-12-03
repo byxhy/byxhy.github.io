@@ -16,22 +16,6 @@ Photo by joshua-earle
 
 ## Table of Contents
 
-[一、C++远征之起航篇](#1)
-
-[二、C++远征之离港篇](#2)
-
-[三、C++远征之封装篇（上）](#3)
-
-[四、C++远征之封装篇（下）](#4)
-
-[五、C++远征之继承篇](#5)
-
-[六、C++远征之多态篇](#6)
-
-[七、C++远征之模板篇](#7)
-
-<br />
-
 * [C++远征之起航篇](#1)
     * C++语言新特性
         * C++输入输出流
@@ -44,14 +28,46 @@ Photo by joshua-earle
         * C++特性之引用
         * C++特性之const
     * C++语言新亮點
+    * 內存管理
+* [C++远征之封装篇（上）](#3)
+    * C++类与对象初体验
+        * 簡介
+        * C++类与对象初体验
+    * C++對象的生離死別
         * C++新亮點之默认参数
         * C++新亮點之重載函數
         * C++新亮點之內聯函數
-* List item two
-* List item three
-* List item four
-* List item three
-* List item four
+* [C++远征之封装篇（下）](#4)
+    * C++语言新特性
+        * C++特性之引用
+        * C++特性之const
+    * C++语言新亮點
+        * C++新亮點之默认参数
+        * C++新亮點之重載函數
+        * C++新亮點之內聯函數
+* [C++远征之继承篇](#5)
+    * C++语言新特性
+        * C++输入输出流
+        * C++新特性以及输入输出
+        * namespace-命名空间的学习
+    * 綜合
+        * 练习：求最大值
+* [C++远征之多态篇](#6)
+    * C++语言新特性
+        * C++特性之引用
+        * C++特性之const
+    * C++语言新亮點
+        * C++新亮點之默认参数
+        * C++新亮點之重載函數
+        * C++新亮點之內聯函數
+* [C++远征之模板篇](#7)
+    * C++语言新特性
+        * C++特性之引用
+        * C++特性之const
+    * C++语言新亮點
+        * C++新亮點之默认参数
+        * C++新亮點之重載函數
+        * C++新亮點之內聯函數
 
 <br />
 <br />
@@ -607,7 +623,7 @@ int main()
 	return 0;
 }
 ```
-4] C++亮點之內聯函數
+5] C++亮點之內聯函數
 
 ```c++
 /*
@@ -649,8 +665,262 @@ int main()
 	return 0;
 }
 ```
-update c++ expedition to line-652
 
+6] 內存管理
+
+```c++
+/*
+********************************************************************************
+*      Copyright (C), 2015-2115, Xhy Tech. Stu.
+*      FileName   : MemoryManagement.cpp
+*      Author     : X h y
+*      Version    : 2.1   
+*      Date       : 11-06-2016
+*      Description:     
+********************************************************************************
+*/
+
+#include <iostream>
+#include <string.h>
+#include <stdlib.h>
+
+using namespace std;
+
+//1' C++申请内存，四部曲，对比malloc
+int testMemory()
+{
+	int * p = new int;
+	//1、判断申请是否成功
+	if (NULL == p)
+	{
+		cout << "new fail" << endl;
+		return 0;
+	}
+
+	//2、使用
+	* p = 10;
+
+	cout << "* p = " << * p << endl;
+
+	//3、释放
+	delete p;
+
+
+	//4、置空
+	p = NULL;
+
+	return 0;
+}
+
+//2' C++申请内存块，四部曲
+int testMemoryBlock()
+{
+	char * str1 = new char[50];
+
+	//1、判断申请是否成功
+	if (NULL == str1)
+	{
+		cout << "new fail" << endl;
+		return 0;
+	}
+
+	//2、使用
+	//char * str2 = "Cannot stoping ...";  //Err: ??????(程序静态区)
+	const char * str2;
+	str2 = "Cannot stoping ...";
+
+	//Err: int len2 = sizeof(str2);  // sizeof得到的是指针地址大小
+	int len = strlen(str2) + 1;  // 要加上结束符
+
+	strcpy_s(str1, len, str2);
+
+	cout << str1 << endl;
+
+	//3、释放
+	delete[] str1;
+
+	//4、置空
+	str1 = NULL;
+
+	return 0;
+}
+
+//3' VS malloc，四部曲
+int testVsMalloc()
+{
+	//VS: char *str1 = new char[50];
+	int n = 50;
+	char * str1 = (char*)malloc(n * sizeof(char));
+
+	//1、判断申请是否成功
+	if (NULL == str1)
+	{
+		cout << "malloc fail" << endl;
+		return 0;
+	}
+
+	//2、使用
+	const char * str2;
+	str2 = "Cannot stoping ...";
+
+	//Err: int len2 = sizeof(str2);  // sizeof得到的是指针地址大小
+	int len = strlen(str2) + 1;  // 要加上结束符
+
+	strcpy_s(str1, len, str2);
+
+	cout << str1 << endl;
+
+	//3、释放
+	//Vs: delete[] str1;
+	free(str1);
+
+	//4、置空
+	str1 = NULL;
+
+	return 0;
+}
+
+int main(int argc, const char * argv[])
+{
+	//testMemory();
+
+	//testMemoryBlock();
+
+	testVsMalloc();
+
+	system("pause");
+
+	return 0;
+}
+```
+
+<h3 id="3"> 三、C++远征之封裝篇（上） ☂</h3>
+
+1] 简介
+
+2] C++类与对象初体验
+
+```c++
+/*
+********************************************************************************
+*      Copyright (C), 2015-2115, Xhy Tech. Stu.
+*      FileName   : ClassAndObject.cpp
+*      Author     : X h y
+*      Version    : 2.1   
+*      Date       : 12-26-2016
+*      Description:     
+********************************************************************************
+*/
+
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+class Coordinate
+{
+public:
+	void prinftX()
+	{
+		cout << "x = " << x << endl;
+	}
+	void prinftY()
+	{
+		cout << "y = " << y << endl;
+	}
+
+    void operation()
+    {
+        x += 10;
+        y -= 1;
+    }
+
+public:
+	int x;
+	int y;
+};
+
+int main(int argc, const char * argv[])
+{
+	//1、从栈中实例化类
+	Coordinate coor;
+
+	coor.x = 10;
+	coor.y = 20;
+
+	coor.prinftX();
+	coor.prinftY();
+
+	cout << endl;
+
+
+	//2、从堆中实例化类
+	Coordinate * p = new Coordinate();
+	if (NULL == p)
+	{
+		printf("new failed !\n");
+		return 0;
+	}
+
+	p->x = 100;
+	p->y = 200;
+
+	p->prinftX();
+	p->prinftY();
+
+	delete p;
+	p = NULL;
+
+	cout << endl;
+
+
+	//3、从堆中实例化多个类
+	Coordinate * q = new Coordinate[5];
+	if (NULL == q)
+	{
+		printf("new failed !\n");
+		return 0;
+	}
+
+	for (int i = 0; i < 5; i++)
+	{
+		q[i].x = i * 100;
+		q[i].y = (i + 1) * 100;
+	}
+
+    cout << "Before:" << endl;
+
+	for (int i = 0; i < 5; i++)
+	{
+		q[i].prinftX();
+		q[i].prinftY();
+
+		cout << endl;
+	}
+
+    cout << "After:" << endl;
+    q[1].operation();
+    q[4].operation();
+
+    for (int i = 0; i < 5; i++)
+    {
+        q[i].prinftX();
+        q[i].prinftY();
+
+        cout << endl;
+    }
+
+	delete[] q;
+	q = NULL;
+
+	system("pause");
+
+	return 0;
+}
+
+```
+
+---
 9] 9999999999999
 
 ```c++
@@ -660,7 +930,7 @@ update c++ expedition to line-652
 *      FileName   : DefaultPara.cpp
 *      Author     : X h y
 *      Version    : 2.1   
-*      Date       : 11-06-2016
+*      Date       : 12-26-2016
 *      Description:     
 ********************************************************************************
 */
@@ -668,3 +938,4 @@ update c++ expedition to line-652
 
 
 ```
+update c++ expedition to line-923
