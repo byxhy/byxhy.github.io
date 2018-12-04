@@ -34,8 +34,8 @@ Photo by joshua-earle
 		* 簡介
 		* C++类与对象初体验
 	* C++對象的生離死別
-		* C++新亮點之默认参数
-		* C++新亮點之重載函數
+		* C++初始字符串类型
+		* C++属性封装代码演示
 		* C++新亮點之內聯函數
 * [C++远征之封装篇（下）](#4)
 	* C++语言新特性
@@ -918,7 +918,7 @@ int main(int argc, const char * argv[])
 	return 0;
 }
 ```
-3] 初始字符串类型
+3] C++初始字符串类型
 
 ```c++
 /*
@@ -1133,8 +1133,96 @@ void testCString()
 	printCString(cstr5);
 }
 ```
+4]  C++属性封装代码演示
+☭ 类内定义的函数优先编译为内联函数
+
+```c++
+/*
+********************************************************************************
+*	  Copyright (C), 2015-2115, Xhy Tech. Stu.
+*	  FileName   : Encapsulation.cpp
+*	  Author	 : X h y
+*	  Version	: 2.1   
+*	  Date	   : 01-12-2017
+*	  Description:	 
+********************************************************************************
+*/
+
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+
+using namespace std;
+
+class Student
+{
+public:
+	//注意命名格式
+	void setName(string name)
+	{
+		m_strName = name;
+	}
+
+	string getName()
+	{
+		return m_strName;
+	}
+
+	void setGender(string gender)
+	{
+		m_strGender = gender;
+	}
+
+	string getGender()
+	{
+		return m_strGender;
+	}
+
+	void initScore()
+	{
+		m_iScore = 0;
+	}
+
+	int getScore()
+	{
+		return m_iScore;
+	}
+
+	void study(int score)
+	{
+		m_iScore += score;
+	}
+
+private:
+	string   m_strName;
+	string   m_strGender;
+	int	  m_iScore;
+};
+
+int main(int argc, char const *argv[])
+{
+	//PA: 但凡new，就把内存释放，指针置空这两步先做了
+	Student * stu = new Student;
+
+	//If: 如果不初始化呢？ 以后的构造函数就能解决这个问题
+	stu->initScore();
+	stu->setName("Lisa"); //PA: string类型的双引号一定要带上
+	stu->setGender("girl");
+	stu->study(2);
+	stu->study(8);
+
+	cout << stu->getName() << " " << stu->getGender() << " " << stu->getScore() << endl;
+
+	delete stu;
+	stu = NULL;
+
+	system("pause");
+
+	return 0;
+}
+```
 ---
-9] 9999999999999
+5] 9999999999999
 
 ```c++
 /*
@@ -1149,6 +1237,5 @@ void testCString()
 */
 
 
-
 ```
-update c++ expedition to line-1135
+update c++ expedition to line-1223
