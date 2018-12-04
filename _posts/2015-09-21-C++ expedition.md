@@ -549,12 +549,12 @@ int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
 ```c++
 /*
  ********************************************************************************
- *	  Copyright (C), 2015-2115, Xhy Tech. Stu.
- *	  FileName   : DefaultPara.cpp
- *	  Author	 : X h y
- *	  Version	: 2.1   
- *	  Date	   : 11-06-2016
- *	  Description:	 
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : DefaultPara.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 11-06-2016
+ *      Description:     
  ********************************************************************************
  */
 
@@ -582,15 +582,15 @@ int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
 
 ```c++
 /*
-********************************************************************************
-*	  Copyright (C), 2015-2115, Xhy Tech. Stu.
-*	  FileName   : Overload.cpp
-*	  Author	 : X h y
-*	  Version	: 2.1   
-*	  Date	   : 11-06-2016
-*	  Description:	 
-********************************************************************************
-*/
+ ********************************************************************************
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : Overload.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 11-06-2016
+ *      Description:     
+ ********************************************************************************
+ */
 
 #include <iostream>
 #include <stdlib.h>
@@ -627,15 +627,15 @@ int main()
 
 ```c++
 /*
-********************************************************************************
-*	  Copyright (C), 2015-2115, Xhy Tech. Stu.
-*	  FileName   : Inline.cpp
-*	  Author	 : X h y
-*	  Version	: 2.1   
-*	  Date	   : 11-06-2016
-*	  Description:	 
-********************************************************************************
-*/
+ ********************************************************************************
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : Inline.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 11-06-2016
+ *      Description:     
+ ********************************************************************************
+ */
 
 #include <iostream>
 #include <stdlib.h>
@@ -670,15 +670,15 @@ int main()
 
 ```c++
 /*
-********************************************************************************
-*	  Copyright (C), 2015-2115, Xhy Tech. Stu.
-*	  FileName   : MemoryManagement.cpp
-*	  Author	 : X h y
-*	  Version	: 2.1   
-*	  Date	   : 11-06-2016
-*	  Description:	 
-********************************************************************************
-*/
+ ********************************************************************************
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : MemoryManagement.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 11-06-2016
+ *      Description:     
+ ********************************************************************************
+ */
 
 #include <iostream>
 #include <string.h>
@@ -802,15 +802,15 @@ int main(int argc, const char * argv[])
 
 ```c++
 /*
-********************************************************************************
-*	  Copyright (C), 2015-2115, Xhy Tech. Stu.
-*	  FileName   : ClassAndObject.cpp
-*	  Author	 : X h y
-*	  Version	: 2.1   
-*	  Date	   : 12-26-2016
-*	  Description:	 
-********************************************************************************
-*/
+ ********************************************************************************
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : ClassAndObject.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 12-26-2016
+ *      Description:     
+ ********************************************************************************
+ */
 
 #include <iostream>
 #include <stdlib.h>
@@ -922,15 +922,15 @@ int main(int argc, const char * argv[])
 
 ```c++
 /*
-********************************************************************************
-*	  Copyright (C), 2015-2115, Xhy Tech. Stu.
-*	  FileName   : InitString.cpp
-*	  Author	 : X h y
-*	  Version	: 2.1   
-*	  Date	   : 12-28-2016
-*	  Description:	 
-********************************************************************************
-*/
+ ********************************************************************************
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : InitString.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 12-28-2016
+ *      Description:     
+ ********************************************************************************
+ */
 
 #include <iostream>
 #include <string>
@@ -1138,15 +1138,15 @@ void testCString()
 
 ```c++
 /*
-********************************************************************************
-*	  Copyright (C), 2015-2115, Xhy Tech. Stu.
-*	  FileName   : Encapsulation.cpp
-*	  Author	 : X h y
-*	  Version	: 2.1   
-*	  Date	   : 01-12-2017
-*	  Description:	 
-********************************************************************************
-*/
+ ********************************************************************************
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : Encapsulation.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 01-12-2017
+ *      Description:     
+ ********************************************************************************
+ */
 
 #include <iostream>
 #include <string>
@@ -1226,16 +1226,15 @@ int main(int argc, char const *argv[])
 
 ```c++
 /*
-********************************************************************************
-*	  Copyright (C), 2015-2115, Xhy Tech. Stu.
-*	  FileName   : DefaultPara.cpp
-*	  Author	 : X h y
-*	  Version	: 2.1   
-*	  Date	   : 12-26-2016
-*	  Description:	 
-********************************************************************************
-*/
-
+ ********************************************************************************
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : Encapsulation.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 01-12-2017
+ *      Description:     
+ ********************************************************************************
+ */
 
 ```
 update c++ expedition to line-1223
