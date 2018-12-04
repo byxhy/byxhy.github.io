@@ -79,12 +79,12 @@ Photo by joshua-earle
 ```c++
 /*
  ********************************************************************************
- *	  Copyright (C), 2015-2115, Xhy Tech. Stu.
- *	  FileName   : Hello.cpp
- *	  Author	 : X h y
- *	  Version	: 2.1   
- *	  Date	   : 11-02-2016
- *	  Description:	 
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : Hello.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 11-02-2016
+ *      Description:     
  ********************************************************************************
  */
 
@@ -108,12 +108,12 @@ int main(int argc, const char * argv[])
 ```c++
 /*
  ********************************************************************************
- *	  Copyright (C), 2015-2115, Xhy Tech. Stu.
- *	  FileName   : CinCout.cpp
- *	  Author	 : X h y
- *	  Version	: 2.1   
- *	  Date	   : 11-03-2016
- *	  Description:	 
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : CinCout.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 11-03-2016
+ *      Description:     
  ********************************************************************************
  */
 
@@ -172,12 +172,12 @@ int main(int argc, const char * argv[])
 ```c++
 /*
  ********************************************************************************
- *	  Copyright (C), 2015-2115, Xhy Tech. Stu.
- *	  FileName   : Namespace.cpp
- *	  Author	 : X h y
- *	  Version	: 2.1   
- *	  Date	   : 11-03-2016
- *	  Description:	 
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : Namespace.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 11-03-2016
+ *      Description:     
  ********************************************************************************
  */
 
@@ -239,12 +239,12 @@ int main(int argc, const char * argv[])
 ```c++
 /*
  ********************************************************************************
- *	  Copyright (C), 2015-2115, Xhy Tech. Stu.
- *	  FileName   : GetMaxOrMin.cpp
- *	  Author	 : X h y
- *	  Version	: 2.1   
- *	  Date	   : 11-05-2016
- *	  Description:	 
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : GetMaxOrMin.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 11-05-2016
+ *      Description:     
  ********************************************************************************
  */
 
@@ -301,12 +301,12 @@ int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
 ```c++
 /*
  ********************************************************************************
- *	  Copyright (C), 2015-2115, Xhy Tech. Stu.
- *	  FileName   : Reference.cpp
- *	  Author	 : X h y
- *	  Version	: 2.1   
- *	  Date	   : 11-05-2016
- *	  Description:	 
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : Reference.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 11-05-2016
+ *      Description:     
  ********************************************************************************
  */
 
@@ -411,12 +411,12 @@ int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
 ```c++
 /*
  ********************************************************************************
- *	  Copyright (C), 2015-2115, Xhy Tech. Stu.
- *	  FileName   : Const.cpp
- *	  Author	 : X h y
- *	  Version	: 2.1   
- *	  Date	   : 11-06-2016
- *	  Description:	 
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : Const.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 11-06-2016
+ *      Description:     
  ********************************************************************************
  */
 
