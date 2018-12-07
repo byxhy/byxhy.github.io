@@ -33,10 +33,12 @@ Photo by joshua-earle
 	* C++类与对象初体验
 		* 簡介
 		* C++类与对象初体验
-	* C++對象的生離死別
+	* C++對象的封裝
 		* C++初始字符串类型
 		* C++属性封装代码演示
 		* C++精彩的类外定义
+	* C++對象的生離死別
+	  * 构造函数演示
 * [C++远征之封装篇（下）](#4)
 	* C++语言新特性
 		* C++特性之引用
@@ -1323,7 +1325,45 @@ void Teacher::teach()
 #endif
 ```
 ---
-7] 9999999999999
+7] 构造函数演示
+
+```c++
+/*
+ **************************************************************************    	 
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : Constructor.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 01-14-2017
+ *      Description:     
+ **************************************************************************    	 
+ */
+
+ #include <stdlib.h>
+ #include "Teacher.h"
+
+ using namespace std;
+
+ int main(int argc, char const *argv[])
+ {
+     //PA: 但凡new，就把内存释放，指针置空这两步先做了
+     Teacher * t1 = new Teacher();
+
+     t1->setName("Confucius"); //PA: string类型的双引号一定要带上
+     t1->setGender("Man");
+
+     cout << t1->getName() << " " << t1->getGender() << " ";
+     t1->teach();
+
+     delete t1;
+     t1 = NULL;
+
+     system("pause");
+
+     return 0;
+ }
+```
+8] 构造函数演示
 
 ```c++
 /*
@@ -1337,29 +1377,5 @@ void Teacher::teach()
  **************************************************************************    	 
  */
 
- #include <stdlib.h>
- #include "Teacher.h"
-
- using namespace std;
-
- int main(int argc, char const *argv[])
- {
-    //PA: 但凡new，就把内存释放，指针置空这两步先做了
-    Teacher * t = new Teacher;
-
-    t->setName("Confucius"); //PA: string类型的双引号一定要带上
-    t->setGender("Man");
-
-    cout << t->getName() << " " << t->getGender() << " ";
-
-    t->teach();
-
-    delete t;
-    t = NULL;
-
-    system("pause");
-
-    return 0;
- }
 ```
 update c++ expedition to line-1323
