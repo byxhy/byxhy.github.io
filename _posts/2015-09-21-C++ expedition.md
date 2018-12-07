@@ -1276,5 +1276,29 @@ int main(int argc, char const *argv[])
  ********************************************************************************
  */
 
+ #include <stdlib.h>
+ #include "Teacher.h"
+
+ using namespace std;
+
+ int main(int argc, char const *argv[])
+ {
+	 //PA: 但凡new，就把内存释放，指针置空这两步先做了
+	 Teacher * t = new Teacher;
+
+	 t->setName("Confucius"); //PA: string类型的双引号一定要带上
+	 t->setGender("Man");
+
+	 cout << t->getName() << " " << t->getGender() << " ";
+
+	 t->teach();
+
+	 delete t;
+	 t = NULL;
+
+	 system("pause");
+
+	 return 0;
+ }
 ```
 update c++ expedition to line-1263
