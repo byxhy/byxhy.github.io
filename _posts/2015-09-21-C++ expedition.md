@@ -1261,6 +1261,67 @@ int main(int argc, char const *argv[])
 	return 0;
  }
 ```
+Teacher.h
+```c++
+#ifndef _TEACHER_H_
+#define _TEACHER_H_
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Teacher
+{
+public:
+	 Teacher()
+	 {
+	     cout << "Teacher" << endl;
+	 }
+	 ~Teacher()
+	 {
+	     cout << "~Teacher" << endl;
+	 }
+
+	 //注意命名格式
+	 void setName(string name);
+	 string getName();
+
+	 void setGender(string gender);
+	 string getGender();
+
+	 void teach();
+
+private:
+	 string m_strName;
+	 string m_strGender;
+};
+
+void Teacher::setName(string name)
+{
+	 m_strName = name;
+}
+string Teacher::getName()
+{
+	 return m_strName;
+}
+
+void Teacher::setGender(string gender)
+{
+	 m_strGender = gender;
+}
+string Teacher::getGender()
+{
+	 return m_strGender;
+}
+
+void Teacher::teach()
+{
+	 cout << "is teaching now ~" << endl;
+}
+
+#endif
+```
 ---
 7] 9999999999999
 
