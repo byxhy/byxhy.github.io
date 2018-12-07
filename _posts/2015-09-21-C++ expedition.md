@@ -95,11 +95,11 @@ using namespace std;
 
 int main(int argc, const char * argv[])
 {
-	cout << "Hello tomorrow !" << endl;
+    cout << "Hello tomorrow !" << endl;
 
-	system("pause");
+    system("pause");
 
-	return 0;
+    return 0;
 }
 ```
 
@@ -124,45 +124,45 @@ using namespace std;
 
 int main(int argc, const char * argv[])
 {
-	int x = 0;
+    int x = 0;
 
-	cout << "Please input a integer number: ";
-	cin >> x;  //VS: getline(cin, x);
+    cout << "Please input a integer number: ";
+    cin >> x;  //VS: getline(cin, x);
 
-	cout << oct << x << endl;
-	cout << dec << x << endl;
-	cout << hex << x << endl;
+    cout << oct << x << endl;
+    cout << dec << x << endl;
+    cout << hex << x << endl;
 
-	bool y = 0;
-	cout << "Please input a bool value: ";
-	cout << boolalpha << y << endl;
+    bool y = 0;
+    cout << "Please input a bool value: ";
+    cout << boolalpha << y << endl;
 
-	//PA: C++11的safe-bool标准: 只有在上下文需要判断bool条件的时候才会自动转换为bool类型
-	//	这里没有需要判断的情况，所以输入除1外的其他值，经过cin处理直接就变成false了
-	//	所以，不要输入bool值了
-	//	想想cin如果在一个循环里会怎样(提示: clear)
-
-
-	//Err: Infinite Loop
-	//while (true)
-	//{
-	//	cin >> y;
-	//	cout << boolalpha << y << endl;
-	//}
+    //PA: C++11的safe-bool标准: 只有在上下文需要判断bool条件的时候才会自动转换为bool类型
+    //这里没有需要判断的情况，所以输入除1外的其他值，经过cin处理直接就变成false了
+    //所以，不要输入bool值了
+    //想想cin如果在一个循环里会怎样(提示: clear)
 
 
-	//True:
-	//while (true)
-	//{
-	//	cin.clear();
-	//	cin >> y;
-	//	cout << boolalpha << y << endl;
-	//}
+    //Err: Infinite Loop
+    //while (true)
+    //{
+    //cin >> y;
+    //cout << boolalpha << y << endl;
+    //}
 
 
-	system("pause");
+    //True:
+    //while (true)
+    //{
+    //cin.clear();
+    //cin >> y;
+    //cout << boolalpha << y << endl;
+    //}
 
-	return 0;
+
+    system("pause");
+
+    return 0;
 }
 ```
 
@@ -188,23 +188,23 @@ using namespace std;
 
 namespace CompanyA
 {
-	int x = 1;
+    int x = 1;
 
-	void fun()
-	{
-		cout << "CompanyA" << endl;
-	}
+    void fun()
+    {
+        cout << "CompanyA" << endl;
+    }
 }
 
 //这是一个好的习惯，对于协作来说
 namespace CompanyB
 {
-	int x = 2;
+    int x = 2;
 
-	void fun()
-	{
-		cout << "CompanyB" << endl;
-	}
+    void fun()
+    {
+        cout << "CompanyB" << endl;
+    }
 
 	void fun2()
 	{
@@ -1362,4 +1362,4 @@ void Teacher::teach()
 	 return 0;
  }
 ```
-update c++ expedition to line-1263
+update c++ expedition to line-1323
