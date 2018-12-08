@@ -39,6 +39,8 @@ Photo by joshua-earle
 		* C++精彩的类外定义
 	* C++對象的生離死別
 	  * 默認构造函数演示
+		* 构造函数初始化列表
+		* 拷贝构造函数
 * [C++远征之封装篇（下）](#4)
 	* C++语言新特性
 		* C++特性之引用
@@ -1502,7 +1504,70 @@ void Teacher::teach()
 
 #endif
 ```
-8] 构造函数初始化列表
+8] 拷贝构造函数
+
+☭ 类内定义的函数优先编译为内联函数
+
+```c++
+/*
+ **************************************************************************    	 
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : CopyConstructor.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 01-22-2017
+ *      Description:     
+ **************************************************************************    	 
+ */
+
+ #include <stdlib.h>
+ #include "Teacher.h"
+
+ using namespace std;
+
+ int main(int argc, char const *argv[])
+ {
+     Teacher t1;
+     Teacher t2 = t1;
+     Teacher t3(t1);
+
+     system("pause");
+
+     return 0;
+ }
+```
+Teacher.h
+```c++
+#ifndef _TEACHER_H_
+#define _TEACHER_H_
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Teacher
+{
+public:
+    Teacher() //如果不定义拷贝构造函数, 则系统自动生成, 就像不定义构造函数一样
+    {
+        cout << "Teacher" << endl;
+    }
+
+    Teacher(const Teacher& teac)  //当采用直接初始化或复制初始化实例化对象时, 系统自动调用拷贝构造函数
+    {
+        cout << "Teacher" << endl;
+    }
+
+    ~Teacher()
+    {
+        cout << "~Teacher" << endl;
+    }
+
+};
+#endif
+```
+9] 拷贝构造函数
 
 ☭ 类内定义的函数优先编译为内联函数
 
@@ -1519,4 +1584,4 @@ void Teacher::teach()
  */
 
 ```
-update c++ expedition to line-1504
+update c++ expedition to line-1569
