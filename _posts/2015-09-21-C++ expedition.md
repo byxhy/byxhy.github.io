@@ -38,7 +38,7 @@ Photo by joshua-earle
 		* C++属性封装代码演示
 		* C++精彩的类外定义
 	* C++對象的生離死別
-	  * 构造函数演示
+	  * 默認构造函数演示
 * [C++远征之封装篇（下）](#4)
 	* C++语言新特性
 		* C++特性之引用
@@ -1137,7 +1137,7 @@ void testCString()
 ```
 4]  C++属性封装代码演示
 
-☭ 类内定义的函数优先编译为内联函数
+* 类内定义的函数优先编译为内联函数
 
 ```c++
 /*
@@ -1224,7 +1224,7 @@ int main(int argc, char const *argv[])
     return 0;
 }
 ```
-6] C++精彩的类外定义
+5] C++精彩的类外定义
 
 ```c++
 /*
@@ -1324,7 +1324,7 @@ void Teacher::teach()
 
 #endif
 ```
-7] 构造函数演示
+6] 默認构造函数演示
 
 ```c++
 /*
@@ -1339,30 +1339,172 @@ void Teacher::teach()
  */
 
  #include <stdlib.h>
- #include "Teacher.h"
+#include "Teacher.h"
 
- using namespace std;
+using namespace std;
 
- int main(int argc, char const *argv[])
- {
-     //PA: 但凡new，就把内存释放，指针置空这两步先做了
-     Teacher * t1 = new Teacher();
+int main(int argc, char const *argv[])
+{
+    //1. 堆中实例化
+    Teacher * t1 = new Teacher();
 
-     t1->setName("Confucius"); //PA: string类型的双引号一定要带上
-     t1->setGender("Man");
+    t1->setName("Confucius"); //PA: string类型的双引号一定要带上
+    t1->setGender("Man");
 
-     cout << t1->getName() << " " << t1->getGender() << " ";
-     t1->teach();
+    cout << t1->getName() << " " << t1->getGender() << " ";
+    t1->teach();
 
-     delete t1;
-     t1 = NULL;
+    delete t1;
+    t1 = NULL;
 
-     system("pause");
 
-     return 0;
- }
+    //2. 栈中实例化
+    Teacher t2;
+
+    t2.setName("Confucius");
+    t2.setGender("Man");
+
+    cout << t2.getName() << " " << t2.getGender() << " ";
+    t2.teach();
+
+    system("pause");
+
+    return 0;
+}
 ```
-8] 构造函数演示
+7] 构造函数初始化列表
+
+* 初始化列表先于构造函数运行
+* 初始化列表只能用于构造函数
+* 初始化列表可以同时初始化多个数据成员
+* 什么情况下才用，跟放在构造函数有什么区别   提示: Const double m_dPi;
+
+```c++
+/*
+ **************************************************************************    	 
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : ConstructorInitialize.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 01-14-2017
+ *      Description:     
+ **************************************************************************    	 
+ */
+
+ #include <stdlib.h>
+#include "Teacher.h"
+
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    //1. 初始化列表
+    Teacher t1;
+
+    //放在初始化列表里去了
+    //t1.setName("Confucius");
+    //t1.setGender("Man");
+
+    cout << t1.getName() << " " << t1.getGender() << " " << t1.getMax() << " ";
+    t1.teach();
+
+
+    //2. 构造函数默认参数, 初始化列表编码
+    Teacher t2("LiYang");
+    cout << t2.getName() << " " << t2.getGender() << " " << t2.getMax() << " ";
+    t2.teach();
+
+    Teacher t3("LiLei", "Female");
+    cout << t3.getName() << " " << t3.getGender() << " " << t3.getMax() << " ";
+    t3.teach();
+
+    Teacher t4("LiLei", "Female", 200);
+    cout << t4.getName() << " " << t4.getGender() << " " << t4.getMax() << " ";
+    t4.teach();
+
+
+    system("pause");
+
+    return 0;
+}
+```
+Teacher.h
+```c++
+#ifndef _TEACHER_H_
+#define _TEACHER_H_
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Teacher
+{
+public: //Star
+    Teacher(string name = "Confucius", string gender = "Man", int max = 100) : m_strName(name), m_strGender(gender), m_iMax(max)
+    {
+        //m_strName = name;
+        //m_strGender = gender;
+        //Err: m_iMax = max;
+
+        cout << "Teacher" << endl;
+    }
+
+    ~Teacher()
+    {
+        cout << "~Teacher" << endl;
+    }
+
+    //注意命名格式
+    void setName(string name);
+    string getName();
+
+    void setGender(string gender);
+    string getGender();
+
+    int getMax();
+
+    void teach();
+
+private:
+    string m_strName;
+    string m_strGender;
+    const int m_iMax;
+};
+
+void Teacher::setName(string name)
+{
+    m_strName = name;
+}
+string Teacher::getName()
+{
+    return m_strName;
+}
+
+void Teacher::setGender(string gender)
+{
+    m_strGender = gender;
+}
+string Teacher::getGender()
+{
+    return m_strGender;
+}
+
+int Teacher::getMax()
+{
+    return m_iMax;
+}
+
+void Teacher::teach()
+{
+    cout << "is teaching now ~" << endl;
+}
+
+#endif
+```
+8] 构造函数初始化列表
+
+☭ 类内定义的函数优先编译为内联函数
 
 ```c++
 /*
@@ -1377,4 +1519,4 @@ void Teacher::teach()
  */
 
 ```
-update c++ expedition to line-1365
+update c++ expedition to line-1504
