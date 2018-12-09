@@ -85,18 +85,19 @@ Photo by joshua-earle
 	* [JDK下載](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
 	* sudo apt-get install ./jdk-11.0.1_linux-x64_bin.deb
 * 配置環境便利
-	* sudo gedit /etc/environment
-	* JAVA_HOME=/usr/lib/jvm/jdk-11.0.1
-	* PATH=$PATH:$JAVA_HOME/bin
+	* cd /etc/profile.d/
+	* sudo gedit mypath.sh
+	* export JAVA_HOME=/usr/lib/jvm/jdk-11.0.1
+	* export PATH=$PATH:$JAVA_HOME/bin
 * 使環境變量生效和測試是否安裝成功
-	* source /etc/environment
+	* source mypath.sh
 	* java -version
 
 2] C++新特性以及输入输出
 
 9] 拷贝构造函数
 
-☭ 类内定义的函数优先编译为内联函数
+* 类内定义的函数优先编译为内联函数
 
 ```c++
 /*
@@ -111,4 +112,4 @@ Photo by joshua-earle
  */
 
 ```
-update java expedition to line-93
+update java expedition to line-94
