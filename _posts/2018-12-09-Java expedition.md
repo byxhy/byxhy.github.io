@@ -29,49 +29,7 @@ Photo by maximilian-weisbecker
 		* C++特性之const
 	* C++语言新亮點
 	* 內存管理
-* [C++远征之封装篇（上）](#3)
-	* C++类与对象初体验
-		* 簡介
-		* C++类与对象初体验
-	* C++對象的封裝
-		* C++初始字符串类型
-		* C++属性封装代码演示
-		* C++精彩的类外定义
-	* C++對象的生離死別
-	  * 默認构造函数演示
-		* 构造函数初始化列表
-		* 拷贝构造函数
-* [C++远征之封装篇（下）](#4)
-	* C++语言新特性
-		* C++特性之引用
-		* C++特性之const
-	* C++语言新亮點
-		* C++新亮點之默认参数
-		* C++新亮點之重載函數
-		* C++新亮點之內聯函數
-* [C++远征之继承篇](#5)
-	* C++语言新特性
-		* C++输入输出流
-		* C++新特性以及输入输出
-		* namespace-命名空间的学习
-	* 綜合
-		* 练习：求最大值
-* [C++远征之多态篇](#6)
-	* C++语言新特性
-		* C++特性之引用
-		* C++特性之const
-	* C++语言新亮點
-		* C++新亮點之默认参数
-		* C++新亮點之重載函數
-		* C++新亮點之內聯函數
-* [C++远征之模板篇](#7)
-	* C++语言新特性
-		* C++特性之引用
-		* C++特性之const
-	* C++语言新亮點
-		* C++新亮點之默认参数
-		* C++新亮點之重載函數
-		* C++新亮點之內聯函數
+
 
 <br />
 <br />
@@ -84,7 +42,7 @@ Photo by maximilian-weisbecker
 * Ubuntu系統下JDK下載安裝
 	* [JDK下載](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
 	* sudo apt-get install ./jdk-11.0.1_linux-x64_bin.deb
-* 配置環境便利
+* 配置環境配置
 	* cd /etc/profile.d/
 	* sudo gedit mypath.sh
 	* export JAVA_HOME=/usr/lib/jvm/jdk-11.0.1
@@ -92,6 +50,9 @@ Photo by maximilian-weisbecker
 * 使環境變量生效和測試是否安裝成功
 	* source mypath.sh
 	* java -version
+* Install Eclipse IDE
+	* tar xfz eclipse-java-2018-09-linux-gtk-x86_64.tar.gz
+	* ./eclipse
 
 2] C++新特性以及输入输出
 
