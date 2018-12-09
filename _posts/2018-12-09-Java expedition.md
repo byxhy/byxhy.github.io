@@ -16,7 +16,7 @@ Photo by joshua-earle
 
 ## Table of Contents
 
-* [C++远征之起航篇](#1)
+* [Java入門 第一季 ](#1)
 	* C++语言新特性
 		* C++输入输出流
 		* C++新特性以及输入输出
@@ -76,12 +76,21 @@ Photo by joshua-earle
 <br />
 <br />
 
-<h3 id="1"> 一、第1章 Java初体验 ☂</h3>
+<h3 id="1"> 一、Java入門 第一季 ☂</h3>
 
-1] 第1章 Java初体验
+**第1章 Java初体验**
 
-
-
+1] 簡介及環境配置
+* Ubuntu系統下JDK下載安裝
+	* [JDK下載](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
+	* sudo apt-get install ./jdk-11.0.1_linux-x64_bin.deb
+* 配置環境便利
+	* sudo gedit /etc/environment
+	* JAVA_HOME=/usr/lib/jvm/jdk-11.0.1
+	* PATH=$PATH:$JAVA_HOME/bin
+* 使環境變量生效和測試是否安裝成功
+	* source /etc/environment
+	* java -version
 
 2] C++新特性以及输入输出
 
@@ -102,4 +111,4 @@ Photo by joshua-earle
  */
 
 ```
-update c++ expedition to line-1569
+update java expedition to line-93
