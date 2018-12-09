@@ -4,10 +4,10 @@ title: "The road to the Java expedition"
 author: "Xhy"
 categories: java
 tags: [improve]
-image: joshua-earle.jpg
+image: maximilian-weisbecker.jpg
 ---
 
-Photo by joshua-earle
+Photo by maximilian-weisbecker
 
 
 >声明：本系列按照[james_yuan](http://www.imooc.com/u/1349694/courses?sort=publish)老师的C++课程的学习路径整理而来，添加少量学习注释。最近沉迷学习，无法自拔，跟着慕课老师james_yuan学习C++，秉承着先上路再迭代的思想，出发啦 ..
