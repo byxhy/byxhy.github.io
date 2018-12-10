@@ -1568,6 +1568,38 @@ public:
 };
 #endif
 ```
+9] 析构函数演示
+
+```c++
+/*
+ **************************************************************************    	 
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : Destroy.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 01-28-2017
+ *      Description:     
+ **************************************************************************    	 
+ */
+
+ #include <stdlib.h>
+ #include "Teacher.h"
+
+ using namespace std;
+
+ int main(int argc, char const *argv[])
+ {
+     Teacher * t = new Teacher[5];
+
+     //Q: 1、如果没有呢？(就没有调用析构函数，栈的自动调用) 2、放到析构函数呢？(最好，就是析构的作用)
+     delete[] t;
+     t = NULL;
+
+     system("pause");
+
+     return 0;
+ }
+```
 9] 拷贝构造函数
 
 * 类内定义的函数优先编译为内联函数
@@ -1585,4 +1617,4 @@ public:
  */
 
 ```
-update c++ expedition to line-1569
+update c++ expedition to line-1602
