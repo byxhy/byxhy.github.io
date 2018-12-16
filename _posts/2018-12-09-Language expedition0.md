@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My Language expedition"
+title: "My language learning expedition"
 author: "Xhy"
 categories: language
 tags: [improve]
@@ -12,7 +12,10 @@ Photo by markus-spiske
 
 >时隔两年，我又遇到了相似的场景，看到了熟悉的眼神，那种羞愧中带着不甘，像是颗火种即将被点燃 ...
 
+*巧的是這句話無論是用在看別人看自己，看現在看以前，都是那樣的合適*
+
 <br />
+
 
 ## Table of Contents
 
