@@ -1394,41 +1394,41 @@ int main(int argc, char const *argv[])
  */
 
  #include <stdlib.h>
-#include "Teacher.h"
+ #include "Teacher.h"
 
-using namespace std;
+ using namespace std;
 
-int main(int argc, char const *argv[])
-{
+ int main(int argc, char const *argv[])
+ {
     //1. 初始化列表
-    Teacher t1;
+     Teacher t1;
 
-    //放在初始化列表里去了
-    //t1.setName("Confucius");
-    //t1.setGender("Man");
+     //放在初始化列表里去了
+     //t1.setName("Confucius");
+     //t1.setGender("Man");
 
-    cout << t1.getName() << " " << t1.getGender() << " " << t1.getMax() << " ";
-    t1.teach();
-
-
-    //2. 构造函数默认参数, 初始化列表编码
-    Teacher t2("LiYang");
-    cout << t2.getName() << " " << t2.getGender() << " " << t2.getMax() << " ";
-    t2.teach();
-
-    Teacher t3("LiLei", "Female");
-    cout << t3.getName() << " " << t3.getGender() << " " << t3.getMax() << " ";
-    t3.teach();
-
-    Teacher t4("LiLei", "Female", 200);
-    cout << t4.getName() << " " << t4.getGender() << " " << t4.getMax() << " ";
-    t4.teach();
+     cout << t1.getName() << " " << t1.getGender() << " " << t1.getMax() << " ";
+     t1.teach();
 
 
-    system("pause");
+     //2. 构造函数默认参数, 初始化列表编码
+     Teacher t2("LiYang");
+     cout << t2.getName() << " " << t2.getGender() << " " << t2.getMax() << " ";
+     t2.teach();
 
-    return 0;
-}
+     Teacher t3("LiLei", "Female");
+     cout << t3.getName() << " " << t3.getGender() << " " << t3.getMax() << " ";
+     t3.teach();
+
+     Teacher t4("LiLei", "Female", 200);
+     cout << t4.getName() << " " << t4.getGender() << " " << t4.getMax() << " ";
+     t4.teach();
+
+
+     system("pause");
+
+     return 0;
+ }
 ```
 Teacher.h
 ```c++
@@ -1624,7 +1624,7 @@ public:
  using namespace std;
 
  int main(int argc, char const *argv[])
-{
+ {
      //1. Instantiation in the stack
      Coordinate c1[3];
      c1[0].m_iX = 0;
@@ -1685,6 +1685,43 @@ public:
      return 0;
  }
 ```
+
+Coordinate.h
+
+```c++
+#pragma once
+
+#include <iostream>
+
+using namespace std;
+
+class Coordinate
+{
+public:
+    Coordinate();
+    ~Coordinate();
+
+public:
+    int m_iX;
+    int m_iY;
+};
+```
+
+Coordinate.cpp
+
+```c++
+#include "Coordinate.h"
+
+Coordinate::Coordinate()
+{
+    cout << "Coordinate()" << endl;
+}
+
+Coordinate::~Coordinate()
+{
+    cout << "~Coordinate()" << endl;
+}
+```
 2] 拷贝构造函数
 
 * 类内定义的函数优先编译为内联函数
@@ -1702,4 +1739,4 @@ public:
  */
 
 ```
-update c++ expedition to line-1687
+update c++ expedition to line-1724
