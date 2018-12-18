@@ -42,9 +42,9 @@ Photo by joshua-earle
 		* 构造函数初始化列表
 		* 拷贝构造函数
 * [C++远征之封装篇（下）](#4)
-	* C++语言新特性
-		* C++特性之引用
-		* C++特性之const
+	* C++对象成員與对象数组
+		* 对象数组实践
+		* 对象成員
 	* C++语言新亮點
 		* C++新亮點之默认参数
 		* C++新亮點之重載函數
@@ -1600,7 +1600,92 @@ public:
      return 0;
  }
 ```
-9] 拷贝构造函数
+
+<h3 id="4"> 四、C++远征之封裝篇（下） ☂</h3>
+
+1] 对象数组实践
+
+```c++
+/*
+ **************************************************************************    	 
+ *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+ *      FileName   : ObjectArray.cpp
+ *      Author     : X h y
+ *      Version    : 2.1   
+ *      Date       : 01-29-2017
+ *      Description:     
+ **************************************************************************    	 
+ */
+
+ #include <iostream>
+ #include "Coordinate.h"
+ #include <stdlib.h>
+
+ using namespace std;
+
+ int main(int argc, char const *argv[])
+{
+     //1. Instantiation in the stack
+     Coordinate c1[3];
+     c1[0].m_iX = 0;
+     c1[0].m_iY = 0;
+
+     c1[1].m_iX = 1;
+     c1[1].m_iY = 1;
+
+     c1[2].m_iX = 2;
+     c1[2].m_iY = 2;
+
+     for (int i = 0; i<3; i++) {
+         cout << "c1[" << i << "].m_iX = " << c1[i].m_iX << endl;
+         cout << "c1[" << i << "].m_iY = " << c1[i].m_iY << endl;
+         cout << endl;
+     }
+
+
+     //2. Instantiation in the heap
+     Coordinate * c2 = new Coordinate[3];
+
+     c2->m_iX = 10;
+     c2[0].m_iY = 10;
+
+     //先++，再 c2[1].m_iX 就是上面的 c2[2] 了。
+     //c2++;
+     //c2[1].m_iX = 20;
+     //c2->m_iY = 20;
+
+
+     c2[1].m_iX = 20;
+     c2++;
+     c2->m_iY = 20;
+
+     //PA:上面的c2++后，c2[1]即是原来的c2[2]了
+     c2[1].m_iX = 30;
+     c2++;
+     c2->m_iY = 30;
+
+     cout << endl;
+     for (int i = 0; i<3; i++) {
+         cout << "c2->m_iX = " << c2->m_iX << endl;
+         cout << "c2->m_iY = " << c2->m_iY << endl;
+         c2--;   //逆序
+         cout << endl;
+     }
+
+     //PA:经过for后，c2指向第一个的前一个，所以要加一，否则释放内存会失败
+     c2++;
+
+     //Q:delete c2;  发生内存泄漏
+     delete []c2; //PA: 内存块释放时一定要注意释放第一个地址
+     c2 = NULL;
+
+
+     system("pause");
+
+     return 0;
+ }
+```
+2] 拷贝构造函数
 
 * 类内定义的函数优先编译为内联函数
 
@@ -1617,4 +1702,4 @@ public:
  */
 
 ```
-update c++ expedition to line-1602
+update c++ expedition to line-1687
