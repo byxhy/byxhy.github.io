@@ -1346,8 +1346,8 @@ void Teacher::teach()
 
  int main(int argc, char const *argv[])
  {
-    //1. 堆中实例化
-    Teacher * t1 = new Teacher();
+     //1. 堆中实例化
+     Teacher * t1 = new Teacher();
 
      t1->setName("Confucius"); //PA: string类型的双引号一定要带上
      t1->setGender("Man");
