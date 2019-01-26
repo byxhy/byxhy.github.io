@@ -92,19 +92,19 @@ Photo by joshua-earle
  **************************************************************************    	 
  */
 
-#include <iostream>
-#include <stdlib.h>
+ #include <iostream>
+ #include <stdlib.h>
 
-using namespace std;
+ using namespace std;
 
-int main(int argc, const char * argv[])
-{
-    cout << "Hello tomorrow !" << endl;
+ int main(int argc, const char * argv[])
+ {
+     cout << "Hello tomorrow !" << endl;
 
-    system("pause");
+     system("pause");
 
-    return 0;
-}
+     return 0;
+ }
 ```
 
 2] C++新特性以及输入输出
@@ -121,53 +121,53 @@ int main(int argc, const char * argv[])
  **************************************************************************    	 
  */
 
-#include <iostream>
-#include <stdlib.h>
+ #include <iostream>
+ #include <stdlib.h>
 
-using namespace std;
+ using namespace std;
 
-int main(int argc, const char * argv[])
-{
-    int x = 0;
+ int main(int argc, const char * argv[])
+ {
+     int x = 0;
 
-    cout << "Please input a integer number: ";
-    cin >> x;  //VS: getline(cin, x);
+     cout << "Please input a integer number: ";
+     cin >> x;  //VS: getline(cin, x);
 
-    cout << oct << x << endl;
-    cout << dec << x << endl;
-    cout << hex << x << endl;
+     cout << oct << x << endl;
+     cout << dec << x << endl;
+     cout << hex << x << endl;
 
-    bool y = 0;
-    cout << "Please input a bool value: ";
-    cout << boolalpha << y << endl;
+     bool y = 0;
+     cout << "Please input a bool value: ";
+     cout << boolalpha << y << endl;
 
-    //PA: C++11的safe-bool标准: 只有在上下文需要判断bool条件的时候才会自动转换为bool类型
-    //这里没有需要判断的情况，所以输入除1外的其他值，经过cin处理直接就变成false了
-    //所以，不要输入bool值了
-    //想想cin如果在一个循环里会怎样(提示: clear)
-
-
-    //Err: Infinite Loop
-    //while (true)
-    //{
-    //cin >> y;
-    //cout << boolalpha << y << endl;
-    //}
+     //PA: C++11的safe-bool标准: 只有在上下文需要判断bool条件的时候才会自动转换为bool类型
+     //这里没有需要判断的情况，所以输入除1外的其他值，经过cin处理直接就变成false了
+     //所以，不要输入bool值了
+     //想想cin如果在一个循环里会怎样(提示: clear)
 
 
-    //True:
-    //while (true)
-    //{
-    //cin.clear();
-    //cin >> y;
-    //cout << boolalpha << y << endl;
-    //}
+     //Err: Infinite Loop
+     //while (true)
+     //{
+     //cin >> y;
+     //cout << boolalpha << y << endl;
+     //}
 
 
-    system("pause");
+     //True:
+     //while (true)
+     //{
+     //cin.clear();
+     //cin >> y;
+     //cout << boolalpha << y << endl;
+     //}
 
-    return 0;
-}
+
+     system("pause");
+
+     return 0;
+ }
 ```
 
 
@@ -185,58 +185,58 @@ int main(int argc, const char * argv[])
  **************************************************************************    	 
  */
 
-#include <iostream>
-#include <stdlib.h>
+ #include <iostream>
+ #include <stdlib.h>
 
-using namespace std;
+ using namespace std;
 
-namespace CompanyA
-{
-    int x = 1;
+ namespace CompanyA
+ {
+     int x = 1;
 
-    void fun()
-    {
-        cout << "CompanyA" << endl;
-    }
-}
+     void fun()
+     {
+         cout << "CompanyA" << endl;
+     }
+ }
 
-//这是一个好的习惯，对于协作来说
-namespace CompanyB
-{
-    int x = 2;
+ //这是一个好的习惯，对于协作来说
+ namespace CompanyB
+ {
+     int x = 2;
 
-    void fun()
-    {
-        cout << "CompanyB" << endl;
-    }
+     void fun()
+     {
+         cout << "CompanyB" << endl;
+     }
 
-    void fun2()
-    {
-        cout << "Company2B" << endl;
-    }
-}
+     void fun2()
+     {
+         cout << "Company2B" << endl;
+     }
+ }
 
-//必须先有定义好的名字空间，才能去使用，不能放在实现之前
-using namespace CompanyB;
+ //必须先有定义好的名字空间，才能去使用，不能放在实现之前
+ using namespace CompanyB;
 
-int main(int argc, const char * argv[])
-{
-    cout << CompanyA::x << endl;
-    CompanyA::fun();
+ int main(int argc, const char * argv[])
+ {
+     cout << CompanyA::x << endl;
+     CompanyA::fun();
 
-    //推荐这种写法
-    cout << CompanyB::x << endl;
-    CompanyB::fun();
+     //推荐这种写法
+     cout << CompanyB::x << endl;
+     CompanyB::fun();
 
-    //VS: 使用了名字空间 CompanyB
-    cout << x << endl;
-    fun();
-    fun2();
+     //VS: 使用了名字空间 CompanyB
+     cout << x << endl;
+     fun();
+     fun2();
 
-    system("pause");
+     system("pause");
 
-    return 0;
-}
+     return 0;
+ }
 ```
 
 4] 练习：求最大值
@@ -252,52 +252,52 @@ int main(int argc, const char * argv[])
  **************************************************************************    	 
  */
 
-#include <iostream>
-#include <stdlib.h>
+ #include <iostream>
+ #include <stdlib.h>
 
-using namespace std;
+ using namespace std;
 
-namespace CompanyA
-{
-    int getMaxOrMin(int * arr, int count, bool isMax = true);
-}
+ namespace CompanyA
+ {
+     int getMaxOrMin(int * arr, int count, bool isMax = true);
+ }
 
 
-int main(int argc, const char * argv[])
-{
-    int arr[7] = { 3, 4, 1, 8, 9, 1, 2 };
+ int main(int argc, const char * argv[])
+ {
+     int arr[7] = { 3, 4, 1, 8, 9, 1, 2 };
 
-    cout << "Max is " << CompanyA::getMaxOrMin(arr, 7) << endl;
-    cout << "Min is " << CompanyA::getMaxOrMin(arr, 7, false) << endl;
+     cout << "Max is " << CompanyA::getMaxOrMin(arr, 7) << endl;
+     cout << "Min is " << CompanyA::getMaxOrMin(arr, 7, false) << endl;
 
-    system("pause");
+     system("pause");
 
-    return 0;
-}
+     return 0;
+ }
 
-int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
-{
-    //PA: 一定要赋第一个值给ret
-    int ret = * arr;
+ int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
+ {
+     //PA: 一定要赋第一个值给ret
+     int ret = * arr;
 
-    if (isMax)
-    {
-        //从第一个起
-		    for (int i = 1; i < count; i++)
-        {
-            ret = (ret >= arr[i]) ? ret : arr[i];
-        }
-    }
-    else
-    {
-        for (int i = 1; i < count; i++)
-        {
-            ret = (ret <= arr[i]) ? ret : arr[i];
-        }
-    }
+     if (isMax)
+     {
+         //从第一个起
+		     for (int i = 1; i < count; i++)
+         {
+             ret = (ret >= arr[i]) ? ret : arr[i];
+         }
+     }
+     else
+     {
+         for (int i = 1; i < count; i++)
+         {
+             ret = (ret <= arr[i]) ? ret : arr[i];
+         }
+     }
 
-	return ret;
-}
+     return ret;
+ }
 ```
 <h3 id="2"> 二、C++远征之离港篇 ☂</h3>
 1] C++特性之引用
@@ -322,91 +322,91 @@ int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
  //1' 基本数据类型的引用 &
  int testBasicStrRef()
  {
-    int x = 0;
-    cout << "x = " << x << endl;
+     int x = 0;
+     cout << "x = " << x << endl;
 
-    int &y = x;  //引用必须初始化
-    y = 3;
+     int &y = x;  //引用必须初始化
+     y = 3;
 
-    cout << "x = " << x << endl;
+     cout << "x = " << x << endl;
 
-    return 0;
+     return 0;
  }
 
  //2' struct的引用 &
  int testStructRef()
  {
-    typedef struct
-    {
-        //Err: 非类范围内的匿名联合的成员不允许类内初始值设定项
-        //int x = 1;
-        //int y = 2;
+     typedef struct
+     {
+         //Err: 非类范围内的匿名联合的成员不允许类内初始值设定项
+         //int x = 1;
+         //int y = 2;
 
-        int x;
-        int y;
-    }Coor;
+         int x;
+         int y;
+     }Coor;
 
-    Coor c1 = {1, 2};
-    cout << "c1.x = " << c1.x << "  c1.y = " << c1.y << endl;
+     Coor c1 = {1, 2};
+     cout << "c1.x = " << c1.x << "  c1.y = " << c1.y << endl;
 
-    Coor &c2 = c1;  //引用必须初始化
-    c2.x = 3;
-    c2.y = 4;
+     Coor &c2 = c1;  //引用必须初始化
+     c2.x = 3;
+     c2.y = 4;
 
-    cout << "c1.x = " << c1.x << "  c1.y = " << c1.y << endl;
+     cout << "c1.x = " << c1.x << "  c1.y = " << c1.y << endl;
 
-    return 0;
+     return 0;
  }
 
  //3' 指针的引用 *&
  int testPointRef()
  {
-    int x = 9;
-    cout << "x  = " << x << endl;
+     int x = 9;
+     cout << "x  = " << x << endl;
 
-    int * p = &x;
-    cout << "* p = " << * p << endl;
+     int * p = &x;
+     cout << "* p = " << * p << endl;
 
-    int * &q = p;  //引用必须初始化
-    * q = 3;
-    cout << "x  = " << x << endl;
-    cout << "* p = " << * p << endl;
+     int * &q = p;  //引用必须初始化
+     * q = 3;
+     cout << "x  = " << x << endl;
+     cout << "* p = " << * p << endl;
 
-    return 0;
+     return 0;
  }
 
  //VS: void swap(int x, int y)
  void swap(int &x, int &y)
  {
-    int tmp = x;
+     int tmp = x;
 
-    x = y;
-    y = tmp;
+     x = y;
+     y = tmp;
  }
  //4' 引用作函数参数 Vs 指针
  int testFuncPrameRef()
  {
-    int x = 3;
-    int y = 9;
-    cout << "x = " << x << " y = " << y << endl;
+     int x = 3;
+     int y = 9;
+     cout << "x = " << x << " y = " << y << endl;
 
-    swap(x, y);
-    cout << "x = " << x << " y = " << y << endl;
+     swap(x, y);
+     cout << "x = " << x << " y = " << y << endl;
 
-    return 0;
+     return 0;
  }
 
 
  int main(int argc, const char * argv[])
  {
-    testBasicStrRef();
-    testStructRef();
-    testPointRef(); //PA: 理解下
-    testFuncPrameRef();
+     testBasicStrRef();
+     testStructRef();
+     testPointRef(); //PA: 理解下
+     testFuncPrameRef();
 
-    system("pause");
+     system("pause");
 
-    return 0;
+     return 0;
  }
 ```
 
@@ -432,120 +432,120 @@ int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
  //1' 修饰基本数据类型
  int testBasicStrCon()
  {
-    //Vs: #define X  3
-    const int x = 6;
-    int const y = 9;
+     //Vs: #define X  3
+     const int x = 6;
+     int const y = 9;
 
-    //x = 5;   //Err: const修饰之后的值不能改变
-    //y = 8;
+     //x = 5;   //Err: const修饰之后的值不能改变
+     //y = 8;
 
-    cout << "x = " << x << endl;
-    cout << "y = " << y << endl;
+     cout << "x = " << x << endl;
+     cout << "y = " << y << endl;
 
-    return 0;
+     return 0;
  }
 
  //2' const 修饰指针常量左边(左数右指法、整体法, 有没有开锁就是了)
  int testPointConLift()
  {
-    int x = 6;
-    int const * p = &x;  //左数，开锁就是值了,那值不能改变
-    cout << "* p = " << * p << endl;
+     int x = 6;
+     int const * p = &x;  //左数，开锁就是值了,那值不能改变
+     cout << "* p = " << * p << endl;
 
-    //* p = 4;		   //Err: 值不能改变
+     //* p = 4;		   //Err: 值不能改变
 
-    x = 4;
-    cout << "* p = " << * p << endl;
+     x = 4;
+     cout << "* p = " << * p << endl;
 
-    return 0;
+     return 0;
  }
 
  //3' const 修饰指针常量右边
  int testPointConRight()
  {
-    int x = 6;
-    int y = 9;
+     int x = 6;
+     int y = 9;
 
-    int * const p = &x;  //右指，没开锁,那就是指针不能变
+     int * const p = &x;  //右指，没开锁,那就是指针不能变
 
-    cout << "* p = " << * p << endl;
+     cout << "* p = " << * p << endl;
 
-    * p = 4;
-    cout << "* p = " << * p << endl;
-    cout << " x = " << x << endl;
+     * p = 4;
+     cout << "* p = " << * p << endl;
+     cout << " x = " << x << endl;
 
-    //p = &y;		   //Err: 指针不能变
+     //p = &y;		   //Err: 指针不能变
 
-    return 0;
+     return 0;
  }
 
 
  //4' const 修饰指针，将权限大的变量赋值给权限小的
  int testPointLimit()
  {
-    int x = 6;
-    int const * p = &x;	//PA: 权限大的 赋值给 权限小的
-    cout << "* p = " << * p << endl;
+     int x = 6;
+     int const * p = &x;	//PA: 权限大的 赋值给 权限小的
+     cout << "* p = " << * p << endl;
 
-    //PA: 反过来就不行了
-    //const int y = 4;
-    //int * q = &y;		//通过*q有可能就操作了y的值，报错
+     //PA: 反过来就不行了
+     //const int y = 4;
+     //int * q = &y;		//通过*q有可能就操作了y的值，报错
 
-    return 0;
+     return 0;
  }
 
  //5' const 修饰引用
  int testReference()
  {
-    int x = 6;
-    int const &y = x;
+     int x = 6;
+     int const &y = x;
 
-    cout << "y = " << y << endl;
+     cout << "y = " << y << endl;
 
-    //y = 4;		//error!!!
-    x = 4;
-    cout << "y = " << y << endl;
+     //y = 4;		//error!!!
+     x = 4;
+     cout << "y = " << y << endl;
 
-    return 0;
+     return 0;
  }
 
  void fun(const int &a, const int &b)
  {
-    //a = 1;	 //error !!!
-    //b = 2;	 //error !!!
+     //a = 1;	 //error !!!
+     //b = 2;	 //error !!!
  }
 
  //6' const 修饰函数形参(避免改变传入的变量的值)
  int testFuncParameter()
  {
-    int x = 6;
-    int y = 9;
-    cout << "x = " << x << " y = " << y << endl;
+     int x = 6;
+     int y = 9;
+     cout << "x = " << x << " y = " << y << endl;
 
-    fun(x, y);
-    cout << "x = " << x << " y = " << y << endl;
+     fun(x, y);
+     cout << "x = " << x << " y = " << y << endl;
 
-    return 0;
+     return 0;
  }
 
 
  int main(int argc, const char * argv[])
  {
-    //testBasicStrCon();
+     //testBasicStrCon();
 
-    //testPointConLift();
+     //testPointConLift();
 
-    //testPointConRight();
+     //testPointConRight();
 
-    //testPointLimit();
+     //testPointLimit();
 
-    //testReference();
+     //testReference();
 
-    testFuncParameter();
+     testFuncParameter();
 
-    system("pause");
+     system("pause");
 
-    return 0;
+     return 0;
  }
  ```
  3] C++亮點之默认参数
@@ -574,12 +574,12 @@ int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
  }
  int main()
  {
-    fun_default();
-    fun_default(100);
-    fun_default(100, 200);
-    fun_default(100, 200, 300);
+     fun_default();
+     fun_default(100);
+     fun_default(100, 200);
+     fun_default(100, 200, 300);
 
-    return 0;
+     return 0;
  }
 ```
 4] C++亮點之重載函數
@@ -596,36 +596,36 @@ int CompanyA::getMaxOrMin(int *arr, int count, bool isMax)
  **************************************************************************    	 
  */
 
-#include <iostream>
-#include <stdlib.h>
+ #include <iostream>
+ #include <stdlib.h>
 
-using namespace std;
+ using namespace std;
 
-//4' C++函数特性之重载函数	Q:要求，好处
-void funOverload(double i = 0.1, double j = 0.2)
-{
-    cout << "i = " << i << "," << "j = " << j << endl;
-}
+ //4' C++函数特性之重载函数	Q:要求，好处
+ void funOverload(double i = 0.1, double j = 0.2)
+ {
+     cout << "i = " << i << "," << "j = " << j << endl;
+ }
 
-void funOverload(int a = 10, int b = 20, int c = 30)
-{
-    cout << "a = " << a << "," << "b = " << b << "," << "c = " << c << endl;
-}
+ void funOverload(int a = 10, int b = 20, int c = 30)
+ {
+     cout << "a = " << a << "," << "b = " << b << "," << "c = " << c << endl;
+ }
 
-int main()
-{
-    //Err: 找全部参数都有默认值的函数，如果两个函数都有默认参数，则报错
-    //Err: funOverload();   
+ int main()
+ {
+     //Err: 找全部参数都有默认值的函数，如果两个函数都有默认参数，则报错
+     //Err: funOverload();   
 
-    funOverload(1, 2);
-    funOverload(0.1);
+     funOverload(1, 2);
+     funOverload(0.1);
 
-    funOverload(100);
-    funOverload(100, 200);
-    funOverload(100, 200, 300);
+     funOverload(100);
+     funOverload(100, 200);
+     funOverload(100, 200, 300);
 
-    return 0;
-}
+     return 0;
+ }
 ```
 5] C++亮點之內聯函數
 
@@ -641,33 +641,33 @@ int main()
  **************************************************************************    	 
  */
 
-#include <iostream>
-#include <stdlib.h>
+ #include <iostream>
+ #include <stdlib.h>
 
-using namespace std;
+ using namespace std;
 
-//5'  C++函数特性之内联函数	Q:要求，好处
-inline void funInline(double i = 0.1, double j = 0.2)
-{
-    cout << "i = " << i << "," << "j = " << j << endl;
-}
+ //5'  C++函数特性之内联函数	Q:要求，好处
+ inline void funInline(double i = 0.1, double j = 0.2)
+ {
+     cout << "i = " << i << "," << "j = " << j << endl;
+ }
 
-inline void funInline(int a = 10, int b = 20, int c = 30)
-{
-    cout << "a = " << a << "," << "b = " << b << "," << "c = " << c << endl;
-}
+ inline void funInline(int a = 10, int b = 20, int c = 30)
+ {
+     cout << "a = " << a << "," << "b = " << b << "," << "c = " << c << endl;
+ }
 
-int main()
-{
-    funInline(1, 2);   //首先去找全部参数都有默认值的函数，若都有，就报错
-    funInline(100);
-    funInline(100, 200);
-    funInline(100, 200, 300);
+ int main()
+ {
+     funInline(1, 2);   //首先去找全部参数都有默认值的函数，若都有，就报错
+     funInline(100);
+     funInline(100, 200);
+     funInline(100, 200, 300);
 
-    funInline(0.1);
+     funInline(0.1);
 
-    return 0;
-}
+     return 0;
+ }
 ```
 
 6] 內存管理
@@ -684,118 +684,118 @@ int main()
  **************************************************************************    	 
  */
 
-#include <iostream>
-#include <string.h>
-#include <stdlib.h>
+ #include <iostream>
+ #include <string.h>
+ #include <stdlib.h>
 
-using namespace std;
+ using namespace std;
 
-//1' C++申请内存，四部曲，对比malloc
-int testMemory()
-{
-    int * p = new int;
-    //1、判断申请是否成功
-    if (NULL == p)
-    {
-        cout << "new fail" << endl;
+ //1' C++申请内存，四部曲，对比malloc
+ int testMemory()
+ {
+     int * p = new int;
+     //1、判断申请是否成功
+     if (NULL == p)
+     {
+          cout << "new fail" << endl;
+         return 0;
+     }
+
+     //2、使用
+     * p = 10;
+
+     cout << "* p = " << * p << endl;
+
+     //3、释放
+     delete p;
+
+
+     //4、置空
+     p = NULL;
+
+     return 0;
+ }
+
+ //2' C++申请内存块，四部曲
+ int testMemoryBlock()
+ {
+     char * str1 = new char[50];
+
+     //1、判断申请是否成功
+     if (NULL == str1)
+     {
+         cout << "new fail" << endl;
         return 0;
-    }
+     }
 
-    //2、使用
-    * p = 10;
+     //2、使用
+     //char * str2 = "Cannot stoping ...";  //Err: ??????(程序静态区)
+     const char * str2;
+     str2 = "Cannot stoping ...";
 
-    cout << "* p = " << * p << endl;
+     //Err: int len2 = sizeof(str2);  // sizeof得到的是指针地址大小
+     int len = strlen(str2) + 1;  // 要加上结束符
 
-    //3、释放
-    delete p;
+     strcpy_s(str1, len, str2);
 
+     cout << str1 << endl;
 
-    //4、置空
-    p = NULL;
+     //3、释放
+     delete[] str1;
 
-    return 0;
-}
+     //4、置空
+     str1 = NULL;
 
-//2' C++申请内存块，四部曲
-int testMemoryBlock()
-{
-    char * str1 = new char[50];
-
-    //1、判断申请是否成功
-    if (NULL == str1)
-    {
-        cout << "new fail" << endl;
-        return 0;
-    }
-
-    //2、使用
-    //char * str2 = "Cannot stoping ...";  //Err: ??????(程序静态区)
-    const char * str2;
-    str2 = "Cannot stoping ...";
-
-    //Err: int len2 = sizeof(str2);  // sizeof得到的是指针地址大小
-    int len = strlen(str2) + 1;  // 要加上结束符
-
-    strcpy_s(str1, len, str2);
-
-    cout << str1 << endl;
-
-    //3、释放
-    delete[] str1;
-
-    //4、置空
-    str1 = NULL;
-
-    return 0;
-}
+     return 0;
+ }
 
 //3' VS malloc，四部曲
-int testVsMalloc()
-{
-    //VS: char *str1 = new char[50];
-    int n = 50;
-    char * str1 = (char*)malloc(n * sizeof(char));
+ int testVsMalloc()
+ {
+     //VS: char *str1 = new char[50];
+     int n = 50;
+     char * str1 = (char*)malloc(n * sizeof(char));
 
-    //1、判断申请是否成功
-    if (NULL == str1)
-    {
-        cout << "malloc fail" << endl;
-        return 0;
-    }
+     //1、判断申请是否成功
+     if (NULL == str1)
+     {
+         cout << "malloc fail" << endl;
+         return 0;
+     }
 
-    //2、使用
-    const char * str2;
-    str2 = "Cannot stoping ...";
+     //2、使用
+     const char * str2;
+     str2 = "Cannot stoping ...";
 
-    //Err: int len2 = sizeof(str2);  // sizeof得到的是指针地址大小
-    int len = strlen(str2) + 1;  // 要加上结束符
+     //Err: int len2 = sizeof(str2);  // sizeof得到的是指针地址大小
+     int len = strlen(str2) + 1;  // 要加上结束符
 
-    strcpy_s(str1, len, str2);
+     strcpy_s(str1, len, str2);
 
-    cout << str1 << endl;
+     cout << str1 << endl;
 
-    //3、释放
-    //Vs: delete[] str1;
-    free(str1);
+     //3、释放
+     //Vs: delete[] str1;
+     free(str1);
 
-    //4、置空
-    str1 = NULL;
+     //4、置空
+     str1 = NULL;
 
-    return 0;
+     return 0;
 }
 
-int main(int argc, const char * argv[])
-{
-    //testMemory();
+ int main(int argc, const char * argv[])
+ {
+     //testMemory();
 
-    //testMemoryBlock();
+     //testMemoryBlock();
 
-    testVsMalloc();
+     testVsMalloc();
 
-    system("pause");
+     system("pause");
 
-    return 0;
-}
+     return 0;
+ }
 ```
 
 <h3 id="3"> 三、C++远征之封裝篇（上） ☂</h3>
@@ -816,111 +816,110 @@ int main(int argc, const char * argv[])
  **************************************************************************    	 
  */
 
-#include <iostream>
-#include <stdlib.h>
+ #include <iostream>
+ #include <stdlib.h>
 
-using namespace std;
+ using namespace std;
 
-class Coordinate
-{
-public:
-    void prinftX()
-    {
-        cout << "x = " << x << endl;
-    }
-    void prinftY()
-    {
-        cout << "y = " << y << endl;
-    }
+ class Coordinate
+ {
+ public:
+     void prinftX()
+     {
+         cout << "x = " << x << endl;
+     }
+     void prinftY()
+     {
+         cout << "y = " << y << endl;
+     }
 
-    void operation()
-    {
-        x += 10;
-        y -= 1;
-    }
+     void operation()
+     {
+         x += 10;
+         y -= 1;
+     }
 
-public:
-    int x;
-    int y;
-};
+ public:
+     int x;
+     int y;
+ };
 
-int main(int argc, const char * argv[])
-{
-    //1、从栈中实例化类
-    Coordinate coor;
+ int main(int argc, const char * argv[])
+ {
+     //1、从栈中实例化类
+     Coordinate coor;
 
-    coor.x = 10;
-    coor.y = 20;
+     coor.x = 10;
+     coor.y = 20;
 
-    coor.prinftX();
-    coor.prinftY();
+     coor.prinftX();
+     coor.prinftY();
 
-    cout << endl;
-
-
-    //2、从堆中实例化类
-    Coordinate * p = new Coordinate();
-    if (NULL == p)
-    {
-        printf("new failed !\n");
-        return 0;
-    }
-
-    p->x = 100;
-    p->y = 200;
-
-    p->prinftX();
-    p->prinftY();
-
-    delete p;
-    p = NULL;
-
-    cout << endl;
+     cout << endl;
 
 
-    //3、从堆中实例化多个类
-    Coordinate * q = new Coordinate[5];
-    if (NULL == q)
-    {
-        printf("new failed !\n");
-        return 0;
-    }
+     //2、从堆中实例化类
+     Coordinate * p = new Coordinate();
+     if (NULL == p)
+     {
+         printf("new failed !\n");
+         return 0;
+     }
 
-    for (int i = 0; i < 5; i++)
-    {
-        q[i].x = i * 100;
-        q[i].y = (i + 1) * 100;
-    }
+     p->x = 100;
+     p->y = 200;
 
-    cout << "Before:" << endl;
+     p->prinftX();
+     p->prinftY();
 
-    for (int i = 0; i < 5; i++)
-    {
-        q[i].prinftX();
-        q[i].prinftY();
+     delete p;
+     p = NULL;
 
-        cout << endl;
-    }
+     cout << endl;
 
-    cout << "After:" << endl;
-    q[1].operation();
-    q[4].operation();
+     //3、从堆中实例化多个类
+     Coordinate * q = new Coordinate[5];
+     if (NULL == q)
+     {
+         printf("new failed !\n");
+          return 0;
+     }
 
-    for (int i = 0; i < 5; i++)
-    {
-        q[i].prinftX();
-        q[i].prinftY();
+     for (int i = 0; i < 5; i++)
+     {
+         q[i].x = i * 100;
+          q[i].y = (i + 1) * 100;
+     }
 
-        cout << endl;
-    }
+     cout << "Before:" << endl;
 
-    delete[] q;
-    q = NULL;
+     for (int i = 0; i < 5; i++)
+     {
+         q[i].prinftX();
+         q[i].prinftY();
 
-    system("pause");
+         cout << endl;
+     }
 
-    return 0;
-}
+     cout << "After:" << endl;
+     q[1].operation();
+     q[4].operation();
+
+     for (int i = 0; i < 5; i++)
+     {
+         q[i].prinftX();
+         q[i].prinftY();
+
+          cout << endl;
+     }
+
+     delete[] q;
+     q = NULL;
+
+     system("pause");
+
+     return 0;
+ }
 ```
 3] C++初始字符串类型
 
@@ -936,206 +935,206 @@ int main(int argc, const char * argv[])
  **************************************************************************    	 
  */
 
-#include <iostream>
-#include <string>
-#include <stdlib.h>
-#include <afx.h>
+ #include <iostream>
+ #include <string>
+ #include <stdlib.h>
+ #include <afx.h>
 
-using namespace std;
+ using namespace std;
 
-void testString();
-void testCharPoint();
-void testStringMore();
-void pCharToString();
-void printCString(CString &csInput);
-void testCString();
+ void testString();
+ void testCharPoint();
+ void testStringMore();
+ void pCharToString();
+ void printCString(CString &csInput);
+ void testCString();
 
-int main(int argc, const char * argv[])
-{
-    //testString();
-    //testCharPoint();
-    //testStringMore();
-    //pCharToString();
-    //CString csInfo = "printCString";
-    //printCString(csInfo);
-    testCString();
+ int main(int argc, const char * argv[])
+ {
+     //testString();
+     //testCharPoint();
+     //testStringMore();
+     //pCharToString();
+     //CString csInfo = "printCString";
+     //printCString(csInfo);
+     testCString();
 
-    system("pause");
+     system("pause");
 
-    return 0;
-}
+     return 0;
+ }
 
 //1、热身
-void testString()
-{
-    string name;
+ void testString()
+ {
+     string name;
 
-    cout << "Please input your name: ";
-    getline(cin, name);		//VS: cin >> name;
+     cout << "Please input your name: ";
+     getline(cin, name);		//VS: cin >> name;
 
-    if (name.empty())		  //Err: if (NULL == name)
-    {
-        cout << "The input is null ..." << endl;
-        return;
-    }
+     if (name.empty())		  //Err: if (NULL == name)
+     {
+         cout << "The input is null ..." << endl;
+         return;
+     }
 
-    cout << "Hello " << name << " !" << endl;
+     cout << "Hello " << name << " !" << endl;
 
-    if ("imooc" == name)	   //Err: if (imooc == name)
-    {
-        cout << "You are Administrator !" << endl;
-    }
+     if ("imooc" == name)	   //Err: if (imooc == name)
+     {
+         cout << "You are Administrator !" << endl;
+     }
 
-    cout << "Your name's length is " << name.size() << "." << endl;
+     cout << "Your name's length is " << name.size() << "." << endl;
 
-    cout << "Your name's first letter is " << name[0] << "." << endl;  //PA
-}
+     cout << "Your name's first letter is " << name[0] << "." << endl;  //PA
+ }
 
 //2、char* 的使用：可以指向一个字符，也可以表示字符数组的首地址功能
-void testCharPoint()
-{
-    //PA: ""里面包含了'\0'
-    char ch1[17] = "study char point";
+ void testCharPoint()
+ {
+     //PA: ""里面包含了'\0'
+     char ch1[17] = "study char point";
 
-    cout << "	ch1:" << ch1 << endl;
-    cout << " ch1[0]:" << ch1[0] << endl;
-    cout << "ch1[14]:" << ch1[14] << endl;
-    cout << "ch1[15]:" << ch1[15] << endl;
-    cout << "ch1[16]:" << ch1[16] << endl;  //Q?
-    cout << "strlen(ch1) = " << strlen(ch1) << endl << endl;
+     cout << "	ch1:" << ch1 << endl;
+     cout << " ch1[0]:" << ch1[0] << endl;
+     cout << "ch1[14]:" << ch1[14] << endl;
+     cout << "ch1[15]:" << ch1[15] << endl;
+     cout << "ch1[16]:" << ch1[16] << endl;  //Q?
+     cout << "strlen(ch1) = " << strlen(ch1) << endl << endl;
 
-    //Err: char * ch2 = "test char point";
-    const char * ch2 = "study char point";
-    cout << "	ch2:" << ch2 << endl;
-    cout << "   * ch2:" << * ch2 << endl;
+     //Err: char * ch2 = "test char point";
+     const char * ch2 = "study char point";
+     cout << "	ch2:" << ch2 << endl;
+     cout << "   * ch2:" << * ch2 << endl;
 
-    char * ch3 = ch1;
-    cout << "	ch3:" << ch3 << endl;
-    cout << "   * ch3:" << * ch3 << endl << endl;
+     char * ch3 = ch1;
+     cout << "	ch3:" << ch3 << endl;
+     cout << "   * ch3:" << * ch3 << endl << endl;
 
-    //Err: char * ch4 = ch1[3];
-    char * ch4 = &ch1[3];
-    cout << "&ch1[3]:" << ch4 << endl << endl;
+     //Err: char * ch4 = ch1[3];
+     char * ch4 = &ch1[3];
+     cout << "&ch1[3]:" << ch4 << endl << endl;
 
-    char ch5 = 'c';
-    cout << "	ch5:" << ch5 << endl << endl;
+     char ch5 = 'c';
+     cout << "	ch5:" << ch5 << endl << endl;
 
-    //Err: char * ch6 = ch5;
-    char * ch6 = &ch5;
-    cout << "	ch6:" << ch6 << endl;  // Pointer address
-    cout << "   * ch6:" << * ch6 << endl;
-}
+     //Err: char * ch6 = ch5;
+     char * ch6 = &ch5;
+     cout << "	ch6:" << ch6 << endl;  // Pointer address
+     cout << "   * ch6:" << * ch6 << endl;
+ }
 
 //3、string 的使用: <string>
-void testStringMore()
-{
-    string s1 = "This";
-    //EQ: string s2 = string(" is");
-    string s2 = " is";
-    string s3 = string(" a").append("program.");
-    //Q: 什么时候不能直接相加，连接？s4 = "hello" + "world";
-    //Q: 加上string呢？ s4 = string("hello") + string("world");
-    string s4 = s1 + s2 + s3;
+ void testStringMore()
+ {
+     string s1 = "This";
+     //EQ: string s2 = string(" is");
+     string s2 = " is";
+     string s3 = string(" a").append("program.");
+     //Q: 什么时候不能直接相加，连接？s4 = "hello" + "world";
+     //Q: 加上string呢？ s4 = string("hello") + string("world");
+     string s4 = s1 + s2 + s3;
 
-    cout << "s4:" << s4 << endl;
-    cout << "s4.size():" << s4.size() << endl;
+     cout << "s4:" << s4 << endl;
+     cout << "s4.size():" << s4.size() << endl;
 
-    //Err: string s5 = s4.insert(s4.end()-9, ' '); insert返回的不是字符串
-    s4.insert(s4.end() - 8, 1, ' ');
-    //EQ: s4.insert(s4.end()-8, ' '); 其中 1 代表个数，1个可以不写
+     //Err: string s5 = s4.insert(s4.end()-9, ' '); insert返回的不是字符串
+     s4.insert(s4.end() - 8, 1, ' ');
+     //EQ: s4.insert(s4.end()-8, ' '); 其中 1 代表个数，1个可以不写
 
-    cout << "s4:" << s4 << endl;
-    cout << "s4.size():" << s4.size() << endl;
-}
+     cout << "s4:" << s4 << endl;
+     cout << "s4.size():" << s4.size() << endl;
+ }
 
 //4、char*  <---->  string 借助c_str();
-void pCharToString()
-{
-    //Err: char * ch1 = "pCharToString";
-    const char * ch1 = "pCharToString";
-    string s1 = string(ch1);
+ void pCharToString()
+ {
+     //Err: char * ch1 = "pCharToString";
+     const char * ch1 = "pCharToString";
+     string s1 = string(ch1);
 
-    cout << "ch1: " << ch1 << endl;
-    cout << " s1: " << s1 << endl << endl;
-
-
-    cout << "* ch1+1  : " << * ch1 + 1 << endl;
-    cout << "* (ch1+1): " << * (ch1 + 1) << endl << endl;
+     cout << "ch1: " << ch1 << endl;
+     cout << " s1: " << s1 << endl << endl;
 
 
-    cout << "* ch1	: " << * ch1 << endl;
-    cout << "* (ch1+1): " << * (ch1 + 1) << endl;
-    cout << "* (ch1+2): " << * (ch1 + 2) << endl;
-    cout << "* (ch1+3): " << * (ch1 + 3) << endl << endl;
+     cout << "* ch1+1  : " << * ch1 + 1 << endl;
+     cout << "* (ch1+1): " << * (ch1 + 1) << endl << endl;
 
 
-    cout << " s1[0]: " << s1[0] << endl;
-    cout << " s1[1]: " << s1[1] << endl;
-    cout << " s1[2]: " << s1[2] << endl;
-    cout << " s1[3]: " << s1[3] << endl;
-    cout << " s1[s1.size() - 1]: " << s1[s1.size() - 1] << endl << endl;
+     cout << "* ch1	: " << * ch1 << endl;
+     cout << "* (ch1+1): " << * (ch1 + 1) << endl;
+     cout << "* (ch1+2): " << * (ch1 + 2) << endl;
+     cout << "* (ch1+3): " << * (ch1 + 3) << endl << endl;
 
 
-    string s2 = "StringToPChar";
-    const char * ch2 = s2.c_str();
-    cout << "ch2: " << ch2 << endl << endl;
-
-    //PA: c_str()返回的是一个const char* 以空字符结束指针，并且是临时的，会被改变
-    //如果s2改变了，const char*的值也随之改变
-    s2 = "unSafe!!!";
-    cout << "ch2: " << ch2 << endl;
+     cout << " s1[0]: " << s1[0] << endl;
+     cout << " s1[1]: " << s1[1] << endl;
+     cout << " s1[2]: " << s1[2] << endl;
+     cout << " s1[3]: " << s1[3] << endl;
+     cout << " s1[s1.size() - 1]: " << s1[s1.size() - 1] << endl << endl;
 
 
-    //要么随用随转换可以把c_str()的值保存起来
-    //int len1 = s2.size() + 1; //Err
-    int len1 = s2.size() + 1;
-    int len2 = strlen(s2.c_str()) + 1;
+     string s2 = "StringToPChar";
+     const char * ch2 = s2.c_str();
+     cout << "ch2: " << ch2 << endl << endl;
 
-    cout << "len1 = " << len1 << " len2 = " << len2 << endl;
+     //PA: c_str()返回的是一个const char* 以空字符结束指针，并且是临时的，会被改变
+     //如果s2改变了，const char*的值也随之改变
+     s2 = "unSafe!!!";
+     cout << "ch2: " << ch2 << endl;
 
-    char * ch3 = new char[len1];
-    strcpy_s(ch3, len1, s2.c_str());
-    cout << "ch3: " << ch3 << endl;
 
-    delete[] ch3;
-    ch3 = NULL;
-}
+     //要么随用随转换可以把c_str()的值保存起来
+     //int len1 = s2.size() + 1; //Err
+     int len1 = s2.size() + 1;
+     int len2 = strlen(s2.c_str()) + 1;
+
+     cout << "len1 = " << len1 << " len2 = " << len2 << endl;
+
+     char * ch3 = new char[len1];
+     strcpy_s(ch3, len1, s2.c_str());
+     cout << "ch3: " << ch3 << endl;
+
+     delete[] ch3;
+     ch3 = NULL;
+ }
 
 //5、CString 的使用: CString 常用于 MFC 编程中，是属于 MFC 的类需要 <afx.h>
-void printCString(CString &csInput)
-{
-    int n = csInput.GetLength(); //类比string
-    //cout << "cstr.GetLength() = " << cstr.GetLength() << endl;
+ void printCString(CString &csInput)
+ {
+     int n = csInput.GetLength(); //类比string
+     //cout << "cstr.GetLength() = " << cstr.GetLength() << endl;
 
-    for (int i = 0; i<n; i++)
-    {
-        printf("%c", csInput[i]); //直接转换成数组了
-    }
+     for (int i = 0; i<n; i++)
+     {
+         printf("%c", csInput[i]); //直接转换成数组了
+     }
 
-    printf("\n");
+     printf("\n");
 
-    cout << "csInput: " << csInput << endl;
-}
+     cout << "csInput: " << csInput << endl;
+ }
 
 //6、CString 的基本使用
-void testCString()
-{
-    char * ch = "Hello";
-    string s = "World";
-    //Q: s.c_str()
-    CString cstr1(ch), cstr2(s.c_str()), cstr3("Program");
+ void testCString()
+ {
+     char * ch = "Hello";
+     string s = "World";
+     //Q: s.c_str()
+     CString cstr1(ch), cstr2(s.c_str()), cstr3("Program");
 
-    printCString(cstr1);
-    printCString(cstr2);
-    printCString(cstr3);
+     printCString(cstr1);
+     printCString(cstr2);
+     printCString(cstr3);
 
-    CString cstr4, cstr5;
-    cstr4 = cstr1 + cstr2 + cstr3;
-    cstr5 = cstr1 + " " + cstr2 + " " + cstr3;
+     CString cstr4, cstr5;
+     cstr4 = cstr1 + cstr2 + cstr3;
+     cstr5 = cstr1 + " " + cstr2 + " " + cstr3;
 
-    printCString(cstr4);
-    printCString(cstr5);
-}
+     printCString(cstr4);
+     printCString(cstr5);
+ }
 ```
 4]  C++属性封装代码演示
 
@@ -1153,77 +1152,77 @@ void testCString()
  **************************************************************************    	 
  */
 
-#include <iostream>
-#include <string>
-#include <stdlib.h>
+ #include <iostream>
+ #include <string>
+ #include <stdlib.h>
 
-using namespace std;
+ using namespace std;
 
-class Student
-{
-public:
-    //注意命名格式
-    void setName(string name)
-    {
-        m_strName = name;
-    }
+ class Student
+ {
+ public:
+     //注意命名格式
+     void setName(string name)
+     {
+         m_strName = name;
+     }
 
-    string getName()
-    {
-        return m_strName;
-    }
+     string getName()
+     {
+         return m_strName;
+     }
 
-    void setGender(string gender)
-    {
-        m_strGender = gender;
-    }
+     void setGender(string gender)
+     {
+         m_strGender = gender;
+     }
 
-    string getGender()
-    {
-        return m_strGender;
-    }
+     string getGender()
+     {
+         return m_strGender;
+     }
 
-    void initScore()
-    {
-        m_iScore = 0;
-    }
+     void initScore()
+     {
+         m_iScore = 0;
+     }
 
-    int getScore()
-    {
-        return m_iScore;
-    }
+     int getScore()
+     {
+         return m_iScore;
+     }
 
-    void study(int score)
-    {
-        m_iScore += score;
-    }
+     void study(int score)
+     {
+         m_iScore += score;
+     }
 
 private:
-    string   m_strName;
-    string   m_strGender;
-    int      m_iScore;
+     string   m_strName;
+     string   m_strGender;
+     int      m_iScore;
 };
 
 int main(int argc, char const *argv[])
 {
-    //PA: 但凡new，就把内存释放，指针置空这两步先做了
-    Student * stu = new Student;
+     //PA: 但凡new，就把内存释放，指针置空这两步先做了
+     Student * stu = new Student;
 
-    //If: 如果不初始化呢？ 以后的构造函数就能解决这个问题
-    stu->initScore();
-    stu->setName("Lisa"); //PA: string类型的双引号一定要带上
-    stu->setGender("girl");
-    stu->study(2);
-    stu->study(8);
+     //If: 如果不初始化呢？ 以后的构造函数就能解决这个问题
+     stu->initScore();
+     stu->setName("Lisa"); //PA: string类型的双引号一定要带上
+     stu->setGender("girl");
+     stu->study(2);
+     stu->study(8);
 
-    cout << stu->getName() << " " << stu->getGender() << " " << stu->getScore() << endl;
+     cout << stu->getName() << " " << stu->getGender() << " " << stu->getScore() << endl;
 
-    delete stu;
-    stu = NULL;
+     delete stu;
+     stu = NULL;
 
-    system("pause");
+     system("pause");
 
-    return 0;
+     return 0;
 }
 ```
 5] C++精彩的类外定义
@@ -1247,22 +1246,22 @@ int main(int argc, char const *argv[])
 
  int main(int argc, char const *argv[])
  {
-    //PA: 但凡new，就把内存释放，指针置空这两步先做了
-    Teacher * t = new Teacher;
+     //PA: 但凡new，就把内存释放，指针置空这两步先做了
+     Teacher * t = new Teacher;
 
-    t->setName("Confucius"); //PA: string类型的双引号一定要带上
-    t->setGender("Man");
+     t->setName("Confucius"); //PA: string类型的双引号一定要带上
+     t->setGender("Man");
 
-    cout << t->getName() << " " << t->getGender() << " ";
+     cout << t->getName() << " " << t->getGender() << " ";
 
-    t->teach();
+     t->teach();
 
-    delete t;
-    t = NULL;
+     delete t;
+     t = NULL;
 
-    system("pause");
+     system("pause");
 
-    return 0;
+     return 0;
  }
 ```
 Teacher.h
@@ -1278,50 +1277,50 @@ using namespace std;
 class Teacher
 {
 public:
-     Teacher()
-     {
-         cout << "Teacher" << endl;
-     }
-     ~Teacher()
-     {
-         cout << "~Teacher" << endl;
-     }
+    Teacher()
+    {
+        cout << "Teacher" << endl;
+    }
+    ~Teacher()
+    {
+        cout << "~Teacher" << endl;
+    }
 
-     //注意命名格式
-     void setName(string name);
-     string getName();
+    //注意命名格式
+    void setName(string name);
+    string getName();
 
-     void setGender(string gender);
-     string getGender();
+    void setGender(string gender);
+    string getGender();
 
-     void teach();
+    void teach();
 
 private:
-     string m_strName;
-     string m_strGender;
+    string m_strName;
+    string m_strGender;
 };
 
 void Teacher::setName(string name)
 {
-     m_strName = name;
+    m_strName = name;
 }
 string Teacher::getName()
 {
-     return m_strName;
+    return m_strName;
 }
 
 void Teacher::setGender(string gender)
 {
-     m_strGender = gender;
+    m_strGender = gender;
 }
 string Teacher::getGender()
 {
-     return m_strGender;
+    return m_strGender;
 }
 
 void Teacher::teach()
 {
-     cout << "is teaching now ~" << endl;
+    cout << "is teaching now ~" << endl;
 }
 
 #endif
@@ -1341,38 +1340,38 @@ void Teacher::teach()
  */
 
  #include <stdlib.h>
-#include "Teacher.h"
+ #include "Teacher.h"
 
-using namespace std;
+ using namespace std;
 
-int main(int argc, char const *argv[])
-{
+ int main(int argc, char const *argv[])
+ {
     //1. 堆中实例化
     Teacher * t1 = new Teacher();
 
-    t1->setName("Confucius"); //PA: string类型的双引号一定要带上
-    t1->setGender("Man");
+     t1->setName("Confucius"); //PA: string类型的双引号一定要带上
+     t1->setGender("Man");
 
-    cout << t1->getName() << " " << t1->getGender() << " ";
-    t1->teach();
+     cout << t1->getName() << " " << t1->getGender() << " ";
+     t1->teach();
 
-    delete t1;
-    t1 = NULL;
+     delete t1;
+     t1 = NULL;
 
 
-    //2. 栈中实例化
-    Teacher t2;
+     //2. 栈中实例化
+     Teacher t2;
 
-    t2.setName("Confucius");
-    t2.setGender("Man");
+     t2.setName("Confucius");
+     t2.setGender("Man");
 
-    cout << t2.getName() << " " << t2.getGender() << " ";
-    t2.teach();
+     cout << t2.getName() << " " << t2.getGender() << " ";
+     t2.teach();
 
-    system("pause");
+     system("pause");
 
-    return 0;
-}
+     return 0;
+ }
 ```
 7] 构造函数初始化列表
 
@@ -1476,30 +1475,30 @@ private:
 
 void Teacher::setName(string name)
 {
-    m_strName = name;
+     m_strName = name;
 }
 string Teacher::getName()
 {
-    return m_strName;
+     return m_strName;
 }
 
 void Teacher::setGender(string gender)
 {
-    m_strGender = gender;
+     m_strGender = gender;
 }
 string Teacher::getGender()
 {
-    return m_strGender;
+     return m_strGender;
 }
 
 int Teacher::getMax()
 {
-    return m_iMax;
+     return m_iMax;
 }
 
 void Teacher::teach()
 {
-    cout << "is teaching now ~" << endl;
+     cout << "is teaching now ~" << endl;
 }
 
 #endif
@@ -1564,9 +1563,9 @@ public:
     {
         cout << "~Teacher" << endl;
     }
-
 };
 #endif
+
 ```
 9] 析构函数演示
 
