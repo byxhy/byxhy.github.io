@@ -749,7 +749,7 @@ Photo by joshua-earle
      return 0;
  }
 
-//3' VS malloc，四部曲
+ //3' VS malloc，四部曲
  int testVsMalloc()
  {
      //VS: char *str1 = new char[50];
@@ -1025,7 +1025,7 @@ Photo by joshua-earle
      cout << "   * ch6:" << * ch6 << endl;
  }
 
-//3、string 的使用: <string>
+ //3、string 的使用: <string>
  void testStringMore()
  {
      string s1 = "This";
@@ -1047,7 +1047,7 @@ Photo by joshua-earle
      cout << "s4.size():" << s4.size() << endl;
  }
 
-//4、char*  <---->  string 借助c_str();
+ //4、char*  <---->  string 借助c_str();
  void pCharToString()
  {
      //Err: char * ch1 = "pCharToString";
@@ -1100,7 +1100,7 @@ Photo by joshua-earle
      ch3 = NULL;
  }
 
-//5、CString 的使用: CString 常用于 MFC 编程中，是属于 MFC 的类需要 <afx.h>
+ //5、CString 的使用: CString 常用于 MFC 编程中，是属于 MFC 的类需要 <afx.h>
  void printCString(CString &csInput)
  {
      int n = csInput.GetLength(); //类比string
@@ -1116,7 +1116,7 @@ Photo by joshua-earle
      cout << "csInput: " << csInput << endl;
  }
 
-//6、CString 的基本使用
+ //6、CString 的基本使用
  void testCString()
  {
      char * ch = "Hello";
