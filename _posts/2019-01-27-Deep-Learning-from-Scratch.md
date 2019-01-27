@@ -4,10 +4,10 @@ title: "Deep Learning from Scratch"
 author: "Xhy"
 categories: Deep-Learning
 tags: [improve]
-image: luca-bravo.jpg
+image: james-pond.jpg
 ---
 
-Photo by luca-bravo
+Photo by james-pond
 
 
 >那么,怎么才能更深入地理解深度学习呢?在笔者看来,最好的办法就
