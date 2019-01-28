@@ -687,7 +687,7 @@ plt.show()
 ```
 
 
-![png](/assets/img/Deep Learning from Scratch/output_72_0.png)
+![png](output_72_0.png)
 
 
 
@@ -710,7 +710,7 @@ plt.show()
 ```
 
 
-![png](/assets/img/Deep Learning from Scratch/output_73_0.png)
+![png](output_73_0.png)
 
 
 #### imshow
@@ -725,10 +725,314 @@ plt.imshow(img)
 plt.show()
 ```
 
-![png](/assets/img/Deep Learning from Scratch/output_75_0.png)
+
+![png](output_75_0.png)
 
 
 #### Get More - https://www.scipy-lectures.org/
+
+#### Chapter 2 – Perceptron
+
+#### 2.1 What is perceptron
+
+#### 2.2 Simple logic circuit
+
+#### 2.3 Perceptron implementation
+
+#### AND
+
+
+```python
+def AND(x1, x2):
+    w1, w2, theta = 0.5, 0.5, 0.7
+    tmp =  x1 * w1 + x2 * w2
+    if tmp <= theta:
+        return 0
+    elif tmp > theta:
+        return 1
+```
+
+
+```python
+AND(0, 0)
+```
+
+
+
+
+    0
+
+
+
+
+```python
+AND(1, 0)
+```
+
+
+
+
+    0
+
+
+
+
+```python
+AND(0, 1)
+```
+
+
+
+
+    0
+
+
+
+
+```python
+AND(1, 1)
+```
+
+
+
+
+    1
+
+
+
+#### Import weights and offsets
+
+
+```python
+import numpy as np
+x = np.array([0, 1])
+w = np.array([0.5, 0.5])
+b = -0.7
+
+w * x
+```
+
+
+
+
+    array([0. , 0.5])
+
+
+
+
+```python
+np.sum(w * x)
+```
+
+
+
+
+    0.5
+
+
+
+
+```python
+np.sum(w * x) + b
+```
+
+
+
+
+    -0.19999999999999996
+
+
+
+#### Perceptron implementation2
+
+#### AND
+
+
+```python
+def AND(x1, x2):
+    x = np.array([x1, x2])
+    w = np.array([0.5, 0.5])
+    b = -0.7
+    tmp = np.sum(w * x) + b
+    if tmp <= 0:
+        return 0
+    else:
+        return 1
+```
+
+
+```python
+AND(0, 0)
+```
+
+
+
+
+    0
+
+
+
+
+```python
+AND(1, 0)
+```
+
+
+
+
+    0
+
+
+
+
+```python
+AND(0, 1)
+```
+
+
+
+
+    0
+
+
+
+
+```python
+AND(1, 1)
+```
+
+
+
+
+    1
+
+
+
+#### NAND
+
+
+```python
+def NAND(x1, x2):
+    x = np.array([x1, x2])
+    w = np.array([-0.5, -0.5])
+    b = 0.7
+    tmp = np.sum(w * x) + b
+    if tmp <= 0:
+        return 0
+    else:
+        return 1
+```
+
+
+```python
+NAND(0, 0)
+```
+
+
+
+
+    1
+
+
+
+
+```python
+NAND(1, 0)
+```
+
+
+
+
+    1
+
+
+
+
+```python
+NAND(0, 1)
+```
+
+
+
+
+    1
+
+
+
+
+```python
+NAND(1, 1)
+```
+
+
+
+
+    0
+
+
+
+#### OR
+
+
+```python
+def OR(x1, x2):
+    x = np.array([x1, x2])
+    w = np.array([0.5, 0.5])
+    b = -0.2
+    tmp = np.sum(w * x) + b
+    if tmp <= 0:
+        return 0
+    else:
+        return 1
+```
+
+
+```python
+OR(0, 0)
+```
+
+
+
+
+    0
+
+
+
+
+```python
+OR(1, 0)
+```
+
+
+
+
+    1
+
+
+
+
+```python
+OR(0, 1)
+```
+
+
+
+
+    1
+
+
+
+
+```python
+OR(1, 1)
+```
+
+
+
+
+    1
+
+
 
 
 ```python
