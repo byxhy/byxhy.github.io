@@ -17,6 +17,7 @@ Photo by james-pond
 
 <br />
 
+
 ### Deep Learning from Scratch
 
 #### Chapter 1 – Introduction to Python
@@ -377,6 +378,14 @@ hello()
 
 
 ```python
+print("I\'m hungry!")
+```
+
+    I'm hungry!
+
+
+
+```python
 run -i './deep-learning-from-scratch/ch01/hungry.py'
 ```
 
@@ -384,6 +393,35 @@ run -i './deep-learning-from-scratch/ch01/hungry.py'
 
 
 #### class
+
+
+```python
+class Man:
+    def __init__(self, name1, name2):
+        self.name1 = name1
+        self.name2 = name2
+        print("Initialized!")
+
+    def hello(self):
+        print("Hello " + self.name1 + "!")
+
+    def goodby(self):
+        print("Goodby " + self.name1 + "!")
+
+    def Goodby2(self):        
+        print("Goodby " + self.name2 + "!")
+
+m = Man("GouDan", "ErYa")
+m.hello()
+m.goodby()
+m.Goodby2()
+```
+
+    Initialized!
+    Hello GouDan!
+    Goodby GouDan!
+    Goodby ErYa!
+
 
 
 ```python
@@ -687,7 +725,7 @@ plt.show()
 ```
 
 
-![png](output_72_0.png)
+![png](/assets/img/Deep Learning from Scratch/output_74_0.png)
 
 
 
@@ -710,7 +748,7 @@ plt.show()
 ```
 
 
-![png](output_73_0.png)
+![png](/assets/img/Deep Learning from Scratch/output_75_0.png)
 
 
 #### imshow
@@ -726,7 +764,7 @@ plt.show()
 ```
 
 
-![png](output_75_0.png)
+![png](/assets/img/Deep Learning from Scratch/output_77_0.png)
 
 
 #### Get More - https://www.scipy-lectures.org/
@@ -1034,7 +1072,76 @@ OR(1, 1)
 
 
 
+#### 2.5 multi-layered perceptron
+
+#### XOR
+
+
+```python
+def XOR(x1, x2):
+    s1 = NAND(x1, x2)
+    s2 = OR(x1, x2)
+    y  = AND(s1, s2)
+    return y
+```
+
+
+```python
+XOR(0, 0)
+```
+
+
+
+
+    0
+
+
+
+
+```python
+XOR(0, 1)
+```
+
+
+
+
+    1
+
+
+
+
+```python
+XOR(1, 0)
+```
+
+
+
+
+    1
+
+
+
+
+```python
+XOR(1, 1)
+```
+
+
+
+
+    0
+
+
+
+#### Chapter 3 – Neural network
+
+#### 3.1 From perceptron to neural network
+
+#### 3.2 Activation function
+
 
 ```python
 
 ```
+
+![png](/assets/img/Deep Learning from Scratch/
