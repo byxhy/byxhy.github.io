@@ -1139,9 +1139,102 @@ XOR(1, 1)
 
 #### 3.2 Activation function
 
+#### 3.2.3 Activation function - step function
+
 
 ```python
+import numpy as np
+import matplotlib.pylab as plt
 
+def step_funcion(x):
+    return np.array(x>0, dtype=np.int)
+
+x = np.arange(-5.0, 5.0, 0.1)
+y = step_funcion(x)
+
+plt.plot(x, y)
+plt.ylim(-0.1, 1.1)
+plt.show()
 ```
 
-![png](/assets/img/Deep Learning from Scratch/
+
+![png](/assets/img/Deep Learning from Scratch/output_123_0.png)
+
+
+#### 3.2.4 Activation function - sigmoid function
+
+
+```python
+import numpy as np
+import matplotlib.pylab as plt
+
+def sigmoid_function(x):
+    return 1 /( 1 + np.exp(-x))
+
+x = np.arange(-5.0, 5.0, 0.1)
+y = sigmoid_function(x)
+
+plt.plot(x, y)
+plt.ylim(-0.1, 1.1)
+plt.show()
+```
+
+
+![png](/assets/img/Deep Learning from Scratch/output_125_0.png)
+
+
+#### step function VS sigmoid function
+
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def step_funcion(x):
+    return np.array(x>0, dtype=np.int)
+
+def sigmoid_function(x):
+    return 1 /( 1 + np.exp(-x))
+
+x  = np.arange(-5.0, 5.0, 0.1)
+
+y1 = step_funcion(x)
+
+y2 = sigmoid_function(x)
+
+plt.plot(x, y1, label="step")
+plt.plot(x, y2, linestyle = "--", label="sigmoid")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title('step & sigmoid')
+plt.legend()
+plt.show()
+```
+
+
+![png](/assets/img/Deep Learning from Scratch/output_127_0.png)
+
+
+#### 3.2.7 Activation function - ReLU function
+
+
+```python
+import numpy as np
+import matplotlib.pylab as plt
+
+def relu(x):
+    return np.maximum(0, x)
+
+x = np.arange(-5.0, 5.0, 0.1)
+y = relu(x)
+
+plt.plot(x, y)
+plt.ylim(-1, 5.5)
+plt.show()
+```
+
+
+![png](/assets/img/Deep Learning from Scratch/output_129_0.png)
+
+
+![png](/assets/img/Deep Learning from Scratch//assets/img/Deep Learning from Scratch/
