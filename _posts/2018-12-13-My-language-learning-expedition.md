@@ -14,6 +14,8 @@ Photo by markus-spiske
 
 *巧的是這句話無論是用在看別人看自己，看現在看以前，都是那樣的合適*
 
+http://iteslj.org/questions/
+
 <br />
 
 
