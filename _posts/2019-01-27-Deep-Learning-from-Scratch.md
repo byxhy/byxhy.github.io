@@ -18,6 +18,7 @@ Photo by james-pond
 <br />
 
 
+
 ### Deep Learning from Scratch
 
 #### Chapter 1 – Introduction to Python
@@ -1154,6 +1155,7 @@ y = step_funcion(x)
 
 plt.plot(x, y)
 plt.ylim(-0.1, 1.1)
+plt.title('step function')
 plt.show()
 ```
 
@@ -1176,6 +1178,7 @@ y = sigmoid_function(x)
 
 plt.plot(x, y)
 plt.ylim(-0.1, 1.1)
+plt.title('sigmoid function')
 plt.show()
 ```
 
@@ -1230,6 +1233,7 @@ y = relu(x)
 
 plt.plot(x, y)
 plt.ylim(-1, 5.5)
+plt.title('ReLU function')
 plt.show()
 ```
 
@@ -1237,4 +1241,262 @@ plt.show()
 ![png](/assets/img/Deep Learning from Scratch/output_129_0.png)
 
 
-![png](/assets/img/Deep Learning from Scratch//assets/img/Deep Learning from Scratch/
+#### 3.3 N dimension array operation
+
+
+```python
+import numpy as np
+
+A = np.array([1, 2, 3, 4])
+print(A)
+```
+
+    [1 2 3 4]
+
+
+
+```python
+np.ndim(A)
+```
+
+
+
+
+    1
+
+
+
+
+```python
+A.shape
+```
+
+
+
+
+    (4,)
+
+
+
+
+```python
+A.shape[0]
+```
+
+
+
+
+    4
+
+
+
+
+```python
+A.shape[1]
+```
+
+
+    ---------------------------------------------------------------------------
+
+    IndexError                                Traceback (most recent call last)
+
+    <ipython-input-31-b42afa0c404d> in <module>
+    ----> 1 A.shape[1]
+
+
+    IndexError: tuple index out of range
+
+
+
+```python
+B = np.array([[1,2], [3,4], [5,6]])
+print(B)
+```
+
+    [[1 2]
+     [3 4]
+     [5 6]]
+
+
+
+```python
+np.ndim(B)
+```
+
+
+
+
+    2
+
+
+
+
+```python
+B.shape
+```
+
+
+
+
+    (3, 2)
+
+
+
+#### Matrix multiplication
+
+
+```python
+A = np.array([[1,2], [3,4]])
+A.shape
+```
+
+
+
+
+    (2, 2)
+
+
+
+
+```python
+B = np.array([[5,6], [7,8]])
+B.shape
+```
+
+
+
+
+    (2, 2)
+
+
+
+
+```python
+np.dot(A, B)
+```
+
+
+
+
+    array([[19, 22],
+           [43, 50]])
+
+
+
+
+```python
+A = np.array([[1,2,3], [4,5,6]])
+A.shape
+```
+
+
+
+
+    (2, 3)
+
+
+
+
+```python
+B = np.array([[1,2], [3,4], [5,6]])
+B.shape
+```
+
+
+
+
+    (3, 2)
+
+
+
+
+```python
+np.dot(A, B)
+```
+
+
+
+
+    array([[22, 28],
+           [49, 64]])
+
+
+
+
+```python
+C = np.array([[1,2], [3,4]])
+C.shape
+```
+
+
+
+
+    (2, 2)
+
+
+
+
+```python
+np.dot(A, C)
+```
+
+
+    ---------------------------------------------------------------------------
+
+    ValueError                                Traceback (most recent call last)
+
+    <ipython-input-43-bb5afb89b162> in <module>
+    ----> 1 np.dot(A, C)
+
+
+    ValueError: shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
+
+
+#### A is two dimension and B is one dimentsion
+
+
+```python
+A = np.array([[1,2], [3, 4], [5,6]])
+A.shape
+```
+
+
+
+
+    (3, 2)
+
+
+
+
+```python
+B = np.array([7,8])
+B.shape
+```
+
+
+
+
+    (2,)
+
+
+
+
+```python
+np.dot(A, B)
+```
+
+
+
+
+    array([23, 53, 83])
+
+
+
+
+```python
+
+```
+
+---
+
+![png](/assets/img/Deep Learning from Scratch/output_129_0.png)
