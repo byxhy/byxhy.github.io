@@ -1497,6 +1497,374 @@ np.dot(A, B)
 
 ```
 
+
+```python
+import numpy as np
+
+X = np.array([1, 2])
+X.shape
+```
+
+
+
+
+    (2,)
+
+
+
+
+```python
+W = np.array([[1, 3, 5], [2, 4, 6]])
+print(W)
+```
+
+    [[1 3 5]
+     [2 4 6]]
+
+
+
+```python
+W.shape
+```
+
+
+
+
+    (2, 3)
+
+
+
+
+```python
+Y = np.dot(X, W)
+print(Y)
+```
+
+    [ 5 11 17]
+
+
+
+```python
+
+```
+
+
+```python
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+```
+
+
+```python
+X  = np.array([1.0, 0.5])
+W1 = np.array([[0.1, 0.3, 0.5], [0.2, 0.4, 0.6]])
+B1 = np.array([0.1, 0.2, 0.3])
+
+print(W1.shape)
+print(X.shape)
+print(B1.shape)
+```
+
+    (2, 3)
+    (2,)
+    (3,)
+
+
+
+```python
+A1 = np.dot(X, W1) + B1
+print(A1)
+```
+
+    [0.3 0.7 1.1]
+
+
+
+```python
+Z1 = sigmoid(A1)
+print(Z1)
+```
+
+    [0.57444252 0.66818777 0.75026011]
+
+
+
+```python
+W2 = np.array([[0.1, 0.4], [0.2, 0.5], [0.3, 0.6]])
+B2 = np.array([0.1, 0.2])
+
+print(Z1.shape)
+print(W2.shape)
+print(B2.shape)
+```
+
+    (3,)
+    (3, 2)
+    (2,)
+
+
+
+```python
+A2 = np.dot(Z1, W2) + B2
+Z2 = sigmoid(A2)
+print(Z2)
+```
+
+    [0.62624937 0.7710107 ]
+
+
+
+```python
+def identity_function(x):
+    return x
+
+W3 = np.array([[0.1, 0.3], [0.2, 0.4]])
+B3 = np.array([0.1, 0.2])
+
+A3 = np.dot(Z2, W3) + B3
+Y = identity_function(A3)
+print(Y)
+```
+
+    [0.31682708 0.69627909]
+
+
+##### Code Summary
+
+
+```python
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+def identity_function(x):
+    return x
+
+def init_network():
+    network = {}
+    network['W1'] = np.array([[0.1, 0.3, 0.5], [0.2, 0.4, 0.6]])
+    network['b1'] = np.array([0.1, 0.2, 0.3])
+    network['W2'] = np.array([[0.1, 0.4], [0.2, 0.5], [0.3, 0.6]])
+    network['b2'] = np.array([0.1, 0.2])
+    network['W3'] = np.array([[0.1, 0.3], [0.2, 0.4]])
+    network['b3'] = np.array([0.1, 0.2])
+
+    return network
+
+
+def forward(network, x):
+    W1, W2, W3 = network['W1'], network['W2'], network['W3']
+    b1, b2, b3 = network['b1'], network['b2'], network['b3']
+
+    a1 = np.dot(x, W1) + b1
+    z1 = sigmoid(a1)
+
+    a2 = np.dot(Z1, W2) + b2
+    z2 = sigmoid(a2)
+
+    a3 = np.dot(Z2, W3) + b3
+    y  = identity_function(a3)
+
+    return y
+```
+
+
+```python
+network = init_network()
+x = np.array([1.0, 0.5])
+y = forward(network, x)
+print(y)
+```
+
+    [0.31682708 0.69627909]
+
+
+##### Softmax function
+
+
+```python
+a = np.array([0.3, 2.9, 4.0])
+exp_a = np.exp(a)
+print(exp_a)
+```
+
+    [ 1.34985881 18.17414537 54.59815003]
+
+
+
+```python
+sum_exp_a = sum(exp_a)
+print(sum_exp_a)
+```
+
+    74.1221542101633
+
+
+
+```python
+y = exp_a / sum_exp_a
+print(y)
+```
+
+    [0.01821127 0.24519181 0.73659691]
+
+
+
+```python
+def softmax(x):
+    exp_a = np.exp(a)
+    sum_exp_a = np.sum(exp_a)
+    y = exp_a / sum_exp_a
+
+    return y
+```
+
+
+```python
+print(softmax(a))
+```
+
+    [0.01821127 0.24519181 0.73659691]
+
+
+##### softmax - matters need attention
+
+
+```python
+a = np.array([1010, 1000, 990])
+np.exp(a) / np.sum(np.exp(a))
+```
+
+    /home/xhy/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:2: RuntimeWarning: overflow encountered in exp
+
+    /home/xhy/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:2: RuntimeWarning: invalid value encountered in true_divide
+
+
+
+
+
+
+    array([nan, nan, nan])
+
+
+
+
+```python
+
+```
+
+
+```python
+c = np.max(a)
+a - c
+```
+
+
+
+
+    array([  0, -10, -20])
+
+
+
+
+```python
+np.exp(a - c) / np.sum(np.exp(a - c))
+```
+
+
+
+
+    array([9.99954600e-01, 4.53978686e-05, 2.06106005e-09])
+
+
+
+#### So the best softmax function is:
+
+
+```python
+def softmax(a):
+    c = np.max(a)
+    exp_a = np.exp(a - c)
+    sum_exp_a = np.sum(exp_a)
+    y = exp_a / sum_exp_a
+
+    return y
+```
+
+
+```python
+a = np.array([1010, 1000, 990])
+print(softmax(a))
+```
+
+    [9.99954600e-01 4.53978686e-05 2.06106005e-09]
+
+
+
+```python
+a = np.array([0.3, 2.9, 4.0])
+y = softmax(a)
+print(y)
+```
+
+    [0.01821127 0.24519181 0.73659691]
+
+
+
+```python
+np.sum(y)
+```
+
+
+
+
+    1.0
+
+
+
+#### 3.6.1 MNIST
+
+
+```python
+import sys, os
+sys.path.append(os.pardir)
+from dataset.mnist import load_mnist   # Must be the same level as the parent directory of load_mnist
+
+(x_train, t_train), (x_test, t_test) = load_mnist(flatten=True, normalize=False) # Change the vps to Global Model
+```
+
+    Downloading train-images-idx3-ubyte.gz ...
+    Done
+    Converting train-images-idx3-ubyte.gz to NumPy Array ...
+    Done
+    Converting train-labels-idx1-ubyte.gz to NumPy Array ...
+    Done
+    Converting t10k-images-idx3-ubyte.gz to NumPy Array ...
+    Done
+    Converting t10k-labels-idx1-ubyte.gz to NumPy Array ...
+    Done
+    Creating pickle file ...
+    Done!
+
+
+
+```python
+print(x_train.shape)
+print(t_train.shape)
+print(x_test.shape)
+print(x_test.shape)
+```
+
+    (60000, 784)
+    (60000,)
+    (10000, 784)
+    (10000, 784)
+
+
+
+```python
+
+```
+
 ---
 
 ![png](/assets/img/Deep Learning from Scratch/output_129_0.png)
