@@ -54,13 +54,13 @@ http://iteslj.org/questions/
 
 ** Lesson5 - Topic: My School Deskmate   **
 
-*Teacher: Teacher Keith
-*Time: Feb 17,2019  19:30
+Teacher: Teacher Keith
+Time: Feb 17,2019  19:30
 
-*Words may be used:
-*Key words:  NBA LBJ
+Words may be used:
+Key words:  NBA LBJ
 
-*Replay:
+Replay:
 K: Yes can you hear me?
 F: Yes,
 K: Good evening!
@@ -69,7 +69,7 @@ K: Yes, ok, so by the way, may I know what’s your name?
 F: Yes, you can call me Felix.
 K: Felix, ok, hi Felix. Nice to meet you. By the way my name is Teacher Keith, you can also call me Keith.
 F: Ok
-*K: All right, by the way how the day today?*
+K: All right, by the way how the day today?*
 F:
 1. Do you remember any of your school deskmates? What are the most exciting that you did together?
 Yes, I have a good deskmate in my high school.The most exciting thing may be playing basketball together.we not only play basketball after class, but sometimes play it secretly during the class. secretly during the class.
@@ -91,13 +91,13 @@ You’ve always said youth will never stray too far. Yet, those times contain ou
 
 ** Lesson8 - Topic: Strange Buildings   **
 
-*Teacher: Cris
-*Time: Feb 20,2019  19:30
+Teacher: Cris
+Time: Feb 20,2019  19:30
 
-*Words may be used:
-*Key words:  
+Words may be used:
+Key words:  
 
-*Replay:
+Replay:
 T: Hi, My name is Cris, so what’s yours name?
 F: Hi Cris, you can call me Felix.
 T: What can you say about the picture? What can you say about the building?
@@ -111,7 +111,7 @@ F: The three guys are Chinese god. For me, these people are very closed to me. I
 
 
 
-*Further Reading:
+Further Reading:
 
 
 update My Language to line-13
@@ -120,11 +120,7 @@ update My Language to line-13
 [2]:	#2
 [3]:
 
-* Lesson8 - Topic: Strange Buildings *
 
-
-** Everyday new sentence **
-
-** Everyday new sentence **
+** Everyday new sentence   **
 
 Winter chills are over, and spring brings a welcome change of mood. We’re passionate about change too, so we’d love to hear your feedback and breathe new life into our Digest. Traditionally, we’ll highlight the latest news too. Let’s dive in!
