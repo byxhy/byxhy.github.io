@@ -53,6 +53,7 @@ http://iteslj.org/questions/
 	*  This course is for students who have English level of CET-4, and have a great interest in analysis and oral English.
 
 ** Lesson5 - Topic: My School Deskmate   **
+
 *Teacher: Teacher Keith
 *Time: Feb 17,2019  19:30
 
@@ -89,6 +90,7 @@ You’ve always said youth will never stray too far. Yet, those times contain ou
 
 
 ** Lesson8 - Topic: Strange Buildings   **
+
 *Teacher: Cris
 *Time: Feb 20,2019  19:30
 
@@ -116,4 +118,13 @@ update My Language to line-13
 
 [1]:	#1
 [2]:	#2
-[3]:	https://novelplanet.com/Novel/With-You
+[3]:
+
+* Lesson8 - Topic: Strange Buildings *
+
+
+** Everyday new sentence **
+
+** Everyday new sentence **
+
+Winter chills are over, and spring brings a welcome change of mood. We’re passionate about change too, so we’d love to hear your feedback and breathe new life into our Digest. Traditionally, we’ll highlight the latest news too. Let’s dive in!
