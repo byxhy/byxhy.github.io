@@ -24,21 +24,8 @@ http://iteslj.org/questions/
 * [Free Talk with topic  II][1]
 	* Lesson0 - Topic: My School Deskmate
 	* Lesson1 - Topic: My School Deskmate
-	* Lesson2 - Topic: My School Deskmate
-	* Lesson3 - Topic: My School Deskmate
-	* Lesson4 - Topic: My School Deskmate
-	* Lesson5 - Topic: My School Deskmate
-	*  綜合
-		* 练习：求最大值
-* [C++远征之离港篇][2]
-	* C++语言新特性
-		* C++特性之引用
-		* C++特性之const
-	* C++语言新亮點
-	* 內存管理
+		* Tommorrow
 
-
-<br />
 <br />
 
 <h3 id="1"> Chapter 1 - Free talk with topic II☂</h3>
@@ -124,3 +111,33 @@ update My Language to line-13
 ** Everyday new sentence   **
 
 Winter chills are over, and spring brings a welcome change of mood. We’re passionate about change too, so we’d love to hear your feedback and breathe new life into our Digest. Traditionally, we’ll highlight the latest news too. Let’s dive in!
+
+
+---
+
+** Lesson8 - Topic: Strange Buildings   **
+
+Teacher: Cris
+Time: Feb 20,2019  19:30
+
+** Everyday new sentence   **
+
+---
+
+
+** Lesson 60 - Topic: Perspective   **
+
+Teacher: OJay.L
+
+Time: April 15, 2019  22:30
+
+
+
+[So what is NLP?](http://www.nlp.com/what-is-nlp/)
+>In fact, go ahead right now and think of, if there was one thing you could change, one habit you could break, what would it be?
+>
+* Would you remain calm during work presentations?
+* Quit procrastinating and spending so much time on Facebook?
+* Not devour a whole bag of potato chips or tub of ice cream in one sitting?
+
+---
