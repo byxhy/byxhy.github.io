@@ -21,14 +21,18 @@ http://iteslj.org/questions/
 
 ## Table of Contents
 
-* [Free Talk with topic  II][1]
+* [Free Talk with Topic Ⅱ][1]
 	* Lesson0 - Topic: My School Deskmate
 	* Lesson1 - Topic: My School Deskmate
 		* Tommorrow
 
+* [Free Talk with Topic Ⅲ][2]
+	* Lesson11 - Topic: Diet
+
+
 <br />
 
-<h3 id="1"> Chapter 1 - Free talk with topic II☂</h3>
+<h3 id="1"> Chapter 1 - Free Talk with Topic Ⅱ☂</h3>
 
 ** Course Introduction  **
 *  This course chooses thought-provoking topics (including social phenomena, recent news, philosophic arguments, sentiment of the life, etc.), guides the students to talk as much as possible about this topic.   
@@ -39,7 +43,7 @@ http://iteslj.org/questions/
 
 	*  This course is for students who have English level of CET-4, and have a great interest in analysis and oral English.
 
-** Lesson5 - Topic: My School Deskmate   **
+** Lesson5 - My School Deskmate   **
 
 Teacher: Teacher Keith
 Time: Feb 17,2019  19:30
@@ -76,7 +80,7 @@ You’ve always said youth will never stray too far. Yet, those times contain ou
 
 
 
-** Lesson8 - Topic: Strange Buildings   **
+** Lesson8 - Strange Buildings   **
 
 Teacher: Cris
 Time: Feb 20,2019  19:30
@@ -115,7 +119,7 @@ Winter chills are over, and spring brings a welcome change of mood. We’re pass
 
 ---
 
-** Lesson8 - Topic: Strange Buildings   **
+** Lesson8 - Strange Buildings   **
 
 Teacher: Cris
 Time: Feb 20,2019  19:30
@@ -125,7 +129,7 @@ Time: Feb 20,2019  19:30
 ---
 
 
-** Lesson 60 - Topic: Perspective   **
+** Lesson 60 - Perspective   **
 
 Teacher: OJay.L
 
@@ -140,4 +144,13 @@ Time: April 15, 2019  22:30
 * Quit procrastinating and spending so much time on Facebook?
 * Not devour a whole bag of potato chips or tub of ice cream in one sitting?
 
----
+
+<br />
+
+<h3 id="2"> Chapter 2 - Free Talk with Topic Ⅲ☂</h3>
+
+** Course Introduction  **
+*  In each part of a class, You will be given 1 topic, 5 words, 1 quote. And you are supposed to give A Speech.
+
+
+** Lesson11 - Diet   **
