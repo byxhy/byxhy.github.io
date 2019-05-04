@@ -154,3 +154,6 @@ Time: April 15, 2019  22:30
 
 
 ** Lesson11 - Diet   **
+
+
+She's a great ally, but not a leader. She's waffling on medicare for all. Bernie or Tulsi will lead.﻿
