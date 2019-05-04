@@ -156,4 +156,13 @@ Time: April 15, 2019  22:30
 ** Lesson11 - Diet   **
 
 
+** Lesson12 - Climate   **
+
+I tried to be as rational as possible, but it was the worst of all my classroom experiences. The class atmosphere was abysmal.
+
+* I didn't see any patients in the class. I was just interrupted and told I was wrong, but you didn't try to give any phonetic interpretation. You didn't give any history of words, is it from Latin or Spanish. Just want me to read after you, I can't do that. I'm not sure you're right. In my opinion, your pronunciation is ok, but not that good.
+* 你讲句中文，我也能找出你发音的问题，但我会告诉你这个词正确的拼音是什么，为什么这么读，历史出处是什么，从这点看你很业余。
+* Your class is read according to the textbook, without any of your ideas. You have students read this, read that, without any guidance, in my opinion, just perfunctory.
+* I will be more careful about the ending of every word. Thank you.
+
 She's a great ally, but not a leader. She's waffling on medicare for all. Bernie or Tulsi will lead.﻿
