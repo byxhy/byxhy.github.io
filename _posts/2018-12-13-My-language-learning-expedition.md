@@ -166,3 +166,6 @@ I tried to be as rational as possible, but it was the worst of all my classroom 
 * I will be more careful about the ending of every word. Thank you.
 
 She's a great ally, but not a leader. She's waffling on medicare for all. Bernie or Tulsi will lead.﻿
+
+
+The midterms also increased Generation X’s representation in the House: Just less than half (44) of the 91 newly elected representatives are part of America’s “middle child” generation (those born between 1965 and 1980). Almost a third (136 members, or 31.5%) of the next House will be Gen Xers, a net increase of 18 from the start of the current Congress.
