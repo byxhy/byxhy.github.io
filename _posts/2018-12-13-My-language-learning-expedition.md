@@ -139,23 +139,23 @@ Time: April 15, 2019  22:30
 [So what is NLP?](http://www.nlp.com/what-is-nlp/)
 >In fact, go ahead right now and think of, if there was one thing you could change, one habit you could break, what would it be?
 >
-* Would you remain calm during work presentations?
-* Quit procrastinating and spending so much time on Facebook?
-* Not devour a whole bag of potato chips or tub of ice cream in one sitting?
+- Would you remain calm during work presentations?
+- Quit procrastinating and spending so much time on Facebook?
+- Not devour a whole bag of potato chips or tub of ice cream in one sitting?
 
 
 <br />
 
 <h3 id="2"> Chapter 2 - Free Talk with Topic Ⅲ</h3>
 
-** Course Introduction  **
+**Course Introduction**
 *  In each part of a class, You will be given 1 topic, 5 words, 1 quote. And you are supposed to give A Speech.
 
 
-** Lesson11 - Diet   **
+**Lesson11 - Diet**
 
 
-** Lesson12 - Climate   **
+### Lesson12 - Climate
 
 I tried to be as rational as possible, but it was the worst of all my classroom experiences. The class atmosphere was abysmal.
 
@@ -168,13 +168,12 @@ She's a great ally, but not a leader. She's waffling on medicare for all. Bernie
 
 <br />
 
-** Lesson14 - Opportunity   **
+### Lesson14 - Opportunity
 
-Teacher & Time: Carole / 2019-05-05 22:30 -- 22:55
+***Teacher & Time:*** Carole / 2019-05-05 22:30 -- 22:55
 
 
 
-Daily sentence:
-It’s mind boggling how curry always does something dumb during a critical game
+***Daily sentence:*** It’s mind boggling how curry always does something dumb during a critical game
 
 <br />
