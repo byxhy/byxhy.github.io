@@ -14,7 +14,6 @@ Photo by markus-spiske
 
 *巧的是這句話無論是用在看別人看自己，看現在看以前，都是那樣的合適*
 
-http://iteslj.org/questions/
 
 <br />
 
@@ -32,7 +31,7 @@ http://iteslj.org/questions/
 
 <br />
 
-<h3 id="1"> Chapter 1 - Free Talk with Topic Ⅱ☂</h3>
+<h3 id="1"> Chapter 1 - Free Talk with Topic Ⅱ</h3>
 
 ** Course Introduction  **
 *  This course chooses thought-provoking topics (including social phenomena, recent news, philosophic arguments, sentiment of the life, etc.), guides the students to talk as much as possible about this topic.   
@@ -147,7 +146,7 @@ Time: April 15, 2019  22:30
 
 <br />
 
-<h3 id="2"> Chapter 2 - Free Talk with Topic Ⅲ☂</h3>
+<h3 id="2"> Chapter 2 - Free Talk with Topic Ⅲ</h3>
 
 ** Course Introduction  **
 *  In each part of a class, You will be given 1 topic, 5 words, 1 quote. And you are supposed to give A Speech.
@@ -167,12 +166,15 @@ I tried to be as rational as possible, but it was the worst of all my classroom 
 
 She's a great ally, but not a leader. She's waffling on medicare for all. Bernie or Tulsi will lead.﻿
 
+<br />
 
-** Lesson13 - Opportunity   **
+** Lesson14 - Opportunity   **
 
-Teacher:
-
-Time: Mar 5, 2019  22:30
+Teacher & Time: Carole / 2019-05-05 22:30 -- 22:55
 
 
+
+Daily sentence:
 It’s mind boggling how curry always does something dumb during a critical game
+
+<br />
