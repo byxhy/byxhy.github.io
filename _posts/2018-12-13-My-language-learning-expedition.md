@@ -30,10 +30,9 @@ Photo by markus-spiske
 
 
 <br />
-
 <h3 id="1"> Chapter 1 - Free Talk with Topic Ⅱ</h3>
 
-** Course Introduction  **
+### Course Introduction
 *  This course chooses thought-provoking topics (including social phenomena, recent news, philosophic arguments, sentiment of the life, etc.), guides the students to talk as much as possible about this topic.   
 
 	*  This course aims at leading the students to practice spoken English and divergent thinking ability.   
@@ -79,7 +78,8 @@ You’ve always said youth will never stray too far. Yet, those times contain ou
 
 
 
-** Lesson8 - Strange Buildings   **
+<br />
+### Lesson8 - Strange Buildings
 
 Teacher: Cris
 Time: Feb 20,2019  19:30
@@ -111,24 +111,24 @@ update My Language to line-13
 [3]:
 
 
-** Everyday new sentence   **
+Everyday new sentence
 
 Winter chills are over, and spring brings a welcome change of mood. We’re passionate about change too, so we’d love to hear your feedback and breathe new life into our Digest. Traditionally, we’ll highlight the latest news too. Let’s dive in!
 
 
----
 
-** Lesson8 - Strange Buildings   **
+<br />
+### Lesson8 - Strange Buildings
 
 Teacher: Cris
 Time: Feb 20,2019  19:30
 
-** Everyday new sentence   **
-
----
+Everyday new sentence
 
 
-** Lesson 60 - Perspective   **
+
+<br />
+### Lesson 60 - Perspective
 
 Teacher: OJay.L
 
@@ -145,16 +145,16 @@ Time: April 15, 2019  22:30
 
 
 <br />
-
 <h3 id="2"> Chapter 2 - Free Talk with Topic Ⅲ</h3>
 
-**Course Introduction**
+### Course Introduction
 *  In each part of a class, You will be given 1 topic, 5 words, 1 quote. And you are supposed to give A Speech.
 
+<br />
+### Lesson11 - Diet
 
-**Lesson11 - Diet**
 
-
+<br />
 ### Lesson12 - Climate
 
 I tried to be as rational as possible, but it was the worst of all my classroom experiences. The class atmosphere was abysmal.
@@ -167,13 +167,15 @@ I tried to be as rational as possible, but it was the worst of all my classroom 
 She's a great ally, but not a leader. She's waffling on medicare for all. Bernie or Tulsi will lead.﻿
 
 <br />
-
 ### Lesson14 - Opportunity
 
-***Teacher & Time:*** Carole / 2019-05-05 22:30 -- 22:55
+Teacher & Time:Carole / 2019-05-05 22:30 -- 22:55
 
-
-
-***Daily sentence:*** It’s mind boggling how curry always does something dumb during a critical game
+Daily sentence: It’s mind boggling how curry always does something dumb during a critical game
 
 <br />
+### Lesson18 - Failure
+
+Teacher & Time:Carole / 2019-05-05 22:30 -- 22:55
+
+Daily sentence: It’s mind boggling how curry always does something dumb during a critical game
