@@ -1957,6 +1957,146 @@ print("Accuracy:" + str(float(accuracy_cnt) / len(x)))
 
     Accuracy:0.9352
 
+
+
+#### 3.6.3 Processing Batch
+
+
+```python
+x, _ = get_data()
+network = init_network()
+W1, W2, W3 = network['W1'], network['W2'], network['W3']
+```
+
+
+```python
+x.shape
+```
+
+
+
+
+    (10000, 784)
+
+
+
+
+```python
+x[0].shape
+```
+
+
+
+
+    (784,)
+
+
+
+
+```python
+W1.shape
+```
+
+
+
+
+    (784, 50)
+
+
+
+
+```python
+W2.shape
+```
+
+
+
+
+    (50, 100)
+
+
+
+
+```python
+W3.shape
+```
+
+
+
+
+    (100, 10)
+
+
+
+#### Batch implementation
+
+
+```python
+x, t = get_data()
+network = init_network()
+
+batch_size = 100
+accuracy_cnt = 0
+for i in range(0, len(x), batch_size):
+    x_batch = x[i:i+batch_size]
+    y_batch = predict(network, x_batch)
+    p = np.argmax(y_batch, axis=1)
+    accuracy_cnt += np.sum(p == t[i:i+batch_size])
+
+print("Accuracy:" + str(float(accuracy_cnt) / len(x)))
+```
+
+    Accuracy:0.9352
+
+
+
+```python
+list( range(0, 10) )
+```
+
+
+
+
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+
+
+```python
+list( range(0, 10, 3) )
+```
+
+
+
+
+    [0, 3, 6, 9]
+
+
+
+
+```python
+x = np.array([[0.1, 0.8, 0.1], [0.3, 0.1, 0.6],[0.2, 0.5, 0.3], [0.8, 0.1, 0.1]])
+y = np.argmax(x, axis=1)
+print(y)
+```
+
+    [1 2 1 0]
+
+
+
+```python
+y = np.array([1, 2, 1, 0])
+t = np.array([1, 2, 0, 0])
+print(y==t)
+np.sum(y==t)
+```
+
+    [ True  True False  True]
+
+    3
+
+
 ---
+
 
 ![png](/assets/img/Deep Learning from Scratch/output_129_0.png)
