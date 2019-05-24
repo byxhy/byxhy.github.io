@@ -22,3 +22,9 @@ You’re joining thousands of students currently enrolled in the course. I'm exc
 >I hope you enjoy the class! -- by University of California, Irvine
 
 <br />
+
+
+Bucks never lost 3 in a row because they have never had to face kawhi Leonard three times in a row.
+
+
+Steve Kerr calling the pistons front office as we speak asking for Zaza back, but it's to late. Kawhi smells blood and is coming for revenge.
