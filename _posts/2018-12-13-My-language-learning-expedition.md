@@ -179,3 +179,12 @@ Daily sentence: It’s mind boggling how curry always does something dumb during
 Teacher & Time:Carole / 2019-05-05 22:30 -- 22:55
 
 Daily sentence: It’s mind boggling how curry always does something dumb during a critical game
+
+
+<br />
+### Lesson34 - Embarrassment
+
+Teacher & Time:Jane.De / 2019-05-30 22:30 -- 22:55
+
+https://www.youtube.com/watch?v=YDxIx3PnFew
+Man, you are throwing out truth bombs left and right. Traditional Asian parents will tell their kids to shove their heads into a math textbook and avoid mingling with people of the opposite sex, but once they graduate from college and get a job, they suddenly expect you to be married and bear grandchildren. And people wonder why so many Asian kids grow up as socially awkward robots...
