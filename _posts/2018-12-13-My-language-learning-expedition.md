@@ -196,3 +196,6 @@ Man, you are throwing out truth bombs left and right. Traditional Asian parents 
 
 Teacher & Time:Jane.De / 2019-06-14 22:30 -- 22:55
 So deserved, especially with what he has had to go through and what he had to proved. Congrats kawhi! 🖐🏿🔥
+
+My Boy Kawhi is the Real Hero for Raptors !!!
+Just one season , he hit many clutch shoot , bring the whole tam to Final and   get the Trophy  , just Amazing🔥🔥 !!!
