@@ -188,3 +188,11 @@ Teacher & Time:Jane.De / 2019-05-30 22:30 -- 22:55
 
 https://www.youtube.com/watch?v=YDxIx3PnFew
 Man, you are throwing out truth bombs left and right. Traditional Asian parents will tell their kids to shove their heads into a math textbook and avoid mingling with people of the opposite sex, but once they graduate from college and get a job, they suddenly expect you to be married and bear grandchildren. And people wonder why so many Asian kids grow up as socially awkward robots...
+
+
+
+<br />
+### Lesson - Embarrassment
+
+Teacher & Time:Jane.De / 2019-06-14 22:30 -- 22:55
+So deserved, especially with what he has had to go through and what he had to proved. Congrats kawhi! 🖐🏿🔥
