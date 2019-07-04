@@ -199,3 +199,57 @@ So deserved, especially with what he has had to go through and what he had to pr
 
 My Boy Kawhi is the Real Hero for Raptors !!!
 Just one season , he hit many clutch shoot , bring the whole tam to Final and   get the Trophy  , just Amazing🔥🔥 !!!
+
+
+
+
+<br />
+
+## Book3 - English for Travel II
+
+##### Course Introduction
+
+- This course picks familiar conversations for travel conditions. The content
+  includes preparing to leave, air travel, hotel accommodation, having the meal, transportation, during the trip, tourist attractions, shopping, etc.
+
+- This course aims at teaching the students traveling English and enable them to
+  use English to communicate during traveling time.
+- There are two conversations in each class, the new words are after the
+  conversation part.
+- This course is for all the students who want to use English during travel.
+
+### <br />
+
+### Lesson2 - Special Discount
+
+##### Class Info
+
+- Teacher: Dane.P
+- Time : 2019-07-04 22:30 -- 22:55
+
+#### Conversation
+
+通过两篇对话，学会如何在旅行社中咨询旅游费用方面的折扣。
+
+##### 重点句型：
+
+-  Hi,	I’d	like	to	make	a	reservation.
+  你好,我想进行一个预订。
+- Is	there	any	discount	for	children?
+  儿童有折扣吗?
+- The	tour	that	goes	to	Guilin	leaves	every	other	day.
+  每隔一天会有去桂林的旅游团。
+- Shall	we	sign	a	contract?
+  我们可以签合同吗?
+
+#### Vocabulary
+
+- destination 目的地，重点
+- discount 折扣
+- infant 婴儿
+- altogether 完全地
+- certificate 证书
+
+#### Further	Reading
+
+情景对话:	 在旅游淡季购买打折机票
