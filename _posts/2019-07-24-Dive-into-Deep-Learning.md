@@ -16,7 +16,8 @@ Aston Zhang, Zachary C. Lipton, Mu Li, and Alexander J. Smola
 
 # Why TensorFlow
 
-[TOC]
+
+Update the Atom to 1.39.0
 
 
 
