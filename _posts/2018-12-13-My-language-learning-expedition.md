@@ -31,7 +31,6 @@ Photo by markus-spiske
 
 <br />
 <h3 id="1"> Chapter 1 - Free Talk with Topic Ⅱ</h3>
-
 ### Course Introduction
 *  This course chooses thought-provoking topics (including social phenomena, recent news, philosophic arguments, sentiment of the life, etc.), guides the students to talk as much as possible about this topic.   
 
@@ -146,7 +145,6 @@ Time: April 15, 2019  22:30
 
 <br />
 <h3 id="2"> Chapter 2 - Free Talk with Topic Ⅲ</h3>
-
 ### Course Introduction
 *  In each part of a class, You will be given 1 topic, 5 words, 1 quote. And you are supposed to give A Speech.
 
@@ -304,3 +302,45 @@ Sentence:
 
 - The class schedule is available on the website.
 - Her silence was taken as an admission of defeat.
+
+
+
+### <br />
+
+### Lesson55 - Buying Tickets
+
+##### Class Info
+
+- Teacher: Teacher.Cami
+- Time : 2019-09-16 22:30 -- 22:55
+
+#### Conversation
+
+***************************************
+
+##### 重点句型：
+
+- How much dose it cost to ride a roller coaster?
+  坐一次过山车要多少钱？
+- Is	there	any	discount	for	children?
+  儿童有折扣吗?
+- The	tour	that	goes	to	Guilin	leaves	every	other	day.
+  每隔一天会有去桂林的旅游团。
+- Shall	we	sign	a	contract?
+  我们可以签合同吗?
+
+#### Vocabulary
+
+- destination 目的地，重点
+- discount 折扣
+- infant 婴儿
+- altogether 完全地
+- certificate 证书
+
+#### Further	Discussion
+
+- I hate the propaganda of the main stream media.
+- They only give you bits of information, not the whole aspecsts.
+- They give you fragmentary information, not the whole picture.
+- That's what I'm most angry about.
+- They deliberately create an information gap to the world.
