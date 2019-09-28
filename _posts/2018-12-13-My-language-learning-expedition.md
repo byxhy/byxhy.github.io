@@ -14,7 +14,6 @@ Photo by markus-spiske
 
 *巧的是這句話無論是用在看別人看自己，看現在看以前，都是那樣的合適*
 
-
 <br />
 
 
@@ -27,6 +26,12 @@ Photo by markus-spiske
 
 * [Free Talk with Topic Ⅲ][2]
 	* Lesson11 - Topic: Diet
+
+
+[1]:	#1
+[2]:	#2
+[3]:  #3
+
 
 
 <br />
@@ -105,9 +110,7 @@ Further Reading:
 
 update My Language to line-13
 
-[1]:	#1
-[2]:	#2
-[3]:
+
 
 
 Everyday new sentence
