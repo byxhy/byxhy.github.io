@@ -10,7 +10,7 @@ image: sabine-schulte.jpg
 
 Photo by sabine schulte
 
->声明：系列筆記參照[莫煩python](https://morvanzhou.github.io/)教學網站的课程整理而來，感謝老師的分享
+>声明：系列筆記參照[liuyubobobo老師](https://coding.imooc.com/learn/list/71.html/)教學课程整理而來，感謝老師的分享
 
 <br />
 
@@ -22,28 +22,6 @@ Photo by sabine schulte
 	 3. [generate test cases](#1-3---generate-test-cases)
    4. [detect performance](#1-4---detect-performance)
 
-2. [Basic use](#2---basic-use)
-   1. [print function](#2-1---print-function)
-   2. [basic computation](#2-2---basic-computation)
-   3. [variable](#2-3---variable)
-
-3. [While and for loop](#3---while-and-for-loop)
-   1. [while](#3-1---while)
-   2. [for](#3-2---for)
-   3. [range](#3-3---range)
-   4. [set type](#3-4---set-type)
-
-4. [If](#4---if)
-   1. [basic use](#4-1---basic-use)
-
-
-5. [Define function](#5---define-function)
-   1. [def use](#5-1---def-use)
-   2. [function parameters](#5-2---function-parameters)
-   3. [default parameters](#5-3---default-parameters)
-   4. [call yourself, only called inside the script](#5-4---call-yourself-only-called-inside-the-script)
-   5. [variable parameters](#5-5---variable-parameters)
-   6. [keyword parameters](#5-6---keyword-parameters)
 
 
 <br />
@@ -429,14 +407,5 @@ namespace SortTestHelper
 #endif
 ```
 
-1. What is the difference between 'function pointer' and 'pointer to a function'?
-2. Remenber to check.(assert)
-
-
-## 2 - Basic use
-
-### 2-1 - print function
-
-#### 2-1-1 - print string
 
 <br />
