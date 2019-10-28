@@ -4,13 +4,13 @@ title: "Speech separation"
 author: "Xhy"
 categories: Speech
 tags: [improve]
-image: jason-rosewell-ASKeuOZqhYU.jpg
+image: jason-rosewell.jpg
 ---
 
-Photo by jason-rosewell-ASKeuOZqhYUl
+Photo by jason-rosewell
 
 
-> 语音增强旨在通过利用信号处理算法提高语音的质量和可懂度。主要包括1.语音解混响，混响是由于空间环境对声音信号的反射产生的；2，语音降噪，干扰主要来源于各种环境和人的噪声；3.语音分离，噪声主要来源于其他说话人的声音信号。通过去除这些噪声或者人声来提高语音的质量。现已经应用于现实生活中，如电话、语音识别、助听器、VoIP以及电话会议系统等。 ……
+> Speech separation is the task of separating target speech from background interference. Traditionally, speech separation is studied as a signal processing problem. A more recent approach formulates speech separation as a supervised learning problem, where the discriminative patterns of speech, speakers, and background noise are learned from training data. Over the past decade, many supervised separation algorithms have been put forward. In particular, the recent introduction of deep learning to supervised speech separation has dramatically accelerated progress and boosted separation performance. 
 
 #### <br />
 
@@ -19,9 +19,9 @@ Photo by jason-rosewell-ASKeuOZqhYUl
 
 ## Table of Contents
 
-* [背景目标][1]
-* [相关论文][2]
-* [发展趋势][3]
+* [Background][1]
+* [Papers][2]
+* [Trend][3]
 
 [1]:	#1
 [2]:	#2
@@ -31,7 +31,8 @@ Photo by jason-rosewell-ASKeuOZqhYUl
 
 <br />
 
-<h3 id="1"> 1. 背景目标</h3>
+<h3 id="1"> 1. Background</h3>
+
 语音分离的问题来自“鸡尾酒会问题”，虽然酒会上很嘈杂，但每个人都能选择性分离出自己想听的声音，那有没有办法对采集回来有干扰的音频信号也做同样的处理呢？
 
 
@@ -54,9 +55,9 @@ Photo by jason-rosewell-ASKeuOZqhYUl
 
 
 
-<h3 id="2"> 2. 相关论文</h3>
+<h3 id="2"> 2. Papers</h3>
 
-\[1] 李号.基于深度学习的单通道语音分离[D].内蒙古：内蒙古大学，2017.
+**\[1] 李号.基于深度学习的单通道语音分离[D].内蒙古：内蒙古大学，2017.**
 
 
 
@@ -70,10 +71,18 @@ Photo by jason-rosewell-ASKeuOZqhYUl
 
 
 
-切入点：
+语音信号知识基础：
 
-- 清音（短时谱上类似白噪声）
-- 浊音（声带振动，有明显谐波结构）
+- 人体发声系统
+  - 产生（人体多器官相互配合带动声带振动发声）
+  - 清音（短时谱上类似白噪声，分离难度大）
+  - 浊音（声带振动，有明显谐波结构）
+  - 基音（声带开启和闭合一次的时间差为一个基音周期）
+    - 80 ～ 500Hz
+    - 纯净语音谱中，谐波结构清晰，基音特征明显，加入噪声后模糊
+  - 短时平稳性（10-30ms内语音是相对平稳的，可认为统计特征不变）
+- 人耳听觉感知系统
+  - 
 
 
 
@@ -151,6 +160,10 @@ Photo by jason-rosewell-ASKeuOZqhYUl
     -
   - 我wf
 
----
 
-## [Looking to Listen: Audio-Visual Speech Separation](http://ai.googleblog.com/2018/04/looking-to-listen-audio-visual-speech.html)
+
+
+
+<h3 id="3"> 3. Trend</h3>
+
+Looking to Listen: Audio-Visual Speech Separation](http://ai.googleblog.com/2018/04/looking-to-listen-audio-visual-speech.html)
