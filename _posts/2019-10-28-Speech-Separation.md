@@ -272,15 +272,15 @@ Photo by jason-rosewell
 
     
 
-    ![png](/assets/img/SpeechEnhancement/output_1_1.png)
+    ![png](/assets/img/SpeechEnhancement/OSR_us_000_0010_8k_3s_wav.png)
 
     
 
-    ![png](/assets/img/SpeechEnhancement/output_1_2.png)
+    ![png](/assets/img/SpeechEnhancement/OSR_us_000_0010_8k_3s_noise_wav.png)
 
     
 
-    ![png](/assets/img/SpeechEnhancement/output_1_3.png)
+    ![png](/assets/img/SpeechEnhancement/OSR_us_000_0010_8k_3s_denoised_wav.png)
 
   - PESQ
 
@@ -310,6 +310,31 @@ Photo by jason-rosewell
         1.6072081327438354
         1.0150597095489502
         1.123104453086853
+
+  - SIR、SDR、SAR
+
+    ```python
+    import librosa
+    import mir_eval
+    
+    clean, fs = librosa.load('./SourceWav/OSR_us_000_0010_8k_3s.wav', sr=None)
+    noise, fs = librosa.load('./SourceWav/OSR_us_000_0010_8k_3s_noise.wav', sr=None)
+    denoised, fs = librosa.load('./SourceWav/OSR_us_000_0010_8k_3s_denoised.wav', sr=None)
+    
+    clean = clean.reshape(1, 66150)
+    noise = noise.reshape(1, 66150)
+    denoised = denoised.reshape(1, 66150)
+    
+    #(sdr, sir, sar, perm) = mir_eval.separation.bss_eval_sources(reference_sources, estimated_sources)
+    (sdr1, sir1, sar1, perm1) = mir_eval.separation.bss_eval_sources(clean, noise)
+    (sdr2, sir2, sar2, perm2) = mir_eval.separation.bss_eval_sources(clean, denoised)
+    
+    print(sdr1, sir1, sar1, perm1)
+    print(sdr2, sir2, sar2, perm2)
+    ```
+
+        [-14.40148513] [inf] [-14.40148513] [0]
+        [13.17128546] [inf] [13.17128546] [0]
 
 #### 3.2 Speech separation algorithm
 
