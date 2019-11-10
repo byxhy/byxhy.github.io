@@ -40,7 +40,6 @@ Photo by paul-stollery
 
 <h3 id="1"> 1. Import the appropriate library</h3>
 
-
 ```python
 import keras
 from keras.layers import Activation, Dense, Dropout, Conv2D, Flatten, MaxPool2D
@@ -308,7 +307,6 @@ print(valid_data['path'])
 
 <h3 id="2"> 2. Prepare the dataset and save to pickle file</h3>
 
-
 ```python
 D = [] #Dataset
 
@@ -354,7 +352,6 @@ print('Save to png and pickle success')
 
 <h3 id="3"> 3. Shuffle the dataset</h3>
 
-
 ```python
 dataset = pickle.load( open('pickle/UrbanSound8K_audio_dataset.p','rb') )
 random.shuffle(dataset)
@@ -375,7 +372,6 @@ y_test  = np.array(keras.utils.to_categorical(y_test, 10))
 ```
 
 <h3 id="4"> 4. Build the model</h3>
-
 ![png](/assets/img/Distinguish-CNN/CNN.png)
 
 
@@ -447,7 +443,6 @@ model.summary()
 
 <h3 id="5"> 5. Compilation and training</h3>
 
-
 ```python
 model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['accuracy'])
 history = model.fit(x=X_train, y=y_train, epochs=12, batch_size=128, validation_data=(X_test, y_test))
@@ -455,13 +450,31 @@ history = model.fit(x=X_train, y=y_train, epochs=12, batch_size=128, validation_
 
     Train on 7000 samples, validate on 467 samples
     Epoch 1/12
-    
-    467/467 [==============================] - ETA:  - ETA:  - ETA:  - ETA:  - 0s 951us/step
-    Test loss:  1.1245524464633787
-    Test accuracy:  0.6616702079772949
+    7000/7000 [==============================] - 7s 973us/step - loss: 2.7252 - accuracy: 0.1803 - val_loss: 2.1620 - val_accuracy: 0.2655
+    Epoch 2/12
+    7000/7000 [==============================] - 4s 618us/step - loss: 2.0975 - accuracy: 0.2661 - val_loss: 1.9176 - val_accuracy: 0.4111
+    Epoch 3/12
+    7000/7000 [==============================] - 4s 623us/step - loss: 1.8854 - accuracy: 0.3344 - val_loss: 1.6909 - val_accuracy: 0.4411
+    Epoch 4/12
+    7000/7000 [==============================] - 4s 622us/step - loss: 1.7220 - accuracy: 0.4059 - val_loss: 1.5624 - val_accuracy: 0.4861
+    Epoch 5/12
+    7000/7000 [==============================] - 4s 620us/step - loss: 1.6325 - accuracy: 0.4303 - val_loss: 1.4503 - val_accuracy: 0.5332
+    Epoch 6/12
+    7000/7000 [==============================] - 4s 622us/step - loss: 1.5293 - accuracy: 0.4721 - val_loss: 1.4113 - val_accuracy: 0.5696
+    Epoch 7/12
+    7000/7000 [==============================] - 4s 617us/step - loss: 1.4036 - accuracy: 0.5100 - val_loss: 1.2618 - val_accuracy: 0.6017
+    Epoch 8/12
+    7000/7000 [==============================] - 4s 614us/step - loss: 1.3376 - accuracy: 0.5376 - val_loss: 1.1999 - val_accuracy: 0.5931
+    Epoch 9/12
+    7000/7000 [==============================] - 4s 614us/step - loss: 1.2815 - accuracy: 0.5531 - val_loss: 1.1648 - val_accuracy: 0.6317
+    Epoch 10/12
+    7000/7000 [==============================] - 4s 613us/step - loss: 1.1936 - accuracy: 0.5884 - val_loss: 1.1424 - val_accuracy: 0.6574
+    Epoch 11/12
+    7000/7000 [==============================] - 4s 614us/step - loss: 1.1831 - accuracy: 0.5939 - val_loss: 1.0406 - val_accuracy: 0.6638
+    Epoch 12/12
+    7000/7000 [==============================] - 4s 614us/step - loss: 1.1056 - accuracy: 0.6240 - val_loss: 1.0186 - val_accuracy: 0.6981
 
 <h3 id="6"> 6. Evaluate the model</h3>
-
 
 ```python
 score = model.evaluate(x=X_test, y=y_test)
