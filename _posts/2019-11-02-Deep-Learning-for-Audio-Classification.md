@@ -10,7 +10,7 @@ image: blake-connally-ipXPK5F7hao.jpg
 
 Photo by Blake Connally
 
-### This is a study note about using deep learning to classify audio. I pretty much appreciate [Seth Adams's](https://www.youtube.com/user/seth8141/playlists) effort. Thank You very much :)
+### This is a learning note about using deep learning to classify audio. I pretty much appreciate [Seth Adams's](https://www.youtube.com/user/seth8141/playlists) effort. Thank You very much :)
 
 <br />
 
@@ -32,7 +32,6 @@ Photo by Blake Connally
 <br />
 
 <h3 id="1"> 1. Plotting & Cleaning</h3>
-
 ```python
 import os
 from tqdm import tqdm
@@ -211,7 +210,6 @@ if len(os.listdir('clean_jupyter/')) == 0:
     100%|████████████████████████████████████████████████████████████████████████████████| 300/300 [01:02<00:00,  4.80it/s]
 
 <h3 id="2"> 2. Model Preparation (CNN / RNN)</h3>
-
 ```python
 import os
 from scipy.io import wavfile
@@ -389,7 +387,6 @@ model.fit(X, y, epochs=20, batch_size=1024,
     Epoch 20/20
     26410/26410 [==============================] - ETA: 1s - loss: 0.1849 - acc: 0.934 - ETA: 1s - loss: 0.2230 - acc: 0.926 - ETA: 1s - loss: 0.2142 - acc: 0.927 - ETA: 1s - loss: 0.2098 - acc: 0.928 - ETA: 1s - loss: 0.2071 - acc: 0.927 - ETA: 1s - loss: 0.2083 - acc: 0.928 - ETA: 1s - loss: 0.2111 - acc: 0.927 - ETA: 1s - loss: 0.2093 - acc: 0.927 - ETA: 1s - loss: 0.2106 - acc: 0.927 - ETA: 1s - loss: 0.2150 - acc: 0.925 - ETA: 1s - loss: 0.2179 - acc: 0.925 - ETA: 0s - loss: 0.2155 - acc: 0.926 - ETA: 0s - loss: 0.2116 - acc: 0.927 - ETA: 0s - loss: 0.2107 - acc: 0.927 - ETA: 0s - loss: 0.2115 - acc: 0.927 - ETA: 0s - loss: 0.2135 - acc: 0.927 - ETA: 0s - loss: 0.2120 - acc: 0.927 - ETA: 0s - loss: 0.2138 - acc: 0.926 - ETA: 0s - loss: 0.2156 - acc: 0.925 - ETA: 0s - loss: 0.2168 - acc: 0.924 - ETA: 0s - loss: 0.2164 - acc: 0.925 - ETA: 0s - loss: 0.2190 - acc: 0.924 - ETA: 0s - loss: 0.2190 - acc: 0.924 - ETA: 0s - loss: 0.2214 - acc: 0.923 - ETA: 0s - loss: 0.2232 - acc: 0.922 - 2s 70us/step - loss: 0.2244 - acc: 0.9217
 <h3 id="3"> 3. Saving Data and Models</h3>
-
 ### cfg_jupyter.py
 
 
@@ -608,7 +605,6 @@ model.save(config.model_path)
     
     Epoch 00020: val_acc improved from 0.75502 to 0.76070, saving model to models_jupyter\time.model
 <h3 id="4"> 4. Predictions</h3>
-
 
 ```python
 import os
