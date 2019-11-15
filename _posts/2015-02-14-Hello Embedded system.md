@@ -633,11 +633,12 @@ app_led.c
     	return 0;
     } 
 
+
+
 2)编译模块：
 
-1. make 
-
-2. arm-linux-gcc -static app_led.c -o app_led
+- make 
+- arm-linux-gcc -static app_led.c -o app_led
 
 3)安装驱动：
 
@@ -653,19 +654,22 @@ app_led.c
 
 ### 008）按键驱动程序设计
 
-目标：设计一个Tiny6410LED的按键驱动，当按下K1是，串口打印:Tiny6410_K1 down !
+目标：
+
+设计一个Tiny6410LED的按键驱动，当按下K1是，串口打印:Tiny6410_K1 down !
+
 1）代码准备：
 key.c
 
     /*
-     ********************************************************************************
+     *****************************************************************
      *      Copyright (C), 2015-2115, Xhy Tech. Stu.
      *      FileName   : key.c
      *      Author     : X h y    
      *      Version    : 1.0       
      *      Date       : 06-02-2015
      *      Description: for Tiny6410   
-     ********************************************************************************
+     *****************************************************************
      */
      
     #include <linux/module.h>
@@ -755,37 +759,45 @@ Makefile
     	make -C $(KDIR) M=$(PWD) modules CROSS_COMPILE=arm-linux- ARCH=arm
     clean:
     	rm -rf .* *.o *.ko *.mod.o *.mod.c *.symvers *.bak *.order
+
+
 2）编译模块：
 
-<1>.make 
+- make 
 
 3）安装驱动：
 
-<1>.将生成的key.ko复制到NFS文件系统里
-<2>.insmod key.ko（安装按键驱动模块）
-<3>.按下K1键，串口屏幕打印：Tiny6410_K1  down !
-<4>.lsmod key（卸载key模块）
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-03-2015
+- 将生成的key.ko复制到NFS文件系统里
 
----
+- insmod key.ko（安装按键驱动模块）
+
+- 按下K1键，串口屏幕打印：Tiny6410_K1  down !
+
+- lsmod key（卸载key模块）
+
+  　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+
 ### 009）优化按键驱动程序
-####目标：
-<1>.中断分层处理，提高系统中断处理效率
-<2>.按键消抖，通过定时器消抖，处理更精确
-<3>.驱动支持多按键处理
+
+目标：
+
+- 中断分层处理，提高系统中断处理效率
+- 按键消抖，通过定时器消抖，处理更精确
+- 驱动支持多按键处理
+
 1）代码准备：
 
 key.c
 
     /*
-     ********************************************************************************
+     *****************************************************************
      *      Copyright (C), 2015-2115, Xhy Tech. Stu.
      *      FileName   : key.c
      *      Author     : X h y    
      *      Version    : 1.0  
      *      Date       : 06-04-2015
      *      Description: for Tiny6410   
-     ********************************************************************************
+     *****************************************************************
      */
     
     #include <linux/module.h>
@@ -919,8 +931,6 @@ key.c
     
     	/* start the timer int work1_func */
 
-
-​    
     	return 0;
     }
     
@@ -937,21 +947,24 @@ key.c
     MODULE_AUTHOR("Xhy Tech.Stu");
     MODULE_VERSION("1.0");
 
-Makefile
 
+
+Makefile
 
 2）编译模块：
 
-<1>.make 
+- make 
 
 3）安装驱动：
 
-<1>.将生成的key.ko复制到NFS文件系统里
-<2>.insmod key.ko（安装按键驱动模块）
-<3>.按下K1键，串口屏幕打印：Tiny6410_K1  down !
-<4>.lsmod key（卸载key模块）
+- 将生成的key.ko复制到NFS文件系统里
+- insmod key.ko（安装按键驱动模块
+- 按下K1键，串口屏幕打印：Tiny6410_K1  down !
+- lsmod key（卸载key模块）
 
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-02-2015
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-02-2015
 
 ---
-**待更新** ……
+
+
+待更新 ……
