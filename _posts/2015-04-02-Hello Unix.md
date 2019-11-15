@@ -1014,16 +1014,21 @@ pipe.c
     }
     
     /* end of file */
+
+
 记住，必须要先创建管道，再创建进程。
 
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-13-2015
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 
----
 ### 008）有名管道通讯编程
 目标：学习有名管道通讯编程
-注意：有名管道可用于任意两个进程间通信；
+
+注意：有名管道可用于任意两个进程间通信
+
 1.创建有名管道函数：mkfifo
+
 <1>先创建fifo文件，在向fifo文件写入数据
+
 fifo_write.c
 
     /*
@@ -1070,7 +1075,10 @@ fifo_write.c
     
     /* end of file */
 
+
+
 <1>从fifo文件读出数据
+
 fifo_read.c
 
     #include <stdio.h>
@@ -1099,13 +1107,14 @@ fifo_read.c
     	unlink("./fifo");
     }
 
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-14-2015
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 
----
 ### 009）信号通讯编程    
 目标：学习信号通讯编程
+
 1.信号处理
 <1>signal:信号处理函数
+
 bprocess.c
 
     /*
@@ -1143,9 +1152,13 @@ bprocess.c
     }
     
     /* end of file */
+
+
 <2>kill:结束进程同时发送SIGINT信号
+
 aprocess.c
     
+
     /*
      ********************************************************************************
      *      Copyright (C), 2015-2115, Xhy Tech. Stu.
@@ -1176,12 +1189,13 @@ aprocess.c
     	kill(pid, SIGINT);	
     }
     /* end of file */
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-15-2015
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 
----
 ### 010）信号量互斥编程
 目标：学习信号量互斥编程
+
 1.创建和获取信号量函数：semget
+
 student1.c
 
     /*
@@ -1271,6 +1285,8 @@ student1.c
     
     /* end of file */
 
+
+
 student2.c
 
     #include <stdio.h>
@@ -1325,18 +1341,22 @@ student2.c
     	/* 8.Close the board */
     	close(fd);	
     } 
-2.先运行./student1 再运行./student2，观察 semid的值和./board.txt里的内容 
-3.注意以root方式运行，因为这是具有超级用户特权的进程
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-15-2015
 
----
+
+2.先运行./student1 再运行./student2，观察 semid的值和./board.txt里的内容 
+
+3.注意以root方式运行，因为这是具有超级用户特权的进程
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+
 ### 011）信号量同步编程
 目标：学习信号量同步编程
+
 适用条件：多并发进程按一定顺序执行（有严格次序）
 
 用生产者和消费者经典问题来练习信号量同步编程
 
 1.生产者
+
 producer.c
 
     /*
@@ -1413,7 +1433,10 @@ producer.c
     }
     
     /* end of file */
+
+
  2.消费者
+
 customer.c 
 
     /*
@@ -1476,15 +1499,14 @@ customer.c
     
     /* end of file */
 
+   
 
-​    
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-15-2015
-
----
 ### 012）共享内存通讯
+
 目标：学习通过共享内存进行进程间通信
 
 1.创建共享内存并通过键盘向共享内存写入字符串
+
 write.c
 
     /*
@@ -1582,7 +1604,10 @@ write.c
     
     /* end of file */
 
+
+
 2.通过共享内存读出字符串
+
 read.c
 
     #include <stdio.h>
@@ -1660,12 +1685,12 @@ read.c
 
 
 ​    
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-19-2015
 
----
 ### 013）消息队列编程
 目标：学习使用消息队列进行进程间通信
+
 1.向消息队列发送消息
+
 send.c
 
     /*
@@ -1746,7 +1771,10 @@ send.c
     }
     
     /* end of file */
+
+
 2.从消息队列读出消息
+
 receive.c
 
     #include <stdio.h>
@@ -1811,12 +1839,14 @@ receive.c
     	return 0;	
     }
 
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-20-2015
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 
----
 ### 014）多线程程序设计
+
 目标：学习多线程程序设计
+
 注意:编译时一定要链接库 -pthread 
+
 1.thread.c
 
     /*
@@ -1916,12 +1946,13 @@ receive.c
     
     /* end of file */
 
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-20-2015
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 
----
 ### 015）多线程同步设计
 目标：学习多线程同步程序设计
-注意:编译时一定要链接库 -pthread 
+
+注意:编译时一定要链接库 -pthread
+
 1.sync.c
 
     /*
@@ -2019,13 +2050,13 @@ receive.c
     
     /* end of file */
 
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-28-2015
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 
----
 ### 016）TCP通讯程序设计
 目标：学习TCP通讯程序设计
 
 1.服务器程序设计：
+
 tcp_server.c
 
     /*
@@ -2134,7 +2165,10 @@ tcp_server.c
     }
     
     /* end of file */
+
+
 2.客户端程序设计：
+
 tcp_client.c
 
     /*
@@ -2191,15 +2225,13 @@ tcp_client.c
             printf("Create socket error !\n");
             exit(1);
         }
+            /* init server address */
+            bzero(&server_addr, sizeof(struct sockaddr_in));
+            server_addr.sin_family      = AF_INET;
+            server_addr.sin_port        = htons(PORTNUM);
+            server_addr.sin_addr.s_addr = inet_addr(argv[1]);
+        
 
-
-​        
-​        /* init server address */
-​        bzero(&server_addr, sizeof(struct sockaddr_in));
-​        server_addr.sin_family      = AF_INET;
-​        server_addr.sin_port        = htons(PORTNUM);
-​        server_addr.sin_addr.s_addr = inet_addr(argv[1]);
-​    
         /* connect the server */
         if (-1 == connect(sockfd, 
                           (struct sockaddr *)(&server_addr), 
@@ -2230,13 +2262,13 @@ tcp_client.c
     
     /* end of file */
 
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-28-2015
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 
----
 ### 017）UDP通讯程序设计
 目标：学习UDP通讯程序设计
 
 1.服务器程序设计：
+
 udp_server.c
 
     /*
@@ -2332,7 +2364,10 @@ udp_server.c
     }
     
     /* end of file */
+
+
 2.客户端程序设计：
+
 udp_client.c
 
     /*
@@ -2427,13 +2462,13 @@ udp_client.c
     /* end of file */
 
 
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-28-2015
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 
----
 ### 018）网络并发服务器设计
 目标：学习网络并发服务器程序设计
 
 1.服务器程序设计：
+
 tcp_server.c
 
     /*
@@ -2556,7 +2591,10 @@ tcp_server.c
     
     /* end of file */
 
+
+
 2.客户端程序设计：
+
 tcp_client.c
 
     /*
@@ -2613,15 +2651,13 @@ tcp_client.c
             printf("Create socket error !\n");
             exit(1);
         }
+            /* init server address */
+            bzero(&server_addr, sizeof(struct sockaddr_in));
+            server_addr.sin_family      = AF_INET;
+            server_addr.sin_port        = htons(PORTNUM);
+            server_addr.sin_addr.s_addr = inet_addr(argv[1]);
+        
 
-
-​        
-​        /* init server address */
-​        bzero(&server_addr, sizeof(struct sockaddr_in));
-​        server_addr.sin_family      = AF_INET;
-​        server_addr.sin_port        = htons(PORTNUM);
-​        server_addr.sin_addr.s_addr = inet_addr(argv[1]);
-​    
         /* connect the server */
         if (-1 == connect(sockfd, 
                           (struct sockaddr *)(&server_addr), 
@@ -2652,104 +2688,105 @@ tcp_client.c
     
     /* end of file */
 
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-28-2015
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 
----
 ### 019）守护进程设计  
 目标：学习守护进程（daemon）程序设计
+
 1. 守护进程程序设计：
+
 daemon.c
-
-        /*
-        ********************************************************************************
-        *      Copyright (C), 2015-2115, Xhy Tech. Stu.
-        *      FileName   : daemon.c
-        *      Author     : X h y
-        *      Version    : 2.0
-        *      Date       : 05-14-2015
-        *
-        *      Description:
-        ********************************************************************************
-        */
+   
+   ```
+    /*
+    ********************************************************************************
+    *      Copyright (C), 2015-2115, Xhy Tech. Stu.
+    *      FileName   : daemon.c
+    *      Author     : X h y
+    *      Version    : 2.0
+    *      Date       : 05-14-2015
+    *
+    *      Description:
+    ********************************************************************************
+    */
+    
+    /**
+    * \file
+    * \brief  daemon process
+    */
+    
+    #include <stdio.h>
+    #include <unistd.h>
+    #include <stdlib.h>
+    #include <sys/types.h>
+    #include <sys/stat.h>
+    #include <fcntl.h>
+    #include <string.h>
+    
+    #define MAXFILE 65535
+    
+    /**
+    * \brief main entry
+    */ 
+    
+    int main(void)
+    {
+        pid_t pid;
         
-        /**
-        * \file
-        * \brief  daemon process
-        */
+        int fd;
+        int i;
+    
+        char flag = 1;
         
-        #include <stdio.h>
-        #include <unistd.h>
-        #include <stdlib.h>
-        #include <sys/types.h>
-        #include <sys/stat.h>
-        #include <fcntl.h>
-        #include <string.h>
-        
-        #define MAXFILE 65535
-        
-        /**
-        * \brief main entry
-        */ 
-        
-        int main(void)
-        {
-            pid_t pid;
-            
-            int fd;
-            int i;
-        
-            char flag = 1;
-            
-            char *buf = "I am daemon !\n";
-        
-            /* create child process */
-            pid = fork();
-        
-            if (pid < 0) {
-                printf("Create child process error !\n");
-                exit(1);
-            } else if (pid > 0) {
-                exit(0);
-            } 
-        
-            /* get away from the teminal */
-            setsid();
-        
-            /* change work directory */
-            chdir("/");
-        
-            /* clear mask */
-            umask(0);
-        
-            /* close file id */
-            for (i=0; i<MAXFILE; i++) {
-                close(i);
-            }
-        
-            while (1) {
-                fd = open("/tmp/daemon.log", 
-                          O_CREAT|O_WRONLY|O_APPEND, 
-                          0664);
-        
-                if ((1 == flag) && (fd < 0)) {
-                    printf("Open file error !\n");
-                    flag = 0;
-                    exit(0);
-                }
-        
-                write(fd, buf, strlen(buf));
-                close(fd);
-                sleep(1);
-            }
-        
-            return 0;
+        char *buf = "I am daemon !\n";
+    
+        /* create child process */
+        pid = fork();
+    
+        if (pid < 0) {
+            printf("Create child process error !\n");
+            exit(1);
+        } else if (pid > 0) {
+            exit(0);
+        } 
+    
+        /* get away from the teminal */
+        setsid();
+    
+        /* change work directory */
+        chdir("/");
+    
+        /* clear mask */
+        umask(0);
+    
+        /* close file id */
+        for (i=0; i<MAXFILE; i++) {
+            close(i);
         }
-        
-        /* end of file */
+    
+        while (1) {
+            fd = open("/tmp/daemon.log", 
+                      O_CREAT|O_WRONLY|O_APPEND, 
+                      0664);
+    
+            if ((1 == flag) && (fd < 0)) {
+                printf("Open file error !\n");
+                flag = 0;
+                exit(0);
+            }
+    
+            write(fd, buf, strlen(buf));
+            close(fd);
+            sleep(1);
+        }
+    
+        return 0;
+    }
+    
+    /* end of file */
+   ```
 
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于06-28-2015
-
----
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 
 ### 019）Shell脚本高级编程
 目标：学习Shell脚本编程
@@ -2760,19 +2797,22 @@ daemon.c
 >目前linux上应用最广泛的是bash，它也是事实上
 >的shell规范，这里所有的论述都是参照bash的规范。
 
+
+
 2.1 基本结构
 
-    #!/bin/bash                                        --------------------指明脚本使用解释工具
+    #!/bin/bash                                      -----指明脚本使用解释工具
     
-    # Filename   : shell.sh                            --------------------文件头，用#注释
+    # Filename   : shell.sh                          -----文件头，用#注释
     # Author     : X h y
     # Version    : 1.0
     # Date       : 07-30-2015
     
-    ehco "by X h y"                                    --------------------打印信息
-    ……                                                 --------------------命令主体
+    ehco "by X h y"                                  -----打印信息
+    ……                                               -----命令主体
     
-    exit(0)                                            --------------------退出返回
+    exit(0)                                          -----退出返回
+
 
 
 2.2 变量
@@ -2784,16 +2824,21 @@ daemon.c
     echo "a is $a"
     echo "b is $b"
     echo -ne "\n"
+
+
 注意：变量两边没有空格，使用变量是用$符。
+
 2.3 参数
 
     echo '#2.3'
-    echo '$# is :' $#                                 -------------------传入脚本命令行参数个数
-    echo '$* is :' $*                                 -------------------命令行参数值
-    echo '$0 is :' $0                                 -------------------shell文件名
-    echo '$1 is :' $1                                 -------------------第1个参数
-    echo '$2 is :' $2                                 -------------------第2个参数
+    echo '$# is :' $#                                 ---传入脚本命令行参数个数
+    echo '$* is :' $*                                 ---命令行参数值
+    echo '$0 is :' $0                                 ---shell文件名
+    echo '$1 is :' $1                                 ---第1个参数
+    echo '$2 is :' $2                                 ---第2个参数
     echo -ne "\n"
+
+
 2.4 计算
 
     echo '#2.4'
@@ -2805,10 +2850,15 @@ daemon.c
     echo $var3
     echo $var4
     echo -ne "\n"
+
+
 注意：计算用expr，表达式用反引号(``)括起来赋值给其他变量。
+
 2.5 流程控制
-    1)if语句
+
+ 1)if语句
     
+
     echo '#2.5.1'
     var=10
     if [ $1 -gt $var ]
@@ -2819,8 +2869,11 @@ daemon.c
     fi 
     echo -ne "\n"
 
- 2)for语句
+ 
+
+2)for语句
     
+
     echo '#2.5.2'
     list="Sun Mon Tue Wed Thur Fri Sat"
     for day in $list
@@ -2829,7 +2882,9 @@ daemon.c
     done
     echo -ne "\n"
 
- 3)while语句
+ 
+
+3)while语句
 
     echo '#2.5.3'
     var=$2
@@ -2839,8 +2894,12 @@ daemon.c
         var=`expr $var - 1`
     done
     echo -ne "\n"
+
+
 注意：条件用[]号括起来，[]两边都必须有空格，另外“＝”两边也有。
+
 附：条件比较
+
 * 　-eq　等于
 * 　-ne　不等于
 * 　-gt　大于
@@ -2851,6 +2910,7 @@ daemon.c
 * 　-n 　非空
 * 　=  　两个字符相等
 * 　!= 　两个字符不等
+
 
 
 2.6 sed工具使用
@@ -2872,6 +2932,8 @@ daemon.c
 >－ｎ：指定处理后只显示该行
 >－ｅ：进行多项编辑任务
 >－ｉ：直接修改读取的文件内容，而不是由屏幕输出
+
+
 
 2.7 awk工具使用
 
@@ -2896,7 +2958,4 @@ daemon.c
     awk -F ':' '$1=="root" {print $0}' /etc/passwd
     echo -ne "\n"
 
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　更于07-30-2015
-
----
-**完结**
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　**完结**
