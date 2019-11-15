@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: "Hello Unix"
+title: "Hello Unix programming"
 author: "Xhy"
 categories: Linux
 tags: [improve]
