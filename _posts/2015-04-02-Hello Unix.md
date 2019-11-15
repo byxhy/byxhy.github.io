@@ -1,14 +1,14 @@
 ---
 
 layout: post
-title: "Distinguish sounds with ConvNets"
+title: "Hello Unix"
 author: "Xhy"
-categories: Speech
+categories: Linux
 tags: [improve]
-image: paul-stollery-ReqdkBNkXl0.jpg
+image: sai-kiran-anagani-Tjbk79TARiE.jpg
 ---
 
-Photo by paul-stollery
+Photo by sai-kiran-anagani
 
 ### This is a learning note about using Convolutional Neural Network to classify  environmental sounds. I pretty much appreciate [CodeEmporium's](https://www.youtube.com/channel/UC5_6ZD6s8klmMu9TXEB_1IA/about) effort. Thank You very much :)
 
@@ -386,17 +386,17 @@ model.add(Activation('relu'))
 model.add(Conv2D(48, (5, 5), padding='valid'))
 model.add(MaxPool2D((4, 2), strides=(4, 2)))
 model.add(Activation('relu'))
-          
+
 model.add(Conv2D(48, (5, 5), padding='valid'))
 model.add(Activation('relu'))
 
 model.add(Flatten())
 model.add(Dropout(rate=0.5))
-          
+
 model.add(Dense(64))
 model.add(Activation('relu'))
 model.add(Dropout(rate=0.5))
-          
+
 model.add(Dense(10))
 model.add(Activation('softmax'))
 model.summary()
