@@ -25,8 +25,8 @@ Photo by paul-stollery
 * [Compilation and training][5]
 * [Evaluate the model][6]
 
-[1]:	#1
-[2]:	#2
+[1]: #1
+[2]: #2
 [3]: #3
 [4]: #4
 [5]: #5
@@ -386,17 +386,17 @@ model.add(Activation('relu'))
 model.add(Conv2D(48, (5, 5), padding='valid'))
 model.add(MaxPool2D((4, 2), strides=(4, 2)))
 model.add(Activation('relu'))
-          
+
 model.add(Conv2D(48, (5, 5), padding='valid'))
 model.add(Activation('relu'))
 
 model.add(Flatten())
 model.add(Dropout(rate=0.5))
-          
+
 model.add(Dense(64))
 model.add(Activation('relu'))
 model.add(Dropout(rate=0.5))
-          
+
 model.add(Dense(10))
 model.add(Activation('softmax'))
 model.summary()

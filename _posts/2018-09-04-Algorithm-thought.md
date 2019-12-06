@@ -22,8 +22,6 @@ Photo by sabine schulte
 	 3. [generate test cases](#1-3---generate-test-cases)
    4. [detect performance](#1-4---detect-performance)
 
-
-
 <br />
 
 ---
@@ -33,49 +31,117 @@ Photo by sabine schulte
 
 ## 1 - Selection Sort
 
-### 1-1 - basic selection sort
+### 1-1 - basic selection and bubble sort
 
 ```c++
 #include <iostream>
-#include <algorithm>
-#include <string>
-#include <stdlib.h>
 
-using namespace std;
-
-void selectionSort(int arr[], int n)
+void swap_vehicle(int &a, int &b)
 {
-    for (int i = 0; i < n - 1; i++) {
-        int minIndex = i; //It matters where you put it.
+    int c = a;
+    a = b;
+    b = c;
+}
+void selectionSort(int arr[], int length)
+{
+    //1. target: output the array in order
+    //2. method: selec the smallest number int each round and swap
+    //3. Go
 
-        for (int j = i + 1; j < n; j++) {
-        if (arr[j] < arr[minIndex]) {
-                minIndex = j;
+    for (int i = 0; i < length - 1; i++) {
+        int min = arr[i];
+        int min_index = i;
+
+        for (int j = i + 1; j < length; j++) {
+            if (min > arr[j]) {
+                min = arr[j];
+                min_index = j;
             }
         }
 
-        swap(arr[i], arr[minIndex]);
+        if(min_index != i)
+            swap_vehicle(arr[i], arr[min_index]);
     }
+
+}
+void selectionSort2(int arr[], int length)
+{
+    for (int i = 0; i < length - 1; i++) { //PA-1-border
+        int min_index = i;
+
+        for (int j = i + 1; j < length; j++) { //PA-2-border
+            if (arr[min_index] > arr[j]) {
+                min_index = j;
+            }
+        }
+
+        if (min_index != i)
+            swap_vehicle(arr[i], arr[min_index]); 
+    }
+
 }
 
-int main(void)
+void bubbleSort(int arr[], int length)
 {
-    //1. int
+    //1. target: output the array in order
+    //2. method: compare the two numbers from tail and swap them
+    //3. Go
+    for (int i = 0; i < length - 1; i++) {
+        for (int j = length - 1; j > i; j--) {
+            if (arr[j - 1] > arr[j]) {
+                swap_vehicle(arr[j - 1], arr[j]);
+            }
+        }   
+    }
+
+}
+
+void bubbleSort2(int arr[], int length)
+{
+    for (int i = 0; i < length - 1; i++) {
+        int swap_counts = 0;
+        for (int j = length - 1; j > i; j--) {
+            if (arr[j - 1] > arr[j]) {
+                swap_vehicle(arr[j - 1], arr[j]);
+                swap_counts++;
+            }
+        }
+
+        if (0 == swap_counts) //PA-3-stop condition
+            break;
+    }
+
+}
+
+int main()
+{
     int a[10] = { 4, 6, 2, 2, 8, 3, 9, 1, 0, 11 };
 
-    selectionSort(a, 10);
+    //selectionSort(a, 10);
+    //selectionSort2(a, 10);
+    //bubbleSort(a, 10);
+    bubbleSort2(a, 10);
+
 
     for (int m = 0; m < 10; m++) {
-        cout << a[m] << " ";
+        std::cout << a[m] << " ";
     }
-
-    cout << endl;
+    std::cout << std::endl;
 
     system("pause");
-
-    return 0;
 }
+
 ```
+
+**Summary:**
+
+1. Pay attention the border
+2. Find the stop conditions
+3. 
+
+<br />
+
+
 ### 1-2 - using template
 
 SelectionSort.cpp
