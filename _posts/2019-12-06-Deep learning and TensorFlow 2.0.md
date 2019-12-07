@@ -17,8 +17,8 @@ image: TF.jpg
 ## `Table of Contents`
 
 * [First impressions of deep learning][1]
-* [Prepare the dataset and save to pickle file][2]
-* [Shuffle the dataset][3]
+* [Standard installation method][2]
+* [Regression problems][3]
 * [Build the model][4]
 * [Compilation and training][5]
 * [Evaluate the model][6]
@@ -36,7 +36,9 @@ image: TF.jpg
 
 
 
-<h2 id="1"> 1. First impressions of deep learning</h2>
+<h2 id="1">[ 1. First impressions of deep learning ]</h2>
+
+
 
 ### Lesson 1 - Tutorial
 
@@ -80,7 +82,7 @@ Forget TensorFlow 1.0 and start with TensorFlow 2.0.
 
 ### Lesson 4 - Install Anaconda
 
-![1575604685668](/home/xhy/.config/Typora/typora-user-images/1575604685668.png)
+![png](/assets/img/TF2.0/Anaconda.png)
 
 [Anaconda Download](https://www.anaconda.com/distribution/)
 
@@ -97,7 +99,7 @@ Forget TensorFlow 1.0 and start with TensorFlow 2.0.
 
 - *If you cannot connect the official source, you can switch to the domestic source*
 
-  Config the domestic source
+  Configure the domestic source
 
   ```
   ▪ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
@@ -163,12 +165,48 @@ Out[2]: True
 
 ### Lesson6 - Install PyCharm
 
-![1575691455689](/home/xhy/.config/Typora/typora-user-images/1575691455689.png)
+![png](/assets/img/TF2.0/PyCharm.png)
 
 [PyCharm Download](https://www.jetbrains.com/pycharm/)
 
 
 
+Add Python Interpreter
+
+![png](/assets/img/TF2.0/Interpreter.png)
+
+Test
+
+![png](/assets/img/TF2.0/PyCharm_Test.png)
+
+
+
+<br />
+
+
+
+<h2 id="2">[ 2. Standard installation method ]</h2>
+
+
+
+But I still recommend you use conda to install TensorFlow.(Like the tutorial above)
+
+
+
+<br />
+
+
+
+<h2 id="3">[ 3. Regression problems ]</h2>
+
+
+
+Regression problems
+
+But I still recommend you use conda to install TensorFlow.(Like the tutorial above)
+
+
+
 ### Lesson7 - Install Anaconda
 
-
+im
