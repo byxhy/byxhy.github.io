@@ -38,14 +38,14 @@ image: TF.jpg
 
 <h2 id="1"> 1. First impressions of deep learning</h2>
 
-### *Lesson 1 - Tutorial*
+### Lesson 1 - Tutorial
 
 - After the course, try to come up with some new ideas.
 - Try to use deep learning to solve some problems in your life
 
 
 
-### *Lesson 2 - Framework of deep learning-1*
+### Lesson 2 - Framework of deep learning - 1
 
 - Tensorflow
   - V_0.1 (2015.9)
@@ -65,20 +65,20 @@ image: TF.jpg
 - Teano
   - difficult to develop and debug
   - Google, TensorFlow
-  - -> TensoFlow2
+  - -> TensorFlow2
 
 - Chainer(Japan)
 - MXNet
 
 
 
-### *Lesson 3 - Framework of deep learning-2*
+### Lesson 3 - Framework of deep learning - 2
 
 Forget TensorFlow 1.0 and start with TensorFlow 2.0.
 
 
 
-### *Lesson 4 - Install Anaconda*
+### Lesson 4 - Install Anaconda
 
 ![1575604685668](/home/xhy/.config/Typora/typora-user-images/1575604685668.png)
 
@@ -86,7 +86,7 @@ Forget TensorFlow 1.0 and start with TensorFlow 2.0.
 
 
 
-### *Lesson 5 - Install TensorFlow 2*
+### Lesson 5 - Install TensorFlow 2
 
 ```
 ▪ conda create -n tf2 tensorflow-gpu
@@ -97,33 +97,27 @@ Forget TensorFlow 1.0 and start with TensorFlow 2.0.
 
 - *If you cannot connect the official source, you can switch to the domestic source*
 
-  1. Config the domestic source
+  Config the domestic source
 
-     ```
-     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-     ```
+  ```
+  ▪ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  ▪ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  ```
 
-     ```
-     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-     ```
+  Display the source address
 
-  2. Display the source address
+  ```
+  ▪ conda config --set show_channel_urls yes
+  ```
 
-     ```
-     conda config --set show_channel_urls yes
-     ```
+  Install the TensorFlow
 
-  3. Install the TensorFlow
+  ```
+  ▪ conda create -n tf2 tensorflow-gpu
+  ▪ conda activate tf2
+  ```
 
-     ```
-     conda create -n tf2 tensorflow-gpu
-     ```
-
-     ```
-     conda activate tf2
-     ```
-
-- *Check your python  and ipython environment*
+- *Check your python  and ipython environment*(**Where**)
 
 ```
 λ activate tf2                                                     
@@ -167,24 +161,14 @@ Out[2]: True
 
 
 
-### *Lesson6 - Install Anaconda*
+### Lesson6 - Install PyCharm
+
+![1575691455689](/home/xhy/.config/Typora/typora-user-images/1575691455689.png)
+
+[PyCharm Download](https://www.jetbrains.com/pycharm/)
 
 
 
-### Lesson6 - Install Anaconda
-
-Lesson6 - Install Anaconda
-
-Lesson6 - Install Anaconda
-
-Lesson6 - Install Anaconda
-
-Lesson6 - Install Anaconda
-
-Lesson6 - Install Anaconda
-
-Lesson6 - Install Anaconda
-
-
+### Lesson7 - Install Anaconda
 
 
