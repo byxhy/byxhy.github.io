@@ -284,8 +284,6 @@ D:\ProgramData\Anaconda3\envs\tf2\python.exe "E:/M/PycharmProjects/Lesson4 - Lin
 loss_before = 5565.107834483214
 loss_after  = 112.64705664288809
 w = 1.4788027175308358  b = 0.03507497059234176
-
-Process finished with exit code 0
 ```
 
 
@@ -367,14 +365,49 @@ if __name__ == '__main__':
 ```
 epoch: 0 step: 0 loss: 1.8372002
 epoch: 0 step: 100 loss: 0.8855913
-epoch: 1 step: 0 loss: 0.74374235
-epoch: 1 step: 100 loss: 0.7092241
-epoch: 2 step: 0 loss: 0.6130973
-epoch: 2 step: 100 loss: 0.6282503
 ...
-epoch: 28 step: 0 loss: 0.27946895
-epoch: 28 step: 100 loss: 0.3261408
 epoch: 29 step: 0 loss: 0.2764416
 epoch: 29 step: 100 loss: 0.32260606
+```
+
+
+
+<br />
+
+
+
+<h2 id="4">[ 4. TensorFlow 2.0 basic operations ]</h2>
+Try to use Jupyter Notebook  to practice these exercises. 
+
+
+
+*If you don't set the Jupyter Notebook environment, you may meet this problem*
+
+
+```python
+import tensorflow as tf
+```
+
+    -------------------------------------------------------------------------
+    ModuleNotFoundError                     Traceback (most recent call last)
+    
+    <ipython-input-1-64156d691fe5> in <module>
+    ----> 1 import tensorflow as tf
+
+
+    ModuleNotFoundError: No module named 'tensorflow'
+
+
+
+*So before you start your notebook, you should add your TensorFlow2.0 environment first.*
+
+```
+source activate myenv
+
+conda install ipykernel
+
+python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+
+juputer notebook
 ```
 
