@@ -208,82 +208,82 @@ But I still recommend you use conda to install TensorFlow.(Like the tutorial abo
 
 ### Lesson18 - Regression problem practice - 1
 
+Summary: [loss   --->  gradient ->  decent]
 
+- y_pre = wx + b
+- loss = mse(y_pre - y_true) = sum((wx_i + b - y_i)^2) / N
+- grad_w = sum(2 * (wx_i + b - y_i) * x_i / N)
+- grad_b = sum(2 * (wx_i + b - y_i) / N)
+- w_new = w - lr * grad_w     b_new = b - lr * grad_b
 
 ```python
 import numpy as np
 
-#1. Calculate the mean square error function
-def loss_caculate_func(w, b, points):
-    x = points[:, 0]
-    y_true = points[:, 1]
+def compute_loss(points, w, b):
+    x, y = points[:, 0], points[:, 1]
+    N = float(len(x))
 
-    y_pred = w * x + b
-    #  MSE = sum(y_pre - y_real) ** 2 / N
-    loss = np.sum((y_pred - y_true) ** 2) / float(len(points))
-
+    loss = np.sum((w * x + b - y) ** 2) / N
     return loss
 
-#2. Caculate gradient
-def step_gradient(points, w_init, b_init, learning_rate):
-    # y = wx+b
-    # grad_w = 2 * (wx + b - y) * x
-    # grad_b = 2 * (wx + b - y) * 1
+def step_gradient(points, init_w, init_b, learning_rate):
+    x, y = points[:, 0], points[:, 1]
+    N = float(len(x))
 
-    N = float(len(points))
-    grad_w = np.sum((2 / N) * (w_init * points[:, 0] + b_init - points[:, 1]) * points[:, 0])
-    grad_b = np.sum((2 / N) * (w_init * points[:, 0] + b_init - points[:, 1]))
+    w, b = init_w, init_b
 
-    w_new = w_init - learning_rate * grad_w
-    b_new = b_init - learning_rate * grad_b
+    # Err 1: x is a array, not scale
+    # grad_w = 2 * np.sum(w * x + b - y) * x / N
+    # grad_b = 2 * np.sum(w * x + b - y) / N
+
+    grad_w = np.sum(2 * (w * x + b - y) * x / N)
+    grad_b = np.sum(2 * (w * x + b - y) / N)
+
+    w_new = w - learning_rate * grad_w
+    b_new = b - learning_rate * grad_b
 
     return w_new, b_new
 
-#3. Gradient decent
-def gradient_decent(points, w_init, b_init, learning_rate, num_iterations):
-    w = w_init
-    b = b_init
+def gradient_decent(points, init_w, init_b, lr, iterations):
+    w, b = init_w, init_b
+    for i in range(iterations):
+        # Err 2: init_w, init_b just only once
+        # w, b = gradient_decent(points, init_w, init_b, lr)
+        # print('w =', w, 'b =', b)
 
-    for i in range(num_iterations):
-        w, b = step_gradient(np.array(points), w, b, learning_rate)
+        w, b = step_gradient(points, w, b, lr)
 
     return w, b
 
-#4. Processing flow
-    #4.1 read data
-    #4.2 set the initial w, b value and caculate the first loss value
-    #4.3 gradient decent
-    #4.4 caculate the last loss value
-
 def run():
+    # 1' read source data and initialize w, b and lr
     points = np.genfromtxt("data.csv", delimiter=",")
 
-    w_init = 0
-    b_init = 0
-    lr = 0.0001
-    # lr = 0.001 [Err: invalid value encountered in double_scalars]
-    num_iterations = 100
+    init_w, init_b, lr = 0, 0, 0.0001
 
-    loss_before = loss_caculate_func(w_init, b_init, points)
-    print('loss_before =', loss_before)
+    iterations = 100
 
-    w, b = gradient_decent(points, w_init, b_init, lr, num_iterations)
+    # 2' compute loss_before
+    loss_before = compute_loss(points, init_w, init_b)
 
-    loss_after = loss_caculate_func(w, b, points)
-    print('loss_after  =', loss_after)
+    # 3' update w, b (gradient decent)
+    w, b = gradient_decent(points, init_w, init_b, lr, iterations)
 
-    print('w =', w, ' b =', b)
+    # 4' compute loss_after
+    loss_after = compute_loss(points, w, b)
 
-if __name__ == "__main__":
+    # 5' output the results
+    print('loss_before =', loss_before, '\nloss_after  =', loss_after)
+    print('w = ', w, 'b =', b)
+
+if __name__ == '__main__':
     run()
-
 ```
 
 ```
-D:\ProgramData\Anaconda3\envs\tf2\python.exe "E:/M/PycharmProjects/Lesson4 - Linear Regression/Linear regression.py"
-loss_before = 5565.107834483214
+loss_before = 5565.107834483214 
 loss_after  = 112.64705664288809
-w = 1.4788027175308358  b = 0.03507497059234176
+w =  1.4788027175308358 b = 0.03507497059234177
 ```
 
 
