@@ -3,7 +3,7 @@ layout: page
 title: Welcome to Fourier
 ---
 
-**Fouier is from Lagrange. I just made some personal adjustments based on Lagrange. Thanks for the author so much. I'm really love this theme.**
+**Fouier is from [Lagrange](https://github.com/LeNPaul/Lagrange). Lagrange is a simple and elegant template. I just made some personal adjustments based on it. Thanks for the author so much. I really love this theme.**
 
 Lagrange is a minimalist Jekyll theme. The purpose of this theme is to provide a simple, clean, content-focused blogging platform for your personal site or blog. Below you can find everything you need to get started.
 

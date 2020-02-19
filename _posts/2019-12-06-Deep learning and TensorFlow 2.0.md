@@ -275,7 +275,7 @@ if __name__ == '__main__':
 ```
 
 ```
-loss_before = 5565.107834483214 
+loss_before = 5565.107834483214
 loss_after  = 112.64705664288809
 w =  1.4788027175308358 b = 0.03507497059234177
 ```
@@ -377,7 +377,7 @@ epoch: 29 step: 100 loss: 0.32260606
 
 
 <h2 id="4">[ 4. TensorFlow 2.0 basic operations ]</h2>
-Try to use Jupyter Notebook  to practice these exercises. 
+Try to use Jupyter Notebook  to practice these exercises.
 
 
 
@@ -390,7 +390,7 @@ import tensorflow as tf
 
     -------------------------------------------------------------------------
     ModuleNotFoundError                     Traceback (most recent call last)
-    
+
     <ipython-input-1-64156d691fe5> in <module>
     ----> 1 import tensorflow as tf
 
@@ -413,7 +413,7 @@ juputer notebook
 
 
 
-### Lesson24 ~ Lesson39 - basic operations 
+### Lesson24 ~ Lesson39 - basic operations
 
 #### Create
 
@@ -453,9 +453,9 @@ tf.constant(2.2, dtype=tf.int32)
 
 
     ---------------------------------------------------------------------------
-    
+
     TypeError                                 Traceback (most recent call last)
-    
+
     <ipython-input-4-cf6ddbb50ed9> in <module>
     ----> 1 tf.constant(2.2, dtype=tf.int32)
 
@@ -506,7 +506,7 @@ tf.constant('Hello TensorFlow 2.0 !')
 with tf.device('cpu'):
     a = tf.constant([1])
     b = tf.range(4)
-    
+
 with tf.device('gpu'):
     c = tf.constant([1])
     d = tf.range(4)
@@ -677,9 +677,9 @@ d.name
 
 
     ---------------------------------------------------------------------------
-    
+
     AttributeError                            Traceback (most recent call last)
-    
+
     <ipython-input-47-4672a43555ef> in <module>
     ----> 1 d.name
 
@@ -1199,7 +1199,7 @@ tf.zeros([2, 3, 3])
     array([[[0., 0., 0.],
             [0., 0., 0.],
             [0., 0., 0.]],
-    
+
            [[0., 0., 0.],
             [0., 0., 0.],
             [0., 0., 0.]]], dtype=float32)>
@@ -1225,7 +1225,7 @@ tf.zeros_like(a)
     array([[[0., 0., 0.],
             [0., 0., 0.],
             [0., 0., 0.]],
-    
+
            [[0., 0., 0.],
             [0., 0., 0.],
             [0., 0., 0.]]], dtype=float32)>
@@ -1256,7 +1256,7 @@ tf.zeros(a.shape)
     array([[[0., 0., 0.],
             [0., 0., 0.],
             [0., 0., 0.]],
-    
+
            [[0., 0., 0.],
             [0., 0., 0.],
             [0., 0., 0.]]], dtype=float32)>
@@ -1327,7 +1327,7 @@ tf.ones_like(a)
     array([[[1., 1., 1.],
             [1., 1., 1.],
             [1., 1., 1.]],
-    
+
            [[1., 1., 1.],
             [1., 1., 1.],
             [1., 1., 1.]]], dtype=float32)>
@@ -1589,9 +1589,9 @@ tf.constant([[1, 2.], [3.]])
 
 
     ---------------------------------------------------------------------------
-    
+
     ValueError                                Traceback (most recent call last)
-    
+
     <ipython-input-22-2db47d890053> in <module>
     ----> 1 tf.constant([[1, 2.], [3.]])
 
@@ -2546,7 +2546,7 @@ b
     array([[[ 0,  1,  2,  3],
             [ 4,  5,  6,  7],
             [ 8,  9, 10, 11]],
-    
+
            [[12, 13, 14, 15],
             [16, 17, 18, 19],
             [20, 21, 22, 23]]])>
@@ -2560,9 +2560,9 @@ tf.boolean_mask(b, mask=[True])
 
 
     ---------------------------------------------------------------------------
-    
+
     ValueError                                Traceback (most recent call last)
-    
+
     <ipython-input-188-0aecea434f71> in <module>
     ----> 1 tf.boolean_mask(b, mask=[True])
 
@@ -2592,9 +2592,9 @@ tf.boolean_mask(b, mask=[[True, False]])
 
 
     ---------------------------------------------------------------------------
-    
+
     ValueError                                Traceback (most recent call last)
-    
+
     <ipython-input-191-1a7109819c9c> in <module>
     ----> 1 tf.boolean_mask(b, mask=[[True, False]])
 
@@ -2624,9 +2624,9 @@ tf.boolean_mask(b, mask=[[[True, False, False, True]]])
 
 
     ---------------------------------------------------------------------------
-    
+
     ValueError                                Traceback (most recent call last)
-    
+
     <ipython-input-196-8b903455c2c1> in <module>
     ----> 1 tf.boolean_mask(b, mask=[[[True, False, False, True]]])
 
@@ -3042,9 +3042,9 @@ x = tf.random.normal([4, 32, 32, 3])
 
 
     ---------------------------------------------------------------------------
-    
+
     InvalidArgumentError                      Traceback (most recent call last)
-    
+
     <ipython-input-6-47933ca14467> in <module>
     ----> 1 (x + tf.random.normal([1,32, 32])).shape
 
@@ -3127,7 +3127,7 @@ a1
     array([[[1., 1., 1., 1.],
             [1., 1., 1., 1.],
             [1., 1., 1., 1.]],
-    
+
            [[1., 1., 1., 1.],
             [1., 1., 1., 1.],
             [1., 1., 1., 1.]]], dtype=float32)>
@@ -3163,7 +3163,7 @@ a3
     array([[[1., 1., 1., 1.],
             [1., 1., 1., 1.],
             [1., 1., 1., 1.]],
-    
+
            [[1., 1., 1., 1.],
             [1., 1., 1., 1.],
             [1., 1., 1., 1.]]], dtype=float32)>
@@ -3186,7 +3186,7 @@ a4
             [1., 1., 1., 1.],
             [1., 1., 1., 1.],
             [1., 1., 1., 1.]],
-    
+
            [[1., 1., 1., 1.],
             [1., 1., 1., 1.],
             [1., 1., 1., 1.],
@@ -3212,7 +3212,7 @@ a5
             [1., 1., 1., 1., 1., 1., 1., 1.],
             [1., 1., 1., 1., 1., 1., 1., 1.],
             [1., 1., 1., 1., 1., 1., 1., 1.]],
-    
+
            [[1., 1., 1., 1., 1., 1., 1., 1.],
             [1., 1., 1., 1., 1., 1., 1., 1.],
             [1., 1., 1., 1., 1., 1., 1., 1.],
@@ -3488,7 +3488,7 @@ aa @ bb
     <tf.Tensor: id=183, shape=(4, 2, 5), dtype=float32, numpy=
     array([[[6., 6., 6., 6., 6.],
             [6., 6., 6., 6., 6.]],
-    
+
            [[6., 6., 6., 6., 6.],
             [6., 6., 6., 6., 6.]]], dtype=float32)>
 
@@ -3505,7 +3505,7 @@ tf.matmul(aa, bb)
     <tf.Tensor: id=184, shape=(4, 2, 5), dtype=float32, numpy=
     array([[[6., 6., 6., 6., 6.],
             [6., 6., 6., 6., 6.]],
-    
+
            [[6., 6., 6., 6., 6.],
             [6., 6., 6., 6., 6.]]], dtype=float32)>
 
@@ -3525,13 +3525,13 @@ a
     <tf.Tensor: id=187, shape=(4, 2, 3), dtype=float32, numpy=
     array([[[1., 1., 1.],
             [1., 1., 1.]],
-    
+
            [[1., 1., 1.],
             [1., 1., 1.]],
-    
+
            [[1., 1., 1.],
             [1., 1., 1.]],
-    
+
            [[1., 1., 1.],
             [1., 1., 1.]]], dtype=float32)>
 
@@ -3569,13 +3569,13 @@ a @ bb
     <tf.Tensor: id=202, shape=(4, 2, 5), dtype=float32, numpy=
     array([[[6., 6., 6., 6., 6.],
             [6., 6., 6., 6., 6.]],
-    
+
            [[6., 6., 6., 6., 6.],
             [6., 6., 6., 6., 6.]],
-    
+
            [[6., 6., 6., 6., 6.],
             [6., 6., 6., 6., 6.]],
-    
+
            [[6., 6., 6., 6., 6.],
             [6., 6., 6., 6., 6.]]], dtype=float32)>
 
@@ -3725,4 +3725,3 @@ epoch: 0  step: 0 loss = 1.0857837200164795
 ...
 epoch: 9  step: 500 loss = 0.10089235007762909
 ```
-
