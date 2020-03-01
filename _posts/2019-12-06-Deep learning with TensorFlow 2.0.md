@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: "Deep learning and TensorFlow 2.0"
+title: "Deep learning with TensorFlow 2.0"
 author: "Xhy"
 categories: DeepLearning
 tags: [improve]
