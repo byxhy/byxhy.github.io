@@ -73,7 +73,7 @@ echo $PATH
 nvcc -V
 ```
 ![png](/assets/img/PyTorch/nvcc-V.png)
-r
+
 ### 2. Anaconda
 
 - a. [Download Anaconda](https://www.anaconda.com/distribution/)
@@ -111,11 +111,11 @@ conda install tensorflow-gpu==2.1.0
 
 ### 1. Linear regression
 
-Core of [gradient descent](https://www.bilibili.com/video/av15997678?p=3)
-
+- Core of [gradient descent](https://www.bilibili.com/video/av15997678?p=3)
 ![png](/assets/img/PyTorch/gradient-descent.jpg)
 
-Code implementation
+- Code implementation
+
 ```python
 import numpy as np
 
@@ -219,7 +219,8 @@ Summary: [loss -->  gradient -->  decent]
    - x = tf.reshape(x, (-1, 28 * 28)）
    - step vs epoch
 
-Code implementation
+- Code implementation
+
 ```python
 import tensorflow as tf
 from tensorflow.keras import Sequential, layers, optimizers, datasets

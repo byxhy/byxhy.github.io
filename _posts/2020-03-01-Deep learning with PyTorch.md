@@ -94,7 +94,6 @@ conda activate torch
 ```
 
 - b. Copy PyTorch installation [command](https://pytorch.org/get-started/locally/)
-
 ![png](/assets/img/PyTorch/pytorch-install-command.png)
 
 ```
@@ -113,8 +112,7 @@ conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 
 ### 1. Linear regression
 
-Core of [gradient descent](https://www.bilibili.com/video/av15997678?p=3)
-
+- Core of [gradient descent](https://www.bilibili.com/video/av15997678?p=3)
 ![png](/assets/img/PyTorch/gradient-descent.jpg)
 
 - a. Question
