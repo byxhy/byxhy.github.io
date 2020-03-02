@@ -20,7 +20,7 @@ Image from [Google images](https://images.app.goo.gl/bqZGCzKDWBSw39qL9)
 
 * [INSTALLATION][1]
 * [GET STARTED][2]
-* [Regression problems][3]
+* [BASIC TENSOR OPERATION][3]
 * [TensorFlow 2.0 basic operations][4]
 * [Compilation and training][5]
 * [Evaluate the model][6]
@@ -93,7 +93,7 @@ conda create -n torch
 conda activate torch
 ```
 
-- b. [Copy PyTorch installation command](https://pytorch.org/get-started/locally/)
+- b. Copy PyTorch installation [command](https://pytorch.org/get-started/locally/)
 
 ![png](/assets/img/PyTorch/pytorch-install-command.png)
 
@@ -200,16 +200,16 @@ if __name__ == '__main__':
 
 ### 2. MNIST
 
-xxxxxxxxxxx`
+xxxxxxxxxxx
 
 ---
 
 <br />
 
 
-<h2 id="3">[ 3. Regression problems ]</h2>
+<h2 id="3">BASIC TENSOR OPERATION</h2>
 
-### Basic data type (lesson8, lesson9) - 20200301-20:18
+### 1. Basic data type
 
 - Type check
 

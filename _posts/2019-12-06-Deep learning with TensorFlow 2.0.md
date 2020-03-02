@@ -5,7 +5,7 @@ title: "Deep learning with TensorFlow 2.0"
 author: "Xhy"
 categories: DeepLearning
 tags: [improve]
-image: TF.jpg
+image: ./TF2.0/TF.jpg
 ---
 
 
@@ -18,9 +18,9 @@ image: TF.jpg
 
 ## `Table of Contents`
 
-* [First impressions of deep learning][1]
-* [Standard installation method][2]
-* [Regression problems][3]
+* [INSTALLATION][1]
+* [GET STARTED][2]
+* [TF BASIC OPERATION 1][3]
 * [TensorFlow 2.0 basic operations][4]
 * [Compilation and training][5]
 * [Evaluate the model][6]
@@ -32,184 +32,90 @@ image: TF.jpg
 [5]: #5
 [6]: #6
 
+---
 
 
 <br />
 
 
 
-<h2 id="1">[ 1. First impressions of deep learning ]</h2>
-### Lesson 1 - Tutorial
+<h2 id="1">INSTALLATION</h2>
 
-- After the course, try to come up with some new ideas.
-- Try to use deep learning to solve some problems in your life
+Take my Ubuntu as an example, and refer to the [official website](https://pytorch.org/get-started/locally/#macos-version) for other cases
 
+### 1. CUDA Toolkit 10.1 Archive
 
+- a. [Download CUDA 10.1](https://developer.nvidia.com/cuda-10.1-download-archive-base?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal)
 
-### Lesson 2 - Framework of deep learning - 1
-
-- Tensorflow
-  - V_0.1 (2015.9)
-  - V_1.0 (2017.2)
-  - V_2.0 (2019.9)
-- Scikit-learn
-  - Machine learning, No GPU
-- Torch
-  - Lua
-- Caffe
-  - 2013, The first framework for deep learning
-  - No auto-grad, C++
-  - Facebook, Caffe2 -> PyTorch
-  - Torch -> PyTorch
-- Keras
-  - wrapper
-- Teano
-  - difficult to develop and debug
-  - Google, TensorFlow
-  - -> TensorFlow2
-
-- Chainer(Japan)
-- MXNet
-
-
-
-### Lesson 3 - Framework of deep learning - 2
-
-Forget TensorFlow 1.0 and start with TensorFlow 2.0.
-
-
-
-### Lesson 4 - Install Anaconda
-
-![png](/assets/img/TF2.0/Anaconda.png)
-
-[Anaconda Download](https://www.anaconda.com/distribution/)
-
-
-
-### Lesson 5 - Install TensorFlow 2.0
-
+- b. Installation Instructions
 ```
-▪ conda create -n tf2 tensorflow-gpu
-▪ conda activate tf2
+sudo dpkg -i cuda-repo-ubuntu1804-10-1-local-10.1.105-418.39_1.0-1_amd64.deb
+sudo apt-key add /var/cuda-repo-<version>/7fa2af80.pub
+sudo apt-get update
+sudo apt-get install cuda
+```
+- c. Use **nvidia-smi** command to test if the installation is normal
+![png](/assets/img/PyTorch/nvidia-smi.png)
+
+- d. Add nvcc environment to PATH
+```
+vi ~/.bashrc
+```
+add the following to the bashrc file
+```
+export CUDA_HOME=/usr/local/cuda
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:"$LD_LIBRARY_PATH:/usr/loacl/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+export PATH=/usr/local/cuda/bin:$PATH
+```
+```
+source ~/.bashrc
+echo $PATH
+nvcc -V
+```
+![png](/assets/img/PyTorch/nvcc-V.png)
+r
+### 2. Anaconda
+
+- a. [Download Anaconda](https://www.anaconda.com/distribution/)
+
+- b. Installation Instructions
+```
+sha256sum Anaconda3-2019.10-Linux-x86_64.sh
+bash Anaconda3-2019.10-Linux-x86_64.sh
+conda config --set auto_activate_base false
 ```
 
+### 3. TensorFlow 2.0
 
-
-- *If you cannot connect the official source, you can switch to the domestic source*
-
-  Configure the domestic source
-
-  ```
-  ▪ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-  ▪ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-  ```
-
-  Display the source address
-
-  ```
-  ▪ conda config --set show_channel_urls yes
-  ```
-
-  Install the TensorFlow
-
-  ```
-  ▪ conda create -n tf2 tensorflow-gpu
-  ▪ conda activate tf2
-  ```
-
-- *Check your python  and ipython environment*(**Where**)
-
+- a. Create a tensorflow virtual environment
 ```
-λ activate tf2                                                     
-
-(tf2) λ where python
-D:\ProgramData\Anaconda3\envs\tf2\python.exe
-D:\ProgramData\Anaconda3\python.exe
-C:\Python27\python.exe
-
-
-(tf2) λ where ipython                                             
-D:\ProgramData\Anaconda3\Scripts\ipython.exe                       
+conda create -n tf2
+conda activate tf2
 ```
 
-
-
-- *We found that there is no ipython in tf2 virtual environment, so we install it*
-
+- b. Using **conda** command to install TF 2.0
+![png](/assets/img/TF2.0/install-tf-gpu.png)
 ```
-(tf2) λ pip install ipython
+conda install tensorflow-gpu==2.1.0
 ```
 
+- c. Test if the TensorFlow installation is normal
+![png](/assets/img/TF2.0/tf-test.png)
 
-
-```
-(tf2) λ where ipython
-D:\ProgramData\Anaconda3\envs\tf2\Scripts\ipython.exe
-D:\ProgramData\Anaconda3\Scripts\ipython.exe
-```
-
-
-
-- *Check TensorFlow version is gpu or not*
-
-```
-(tf2) λ ipython           
-In [1]: import tensorflow as tf                              
-In [2]: tf.test.is_gpu_available()     
-Out[2]: True      
-```
-
-
-
-### Lesson6 - Install PyCharm
-
-![png](/assets/img/TF2.0/PyCharm.png)
-
-[PyCharm Download](https://www.jetbrains.com/pycharm/)
-
-
-
-Add Python Interpreter
-
-![png](/assets/img/TF2.0/Interpreter.png)
-
-Test
-
-![png](/assets/img/TF2.0/PyCharm_Test.png)
-
-
+---
 
 <br />
 
 
+<h2 id="2">GET STARTED</h2>
 
-<h2 id="2">[ 2. Standard installation method ]</h2>
-But I still recommend you use conda to install TensorFlow.(Like the tutorial above)
+### 1. Linear regression
 
+Core of [gradient descent](https://www.bilibili.com/video/av15997678?p=3)
 
+![png](/assets/img/PyTorch/gradient-descent.jpg)
 
-( Lesson7 - Lesson14 )
-
-
-
-<br />
-
-
-
-<h2 id="3">[ 3. Regression problems ]</h2>
-### Lesson15 - Linear Regression - 1
-
-- Linear Regression
-- Logistic Regression
-- Classification
-
-### Lesson16 - Linear Regression - 2
-
-### Lesson17 - Regression problem practice - 1
-
-### Lesson18 - Regression problem practice - 1
-
+Code implementation
 ```python
 import numpy as np
 
@@ -280,7 +186,7 @@ loss_after  = 112.64705664288809
 w =  1.4788027175308358 b = 0.03507497059234177
 ```
 
-Summary: [loss   --->  gradient ->  decent]
+Summary: [loss -->  gradient -->  decent]
 
 - y_pre = wx + b
 - loss = mse(y_pre - y_true) = sum((wx_i + b - y_i)^2) / N
@@ -288,33 +194,32 @@ Summary: [loss   --->  gradient ->  decent]
 - grad_b = sum(2 * (wx_i + b - y_i) / N)
 - w_new = w - lr * grad_w     b_new = b - lr * grad_b
 
-### Lesson23 - Handwritten digit recognition problem - 2
+### 2. Handwritten digit recognition problem
 
 *Imagine being given a blank sheet of paper to write down a solution to this problem. What would you do ?*
 
-
-
-1. Q: Use TensorFlow to recognize the number in the picture of MNIST dataset
+- Q: Use TensorFlow to recognize the number in the picture of MNIST dataset
    - background
      - why : In order to master the skill of deep learning
      - diff: I have the class, but I want to do it by myself
    - nature : deep learning model, gradient decent method, classification
    - medicine : TensorFlow now
    -  target : Starting from scratch
-2. Multidimensional and critical thinking:
+-  Multidimensional and critical thinking:
    - divergent
-3. Framework: You must have a global view of the problem
-   - input  --->  hidden  -->  output
-4. Execute:
-5. Check / update:
-   - Before: input  --->  hidden  -->  output
-   - After:  loss   --->  gradient ->  decent
-6. Summary:  `[loss   --->  gradient ->  decent]`
+- Framework: You must have a global view of the problem
+   - input --> hidden --> output
+- Execute:
+- Check / update:
+   - Before: input --> hidden --> output
+   - After:  loss --> gradient --> decent
+- Summary:  `[loss --> gradient --> decent]`
    - Normalize the train data
    - label to one-hot
-   - x = tf.reshape(x, (-1, 28 * 28)
+   - x = tf.reshape(x, (-1, 28 * 28)）
    - step vs epoch
 
+Code implementation
 ```python
 import tensorflow as tf
 from tensorflow.keras import Sequential, layers, optimizers, datasets
@@ -370,50 +275,14 @@ epoch: 29 step: 0 loss: 0.2764416
 epoch: 29 step: 100 loss: 0.32260606
 ```
 
-
+---
 
 <br />
 
 
+<h2 id="3">TF BASIC OPERATION 1</h2>
 
-<h2 id="4">[ 4. TensorFlow 2.0 basic operations ]</h2>
-Try to use Jupyter Notebook  to practice these exercises.
-
-
-
-*If you don't set the Jupyter Notebook environment, you may meet this problem*
-
-
-```python
-import tensorflow as tf
-```
-
-    -------------------------------------------------------------------------
-    ModuleNotFoundError                     Traceback (most recent call last)
-
-    <ipython-input-1-64156d691fe5> in <module>
-    ----> 1 import tensorflow as tf
-
-
-    ModuleNotFoundError: No module named 'tensorflow'
-
-
-
-*So before you start your notebook, you should add your TensorFlow2.0 environment first.*
-
-```
-source activate myenv
-
-conda install ipykernel
-
-python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
-
-juputer notebook
-```
-
-
-
-### Lesson24 ~ Lesson39 - basic operations
+### 1. Basic operation
 
 #### Create
 
@@ -3626,8 +3495,7 @@ out
            [2.1],
            [2.1]], dtype=float32)>
 
-
-### Lesson43 - Forward propagation
+### 2. Forward propagation
 
 `Q: Build a forward network from scratch`
 
@@ -3725,3 +3593,5 @@ epoch: 0  step: 0 loss = 1.0857837200164795
 ...
 epoch: 9  step: 500 loss = 0.10089235007762909
 ```
+
+---
