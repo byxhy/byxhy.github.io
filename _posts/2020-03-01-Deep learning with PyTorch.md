@@ -5,12 +5,12 @@ title: "Deep learning with PyTorch"
 author: "Xhy"
 categories: DeepLearning
 tags: [improve]
-image: TF.jpg
+image: ./PyTorch/pytorch.jpg
 ---
 
+Image from [Google images](https://images.app.goo.gl/bqZGCzKDWBSw39qL9)
 
-
-> At TensorFlow Dev Summit 2019, the TensorFlow team introduced the Alpha version of TensorFlow 2.0
+> An open source machine learning [framework](https://pytorch.org/) that accelerates the path from research prototyping to production deployment.
 
 <br />
 
@@ -18,7 +18,7 @@ image: TF.jpg
 
 ## `Table of Contents`
 
-* [First impressions of deep learning][1]
+* [INSTALLATION][1]
 * [Standard installation method][2]
 * [Regression problems][3]
 * [TensorFlow 2.0 basic operations][4]
@@ -38,61 +38,82 @@ image: TF.jpg
 
 
 
-<h2 id="1">[ 1. First impressions of deep learning ]</h2>
-### Lesson 1 - Tutorial
+<h2 id="1">INSTALLATION</h2>
 
-- After the course, try to come up with some new ideas.
-- Try to use deep learning to solve some problems in your life
+Take my Ubuntu as an example, and refer to the [official website](https://pytorch.org/get-started/locally/#macos-version) for other cases
 
+### 1. CUDA Toolkit 10.1 Archive
 
+- a. [Download CUDA 10.1](https://developer.nvidia.com/cuda-10.1-download-archive-base?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal)
 
-### Lesson 2 - Framework of deep learning - 1
+- b. Installation Instructions
+```
+sudo dpkg -i cuda-repo-ubuntu1804-10-1-local-10.1.105-418.39_1.0-1_amd64.deb
+sudo apt-key add /var/cuda-repo-<version>/7fa2af80.pub
+sudo apt-get update
+sudo apt-get install cuda
+```
+- c. Use **nvidia-smi** command to test if the installation is normal
+![png](/assets/img/PyTorch/nvidia-smi.png)
 
+- d. Add nvcc environment to PATH
+```
+vi ~/.bashrc
+```
+add the following to the bashrc file
+```
+export CUDA_HOME=/usr/local/cuda
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:"$LD_LIBRARY_PATH:/usr/loacl/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+export PATH=/usr/local/cuda/bin:$PATH
+```
+```
+source ~/.bashrc
+echo $PATH
+nvcc -V
+```
+![png](/assets/img/PyTorch/nvcc-V.png)
 
+### 2. Anaconda
 
-### Lesson 3 - Framework of deep learning - 2
+- a. [Download Anaconda](https://www.anaconda.com/distribution/)
 
-Forget TensorFlow 1.0 and start with TensorFlow 2.0.
+- b. Installation Instructions
+```
+sha256sum Anaconda3-2019.10-Linux-x86_64.sh
+bash Anaconda3-2019.10-Linux-x86_64.sh
+conda config --set auto_activate_base false
+```
 
+### 3. PyTorch
 
+- a. Create a torch virtual environment
+```
+conda create -n torch
+conda activate torch
+```
 
-### Lesson 4 - Install Anaconda
+- b. [Copy PyTorch installation command](https://pytorch.org/get-started/locally/)
 
-![png](/assets/img/TF2.0/Anaconda.png)
+![png](/assets/img/PyTorch/pytorch-install-command.png)
 
-[Anaconda Download](https://www.anaconda.com/distribution/)
+```
+conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+```
 
-
+- c. Test if the PyTorch installation is normal
+![png](/assets/img/PyTorch/pytorch-test.png)
 
 <br />
-
 
 
 <h2 id="2">[ 2. Standard installation method ]</h2>
-But I still recommend you use conda to install TensorFlow.(Like the tutorial above)
-
-
-
-( Lesson7 - Lesson14 )
 
 
 
 <br />
-
 
 
 <h2 id="3">[ 3. Regression problems ]</h2>
 
-
-
-### Lesson15 - Linear Regression - 1
-
-- Linear Regression
-- Logistic Regression
-- Classification
-
-### Lesson16 - Linear Regression - 2
-
-### Lesson17 - Regression problem practice - 1
-
-```
+[Anaconda Download](https://www.anaconda.com/distribution/)
+![png](/assets/img/PyTorch/pytorch-test.png)
