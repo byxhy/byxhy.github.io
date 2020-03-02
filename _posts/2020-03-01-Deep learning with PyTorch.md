@@ -95,7 +95,6 @@ conda activate torch
 
 - b. Copy PyTorch installation [command](https://pytorch.org/get-started/locally/)
 ![png](/assets/img/PyTorch/pytorch-install-command.png)
-
 ```
 conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 ```
