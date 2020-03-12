@@ -1853,3 +1853,8 @@ torch.take(src, torch.tensor([0, 2, 5]))
 *Summary*
 
 - index_select(name dim, Tensor index)
+
+
+```python
+
+```
