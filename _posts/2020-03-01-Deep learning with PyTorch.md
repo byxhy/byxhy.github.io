@@ -1453,10 +1453,403 @@ a, b
 
 
 
-- Summary
-  - Tensor(shape) vs tensor(list): torch.Tensor(3, 3) / torch.tensor([3., 2.])
-  - empty/Tensor vs rand/randn: recommend the last one usage, if you meet 'nan'or 'inf', you should check if you have initialized the variable
-  - arange[start, end) vs linspace[start, end]: arange(low, high, step) / linspace(low, high, nums)
+*Summary*
+- Tensor(shape) vs tensor(list): torch.Tensor(3, 3) / torch.tensor([3., 2.])
+- empty/Tensor vs rand/randn: recommend the last one usage, if you meet 'nan'or 'inf', you should check if you have initialized the variable
+- arange[start, end) vs linspace[start, end]: arange(low, high, step) / linspace(low, high, nums)
 
 
-  
+
+
+### 3. Index and slice
+
+- Indexing
+
+
+```python
+import torch
+import numpy as np
+```
+
+
+```python
+a = torch.rand(4, 3, 28, 28)
+```
+
+
+```python
+a[0].shape
+```
+
+
+
+
+    torch.Size([3, 28, 28])
+
+
+
+
+```python
+a[0, 0].shape
+```
+
+
+
+
+    torch.Size([28, 28])
+
+
+
+
+```python
+a[0, 0, 2, 24] # dimension = 0
+```
+
+
+
+
+    tensor(0.8909)
+
+
+
+- Select first/last N
+
+
+```python
+a.shape
+```
+
+
+
+
+    torch.Size([4, 3, 28, 28])
+
+
+
+
+```python
+a[:2].shape
+```
+
+
+
+
+    torch.Size([2, 3, 28, 28])
+
+
+
+
+```python
+a[:2, :1, :, :].shape  # [start:end)
+```
+
+
+
+
+    torch.Size([2, 1, 28, 28])
+
+
+
+
+```python
+a[:2, 1:, :, :].shape
+```
+
+
+
+
+    torch.Size([2, 2, 28, 28])
+
+
+
+
+```python
+a[:2, -1:, :, :].shape  #[0, 1, 2] --> [-3, -2, -1]
+```
+
+
+
+
+    torch.Size([2, 1, 28, 28])
+
+
+
+
+```python
+a[:2, :-1, :, :].shape
+```
+
+
+
+
+    torch.Size([2, 2, 28, 28])
+
+
+
+- select by setps
+
+
+```python
+a[:, :, 0:28:2, 0:28:2].shape
+```
+
+
+
+
+    torch.Size([4, 3, 14, 14])
+
+
+
+
+```python
+a[:, :, ::2, ::2].shape
+```
+
+
+
+
+    torch.Size([4, 3, 14, 14])
+
+
+
+
+```python
+torch.tensor([1.2, 3]).type()
+```
+
+- selct by specific index
+
+
+```python
+a.shape
+```
+
+
+
+
+    torch.Size([4, 3, 28, 28])
+
+
+
+
+```python
+a.index_select(0, [1, 2]).shape
+```
+
+
+    ---------------------------------------------------------------------------
+
+    TypeError                                 Traceback (most recent call last)
+
+    <ipython-input-26-99f26bb9aaf7> in <module>
+    ----> 1 a.index_select(0, [1, 2]).shape
+
+
+    TypeError: index_select() received an invalid combination of arguments - got (int, list), but expected one of:
+     * (name dim, Tensor index)
+          didn't match because some of the arguments have invalid types: (int, list)
+     * (int dim, Tensor index)
+          didn't match because some of the arguments have invalid types: (int, list)
+
+
+
+
+```python
+a.index_select(0, (1, 2)).shape
+```
+
+
+    ---------------------------------------------------------------------------
+
+    TypeError                                 Traceback (most recent call last)
+
+    <ipython-input-28-191f52239e29> in <module>
+    ----> 1 a.index_select(0, (1, 2)).shape
+
+
+    TypeError: index_select() received an invalid combination of arguments - got (int, tuple), but expected one of:
+     * (name dim, Tensor index)
+          didn't match because some of the arguments have invalid types: (int, tuple)
+     * (int dim, Tensor index)
+          didn't match because some of the arguments have invalid types: (int, tuple)
+
+
+
+
+```python
+a.index_select(0, torch.tensor([1, 2])).shape # Tensor index
+```
+
+
+
+
+    torch.Size([2, 3, 28, 28])
+
+
+
+
+```python
+a.index_select(3, torch.arange(28)).shape
+```
+
+
+
+
+    torch.Size([4, 3, 28, 28])
+
+
+
+
+```python
+a.index_select(3, torch.arange(8)).shape
+```
+
+
+
+
+    torch.Size([4, 3, 28, 8])
+
+
+
+
+```python
+torch.arange(8)
+```
+
+
+
+
+    tensor([0, 1, 2, 3, 4, 5, 6, 7])
+
+
+
+- ...
+
+
+```python
+a.shape
+```
+
+
+
+
+    torch.Size([4, 3, 28, 28])
+
+
+
+
+```python
+a[..., :2].shape
+```
+
+
+
+
+    torch.Size([4, 3, 28, 2])
+
+
+
+
+```python
+a[:, 1, ...].shape
+```
+
+
+
+
+    torch.Size([4, 28, 28])
+
+
+
+
+```python
+torch.randint(1, 10, (3, 3))
+```
+
+- select by mask
+
+
+```python
+x = torch.randn(3, 4)
+x
+```
+
+
+
+
+    tensor([[ 1.3120, -0.4552, -0.9988, -1.0441],
+            [-0.8049, -0.2233,  0.9265, -1.0436],
+            [ 1.8328, -0.8679, -1.3924,  0.7992]])
+
+
+
+
+```python
+mask = x.ge(0.5)
+mask
+```
+
+
+
+
+    tensor([[ True, False, False, False],
+            [False, False,  True, False],
+            [ True, False, False,  True]])
+
+
+
+
+```python
+torch.masked_select(x, mask)
+```
+
+
+
+
+    tensor([1.3120, 0.9265, 1.8328, 0.7992])
+
+
+
+
+```python
+torch.masked_select(x, mask).shape
+```
+
+
+
+
+    torch.Size([4])
+
+
+
+- select by flatten index
+
+
+```python
+src = torch.tensor([[3, 4, 5], [6, 7, 8]])
+src
+```
+
+
+
+
+    tensor([[3, 4, 5],
+            [6, 7, 8]])
+
+
+
+
+```python
+torch.take(src, torch.tensor([0, 2, 5]))
+```
+
+
+
+
+    tensor([3, 5, 8])
+
+
+
+*Summary*
+
+- index_select(name dim, Tensor index)
