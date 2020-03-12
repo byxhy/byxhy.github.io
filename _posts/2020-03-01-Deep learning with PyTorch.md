@@ -1457,3 +1457,6 @@ a, b
   - Tensor(shape) vs tensor(list): torch.Tensor(3, 3) / torch.tensor([3., 2.])
   - empty/Tensor vs rand/randn: recommend the last one usage, if you meet 'nan'or 'inf', you should check if you have initialized the variable
   - arange[start, end) vs linspace[start, end]: arange(low, high, step) / linspace(low, high, nums)
+
+
+  
