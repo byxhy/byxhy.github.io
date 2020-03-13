@@ -1858,3 +1858,704 @@ torch.take(src, torch.tensor([0, 2, 5]))
 ```python
 
 ```
+
+
+
+
+### 4. Tensor dimension transformation
+
+- View reshape (Lost dim infomation)
+
+
+```python
+import torch
+import numpy as np
+```
+
+
+```python
+x = torch.rand(4, 1, 28, 28)
+```
+
+
+```python
+a = x
+```
+
+
+```python
+a.shape
+```
+
+
+
+
+    torch.Size([4, 1, 28, 28])
+
+
+
+
+```python
+a.view(4, 28*28)
+```
+
+
+
+
+    tensor([[0.7975, 0.5761, 0.8444,  ..., 0.9069, 0.5710, 0.7413],
+            [0.8978, 0.9502, 0.2907,  ..., 0.4465, 0.4286, 0.7255],
+            [0.3094, 0.0622, 0.5224,  ..., 0.1396, 0.4282, 0.8647],
+            [0.7251, 0.6360, 0.3513,  ..., 0.9942, 0.3114, 0.3732]])
+
+
+
+
+```python
+a.view(4, 28*28).shape
+```
+
+
+
+
+    torch.Size([4, 784])
+
+
+
+
+```python
+a.view(4*28, 28).shape
+```
+
+
+
+
+    torch.Size([112, 28])
+
+
+
+
+```python
+a.view(4*1, 28, 28).shape
+```
+
+
+
+
+    torch.Size([4, 28, 28])
+
+
+
+
+```python
+b = a.view(4, 784)
+b.shape
+```
+
+
+
+
+    torch.Size([4, 784])
+
+
+
+
+```python
+c = b.view(4, 28, 28, 1)
+c.shape
+```
+
+
+
+
+    torch.Size([4, 28, 28, 1])
+
+
+
+
+```python
+d = b.view(4, 1, 28, 28)
+d.shape
+```
+
+
+
+
+    torch.Size([4, 1, 28, 28])
+
+
+
+
+```python
+torch.equal(c, x)
+```
+
+
+
+
+    False
+
+
+
+
+```python
+torch.equal(d, x)
+```
+
+
+
+
+    True
+
+
+
+
+```python
+a.view(4, 783)
+```
+
+
+    ---------------------------------------------------------------------------
+
+    RuntimeError                              Traceback (most recent call last)
+
+    <ipython-input-14-0404691742fb> in <module>
+    ----> 1 a.view(4, 783)
+
+
+    RuntimeError: shape '[4, 783]' is invalid for input of size 3136
+
+
+- unsqueeze  [-input.dim() - 1, input.dim() + 1)
+
+![png](/assets/img/PyTorch/unsqueeze.png)
+
+
+```python
+a = torch.rand(4, 1, 28, 28)
+a.shape
+```
+
+
+
+
+    torch.Size([4, 1, 28, 28])
+
+
+
+
+```python
+a.unsqueeze(0).shape # vs a.unsqueeze(-5).shape
+```
+
+
+
+
+    torch.Size([1, 4, 1, 28, 28])
+
+
+
+
+```python
+a.shape
+```
+
+
+
+
+    torch.Size([4, 1, 28, 28])
+
+
+
+
+```python
+a.unsqueeze(-5).shape
+```
+
+
+
+
+    torch.Size([1, 4, 1, 28, 28])
+
+
+
+
+```python
+a.unsqueeze(3).shape # vs a.unsqueeze(-2).shape
+```
+
+
+
+
+    torch.Size([4, 1, 28, 1, 28])
+
+
+
+
+```python
+a.shape
+```
+
+
+
+
+    torch.Size([4, 1, 28, 28])
+
+
+
+
+```python
+a.unsqueeze(-2).shape
+```
+
+
+
+
+    torch.Size([4, 1, 28, 1, 28])
+
+
+
+
+```python
+b = torch.tensor([1.2, 2.3])
+b
+```
+
+
+
+
+    tensor([1.2000, 2.3000])
+
+
+
+
+```python
+b.shape
+```
+
+
+
+
+    torch.Size([2])
+
+
+
+
+```python
+b.unsqueeze(-1)
+```
+
+
+
+
+    tensor([[1.2000],
+            [2.3000]])
+
+
+
+
+```python
+b.unsqueeze(0)
+```
+
+
+
+
+    tensor([[1.2000, 2.3000]])
+
+
+
+- unsqueeze example
+
+
+```python
+c = torch.rand(32)
+c.shape
+```
+
+
+
+
+    torch.Size([32])
+
+
+
+
+```python
+target = torch.rand(4, 32, 14, 14)
+target.shape
+```
+
+
+
+
+    torch.Size([4, 32, 14, 14])
+
+
+
+
+```python
+c = c.unsqueeze(0).unsqueeze(-1).unsqueeze(-1)
+c.shape
+```
+
+
+
+
+    torch.Size([1, 32, 1, 1])
+
+
+
+- squeeze
+
+
+```python
+d = torch.rand(1, 32, 1, 1)
+d.shape
+```
+
+
+
+
+    torch.Size([1, 32, 1, 1])
+
+
+
+
+```python
+d.squeeze().shape
+```
+
+
+
+
+    torch.Size([32])
+
+
+
+
+```python
+d.squeeze(0).shape # vs d.squeeze(-4).shape
+```
+
+
+
+
+    torch.Size([32, 1, 1])
+
+
+
+
+```python
+d.squeeze(-4).shape
+```
+
+
+
+
+    torch.Size([32, 1, 1])
+
+
+
+
+```python
+d.squeeze(-1).shape
+```
+
+
+
+
+    torch.Size([1, 32, 1])
+
+
+
+
+```python
+d.squeeze(-2).shape
+```
+
+
+
+
+    torch.Size([1, 32, 1])
+
+
+
+- expand:broadcasting
+
+
+```python
+a = torch.rand(4, 32, 14, 14)
+b = torch.rand(1, 32, 1, 1)
+```
+
+
+```python
+b.expand(4, 32, 14, 14).shape
+```
+
+
+
+
+    torch.Size([4, 32, 14, 14])
+
+
+
+
+```python
+b.expand(-1, 32, -1, -1).shape
+```
+
+
+
+
+    torch.Size([1, 32, 1, 1])
+
+
+
+
+```python
+b.expand(-1, 32, -1, -4).shape # bug
+```
+
+
+
+
+    torch.Size([1, 32, 1, -4])
+
+
+
+- repeat: Memory touched
+
+
+```python
+b.shape
+```
+
+
+
+
+    torch.Size([1, 32, 1, 1])
+
+
+
+
+```python
+b.repeat(4, 32, 1, 1).shape
+```
+
+
+
+
+    torch.Size([4, 1024, 1, 1])
+
+
+
+
+```python
+b.repeat(4, 1, 1, 1).shape
+```
+
+
+
+
+    torch.Size([4, 32, 1, 1])
+
+
+
+
+```python
+b.repeat(4, 1, 32, 32).shape
+```
+
+
+
+
+    torch.Size([4, 32, 32, 32])
+
+
+
+- .t (tensor with <= 2 dimensions)
+
+
+```python
+b.t()
+```
+
+
+    ---------------------------------------------------------------------------
+
+    RuntimeError                              Traceback (most recent call last)
+
+    <ipython-input-44-b510e0f64f40> in <module>
+    ----> 1 b.t()
+
+
+    RuntimeError: t() expects a tensor with <= 2 dimensions, but self is 4D
+
+
+
+```python
+c = torch.rand(3, 4)
+c
+```
+
+
+
+
+    tensor([[0.6893, 0.5189, 0.9370, 0.5368],
+            [0.8434, 0.8373, 0.8882, 0.6287],
+            [0.6004, 0.5860, 0.1956, 0.0710]])
+
+
+
+
+```python
+c.t()
+```
+
+
+
+
+    tensor([[0.6893, 0.8434, 0.6004],
+            [0.5189, 0.8373, 0.5860],
+            [0.9370, 0.8882, 0.1956],
+            [0.5368, 0.6287, 0.0710]])
+
+
+
+- transpose
+
+
+```python
+a = torch.rand(4, 3, 32, 32)
+```
+
+
+```python
+b1 = a.transpose(1, 3).view(4, 32*32*3).view(4, 3, 32, 32)
+```
+
+
+    ---------------------------------------------------------------------------
+
+    RuntimeError                              Traceback (most recent call last)
+
+    <ipython-input-48-72a945409913> in <module>
+    ----> 1 b1 = a.transpose(1, 3).view(4, 32*32*3).view(4, 3, 32, 32)
+
+
+    RuntimeError: view size is not compatible with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead.
+
+
+
+```python
+b1 = a.transpose(1, 3).contiguous().view(4, 32*32*3).view(4, 3, 32, 32)
+b1.shape
+```
+
+
+
+
+    torch.Size([4, 3, 32, 32])
+
+
+
+
+```python
+b2 = a.transpose(1, 3).contiguous().view(4, 32*32*3).view(4, 32, 32, 3).transpose(1, 3)
+b2.shape
+```
+
+
+
+
+    torch.Size([4, 3, 32, 32])
+
+
+
+
+```python
+torch.all(torch.eq(a, b1))
+```
+
+
+
+
+    tensor(False)
+
+
+
+
+```python
+torch.all(torch.eq(a, b2))
+```
+
+
+
+
+    tensor(True)
+
+
+
+- permute [b, c, h, w] --> [b, h, w, c]
+
+
+```python
+a = torch.rand(4, 3, 28, 28)
+a.transpose(1, 3).shape
+```
+
+
+
+
+    torch.Size([4, 28, 28, 3])
+
+
+
+
+```python
+b = torch.rand(4, 3, 28, 32)
+b.transpose(1, 3).shape
+```
+
+
+
+
+    torch.Size([4, 32, 28, 3])
+
+
+
+
+```python
+b.transpose(1, 3).transpose(1, 2).shape
+```
+
+
+
+
+    torch.Size([4, 28, 32, 3])
+
+
+
+
+```python
+b.permute(0, 2, 3, 1).shape
+```
+
+
+
+
+    torch.Size([4, 28, 32, 3])
+
+
+
+*Summary*
+
+- unsqueeze [-input.dim() - 1, input.dim() + 1)
+- repeat - - > expand
+- transpose - - > permute
+
+
+```python
+
+```
