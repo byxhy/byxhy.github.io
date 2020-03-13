@@ -768,7 +768,9 @@ a.size()
 
     torch.Size([])
 
+---
 
+<br />
 
 
 ### 2. Create Tensor
@@ -1458,7 +1460,9 @@ a, b
 - empty/Tensor vs rand/randn: recommend the last one usage, if you meet 'nan'or 'inf', you should check if you have initialized the variable
 - arange[start, end) vs linspace[start, end]: arange(low, high, step) / linspace(low, high, nums)
 
+---
 
+<br />
 
 
 ### 3. Index and slice
@@ -1854,12 +1858,9 @@ torch.take(src, torch.tensor([0, 2, 5]))
 
 - index_select(name dim, Tensor index)
 
+---
 
-```python
-
-```
-
-
+<br />
 
 
 ### 4. Tensor dimension transformation
@@ -2555,7 +2556,6 @@ b.permute(0, 2, 3, 1).shape
 - repeat - - > expand
 - transpose - - > permute
 
+---
 
-```python
-
-```
+<br />
