@@ -680,9 +680,6 @@ Photo by joshua earle
 
 
 
-white space
-
----
 第525天，天空那么美 ~
 
 ![](/assets/img/NYear/525.jpg)
@@ -699,7 +696,7 @@ white space
 
 第527天，坚持的力量 ~
 
-![](/assets/img/NYear/527.jpg)
+![](/assets/img/NYear/527.png)
 ###### 2017-12-01 00:16
 
 
@@ -713,7 +710,7 @@ white space
 
 第529天，建立多元的价值观 ~
 
-![](/assets/img/NYear/529.jpg)
+![](/assets/img/NYear/529.png)
 ###### 2017-12-03 01:49
 
 
@@ -748,7 +745,7 @@ white space
 
 第534天，能感受到只有现在这一刻，那你该怎么做？
 
-![](/assets/img/NYear/534jpg)
+![](/assets/img/NYear/534.png)
 ###### 2017-12-08 00:18
 
 

@@ -2559,3 +2559,311 @@ b.permute(0, 2, 3, 1).shape
 ---
 
 <br />
+
+
+### 5. Broadcasting
+
+- broadcasting (start with the last dimension)
+
+
+```python
+import torch
+import numpy as np
+```
+
+
+```python
+x = torch.rand(4, 1, 28, 28)
+```
+
+
+```python
+b = 0.2
+```
+
+
+```python
+x_b = x + b
+x_b.shape
+```
+
+
+
+
+    torch.Size([4, 1, 28, 28])
+
+
+
+
+```python
+x_b - x
+```
+
+
+
+
+    tensor([[[[0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              ...,
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000]]],
+
+
+​    
+
+            [[[0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              ...,
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000]]],
+
+
+​    
+
+            [[[0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              ...,
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000]]],
+
+
+​    
+
+            [[[0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              ...,
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000],
+              [0.2000, 0.2000, 0.2000,  ..., 0.2000, 0.2000, 0.2000]]]])
+
+---
+
+<br />
+
+
+### 6. Merge and split
+
+- cat
+
+
+```python
+import torch
+import numpy as np
+```
+
+
+```python
+a = torch.rand(4, 32, 8)
+b = torch.rand(5, 32, 8)
+```
+
+
+```python
+torch.cat([a, b], dim=0).shape
+```
+
+
+
+
+    torch.Size([9, 32, 8])
+
+
+
+
+```python
+a = torch.rand(4, 3, 16, 32)
+b = torch.rand(4, 3, 16, 32)
+```
+
+
+```python
+torch.cat([a, b], dim=2).shape
+```
+
+
+
+
+    torch.Size([4, 3, 32, 32])
+
+
+
+- stack
+
+
+```python
+a = torch.rand(16, 32)
+b = torch.rand(16, 32)
+```
+
+
+```python
+torch.stack([a, b], dim=0).shape
+```
+
+
+
+
+    torch.Size([2, 16, 32])
+
+
+
+
+```python
+torch.stack([a, b], dim=1).shape
+```
+
+
+
+
+    torch.Size([16, 2, 32])
+
+
+
+
+```python
+a = torch.rand(4, 3, 16, 32)
+b = torch.rand(4, 3, 16, 32)
+```
+
+
+```python
+torch.stack([a, b], dim=2).shape
+```
+
+
+
+
+    torch.Size([4, 3, 2, 16, 32])
+
+
+
+- stack vs cat
+
+
+```python
+a = torch.rand(32, 8)
+b = torch.rand(30, 8)
+```
+
+
+```python
+torch.cat([a, b], dim=0).shape
+```
+
+
+
+
+    torch.Size([62, 8])
+
+
+
+
+```python
+torch.stack([a, b], dim=0).shape
+```
+
+
+    ---------------------------------------------------------------------------
+
+    RuntimeError                              Traceback (most recent call last)
+
+    <ipython-input-13-201fb7282b6d> in <module>
+    ----> 1 torch.stack([a, b], dim=0).shape
+
+
+    RuntimeError: invalid argument 0: Sizes of tensors must match except in dimension 0. Got 32 and 30 in dimension 1 at /opt/conda/conda-bld/pytorch_1579022027550/work/aten/src/TH/generic/THTensor.cpp:612
+
+
+- split: by len
+
+
+```python
+c = torch.rand(4, 32, 8)
+```
+
+
+```python
+aa, bb = c.split([1, 3], dim=0)
+aa.shape, bb.shape
+```
+
+
+
+
+    (torch.Size([1, 32, 8]), torch.Size([3, 32, 8]))
+
+
+
+
+```python
+aa, bb = c.split(2, dim=0)
+aa.shape, bb.shape
+```
+
+
+
+
+    (torch.Size([2, 32, 8]), torch.Size([2, 32, 8]))
+
+
+
+
+```python
+aa, bb, cc = c.split([1, 2, 1], dim=0)
+aa.shape, bb.shape, cc.shape
+```
+
+
+
+
+    (torch.Size([1, 32, 8]), torch.Size([2, 32, 8]), torch.Size([1, 32, 8]))
+
+
+
+- chunk: by num (vs split)
+
+
+```python
+c = torch.rand(2, 32, 8)
+```
+
+
+```python
+aa, bb = c.split(2, dim=0)
+aa.shape, bb.shape
+```
+
+
+    ---------------------------------------------------------------------------
+
+    ValueError                                Traceback (most recent call last)
+
+    <ipython-input-19-6536367bfe5f> in <module>
+    ----> 1 aa, bb = c.split(2, dim=0)
+          2 aa.shape, bb.shape
+
+
+    ValueError: not enough values to unpack (expected 2, got 1)
+
+
+
+```python
+aa, bb = c.chunk(2, dim=0)
+aa.shape, bb.shape
+```
+
+
+
+
+    (torch.Size([1, 32, 8]), torch.Size([1, 32, 8]))
+
+---
+
+<br />
