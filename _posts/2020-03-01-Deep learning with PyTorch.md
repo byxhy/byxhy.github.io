@@ -2867,3 +2867,461 @@ aa.shape, bb.shape
 ---
 
 <br />
+
+
+### 7. Basic operation
+
+- basic
+
+
+```python
+import torch
+import numpy as np
+```
+
+
+```python
+a = torch.rand(3, 4)
+b = torch.rand(4)
+```
+
+
+```python
+a+b
+```
+
+
+
+
+    tensor([[0.5698, 1.0592, 1.5789, 0.4249],
+            [1.2410, 1.4248, 1.1539, 0.4428],
+            [0.4254, 1.2981, 1.1344, 1.0469]])
+
+
+
+
+```python
+torch.add(a, b)
+```
+
+
+
+
+    tensor([[0.5698, 1.0592, 1.5789, 0.4249],
+            [1.2410, 1.4248, 1.1539, 0.4428],
+            [0.4254, 1.2981, 1.1344, 1.0469]])
+
+
+
+
+```python
+torch.all(torch.eq(a+b, torch.add(a, b)))
+```
+
+
+
+
+    tensor(True)
+
+
+
+
+```python
+torch.all(torch.eq(a-b, torch.sub(a, b)))
+```
+
+
+
+
+    tensor(True)
+
+
+
+
+```python
+torch.all(torch.eq(a*b, torch.mul(a, b)))
+```
+
+
+
+
+    tensor(True)
+
+
+
+
+```python
+torch.all(torch.eq(a/b, torch.div(a, b)))
+```
+
+
+
+
+    tensor(True)
+
+
+
+- matmul
+
+
+```python
+a = torch.full([2, 2], 3)
+a
+```
+
+
+
+
+    tensor([[3., 3.],
+            [3., 3.]])
+
+
+
+
+```python
+b = torch.ones(2, 2)
+b
+```
+
+
+
+
+    tensor([[1., 1.],
+            [1., 1.]])
+
+
+
+
+```python
+torch.mm(a, b)
+```
+
+
+
+
+    tensor([[6., 6.],
+            [6., 6.]])
+
+
+
+
+```python
+torch.matmul(a, b)
+```
+
+
+
+
+    tensor([[6., 6.],
+            [6., 6.]])
+
+
+
+
+```python
+a @ b
+```
+
+
+
+
+    tensor([[6., 6.],
+            [6., 6.]])
+
+
+
+- matmul for linear layer
+
+
+```python
+x = torch.rand(4, 784)
+```
+
+
+```python
+w = torch.rand(512, 784)
+```
+
+
+```python
+(x @ w.t()).shape
+```
+
+
+
+
+    torch.Size([4, 512])
+
+
+
+- \>2d tensor matmul
+
+
+```python
+a = torch.rand(4, 3, 28, 64)
+b = torch.rand(4, 3, 64, 32)
+```
+
+
+```python
+torch.mm(a, b).shape
+```
+
+
+    ---------------------------------------------------------------------------
+
+    RuntimeError                              Traceback (most recent call last)
+
+    <ipython-input-21-bd98cd1646a7> in <module>
+    ----> 1 torch.mm(a, b).shape
+
+
+    RuntimeError: matrices expected, got 4D, 4D tensors at /opt/conda/conda-bld/pytorch_1579022027550/work/aten/src/TH/generic/THTensorMath.cpp:131
+
+
+
+```python
+torch.matmul(a, b).shape
+```
+
+
+
+
+    torch.Size([4, 3, 28, 32])
+
+
+
+
+```python
+c = torch.rand(64, 32)
+torch.matmul(a, c).shape
+```
+
+
+
+
+    torch.Size([4, 3, 28, 32])
+
+
+
+
+```python
+d = torch.rand(4, 64, 32)
+torch.matmul(a, d).shape
+```
+
+
+    ---------------------------------------------------------------------------
+
+    RuntimeError                              Traceback (most recent call last)
+
+    <ipython-input-25-55e69d3a8519> in <module>
+          1 d = torch.rand(4, 64, 32)
+    ----> 2 torch.matmul(a, d).shape
+
+
+    RuntimeError: The size of tensor a (3) must match the size of tensor b (4) at non-singleton dimension 1
+
+
+- power
+
+
+```python
+a = torch.full([2, 2], 3)
+```
+
+
+```python
+a.pow(2)
+```
+
+
+
+
+    tensor([[9., 9.],
+            [9., 9.]])
+
+
+
+
+```python
+a**2
+```
+
+
+
+
+    tensor([[9., 9.],
+            [9., 9.]])
+
+
+
+
+```python
+aa = a**2
+aa.sqrt()
+```
+
+
+
+
+    tensor([[3., 3.],
+            [3., 3.]])
+
+
+
+
+```python
+aa.rsqrt()
+```
+
+
+
+
+    tensor([[0.3333, 0.3333],
+            [0.3333, 0.3333]])
+
+
+
+
+```python
+aa**.5
+```
+
+
+
+
+    tensor([[3., 3.],
+            [3., 3.]])
+
+
+
+- Exp log
+
+
+```python
+a = torch.exp(torch.ones(2, 2))
+a
+```
+
+
+
+
+    tensor([[2.7183, 2.7183],
+            [2.7183, 2.7183]])
+
+
+
+
+```python
+torch.log(a)
+```
+
+
+
+
+    tensor([[1., 1.],
+            [1., 1.]])
+
+
+
+- Approximation
+
+
+```python
+a = torch.tensor(3.14)
+```
+
+
+```python
+a.floor(), a.ceil(), a.trunc(), a.frac()
+```
+
+
+
+
+    (tensor(3.), tensor(4.), tensor(3.), tensor(0.1400))
+
+
+
+
+```python
+b = torch.tensor(3.499)
+b.round()
+```
+
+
+
+
+    tensor(3.)
+
+
+
+
+```python
+c = torch.tensor(3.5)
+c.round()
+```
+
+
+
+
+    tensor(4.)
+
+
+
+- clamp(min), (min, max)
+
+
+```python
+grad = torch.rand(2, 3) * 15
+grad
+```
+
+
+
+
+    tensor([[ 5.2049, 10.0966,  6.0705],
+            [11.3415,  3.0498, 14.2503]])
+
+
+
+
+```python
+grad.max(), grad.min(), grad.median()
+```
+
+
+
+
+    (tensor(14.2503), tensor(3.0498), tensor(6.0705))
+
+
+
+
+```python
+grad.clamp(10)
+```
+
+
+
+
+    tensor([[10.0000, 10.0966, 10.0000],
+            [11.3415, 10.0000, 14.2503]])
+
+
+
+
+```python
+grad.clamp(0, 10)
+```
+
+
+
+
+    tensor([[ 5.2049, 10.0000,  6.0705],
+            [10.0000,  3.0498, 10.0000]])
+
+---
+
+<br />

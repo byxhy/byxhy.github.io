@@ -916,7 +916,7 @@ Photo by joshua earle
 
 第1288天，舍 ~
 
-![](/assets/img/NYear/1288.jpg)
+![](/assets/img/NYear/1288.png)
 
 ###### 2020-01-02 00:09
 
@@ -940,7 +940,7 @@ Photo by joshua earle
 
 第1291天， 放手去干就好了 ～
 
-![](/assets/img/NYear/1291.jpg)
+![](/assets/img/NYear/1291.png)
 
 ###### 2020-01-05 01:03
 
@@ -1172,7 +1172,7 @@ Photo by joshua earle
 
 第1320天，前行的路，相信阳光，相信遇见 ~
 
-![](/assets/img/NYear/1320jpg)
+![](/assets/img/NYear/1320.jpg)
 
 ###### 2020-02-02 23:48
 
