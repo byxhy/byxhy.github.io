@@ -3172,7 +3172,20 @@ aa.sqrt()
 
 
 ```python
-aa.rsqrt()
+aa.rsqrt()  # reciprocal
+```
+
+
+
+
+    tensor([[0.3333, 0.3333],
+            [0.3333, 0.3333]])
+
+
+
+
+```python
+1 / aa.sqrt()
 ```
 
 
