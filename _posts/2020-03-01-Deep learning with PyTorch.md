@@ -21,7 +21,7 @@ Image from [Google images](https://images.app.goo.gl/bqZGCzKDWBSw39qL9)
 * [INSTALLATION][1]
 * [GET STARTED][2]
 * [BASIC TENSOR OPERATION][3]
-* [TensorFlow 2.0 basic operations][4]
+* [STOCHASTIC GRADIENT DESCENT][4]
 * [Compilation and training][5]
 * [Evaluate the model][6]
 
@@ -3850,3 +3850,177 @@ torch.equal(a, a)
 ---
 
 <br />
+
+
+### 9. Advanced operation
+
+- where
+
+
+```python
+import torch
+import numpy as np
+```
+
+
+```python
+x = torch.randn(2, 2)
+x
+```
+
+
+
+
+    tensor([[ 0.4610,  0.0117],
+            [-1.4521, -3.1001]])
+
+
+
+
+```python
+a = torch.ones(2, 2)
+a
+```
+
+
+
+
+    tensor([[1., 1.],
+            [1., 1.]])
+
+
+
+
+```python
+b = torch.zeros(2, 2)
+b
+```
+
+
+
+
+    tensor([[0., 0.],
+            [0., 0.]])
+
+
+
+
+```python
+torch.where(x > 0.01, a, b)
+```
+
+
+
+
+    tensor([[1., 1.],
+            [0., 0.]])
+
+
+
+
+```python
+torch.gt(x, 0.01)
+```
+
+
+
+
+    tensor([[ True,  True],
+            [False, False]])
+
+
+
+- gather
+
+
+```python
+prob = torch.randn(4, 10)
+```
+
+
+```python
+idx = prob.topk(3, dim=1)
+idx
+```
+
+
+
+
+    torch.return_types.topk(
+    values=tensor([[1.2369, 0.9901, 0.1664],
+            [1.6307, 0.7344, 0.2915],
+            [2.8899, 1.1640, 1.0699],
+            [0.8193, 0.4604, 0.1266]]),
+    indices=tensor([[4, 6, 0],
+            [2, 0, 5],
+            [5, 0, 3],
+            [2, 7, 8]]))
+
+
+
+
+```python
+idx = idx[1]
+idx
+```
+
+
+
+
+    tensor([[4, 6, 0],
+            [2, 0, 5],
+            [5, 0, 3],
+            [2, 7, 8]])
+
+
+
+
+```python
+label = torch.arange(10) + 100
+label.expand(4, 10)
+```
+
+
+
+
+    tensor([[100, 101, 102, 103, 104, 105, 106, 107, 108, 109],
+            [100, 101, 102, 103, 104, 105, 106, 107, 108, 109],
+            [100, 101, 102, 103, 104, 105, 106, 107, 108, 109],
+            [100, 101, 102, 103, 104, 105, 106, 107, 108, 109]])
+
+
+
+
+```python
+idx.long()
+```
+
+
+
+
+    tensor([[4, 6, 0],
+            [2, 0, 5],
+            [5, 0, 3],
+            [2, 7, 8]])
+
+
+
+
+```python
+torch.gather(label.expand(4, 10), dim=1, index=idx.long()) #retrieve label
+```
+
+
+
+
+    tensor([[104, 106, 100],
+            [102, 100, 105],
+            [105, 100, 103],
+            [102, 107, 108]])
+
+---
+
+<br />
+
+
+<h2 id="4">STOCHASTIC GRADIENT DESCENT</h2>
