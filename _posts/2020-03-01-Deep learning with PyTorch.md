@@ -126,67 +126,67 @@ conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 
 - c. Action
 
-``` python
-import numpy as np
-np.random.seed(1234)
+  ``` python
+  import numpy as np
+  np.random.seed(1234)
 
-# 1. Create a data array
+  # 1. Create a data array
 
-num = 100
+  num = 100
 
-w_true, b_true = 0.727, 3.193
-# esp = np.random.random(100)
-# esp = np.random.normal(0.1, 1, num)
-# print(np.mean(esp), np.std(esp))
+  w_true, b_true = 0.727, 3.193
+  # esp = np.random.random(100)
+  # esp = np.random.normal(0.1, 1, num)
+  # print(np.mean(esp), np.std(esp))
 
-esp = 0
+  esp = 0
 
-x = np.linspace(-50, 50, num)
+  x = np.linspace(-50, 50, num)
 
-y_true = w_true * x + b_true + esp
-
-
-# 2. loss
-def gradient_descent(w_init, b_init, lr, x, y):
-    N = len(x)
-
-    # You need to re-understand loss function, don't lost the sum
-    # grad_w = 2 / N * (w_init * x + b_init - y) * x
-    # grad_b = 2 / N * (w_init * x + b_init - y)
-
-    grad_w = 2 / N * np.sum((w_init * x + b_init - y) * x)
-    grad_b = 2 / N * np.sum((w_init * x + b_init - y))
-
-    w_new = w_init - lr * grad_w
-    b_new = b_init - lr * grad_b
-
-    return w_new, b_new
+  y_true = w_true * x + b_true + esp
 
 
-def train_epoch(epochs):
-    lr = 1e-3
+  # 2. loss
+  def gradient_descent(w_init, b_init, lr, x, y):
+      N = len(x)
 
-    w, b = 0, 0
+      # You need to re-understand loss function, don't lost the sum
+      # grad_w = 2 / N * (w_init * x + b_init - y) * x
+      # grad_b = 2 / N * (w_init * x + b_init - y)
 
-    for e in range(epochs):
-        w, b = gradient_descent(w, b, lr, x, y_true) # PA: update w, b
+      grad_w = 2 / N * np.sum((w_init * x + b_init - y) * x)
+      grad_b = 2 / N * np.sum((w_init * x + b_init - y))
 
-        y_pre = w * x + b
+      w_new = w_init - lr * grad_w
+      b_new = b_init - lr * grad_b
 
-        loss = np.sum((y_pre - y_true) ** 2) / len(x)
-
-        print('Epoch:', e, ' loss:', loss, ' w =', w, ' b =', b)
-
-
-def main():
-    train_epoch(3500)
-
-    print('\nw_true:', w_true, ' b_true:', b_true)
+      return w_new, b_new
 
 
-if __name__ == '__main__':
-    main()
-```
+  def train_epoch(epochs):
+      lr = 1e-3
+
+      w, b = 0, 0
+
+      for e in range(epochs):
+          w, b = gradient_descent(w, b, lr, x, y_true) # update w, b
+
+          y_pre = w * x + b
+
+          loss = np.sum((y_pre - y_true) ** 2) / len(x)
+
+          print('Epoch:', e, ' loss:', loss, ' w =', w, ' b =', b)
+
+
+  def main():
+      train_epoch(3500)
+
+      print('\nw_true:', w_true, ' b_true:', b_true)
+
+
+  if __name__ == '__main__':
+      main()
+  ```
 
 - d. Review
   - Don't forget the sum action when we compute the gradient of loss
@@ -2553,8 +2553,8 @@ b.permute(0, 2, 3, 1).shape
 *Summary*
 
 - unsqueeze [-input.dim() - 1, input.dim() + 1)
-- repeat - - > expand
-- transpose - - > permute
+- repeat --> expand
+- transpose --> permute
 
 ---
 
@@ -3334,6 +3334,518 @@ grad.clamp(0, 10)
 
     tensor([[ 5.2049, 10.0000,  6.0705],
             [10.0000,  3.0498, 10.0000]])
+
+---
+
+<br />
+
+
+### 8. Statistics properties
+
+- norm-p
+
+
+```python
+import torch
+import numpy as np
+```
+
+
+```python
+a = torch.full([8], 1)
+b = a.view(2, 4)
+c = a.view(2, 2, 2)
+```
+
+
+```python
+a.norm(1), b.norm(1), c.norm(1)
+```
+
+
+
+
+    (tensor(8.), tensor(8.), tensor(8.))
+
+
+
+
+```python
+a.norm(2), b.norm(2), c.norm(2)
+```
+
+
+
+
+    (tensor(2.8284), tensor(2.8284), tensor(2.8284))
+
+
+
+
+```python
+b.norm(1, dim=1)
+```
+
+
+
+
+    tensor([4., 4.])
+
+
+
+
+```python
+b.norm(2, dim=1)
+```
+
+
+
+
+    tensor([2., 2.])
+
+
+
+
+```python
+c.norm(1, dim=0)
+```
+
+
+
+
+    tensor([[2., 2.],
+            [2., 2.]])
+
+
+
+
+```python
+c.norm(2, dim=0)
+```
+
+
+
+
+    tensor([[1.4142, 1.4142],
+            [1.4142, 1.4142]])
+
+
+
+- mean, sum, min, max, prod
+
+
+```python
+a = torch.arange(8).view(2, 4).float()
+a
+```
+
+
+
+
+    tensor([[0., 1., 2., 3.],
+            [4., 5., 6., 7.]])
+
+
+
+
+```python
+a.min(), a.max(), a.mean(), a.prod()
+```
+
+
+
+
+    (tensor(0.), tensor(7.), tensor(3.5000), tensor(0.))
+
+
+
+
+```python
+a.sum()
+```
+
+
+
+
+    tensor(28.)
+
+
+
+
+```python
+a.argmax(), a.argmin()
+```
+
+
+
+
+    (tensor(7), tensor(0))
+
+
+
+- argmin, argmax
+
+
+```python
+a = torch.rand(4, 10)
+a[0]
+```
+
+
+
+
+    tensor([0.3720, 0.6761, 0.3741, 0.9730, 0.2760, 0.0788, 0.4316, 0.0789, 0.8999,
+            0.8642])
+
+
+
+
+```python
+a.argmax()
+```
+
+
+
+
+    tensor(3)
+
+
+
+
+```python
+a.argmax(dim=1)
+```
+
+
+
+
+    tensor([3, 4, 8, 8])
+
+
+
+- dim, keepdim
+
+
+```python
+a = torch.rand(4, 10)
+```
+
+
+```python
+a.max(dim=1)
+```
+
+
+
+
+    torch.return_types.max(
+    values=tensor([0.7634, 0.9783, 0.8863, 0.9994]),
+    indices=tensor([4, 1, 3, 0]))
+
+
+
+
+```python
+a.max(dim=1, keepdim=True)
+```
+
+
+
+
+    torch.return_types.max(
+    values=tensor([[0.7634],
+            [0.9783],
+            [0.8863],
+            [0.9994]]),
+    indices=tensor([[4],
+            [1],
+            [3],
+            [0]]))
+
+
+
+
+```python
+a.argmax(dim=1, keepdim=True)
+```
+
+
+
+
+    tensor([[4],
+            [1],
+            [3],
+            [0]])
+
+
+
+- Top-k or k-th
+
+
+```python
+a = torch.rand(4, 10)
+a
+```
+
+
+
+
+    tensor([[0.9320, 0.1271, 0.7293, 0.3934, 0.9798, 0.8641, 0.6343, 0.3942, 0.0804,
+             0.7824],
+            [0.0198, 0.5221, 0.1622, 0.4375, 0.4997, 0.4394, 0.6338, 0.6554, 0.7376,
+             0.3378],
+            [0.1089, 0.0269, 0.5377, 0.5592, 0.9298, 0.5855, 0.9504, 0.6926, 0.9498,
+             0.4973],
+            [0.5445, 0.1226, 0.9817, 0.0698, 0.9938, 0.6199, 0.8160, 0.0527, 0.5491,
+             0.8526]])
+
+
+
+
+```python
+a.topk(3, dim=1)
+```
+
+
+
+
+    torch.return_types.topk(
+    values=tensor([[0.9798, 0.9320, 0.8641],
+            [0.7376, 0.6554, 0.6338],
+            [0.9504, 0.9498, 0.9298],
+            [0.9938, 0.9817, 0.8526]]),
+    indices=tensor([[4, 0, 5],
+            [8, 7, 6],
+            [6, 8, 4],
+            [4, 2, 9]]))
+
+
+
+
+```python
+a.topk(3, dim=1, largest=False)
+```
+
+
+
+
+    torch.return_types.topk(
+    values=tensor([[0.0804, 0.1271, 0.3934],
+            [0.0198, 0.1622, 0.3378],
+            [0.0269, 0.1089, 0.4973],
+            [0.0527, 0.0698, 0.1226]]),
+    indices=tensor([[8, 1, 3],
+            [0, 2, 9],
+            [1, 0, 9],
+            [7, 3, 1]]))
+
+
+
+
+```python
+a.kthvalue(1, dim=1)
+```
+
+
+
+
+    torch.return_types.kthvalue(
+    values=tensor([0.0804, 0.0198, 0.0269, 0.0527]),
+    indices=tensor([8, 0, 1, 7]))
+
+
+
+
+```python
+a.kthvalue(10, dim=1)
+```
+
+
+
+
+    torch.return_types.kthvalue(
+    values=tensor([0.9798, 0.7376, 0.9504, 0.9938]),
+    indices=tensor([4, 8, 6, 4]))
+
+
+
+
+```python
+a.kthvalue(3)
+```
+
+
+
+
+    torch.return_types.kthvalue(
+    values=tensor([0.3934, 0.3378, 0.4973, 0.1226]),
+    indices=tensor([3, 9, 9, 1]))
+
+
+
+
+```python
+a.kthvalue(1, keepdim=True)
+```
+
+
+
+
+    torch.return_types.kthvalue(
+    values=tensor([[0.0804],
+            [0.0198],
+            [0.0269],
+            [0.0527]]),
+    indices=tensor([[8],
+            [0],
+            [1],
+            [7]]))
+
+
+
+- compare
+
+
+```python
+a = torch.randn(4, 10)
+```
+
+
+```python
+a > 0
+```
+
+
+
+
+    tensor([[False, False, False, False,  True,  True,  True, False,  True, False],
+            [ True, False,  True, False, False,  True,  True,  True,  True, False],
+            [ True,  True,  True, False, False,  True,  True, False, False, False],
+            [False, False,  True,  True, False,  True, False, False,  True,  True]])
+
+
+
+
+```python
+torch.gt(a, 0)
+```
+
+
+
+
+    tensor([[False, False, False, False,  True,  True,  True, False,  True, False],
+            [ True, False,  True, False, False,  True,  True,  True,  True, False],
+            [ True,  True,  True, False, False,  True,  True, False, False, False],
+            [False, False,  True,  True, False,  True, False, False,  True,  True]])
+
+
+
+
+```python
+a != 0
+```
+
+
+
+
+    tensor([[True, True, True, True, True, True, True, True, True, True],
+            [True, True, True, True, True, True, True, True, True, True],
+            [True, True, True, True, True, True, True, True, True, True],
+            [True, True, True, True, True, True, True, True, True, True]])
+
+
+
+- eq vs equal
+
+
+```python
+a = torch.ones(2, 3)
+b = torch.ones(2, 3)
+b[:,2] = 0
+```
+
+
+```python
+a
+```
+
+
+
+
+    tensor([[1., 1., 1.],
+            [1., 1., 1.]])
+
+
+
+
+```python
+b
+```
+
+
+
+
+    tensor([[1., 1., 0.],
+            [1., 1., 0.]])
+
+
+
+
+```python
+torch.eq(a, b)
+```
+
+
+
+
+    tensor([[ True,  True, False],
+            [ True,  True, False]])
+
+
+
+
+```python
+torch.equal(a, b)
+```
+
+
+
+
+    False
+
+
+
+
+```python
+torch.eq(a, a)
+```
+
+
+
+
+    tensor([[True, True, True],
+            [True, True, True]])
+
+
+
+
+```python
+torch.equal(a, a)
+```
+
+
+
+
+    True
+
+
+
+*Summary*
+
+- L1-Norm: Manhattan Distance or Taxicab norm
+- L2-Norm: Is the most popular norm, also known as the Euclidean norm
+- topk(max_index --> min_index) vs k-th(k --> max_index): topk(10 --> 0) vs k-th(k --> 10)
+- eq vs equal
 
 ---
 
