@@ -10,7 +10,7 @@ image: paul-stollery-ReqdkBNkXl0.jpg
 
 Photo by paul-stollery
 
-### This is a learning note about using Convolutional Neural Network to classify  environmental sounds. I pretty much appreciate [CodeEmporium's](https://www.youtube.com/channel/UC5_6ZD6s8klmMu9TXEB_1IA/about) effort. Thank You very much :)
+> This is a learning note about using Convolutional Neural Network to classify  environmental sounds. I pretty much appreciate [CodeEmporium's](https://www.youtube.com/channel/UC5_6ZD6s8klmMu9TXEB_1IA/about) effort. Thank You very much :)
 
 <br />
 
