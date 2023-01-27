@@ -4,7 +4,7 @@ layout: post
 title: "Deep learning with PyTorch"
 author: "Xhy"
 categories: DeepLearning
-tags: [improve]
+tags: [Machine Learning]
 image: ./PyTorch/pytorch.jpg
 ---
 

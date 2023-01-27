@@ -3,7 +3,7 @@ layout: post
 title: "The 24 solar terms"
 author: "Xhy"
 categories: journal
-tags: [documentation,sample]
+tags: [Journal]
 image: solar_term.jpg
 ---
 

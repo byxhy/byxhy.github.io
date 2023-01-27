@@ -3,7 +3,7 @@ layout: post
 title: "Python foundation for Machine Learning"
 author: "Xhy"
 categories: Machine Learning
-tags: [documentation,sample]
+tags: [Machine Learning]
 image: MLFoudation.jpg
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "96 hours of special training"
 author: "Xhy"
 categories: dream
-tags: [basketball]
+tags: [Improve]
 image: joshua-ness.jpg
 ---
 

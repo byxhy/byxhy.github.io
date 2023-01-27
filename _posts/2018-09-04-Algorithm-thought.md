@@ -3,7 +3,7 @@ layout: post
 title: "Algorithm thought"
 author: "Xhy"
 categories: No-Standard
-tags: [algorithm,sample]
+tags: [Foundation]
 image: sabine-schulte.jpg
 ---
 

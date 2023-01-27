@@ -4,7 +4,7 @@ layout: post
 title: "Distinguish sounds with ConvNets"
 author: "Xhy"
 categories: Speech
-tags: [improve]
+tags: [AudioVoice]
 image: paul-stollery-ReqdkBNkXl0.jpg
 ---
 

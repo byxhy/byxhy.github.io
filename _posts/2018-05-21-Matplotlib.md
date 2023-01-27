@@ -3,7 +3,7 @@ layout: post
 title: "Data Processing with Python Matplotlib"
 author: "Xhy"
 categories: Machine Learning
-tags: [documentation,sample]
+tags: [Machine Learning]
 image: hal-gatewood.jpg
 ---
 

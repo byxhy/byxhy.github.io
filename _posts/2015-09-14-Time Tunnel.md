@@ -3,7 +3,7 @@ layout: post
 title: "Time Tunnel"
 author: "Xhy"
 categories: journal
-tags: [documentation,sample]
+tags: [Documentation]
 image: joshua-earle.jpg
 ---
 Photo by joshua earle

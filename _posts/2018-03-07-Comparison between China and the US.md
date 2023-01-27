@@ -3,7 +3,7 @@ layout: post
 title: "Comparison between China and the US"
 author: "Xhy"
 categories: journal
-tags: [documentation,sample]
+tags: [Journal]
 image: ql.jpg
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "C++ logging library"
 author: "Xhy"
 categories: c++
-tags: [logging]
+tags: [Foundation]
 image: markus-spiske-78531.jpg
 ---
 

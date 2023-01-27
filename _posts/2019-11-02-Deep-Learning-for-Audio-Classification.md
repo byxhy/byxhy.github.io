@@ -4,7 +4,7 @@ layout: post
 title: "DL for Audio Classification"
 author: "Xhy"
 categories: Speech
-tags: [improve]
+tags: [AudioVoice]
 image: blake-connally-ipXPK5F7hao.jpg
 ---
 

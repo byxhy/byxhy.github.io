@@ -3,7 +3,7 @@ layout: post
 title: "C++ multithreading template"
 author: "Xhy"
 categories: coding
-tags: [documentation,sample]
+tags: [Foundation]
 image: fancycrave.jpg
 ---
 

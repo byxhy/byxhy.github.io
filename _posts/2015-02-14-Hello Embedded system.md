@@ -4,7 +4,7 @@ layout: post
 title: "Hello Embedded system"
 author: "Xhy"
 categories: Linux
-tags: [improve]
+tags: [Embedded]
 image: harrison-broadbent-hSHNPyND_dU.jpg
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "Machine Vision"
 author: "Xhy"
 categories: MV
-tags: [machine vision,sample]
+tags: [Foundation]
 image: shane-hauser.jpg
 ---
 

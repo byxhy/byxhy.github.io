@@ -3,7 +3,7 @@ layout: post
 title: "My language learning expedition"
 author: "Xhy"
 categories: language
-tags: [improve]
+tags: [Improve]
 image: markus-spiske2.jpg
 ---
 

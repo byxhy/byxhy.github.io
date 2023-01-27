@@ -3,7 +3,7 @@ layout: post
 title: "About the Author"
 author: "Paul Le"
 categories: Me
-tags: [documentation,sample]
+tags: [Documentation]
 image: cutting.jpg
 ---
 

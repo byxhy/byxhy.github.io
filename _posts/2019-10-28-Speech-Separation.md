@@ -3,7 +3,7 @@ layout: post
 title: "Speech separation"
 author: "Xhy"
 categories: Speech
-tags: [improve]
+tags: [Improve]
 image: jason-rosewell.jpg
 ---
 

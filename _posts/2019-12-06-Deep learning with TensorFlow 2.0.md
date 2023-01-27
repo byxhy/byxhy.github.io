@@ -4,7 +4,7 @@ layout: post
 title: "Deep learning with TensorFlow 2.0"
 author: "Xhy"
 categories: DeepLearning
-tags: [improve]
+tags: [Machine Learning]
 image: ./TF2.0/TF.jpg
 ---
 

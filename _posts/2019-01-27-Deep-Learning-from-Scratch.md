@@ -3,7 +3,7 @@ layout: post
 title: "Deep Learning from Scratch"
 author: "Xhy"
 categories: Deep-Learning
-tags: [improve]
+tags: [Machine Learning]
 image: james-pond.jpg
 ---
 

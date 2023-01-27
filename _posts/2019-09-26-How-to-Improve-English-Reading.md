@@ -3,7 +3,7 @@ layout: post
 title: "How to Improve English Reading"
 author: "Xhy"
 categories: language
-tags: [improve]
+tags: [Improve]
 image: josh-applegate-p.jpg
 ---
 

@@ -4,7 +4,7 @@ layout: post
 title: "Hello Unix programming"
 author: "Xhy"
 categories: Linux
-tags: [improve]
+tags: [Embedded]
 image: sai-kiran-anagani-Tjbk79TARiE.jpg
 ---
 

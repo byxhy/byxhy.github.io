@@ -3,7 +3,7 @@ layout: post
 title: "The road to the Java expedition"
 author: "Xhy"
 categories: java
-tags: [improve]
+tags: [Foundation]
 image: maximilian-weisbecker.jpg
 ---
 

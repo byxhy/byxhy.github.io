@@ -3,7 +3,7 @@ layout: post
 title: "Time will tell"
 author: "Xhy"
 categories: English
-tags: [documentation,sample]
+tags: [Documentation]
 image: tobias-cornille.jpg
 ---
 

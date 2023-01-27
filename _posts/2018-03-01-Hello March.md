@@ -3,7 +3,7 @@ layout: post
 title: "Hello shining March"
 author: "Xhy"
 categories: journal
-tags: [documentation,sample]
+tags: [Journal]
 image: march.jpg
 ---
 Photo by myself
@@ -18,16 +18,3 @@ Photo by myself
 回去后读读二十四节气，找一件可以主心的事，坚持干下去，让自己的心有个依靠，多关心关心家人。不要沉湎过去，向前看，努力活，不留憾
 >
 2018.02.23/17:47 at Sokha Angkor Resort
-
-
-### Getting Started
-
-[Getting Started]({{ site.github.url }}{% post_url 2015-10-10-getting-started %}): getting started with installing Lagrange, whether you are completely new to using Jekyll, or simply just migrating to a new Jekyll theme.
-
-### Example Content
-
-[Text and Formatting]({{ site.github.url }}{% post_url 2014-01-01-text-formatting-examples %})
-
-### Questions?
-
-This theme is completely free and open source software. You may use it however you want, as it is distributed under the [MIT License](http://choosealicense.com/licenses/mit/). If you are having any problems, any questions or suggestions, feel free to [tweet at me](https://twitter.com/intent/tweet?text=My%question%about%Lagrange%is:%&amp;via=paululele), or [file a GitHub issue](https://github.com/lenpaul/lagrange/issues/new).

@@ -3,7 +3,7 @@ layout: post
 title: "The road to the C++ expedition"
 author: "Xhy"
 categories: c++
-tags: [improve]
+tags: [Foundation]
 image: joshua-earle.jpg
 ---
 
