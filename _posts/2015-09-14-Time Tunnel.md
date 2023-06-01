@@ -2,10 +2,8 @@
 layout: post
 title: Time Tunnel
 categories: Explore
-excerpt: In graphic design, a pull quote (also known as a lift-out pull quote) is a key phrase, quotation, or excerpt that has been pulled from an article and used as a page layout graphic element, serving to entice readers into the article or to highlight a key topic. In graphic design, a pull quote (also known as a lift-out pull quote) is a key phrase, quotation, or excerpt that has been pulled from an article and used as a page layout graphic element, serving to entice readers into the article or to highlight a key topic.
+excerpt: 有人说，她来的时候就有了，信不信你走的时候，我还在... In graphic design, a pull quote (also known as a lift-out pull quote) is a key phrase, quotation, or excerpt that has been pulled from an article and used as a page layout graphic element, serving to entice readers into the article or to highlight a key topic. In graphic design, a pull quote (also known as a lift-out pull quote) is a key phrase, quotation, or excerpt that has been pulled from an article and used as a page layout graphic element, serving to entice readers into the article or to highlight a key topic.
 ---
-Photo by joshua earle
->有人说，她来的时候就有了，信不信你走的时候，我还在 ...
 
 <br />
 
@@ -1573,7 +1571,7 @@ Photo by joshua earle
 ###### 2020-02-02 23:48
 
 
-
+- 定义一种极小透明灰类右下角字体来显示时间
 <补货中，请稍后...>
 
 <br />
