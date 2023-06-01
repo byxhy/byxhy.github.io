@@ -42,3 +42,5 @@ Learn more about it [here](https://github.com/amitmerchant1990/reverie) on how t
 <a href="https://www.flaticon.com/free-icons/backpack" title="backpack icons">Backpack icons created by Leremy - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/alone" title="alone icons">Alone icons created by Leremy - Flaticon</a>
+
+- 还有一个图标的路径没有找到，error.ico
